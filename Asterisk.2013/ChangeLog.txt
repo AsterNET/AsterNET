@@ -1,0 +1,69 @@
+18.01.2013 (ppumkin)
+	Re-homed project to CodePlex with TFS Support
+	Upgraded Project to .NET 4.5
+	Allow connection to Asterisk 1.8.x - Still uses the 1.6.x logic, so any 1.8 changes are not yet implemented. <- TODO
+
+
+09.06.2009
+	Fix QueueAdd action
+	Fix Ping actionid with 1.6.0.10 version
+	Fix Bridge event attributes
+02.18.2009
+	Fix event with unregistered or empry action id
+	Add reconnect properties
+10.15.2008
+	Change MappingStrategy.cs line 80
+		from	ResourceReader rr = new ResourceReader(resourceName);
+		to	ResourceReader rr = new ResourceReader(AppDomain.CurrentDomain.BaseDirectory + resourceName);
+	Change AsteriskFastAGI default socket encoding from Encoding.UTF8 to Encoding.ASCII
+09.18.2008
+	Change read socket to async model (BeginRead/EndRead)
+	Add Ping/Pong heartbeat to check connection (ManagerConnection.PingInterval in milliseconds).
+	Remove AsteriskManager class (use ManagerConnection).
+	Change Events event handler to UnhandleEvent and change event logic:
+		 ManagerConnection.FireAllEvents property = false
+			ManagerConnection event only individual events by event handlers and event all other (unknown) events to UnhandleEvent
+		 ManagerConnection.FireAllEvents property = true
+			ManagerConnection event individual events by event handlers and if individual handler not set then fire event to UnhandleEvent
+	Combine Connect/Disconnect/Reload/Shutdown events to one ConnectionState event handler.
+	Change reconnection login:
+		ManagerConnection.KeepAlive property to control auto reconnection on Disconnect/Reload/Shutdown (default true)
+		add Reconnect property to Connect/Disconnect/Reload/Shutdown events and if this property = true - it's means that reconnection process started (Disconnect/Reload/Shutdown) or done (Connect)
+		by default thi means that two events fire on reconnect. For example:
+		1. Reload (.Reconnect = true)
+		2. if success Connect (.Reconnect = true)
+		3. or fail Disconnect  (.Reconnect = false)
+	Fix error with Close Windows.Forms without Logoff() - to disable this feauture set TraceCallerThread property to false
+	Add GetConfig/UpdateConfig actions.
+	Change Logger logic. Add Visible() methods to define logger rules by level and class:method.
+	Add custom response to Action (only event in previous) (see GetConfig for example)
+	
+08.26.2008
+	Remove exception if internalActionId is not define in event
+	Add Attributes property to ManagerEvent to accept all non defined keys (resolve no setter exception).
+	Add Attributes property to ManagerResponse to accept all non defined keys (resolve no setter exception).
+08.18.2008
+	Fix Originate error (check for 1.4.21 and 1.6-b9)
+08.16.2008
+	Add AstManProxy support
+	Add NO_TIMEOUT symbol to disable timeout
+	Fix numeric conversion error (asterisk 1.6-beta-9 chan_iax2.c line 7501)
+08.09.2008
+	Add VideoSupport, TextSupport, RealtimeDevice to PeerEntryEvent
+	Change all .ToLower() to .ToLower(...culture("en")...)
+	Separate MeetmeJoinEvent and MeetmeLeaveEvent (both from MeetmeEvent).
+	Rename all MeetMe... to Meetme...
+	Remove Event tail from event name (ex. JabberEvent)
+06.20.2008
+	Change reconnect thread model.
+06.19.2008
+	Fix JoinEvent UniqueId parameter.
+	Set default socket encoding to ASCII (thanks to Phillip N.) - see SocketEncoding property of AsteriskManager class.
+	Add support Manager events with Asteirsk 1.6 beta 9.
+	Fix Asterisk version determination.
+	Fix Reload and Disconnect event handlers.
+	Add WinForm example (thanks to shurik_ev).
+05.19.2008
+	Add Name property to QueueMemberEvent class
+04.22.2008
+	Support Asterisk 1.4 and new custom IVR with FastAGI protocol.
