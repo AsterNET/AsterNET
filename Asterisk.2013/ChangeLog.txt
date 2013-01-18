@@ -2,6 +2,8 @@
 	Re-homed project to CodePlex with TFS Support
 	Upgraded Project to .NET 4.5
 	Allow connection to Asterisk 1.8.x - Still uses the 1.6.x logic, so any 1.8 changes are not yet implemented. <- TODO
+	Readded the Test Project, upgraded to .NET 4.5 and post build fix.
+	Removed "@"%ProgramFiles%\Microsoft Visual Studio 8\SDK\v2.0\Bin\ResGen.exe" "$(ProjectDir)fastagi-mapping.resx" fastagi-mapping.resources" for now until I know what it does
 
 
 09.06.2009

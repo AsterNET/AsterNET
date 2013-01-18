@@ -10,9 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asterisk.NET", "Asterisk.NE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asterisk.NET.WinForm", "Asterisk.NET.WinForm\Asterisk.NET.WinForm.csproj", "{03687626-613A-4E41-8F60-7C7839D6DD5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asterisk.NET.Test", "..\..\dfd\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\Asterisk.NET.Test.csproj", "{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -22,6 +24,9 @@ Global
 		SccProjectUniqueName2 = Asterisk.NET\\Asterisk.NET.csproj
 		SccProjectName2 = Asterisk.NET
 		SccLocalPath2 = Asterisk.NET
+		SccProjectUniqueName3 = ..\\..\\dfd\\Asterisk.NET.1.6.3.1\\Asterisk.NET.Test\\Asterisk.NET.Test.csproj
+		SccProjectName3 = Asterisk.NET.Test/Asterisk.NET.Test
+		SccLocalPath3 = ..\\..\\dfd\\Asterisk.NET.1.6.3.1\\Asterisk.NET.Test
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +41,10 @@ Global
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
