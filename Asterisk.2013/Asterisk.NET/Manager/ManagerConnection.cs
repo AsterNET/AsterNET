@@ -30,9 +30,11 @@ namespace Asterisk.NET.Manager
 	public delegate void AgentsEventHandler(object sender, Event.AgentsEvent e);
 	public delegate void AlarmClearEventHandler(object sender, Event.AlarmClearEvent e);
 	public delegate void AlarmEventHandler(object sender, Event.AlarmEvent e);
+    public delegate void BridgeEventHandler(object sender, Event.BridgeEvent e);
 	public delegate void CdrEventHandler(object sender, Event.CdrEvent e);
 	public delegate void DBGetResponseEventHandler(object sender, Event.DBGetResponseEvent e);
 	public delegate void DialEventHandler(object sender, Event.DialEvent e);
+    public delegate void DTMFEventHandler(object sender, Event.DTMFEvent e);
 	public delegate void DNDStateEventHandler(object sender, Event.DNDStateEvent e);
 	public delegate void ExtensionStatusEventHandler(object sender, Event.ExtensionStatusEvent e);
 	public delegate void HangupEventHandler(object sender, Event.HangupEvent e);
@@ -68,12 +70,14 @@ namespace Asterisk.NET.Manager
 	public delegate void QueueStatusCompleteEventHandler(object sender, Event.QueueStatusCompleteEvent e);
 	public delegate void RegistryEventHandler(object sender, Event.RegistryEvent e);
 	public delegate void RenameEventHandler(object sender, Event.RenameEvent e);
+    public delegate void TransferEventHandler(object sender, Event.TransferEvent e);
 	public delegate void StatusCompleteEventHandler(object sender, Event.StatusCompleteEvent e);
 	public delegate void StatusEventHandler(object sender, Event.StatusEvent e);
 	public delegate void UnholdEventHandler(object sender, Event.UnholdEvent e);
 	public delegate void UnlinkEventHandler(object sender, Event.UnlinkEvent e);
 	public delegate void UnparkedCallEventHandler(object sender, Event.UnparkedCallEvent e);
 	public delegate void UserEventHandler(object sender, Event.UserEvent e);
+    public delegate void QueueCallerAbandonEventHandler(object sender, Event.QueueCallerAbandonEvent e);
 	public delegate void ZapShowChannelsCompleteEventHandler(object sender, Event.ZapShowChannelsCompleteEvent e);
 	public delegate void ZapShowChannelsEventHandler(object sender, Event.ZapShowChannelsEvent e);
 	public delegate void ConnectionStateEventHandler(object sender, Event.ConnectionStateEvent e);
@@ -191,6 +195,10 @@ namespace Asterisk.NET.Manager
 		/// An AlarmEvent is triggered when a Zap channel leaves alarm state.
 		/// </summary>
 		public event AlarmClearEventHandler AlarmClear;
+        /// <summary>
+        /// 
+        /// </summary>
+        public event BridgeEventHandler Bridge;
 		/// <summary>
 		/// An AlarmEvent is triggered when a Zap channel enters or changes alarm state.
 		/// </summary>
@@ -204,6 +212,7 @@ namespace Asterisk.NET.Manager
 		/// A Dial is triggered whenever a phone attempts to dial someone.<br/>
 		/// </summary>
 		public event DialEventHandler Dial;
+        public event DTMFEventHandler DTMF;
 		/// <summary>
 		/// A DNDStateEvent is triggered by the Zap channel driver when a channel enters or leaves DND (do not disturb) state.
 		/// </summary>
@@ -319,6 +328,10 @@ namespace Asterisk.NET.Manager
 		/// A PeerStatus is triggered when a SIP or IAX client attempts to registrer at this asterisk server.<br/>
 		/// </summary>
 		public event PeerStatusEventHandler PeerStatus;
+        /// <summary>
+        /// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.
+        /// </summary>
+        public event QueueCallerAbandonEventHandler QueueCallerAbandon;
 		/// <summary>
 		/// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.
 		/// </summary>
@@ -368,6 +381,10 @@ namespace Asterisk.NET.Manager
 		/// A StatusEvent is triggered for each active channel in response to a StatusAction.
 		/// </summary>
 		public event StatusEventHandler Status;
+        /// <summary>
+        /// 
+        /// </summary>
+        public event TransferEventHandler Transfer;
 		/// <summary>
 		/// An UnholdEvent is triggered by the SIP channel driver when a channel is no longer put on hold.
 		/// </summary>
@@ -468,7 +485,7 @@ namespace Asterisk.NET.Manager
 			Helper.RegisterEventHandler(registeredEventHandlers, 48, typeof(QueueParamsEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 49, typeof(QueueStatusCompleteEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 50, typeof(RegistryEvent));
-
+            Helper.RegisterEventHandler(registeredEventHandlers, 51, typeof(QueueCallerAbandonEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 52, typeof(RenameEvent));
 
 			Helper.RegisterEventHandler(registeredEventHandlers, 54, typeof(StatusCompleteEvent));
@@ -484,6 +501,10 @@ namespace Asterisk.NET.Manager
 			Helper.RegisterEventHandler(registeredEventHandlers, 62, typeof(DisconnectEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 62, typeof(ReloadEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 62, typeof(ShutdownEvent));
+
+            Helper.RegisterEventHandler(registeredEventHandlers, 63, typeof(BridgeEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 64, typeof(TransferEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 65, typeof(DTMFEvent));
 
 
 			#endregion
@@ -933,6 +954,13 @@ namespace Asterisk.NET.Manager
 							return;
 						}
 						break;
+                    case 51:
+                        if (QueueCallerAbandon != null)
+                        {
+                            QueueCallerAbandon(this, (QueueCallerAbandonEvent)e);
+                            return;
+                        }
+                        break;
 					case 52:
 						if (Rename != null)
 						{
@@ -1005,6 +1033,24 @@ namespace Asterisk.NET.Manager
 							return;
 						}
 						break;
+                    case 63:
+                        if (Bridge != null)
+                        {
+                            Bridge(this, (BridgeEvent)e);
+                        }
+                        break;
+                    case 64:
+                        if (Transfer != null)
+                        {
+                            Transfer(this, (TransferEvent)e);
+                        }
+                        break;
+                    case 65:
+                        if (DTMF != null)
+                        {
+                            DTMF(this, (DTMFEvent)e);
+                        }
+                        break;
 
 					default:
 						if (UnhandledEvent != null)
@@ -1979,7 +2025,7 @@ namespace Asterisk.NET.Manager
 			if (response != null)
 				actionId = response.ActionId;
 
-			if (!string.IsNullOrEmpty(actionId))
+            if (!string.IsNullOrEmpty(actionId))
 			{
 				int hash = Helper.GetInternalActionId(actionId).GetHashCode();
 				responseActionId = Helper.StripInternalActionId(actionId);
@@ -2013,7 +2059,8 @@ namespace Asterisk.NET.Manager
 					}
 				}
 			}
-			else if (response == null && buffer.ContainsKey("ping") && buffer["ping"] == "Pong")
+			
+            if (response == null && buffer.ContainsKey("ping") && buffer["ping"] == "Pong")
 			{
 				response = Helper.BuildResponse(buffer);
 				foreach (ResponseHandler pingHandler in pingHandlers.Values)

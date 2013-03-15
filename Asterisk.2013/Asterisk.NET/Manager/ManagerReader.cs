@@ -209,24 +209,23 @@ namespace Asterisk.NET.Manager
 						}
 						if (lineQueue.Count == 0)
 						{
-							if (mrConnector.PingInterval > 0
-								&& mrSocket != null
-								&& !wait4identiier
-								&& !is_logoff
-								&& lastPacketTime.AddMilliseconds(mrConnector.PingInterval) < DateTime.Now
-								)
-							{
-								if (pingHandler != null)
-								{
-									// In 1.6.0 no Response from Ping
-									if (pingHandler.Response == null)
-									{
-										// If one PingInterval from Ping without Pong then send Disconnect event
-										mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
-									}
-									pingHandler.Free();
-									mrConnector.RemoveResponseHandler(pingHandler);
-									pingHandler = null;
+                            if (lastPacketTime.AddMilliseconds(mrConnector.PingInterval) < DateTime.Now
+                                && mrConnector.PingInterval > 0
+                                && mrSocket != null
+                                && !wait4identiier
+                                && !is_logoff
+                                )
+                            {
+                                if (pingHandler != null)
+                                {
+                                    if (pingHandler.Response == null)
+                                    {
+                                        // If one PingInterval from Ping without Pong then send Disconnect event
+                                        mrConnector.RemoveResponseHandler(pingHandler);
+                                        mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
+                                    }
+                                    pingHandler.Free();
+                                    pingHandler = null;
 								}
 								else
 								{

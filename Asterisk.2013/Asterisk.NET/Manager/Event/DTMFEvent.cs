@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Asterisk.NET.Manager.Event
 {
-	class DTMFEvent : ManagerEvent
+	public class DTMFEvent : ManagerEvent
 	{
 		private string digit;
 		private string direction;
