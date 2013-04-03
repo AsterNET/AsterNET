@@ -1,0 +1,91 @@
+﻿./apps/app_dial.c:686:Event:				Begin
+./apps/app_dial.c:702:Event:				End
+./apps/app_meetme.c:4517:Event:				MeetmeList
+./apps/app_meetme.c:4548:Event:				MeetmeListComplete
+./apps/app_queue.c:6354:Event:				QueueSummary
+./apps/app_queue.c:6371:Event:				QueueSummaryComplete
+./apps/app_queue.c:6406:Event:				QueueParams
+./apps/app_queue.c:6426:Event:				QueueMember
+./apps/app_queue.c:6447:Event:				QueueEntry
+./apps/app_queue.c:6469:Event:				QueueStatusComplete
+./apps/app_userevent.c:49:Event:			UserEvent
+./apps/app_userevent.c:50:Event:
+./apps/app_userevent.c:88:Event:
+./apps/app_voicemail.c:10741:Event:			VoicemailUserEntry
+./apps/app_voicemail.c:10804:Event:			VoicemailUserEntryComplete
+./channels/chan_agent.c:1644:Event:			Agents
+./channels/chan_agent.c:1658:Event:			AgentsComplete
+./channels/chan_dahdi.c:13522:Event:
+./channels/chan_dahdi.c:14614:Event:
+./channels/chan_dahdi.c:16446:Event:		DAHDIShowChannels
+./channels/chan_dahdi.c:16469:Event:		DAHDIShowChannels
+./channels/chan_dahdi.c:16491:Event:		DAHDIShowChannelsComplete
+./channels/chan_iax2.c:6455:Event:			PeerEntry
+./channels/chan_iax2.c:6733:Event:			PeerEntry
+./channels/chan_iax2.c:6753:Event:			PeerlistComplete
+./channels/chan_iax2.c:6846:Event:			RegistryEntry
+./channels/chan_iax2.c:6862:Event:			RegistrationsComplete
+./channels/chan_sip.c:15242:Event:			RegistryEntry
+./channels/chan_sip.c:15257:Event:			RegistrationsComplete
+./channels/chan_sip.c:15290:Event:			PeerlistComplete
+./channels/chan_sip.c:15453:Event:			PeerEntry
+./channels/chan_sip.c:19723:Event:
+./channels/chan_sip.c:21996:Event:			header
+./channels/chan_skinny.c:2994:Event:		DeviceEntry
+./channels/chan_skinny.c:3044:Event:		DevicelistComplete
+./channels/chan_skinny.c:3258:Event:		LineEntry
+./channels/chan_skinny.c:3305:Event:		LinelistComplete
+./channels/chan_skinny.c:5705:Event:
+./channels/chan_skinny.c:5714:Event:		None
+./channels/chan_skinny.c:5718:Event:		Redial
+./channels/chan_skinny.c:5762:Event:		New
+./channels/chan_skinny.c:5801:Event:		Hold
+./channels/chan_skinny.c:5806:Event:		Transfer
+./channels/chan_skinny.c:5815:Event:		DND
+./channels/chan_skinny.c:5832:Event:		Forward
+./channels/chan_skinny.c:5850:Event:		Forward
+./channels/chan_skinny.c:5868:Event:		Forward
+./channels/chan_skinny.c:5888:Event:		Backspace
+./channels/chan_skinny.c:5892:Event:		End
+./channels/chan_skinny.c:5945:Event:		Resume
+./channels/chan_skinny.c:5960:Event:		Answer
+./channels/chan_skinny.c:5982:Event:		Info
+./channels/chan_skinny.c:5986:Event:		Conference
+./channels/chan_skinny.c:5995:Event:		Park
+./channels/chan_skinny.c:6016:Event:		Join
+./channels/chan_skinny.c:6021:Event:		Meetme
+./channels/chan_skinny.c:6025:Event:		Pickup
+./channels/chan_skinny.c:6029:Event:		Group
+./channels/chan_skinny.c:6033:Event:
+./main/db.c:605:Event:						DBGetResponse
+./main/event.c:1396:Event:
+./main/features.c:4965:Event:				ParkedCall
+./main/features.c:4985:Event:				ParkedCallsComplete
+./main/manager.c:1719:Event:				WaitEventComplete
+./main/manager.c:1822:Event:				FullyBooted
+./main/manager.c:2059:Event:				Status
+./main/manager.c:2085:Event:				Status
+./main/manager.c:2109:Event:				StatusComplete
+./main/manager.c:2794:Event:				EventStringToSend
+./main/manager.c:2813:Event:
+./main/manager.c:2956:Event:				CoreShowChannel
+./main/manager.c:2980:Event:				CoreShowChannelsComplete
+./main/manager.c:3481:Event:
+./main/manager.c:4280:Event:				Placeholder
+./main/pbx.c:6081:Event:					ListDialplan
+./main/pbx.c:6105:Event:					ListDialplan
+./main/pbx.c:6121:Event:					ListDialplan
+./main/pbx.c:6131:Event:					ListDialplan
+./main/pbx.c:6192:Event:					ShowDialPlanComplete
+./main/rtp.c:1033:Event:
+./main/rtp.c:1048:Event:
+./res/res_agi.c:2790:Event:					Start
+./res/res_agi.c:2814:Event:					End
+./res/res_agi.c:2839:Event:					End
+./res/res_agi.c:2848:Event:					End
+./res/res_agi.c:693:Event:					Start
+./res/res_agi.c:726:Event:					Exec
+./res/res_agi.c:728:Event:					Exec
+./res/res_agi.c:762:Event:					End
+./utils/muted.c:628:Event:
+./utils/muted.c:629:Event:

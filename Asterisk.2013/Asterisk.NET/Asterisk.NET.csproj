@@ -127,6 +127,8 @@
     <Compile Include="Manager\Action\ChallengeAction.cs" />
     <Compile Include="Manager\Action\ChangeMonitorAction.cs" />
     <Compile Include="Manager\Action\CommandAction.cs" />
+    <Compile Include="Manager\Action\DBDelAction.cs" />
+    <Compile Include="Manager\Action\DBDelTreeAction.cs" />
     <Compile Include="Manager\Action\DBGetAction.cs" />
     <Compile Include="Manager\Action\DBPutAction.cs" />
     <Compile Include="Manager\Action\EventsAction.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="Manager\Action\GetConfigAction.cs" />
     <Compile Include="Manager\Action\GetVarAction.cs" />
     <Compile Include="Manager\Action\HangupAction.cs" />
+    <Compile Include="Manager\Action\ListCommandsAction.cs" />
     <Compile Include="Manager\Action\ManagerActionEvent.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -308,6 +311,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
+    <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

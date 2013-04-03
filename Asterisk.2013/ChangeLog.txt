@@ -1,3 +1,14 @@
+03.04.2013 (skrusty)
+	Added direct support for Asterisk 1.8 in version Enum
+	Added documentation for events and actions in Asterisk 1.6.2.24 (last version in 1.6.2 branch)
+	Added DBDel Action
+	Added DBDelTree Action
+
+
+15.03.2013 (skrusty)
+	Fixed Ping/Pong disconnection bug
+	Added mappings for events: BridgeEventHandler, DTMFEventHandler, TransferEventHandler, QueueCallerAbandonEventHandler
+
 18.01.2013 (ppumkin)
 	Re-homed project to CodePlex with TFS Support
 	Upgraded Project to .NET 4.5

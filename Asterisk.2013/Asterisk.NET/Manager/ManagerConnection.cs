@@ -1335,7 +1335,6 @@ namespace Asterisk.NET.Manager
 		#region determineVersion()
 		protected internal AsteriskVersion determineVersion()
 		{
-			// First try version check to 1.4 & 1.6
 			Response.ManagerResponse response;
 			response = SendAction(new Action.CommandAction("core show version"), defaultResponseTimeout * 2);
 			if (response is Response.CommandResponse)
@@ -1347,12 +1346,14 @@ namespace Asterisk.NET.Manager
 						if (m.Groups.Count >= 2)
 						{
 							version = m.Groups[1].Value;
-							if (version.StartsWith("1.4."))
-								return AsteriskVersion.ASTERISK_1_4;
-                            else if (version.StartsWith("1.6.") || version.StartsWith("1.8."))
-								return AsteriskVersion.ASTERISK_1_6;
-							else
-								throw new ManagerException("Unknown Asterisk version " + version);
+                            if (version.StartsWith("1.4."))
+                                return AsteriskVersion.ASTERISK_1_4;
+                            else if (version.StartsWith("1.6."))
+                                return Manager.AsteriskVersion.ASTERISK_1_6;
+                            else if (version.StartsWith("1.8."))
+                                return Manager.AsteriskVersion.ASTERISK_1_8;
+                            else
+                                throw new ManagerException("Unknown Asterisk version " + version);
 						}
 					}
 				}
