@@ -73,8 +73,10 @@ namespace Asterisk.NET
 			int delimiterIndex = actionId.IndexOf(Common.INTERNAL_ACTION_ID_DELIMITER);
 			if (delimiterIndex > 0)
 			{
-				if (actionId.Length > delimiterIndex + 1)
-					return actionId.Substring(delimiterIndex + 1).Trim();
+                if (actionId.Length > delimiterIndex + 1)
+                    return actionId.Substring(delimiterIndex + 1).Trim();
+                else
+                    return actionId.Substring(0, delimiterIndex).Trim();
 			}
 			return string.Empty;
 		}

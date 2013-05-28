@@ -316,6 +316,9 @@
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Manager\Documentation\Asterisk-1.8.x\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

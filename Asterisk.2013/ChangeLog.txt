@@ -1,3 +1,6 @@
+28.05.2013 (skrusty)
+	Fix Fixed issue with SendEventGeneratingAction, see work item: 1000 (https://asternet.codeplex.com/workitem/1000)
+
 03.04.2013 (skrusty)
 	Added direct support for Asterisk 1.8 in version Enum
 	Added documentation for events and actions in Asterisk 1.6.2.24 (last version in 1.6.2 branch)
