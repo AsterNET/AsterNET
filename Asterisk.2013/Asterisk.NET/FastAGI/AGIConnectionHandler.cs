@@ -17,7 +17,9 @@ namespace Asterisk.NET.FastAGI
 #endif
 		private static readonly LocalDataStoreSlot channel = Thread.AllocateDataSlot();
 		private IO.SocketConnection socket;
-		private MappingStrategy mappingStrategy;
+		private IMappingStrategy mappingStrategy;
+        private bool _SC511_CAUSES_EXCEPTION = false;
+        private bool _SCHANGUP_CAUSES_EXCEPTION = false;
 
 		#region Channel
 		/// <summary>
@@ -39,10 +41,12 @@ namespace Asterisk.NET.FastAGI
 		/// </summary>
 		/// <param name="socket">the socket connection to handle.</param>
 		/// <param name="mappingStrategy">the strategy to use to determine which script to run.</param>
-		public AGIConnectionHandler(IO.SocketConnection socket, MappingStrategy mappingStrategy)
+        public AGIConnectionHandler(IO.SocketConnection socket, IMappingStrategy mappingStrategy, bool SC511_CAUSES_EXCEPTION, bool SCHANGUP_CAUSES_EXCEPTION)
 		{
 			this.socket = socket;
 			this.mappingStrategy = mappingStrategy;
+            this._SC511_CAUSES_EXCEPTION = SC511_CAUSES_EXCEPTION;
+            this._SCHANGUP_CAUSES_EXCEPTION = SCHANGUP_CAUSES_EXCEPTION;
 		}
 		#endregion
 
@@ -53,7 +57,7 @@ namespace Asterisk.NET.FastAGI
 				AGIReader reader = new AGIReader(socket);
 				AGIWriter writer = new AGIWriter(socket);
 				AGIRequest request = reader.ReadRequest();
-				AGIChannel channel = new AGIChannel(writer, reader);
+				AGIChannel channel = new AGIChannel(writer, reader, this._SC511_CAUSES_EXCEPTION, this._SCHANGUP_CAUSES_EXCEPTION);
 				AGIScript script = mappingStrategy.DetermineScript(request);
 				Thread.SetData(AGIConnectionHandler.channel, channel);
 

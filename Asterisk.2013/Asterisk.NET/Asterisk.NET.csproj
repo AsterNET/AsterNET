@@ -115,6 +115,9 @@
     <Compile Include="FastAGI\Command\WaitForDigitCommand.cs" />
     <Compile Include="FastAGI\Exceptions\InvalidCommandSyntaxException.cs" />
     <Compile Include="FastAGI\Exceptions\InvalidOrUnknownCommandException.cs" />
+    <Compile Include="FastAGI\IMappingStrategy.cs" />
+    <Compile Include="FastAGI\MappingStrategies\GeneralMappingStrategy.cs" />
+    <Compile Include="FastAGI\MappingStrategies\ResourceMappingStrategy.cs" />
     <Compile Include="FastAGI\MappingStrategy.cs" />
     <Compile Include="FastAGI\Script\AGINoAction.cs" />
     <Compile Include="IO\ServerSocket.cs" />

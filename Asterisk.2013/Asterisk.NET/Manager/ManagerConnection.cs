@@ -81,6 +81,7 @@ namespace Asterisk.NET.Manager
 	public delegate void ZapShowChannelsCompleteEventHandler(object sender, Event.ZapShowChannelsCompleteEvent e);
 	public delegate void ZapShowChannelsEventHandler(object sender, Event.ZapShowChannelsEvent e);
 	public delegate void ConnectionStateEventHandler(object sender, Event.ConnectionStateEvent e);
+    public delegate void VarSetEventHandler(object sender, Event.VarSetEvent e);
 
 	#endregion
 
@@ -414,6 +415,11 @@ namespace Asterisk.NET.Manager
 		/// </summary>
 		public event ConnectionStateEventHandler ConnectionState;
 
+        /// <summary>
+        /// When a variable is set
+        /// </summary>
+	    public event VarSetEventHandler VarSet;
+
 		#endregion
 
 		#region Constructor - ManagerConnection()
@@ -505,6 +511,8 @@ namespace Asterisk.NET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 63, typeof(BridgeEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 64, typeof(TransferEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 65, typeof(DTMFEvent));
+
+            Helper.RegisterEventHandler(registeredEventHandlers, 70, typeof(VarSetEvent));
 
 
 			#endregion
@@ -1051,6 +1059,12 @@ namespace Asterisk.NET.Manager
                             DTMF(this, (DTMFEvent)e);
                         }
                         break;
+                    case 70:
+                        if (VarSet != null)
+                        {
+                            VarSet(this, (VarSetEvent)e);
+                        }
+                        break;
 
 					default:
 						if (UnhandledEvent != null)
@@ -1352,6 +1366,12 @@ namespace Asterisk.NET.Manager
                                 return Manager.AsteriskVersion.ASTERISK_1_6;
                             else if (version.StartsWith("1.8."))
                                 return Manager.AsteriskVersion.ASTERISK_1_8;
+                            else if (version.StartsWith("10."))
+                                return Manager.AsteriskVersion.ASTERISK_10;
+                            else if (version.StartsWith("11."))
+                                return Manager.AsteriskVersion.ASTERISK_11;
+                            else if (version.StartsWith("12."))
+                                return Manager.AsteriskVersion.ASTERISK_12;
                             else
                                 throw new ManagerException("Unknown Asterisk version " + version);
 						}

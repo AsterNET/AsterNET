@@ -90,7 +90,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET\Asterisk.NET.csproj">
+    <ProjectReference Include="..\..\Asterisk.NET\Asterisk.NET.csproj">
       <Project>{bc6e7dba-c05a-45fe-a2a3-b1637ce16274}</Project>
       <Name>Asterisk.NET</Name>
     </ProjectReference>

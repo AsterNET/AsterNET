@@ -5,6 +5,8 @@ using Asterisk.NET.Manager.Action;
 using Asterisk.NET.Manager.Response;
 using Asterisk.NET.FastAGI;
 using Asterisk.NET.Manager.Event;
+using Asterisk.NET.FastAGI.MappingStrategies;
+using System.Collections.Generic;
 
 namespace Asterisk.NET.Test
 {
@@ -27,7 +29,10 @@ namespace Asterisk.NET.Test
 		[STAThread]
 		static void Main()
 		{
+            // Comment me out if you don't want to run the AMI sample
 			checkManagerAPI();
+
+            // Comment me out if you don't want to run the FastAGI sample
 			checkFastAGI();
 		}
 
@@ -44,6 +49,24 @@ See CustomIVR.cs and fastagi-mapping.resx to detail.
 
 Ctrl-C to exit");
 			AsteriskFastAGI agi = new AsteriskFastAGI();
+            agi.BindPort = 8675;
+            // Remove the lines below to enable the default (resource based) MappingStrategy
+            // You can use an XML file with XmlMappingStrategy, or simply pass in a list of
+            // ScriptMapping. 
+            // If you wish to save it to a file, use ScriptMapping.SaveMappings and pass in a path.
+            // This can then be used to load the mappings without having to change the source code!
+
+            agi.MappingStrategy = new GeneralMappingStrategy(new List<ScriptMapping>()
+            {
+                new ScriptMapping() {
+                    ScriptClass = "Asterisk.NET.Test.CustomIVR",
+                    ScriptName = "customivr"
+                }
+            });
+
+            //agi.SC511_CAUSES_EXCEPTION = true;
+            //agi.SCHANGUP_CAUSES_EXCEPTION = true;
+
 			agi.Start();
 		}
 		#endregion

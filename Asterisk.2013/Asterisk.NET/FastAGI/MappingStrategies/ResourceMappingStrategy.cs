@@ -3,7 +3,7 @@ using System.Collections;
 using System.Resources;
 using System.Reflection;
 
-namespace Asterisk.NET.FastAGI
+namespace Asterisk.NET.FastAGI.MappingStrategies
 {
 	/// <summary>
 	/// A MappingStrategy that is configured via a resource bundle.<br/>
@@ -15,8 +15,7 @@ namespace Asterisk.NET.FastAGI
 	/// </pre>
 	/// NoopCommand must implement the AGIScript interface and have a default constructor with no parameters.<br/>
 	/// </summary>
-	[Obsolete("This class has been depreciated in favour of MappingStrategies.ResourceMappingStrategy", false)]
-    public class MappingStrategy : IMappingStrategy
+    public class ResourceMappingStrategy : IMappingStrategy
 	{
 #if LOGGER
 		private Logger logger = Logger.Instance();
@@ -24,13 +23,13 @@ namespace Asterisk.NET.FastAGI
 		private string resourceName;
 		private Hashtable mapping;
 
-		public MappingStrategy()
+		public ResourceMappingStrategy()
 		{
 			this.resourceName = Common.AGI_DEFAULT_RESOURCE_BUNDLE_NAME;
 			this.mapping = null;
 		}
 
-        public MappingStrategy(string resourceName)
+		public ResourceMappingStrategy(string resourceName)
 		{
 			this.resourceName = resourceName;
 			this.mapping = null;

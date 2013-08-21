@@ -18,6 +18,11 @@ namespace Asterisk.NET.FastAGI
 		/// AGICommand because there is no command with the given name available.
 		/// </summary>
 		SC_INVALID_OR_UNKNOWN_COMMAND = 510,
+        /// <summary>
+        /// Status code (511) indicating Asterisk was unable to process the
+        /// AGICommand because the channel is dead.
+        /// </summary>
+        SC_DEAD_CHANNEL = 511,
 		/// <summary>
 		/// Status code (520) indicating Asterisk was unable to process the
 		/// AGICommand because the syntax used was not correct. This is most likely

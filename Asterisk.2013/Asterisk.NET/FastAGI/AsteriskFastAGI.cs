@@ -1,3 +1,4 @@
+using Asterisk.NET.FastAGI.MappingStrategies;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -5,10 +6,25 @@ using System.Text;
 namespace Asterisk.NET.FastAGI
 {
 	public class AsteriskFastAGI
-	{
-		#region Variables
+    {
+
+        #region Flags
+        /// <summary>
+        /// If set to true, causes the AGIChannel to throw an exception when a status code of 511 (Channel Dead) is returned.
+        /// This is set to false by default to maintain backwards compatibility
+        /// </summary>
+        public bool SC511_CAUSES_EXCEPTION = false;
+
+        /// <summary>
+        /// If set to true, causes the AGIChannel to throw an exception when return status is 0 and reply is HANGUP.
+        /// This is set to false by default to maintain backwards compatibility
+        /// </summary>
+        public bool SCHANGUP_CAUSES_EXCEPTION = false;
+        #endregion
+        
+        #region Variables
 #if LOGGER
-		private Logger logger = Logger.Instance();
+        private Logger logger = Logger.Instance();
 #endif
 		private IO.ServerSocket serverSocket;
 
@@ -25,7 +41,7 @@ namespace Asterisk.NET.FastAGI
 		/// <summary>
 		/// The strategy to use for bind AGIRequests to AGIScripts that serve them.
 		/// </summary>
-		private MappingStrategy mappingStrategy;
+		private IMappingStrategy mappingStrategy;
 		private Encoding socketEncoding = Encoding.ASCII;
 		#endregion
 
@@ -61,7 +77,7 @@ namespace Asterisk.NET.FastAGI
 		/// The default mapping is a MappingStrategy.
 		/// </summary>
 		/// <seealso cref="MappingStrategy" />
-		public MappingStrategy MappingStrategy
+		public IMappingStrategy MappingStrategy
 		{
 			set { this.mappingStrategy = value; }
 		}
@@ -84,7 +100,7 @@ namespace Asterisk.NET.FastAGI
 			this.address = Common.AGI_BIND_ADDRESS;
 			this.port = Common.AGI_BIND_PORT;
 			this.poolSize = Common.AGI_POOL_SIZE;
-			this.mappingStrategy = new MappingStrategy();
+			this.mappingStrategy = new ResourceMappingStrategy();
 		}
 		#endregion
 
@@ -97,9 +113,30 @@ namespace Asterisk.NET.FastAGI
 			this.address = Common.AGI_BIND_ADDRESS;
 			this.port = Common.AGI_BIND_PORT;
 			this.poolSize = Common.AGI_POOL_SIZE;
-			this.mappingStrategy = new MappingStrategy(mappingStrategy);
+			this.mappingStrategy = new ResourceMappingStrategy(mappingStrategy);
 		}
 		#endregion
+
+        #region Constructor - AsteriskFastAGI()
+        /// <summary>
+        /// Creates a new AsteriskFastAGI.
+        /// </summary>
+        public AsteriskFastAGI(IMappingStrategy mappingStrategy)
+        {
+            this.address = Common.AGI_BIND_ADDRESS;
+            this.port = Common.AGI_BIND_PORT;
+            this.poolSize = Common.AGI_POOL_SIZE;
+            this.mappingStrategy = mappingStrategy;
+        }
+
+        public AsteriskFastAGI(IMappingStrategy mappingStrategy, string ipaddress, int port, int poolSize)
+        {
+            this.address = ipaddress;
+            this.port = port;
+            this.poolSize = poolSize;
+            this.mappingStrategy = mappingStrategy;
+        }
+        #endregion
 
 		#region Constructor - AsteriskFastAGI(int port, int poolSize) 
 		/// <summary>
@@ -113,7 +150,7 @@ namespace Asterisk.NET.FastAGI
 			this.address = Common.AGI_BIND_ADDRESS;
 			this.port = port;
 			this.poolSize = poolSize;
-			this.mappingStrategy = new MappingStrategy();
+			this.mappingStrategy = new ResourceMappingStrategy();
 		}
 		#endregion
 
@@ -130,7 +167,7 @@ namespace Asterisk.NET.FastAGI
 			this.address = ipaddress;
 			this.port = port;
 			this.poolSize = poolSize;
-			this.mappingStrategy = new MappingStrategy();
+			this.mappingStrategy = new ResourceMappingStrategy();
 		}
 		#endregion
 
@@ -168,7 +205,7 @@ namespace Asterisk.NET.FastAGI
 #if LOGGER
 					logger.Info("Received connection.");
 #endif
-					connectionHandler = new AGIConnectionHandler(socket, mappingStrategy);
+					connectionHandler = new AGIConnectionHandler(socket, mappingStrategy, this.SC511_CAUSES_EXCEPTION, this.SCHANGUP_CAUSES_EXCEPTION);
 					pool.AddJob(connectionHandler);
 				}
 			}

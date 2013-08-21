@@ -1,3 +1,14 @@
+21.08.2013 (skrusty)
+	Added VarSetEventHandler (added as contribution by bacobart)
+	Added IMappingStrategy to allow different mapping strategies to be created (added as contribution by bacobart) (*note to get documentation added for this)
+	Added SC_DEAD_CHANNEL result code handling (added as contribution by nuronce, as per work item 1163)
+	Added SC511_CAUSES_EXCEPTION and SCHANGUP_CAUSES_EXCEPTION flags to enable new behaviour (as per item 1163)
+	Added new GeneralMappingStrategy class to handle simpler script mappings
+	Added Obsolete attribute to MappingStrategy and created a new ResourceMappingStrategy to replace it
+	Fixed Version Parsing for versions later than Asterisk 10 (added as contribution by bacobart)
+	Changed Test project to use new GeneralMappingStrategy for simpler code and readability, left the existing resource file in for backwards compatibility
+
+
 28.05.2013 (skrusty)
 	Fix Fixed issue with SendEventGeneratingAction, see work item: 1000 (https://asternet.codeplex.com/workitem/1000)
 
