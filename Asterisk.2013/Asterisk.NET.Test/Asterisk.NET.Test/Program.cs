@@ -49,7 +49,6 @@ See CustomIVR.cs and fastagi-mapping.resx to detail.
 
 Ctrl-C to exit");
 			AsteriskFastAGI agi = new AsteriskFastAGI();
-            agi.BindPort = 8675;
             // Remove the lines below to enable the default (resource based) MappingStrategy
             // You can use an XML file with XmlMappingStrategy, or simply pass in a list of
             // ScriptMapping. 
