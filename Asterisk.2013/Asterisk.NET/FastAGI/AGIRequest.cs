@@ -252,15 +252,15 @@ namespace Asterisk.NET.FastAGI
 		/// <summary>
 		/// Returns the priority in the dial plan from which the AGI script was called.
 		/// </summary>
-		public int Priority
+		public string Priority
 		{
 			get
 			{
 				if (request["priority"] != null)
 				{
-					return Int32.Parse((string) request["priority"]);
+					return (string) request["priority"];
 				}
-				return -1;
+				return "";      
 			}
 
 		}

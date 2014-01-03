@@ -1,3 +1,13 @@
+03.01.2014 (skrusty)
+	Added patch submitted by Saritha Bhandarkar
+		Adds AGIAction to Asterisk Manager
+		Adds AGIAction Event
+		Changes PRIORTY (int to string) - BREAKING CHANGE!! If you use Priority for Originate, then this will have broken between last release and now.
+	Added Support for v10+ ConfBridge events   (not yet fully tested)
+	Added Support for v10+ COnfBridge actions  (not yet fully tested)
+	Changed GeneralMappingStrategy requires a full path to an assembly that requires loading
+	Added GeneralMappingStrategy can now take an assembly in the mapping strategy, forcing AsterNET not to reload the assembly during load
+
 21.08.2013 (skrusty)
 	Added VarSetEventHandler (added as contribution by bacobart)
 	Added IMappingStrategy to allow different mapping strategies to be created (added as contribution by bacobart) (*note to get documentation added for this)

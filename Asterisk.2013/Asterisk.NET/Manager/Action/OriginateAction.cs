@@ -27,7 +27,7 @@ namespace Asterisk.NET.Manager.Action
 		private string channel;
 		private string exten;
 		private string context;
-		private int priority;
+		private string priority;
 		private int timeout;
 		private string callerId;
 		private Dictionary<string, string> variables;
@@ -110,7 +110,7 @@ namespace Asterisk.NET.Manager.Action
 		/// Get /Set the priority of the extension to connect to.
 		/// If you set the priority you also have to set the context and exten properties.
 		/// </summary>
-		public int Priority
+		public string Priority
 		{
 			get { return priority; }
 			set { this.priority = value; }

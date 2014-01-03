@@ -82,6 +82,12 @@ namespace Asterisk.NET.Manager
 	public delegate void ZapShowChannelsEventHandler(object sender, Event.ZapShowChannelsEvent e);
 	public delegate void ConnectionStateEventHandler(object sender, Event.ConnectionStateEvent e);
     public delegate void VarSetEventHandler(object sender, Event.VarSetEvent e);
+    public delegate void AGIExecHandler(object sender, Event.AGIExecEvent e);
+    public delegate void ConfbridgeStartEventHandler(object sender, Event.ConfbridgeStartEvent e);
+    public delegate void ConfbridgeJoinEventHandler(object sender, Event.ConfbridgeJoinEvent e);
+    public delegate void ConfbridgeLeaveEventHandler(object sender, Event.ConfbridgeLeaveEvent e);
+    public delegate void ConfbridgeEndEventHandler(object sender, Event.ConfbridgeEndEvent e);
+    public delegate void ConfbridgeTalkingEventHandler(object sender, Event.ConfbridgeTalkingEvent e);
 
 	#endregion
 
@@ -420,6 +426,36 @@ namespace Asterisk.NET.Manager
         /// </summary>
 	    public event VarSetEventHandler VarSet;
 
+        /// <summary>
+        /// AgiExec is execute
+        /// </summary>
+        public event AGIExecHandler AGIExec;
+
+        /// <summary>
+        /// This event is sent when the first user requests a conference and it is instantiated
+        /// </summary>
+	    public event ConfbridgeStartEventHandler ConfbridgeStart;
+
+        /// <summary>
+        /// This event is sent when a user joins a conference - either one already in progress or as the first user to join a newly instantiated bridge.
+        /// </summary>
+        public event ConfbridgeJoinEventHandler ConfbridgeJoin;
+
+        /// <summary>
+        /// This event is sent when a user leaves a conference.
+        /// </summary>
+        public event ConfbridgeLeaveEventHandler ConfbridgeLeave;
+
+        /// <summary>
+        /// This event is sent when the last user leaves a conference and it is torn down.
+        /// </summary>
+        public event ConfbridgeEndEventHandler ConfbridgeEnd;
+
+        /// <summary>
+        /// This event is sent when the conference detects that a user has either begin or stopped talking.
+        /// </summary>
+        public event ConfbridgeTalkingEventHandler ConfbridgeTalking;
+
 		#endregion
 
 		#region Constructor - ManagerConnection()
@@ -513,6 +549,13 @@ namespace Asterisk.NET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 65, typeof(DTMFEvent));
 
             Helper.RegisterEventHandler(registeredEventHandlers, 70, typeof(VarSetEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 80, typeof(AGIExecEvent));
+
+            Helper.RegisterEventHandler(registeredEventHandlers, 81, typeof(ConfbridgeStartEventHandler));
+            Helper.RegisterEventHandler(registeredEventHandlers, 82, typeof(ConfbridgeJoinEventHandler));
+            Helper.RegisterEventHandler(registeredEventHandlers, 83, typeof(ConfbridgeLeaveEventHandler));
+            Helper.RegisterEventHandler(registeredEventHandlers, 84, typeof(ConfbridgeEndEventHandler));
+            Helper.RegisterEventHandler(registeredEventHandlers, 85, typeof(ConfbridgeTalkingEventHandler));
 
 
 			#endregion
@@ -1065,7 +1108,42 @@ namespace Asterisk.NET.Manager
                             VarSet(this, (VarSetEvent)e);
                         }
                         break;
-
+                    case 80:
+                        if (AGIExec != null)
+                        {
+                            AGIExec(this, (AGIExecEvent)e);
+                        }
+                        break;
+                    case 81:
+                        if (ConfbridgeStart != null)
+                        {
+                            ConfbridgeStart(this, (ConfbridgeStartEvent)e);
+                        }
+                        break;
+                    case 82:
+                        if (ConfbridgeJoin != null)
+                        {
+                            ConfbridgeJoin(this, (ConfbridgeJoinEvent)e);
+                        }
+                        break;
+                    case 83:
+                        if (ConfbridgeLeave != null)
+                        {
+                            ConfbridgeLeave(this, (ConfbridgeLeaveEvent)e);
+                        }
+                        break;
+                    case 84:
+                        if (ConfbridgeEnd != null)
+                        {
+                            ConfbridgeEnd(this, (ConfbridgeEndEvent)e);
+                        }
+                        break;
+                    case 85:
+                        if (ConfbridgeTalking != null)
+                        {
+                            ConfbridgeTalking(this, (ConfbridgeTalkingEvent)e);
+                        }
+                        break;
 					default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);

@@ -47,6 +47,8 @@ namespace Asterisk.NET.FastAGI.MappingStrategies
         /// </summary>
         public string ScriptAssmebly { get; set; }
 
+        public Assembly PreLoadedAssembly { get; set; }
+
         public static List<ScriptMapping> LoadMappings(string pathToXml)
         {
             // Load ScriptMappings XML File
@@ -91,8 +93,6 @@ namespace Asterisk.NET.FastAGI.MappingStrategies
 #endif
         private List<ScriptMapping> mappings;
         private Dictionary<string, MappingAssembly> mapAssemblies;
-
-        public string AGIPath = string.Empty;
 
         /// <summary>
         /// 
@@ -142,37 +142,44 @@ namespace Asterisk.NET.FastAGI.MappingStrategies
             lock (mapAssemblies)
             {
                 mapAssemblies.Clear();
-                try
-                {
-                    foreach (var de in this.mappings)
-                    {
-                        MappingAssembly ma;
 
-                        if (mapAssemblies.ContainsKey(de.ScriptName))
-                            throw new AGIException(String.Format("Duplicate mapping name '{0}'", de.ScriptName));
-                        if (!string.IsNullOrEmpty(de.ScriptAssmebly))
+                if (this.mappings == null || this.mappings.Count == 0)
+                    throw new AGIException("No mappings were added, before Load method called.");
+
+                foreach (var de in this.mappings)
+                {
+                    MappingAssembly ma;
+
+                    if (mapAssemblies.ContainsKey(de.ScriptName))
+                        throw new AGIException(String.Format("Duplicate mapping name '{0}'", de.ScriptName));
+                    if (!string.IsNullOrEmpty(de.ScriptAssmebly))
+                    {
+                        try
                         {
                             ma = new MappingAssembly()
                             {
                                 ClassName = (string)de.ScriptClass,
-                                LoadedAssembly = Assembly.LoadFile(Path.Combine(this.AGIPath, de.ScriptAssmebly))
+                                LoadedAssembly = Assembly.LoadFile(de.ScriptAssmebly)
                             };
                         }
-                        else
+                        catch (FileNotFoundException fnfex)
                         {
-                            ma = new MappingAssembly()
-                            {
-                                ClassName = (string)de.ScriptClass
-                            };
+                            throw new AGIException(string.Format("Unable to load AGI Script {0}, file not found.", Path.Combine(Environment.CurrentDirectory, de.ScriptAssmebly)), fnfex);
                         }
-
-                        mapAssemblies.Add(de.ScriptName, ma);
                     }
+                    else
+                    {
+                        ma = new MappingAssembly()
+                        {
+                            ClassName = (string)de.ScriptClass
+                        };
+                        if (de.PreLoadedAssembly != null)
+                            ma.LoadedAssembly = de.PreLoadedAssembly;
+                    }
+
+                    mapAssemblies.Add(de.ScriptName, ma);
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception("No mappings were added before 'Load' method called.");
-                }
+                
             }
         }
 

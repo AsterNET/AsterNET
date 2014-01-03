@@ -202,7 +202,7 @@ Ctrl-C to exit");
 
 			OriginateAction oc = new OriginateAction();
 			oc.Context = ORIGINATE_CONTEXT;
-			oc.Priority = 1;
+			oc.Priority = "1";
 			oc.Channel = ORIGINATE_CHANNEL;
 			oc.CallerId = ORIGINATE_CALLERID;
 			oc.Exten = ORIGINATE_EXTEN;
