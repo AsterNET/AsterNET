@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary>
 	/// Does nothing.

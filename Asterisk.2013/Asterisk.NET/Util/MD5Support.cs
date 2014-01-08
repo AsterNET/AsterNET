@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography;
 
-namespace Asterisk.NET.Util
+namespace AsterNET.Util
 {
 	/// <summary>
 	/// Encapsulates the functionality of message digest algorithms such as SHA-1 or MD5.

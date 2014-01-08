@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A LogChannelEvent is triggered when logging is turned on or off.<br/>

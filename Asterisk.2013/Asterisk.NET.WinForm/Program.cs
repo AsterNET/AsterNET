@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Asterisk.NET.WinForm
+namespace AsterNET.WinForm
 {
 	static class Program
 	{

@@ -1,4 +1,4 @@
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary>
 	/// Receives a string of text on a channel.<br/>

@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The ZapDNDOnAction switches a zap channel "Do Not Disturb" status off.

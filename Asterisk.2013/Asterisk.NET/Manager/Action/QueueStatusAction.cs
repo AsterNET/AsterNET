@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The QueueStatusAction requests the state of all defined queues their members (agents) and entries (callers).<br/>

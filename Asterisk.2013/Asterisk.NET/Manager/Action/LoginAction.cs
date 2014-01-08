@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The LoginAction authenticates the connection.<br/>

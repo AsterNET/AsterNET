@@ -2,7 +2,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-namespace Asterisk.NET.IO
+namespace AsterNET.IO
 {
 	/// <summary>
 	/// ServerSocket using standard socket classes.

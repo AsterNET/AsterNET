@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The ZapTransferAction transfers a zap channel.

@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary> Say a given character string, returning early if any of the given DTMF digits are received on the channel.<br/>
 	/// Returns 0 if playback completes without a digit being pressed, or the ASCII

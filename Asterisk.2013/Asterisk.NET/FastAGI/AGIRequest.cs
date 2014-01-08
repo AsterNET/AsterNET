@@ -7,7 +7,7 @@ using System.Collections;
 using System.Net;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// Default implementation of the AGIRequest interface.

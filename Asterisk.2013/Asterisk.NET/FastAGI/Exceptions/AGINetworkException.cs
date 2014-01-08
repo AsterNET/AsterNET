@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// The AGINetworkException usally wraps an IOException denoting a network problem when talking to the Asterisk server.

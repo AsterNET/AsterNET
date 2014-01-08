@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// The AGIHangupException is thrown if the channel has been hang up while processing the AGIRequest.

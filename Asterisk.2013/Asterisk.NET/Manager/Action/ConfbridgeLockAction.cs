@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
     public class ConfbridgeLockAction : ManagerAction
     {

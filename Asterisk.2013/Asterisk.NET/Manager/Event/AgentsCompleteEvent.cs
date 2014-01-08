@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An AgentsCompleteEvent is triggered after the state of all agents has been

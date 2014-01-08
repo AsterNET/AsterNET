@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Manager.Response
+namespace AsterNET.Manager.Response
 {
 	/// <summary>
 	/// Represents an "Response: Error" response received from the asterisk server.

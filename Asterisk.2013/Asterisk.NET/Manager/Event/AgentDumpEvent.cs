@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An AgentDumpEvent is triggered when an agent dumps the caller while listening

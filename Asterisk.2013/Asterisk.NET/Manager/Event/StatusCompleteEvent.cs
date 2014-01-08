@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A StatusCompleteEvent is triggered after the state of all channels has been reported in response

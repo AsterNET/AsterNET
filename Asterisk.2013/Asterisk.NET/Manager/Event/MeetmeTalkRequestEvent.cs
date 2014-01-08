@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	public class MeetmeTalkRequestEvent : AbstractMeetmeEvent
 	{

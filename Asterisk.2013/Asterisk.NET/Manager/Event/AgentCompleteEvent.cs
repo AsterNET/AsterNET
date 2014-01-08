@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An AgentCompleteEvent is triggered when at the end of a call if the caller was connected to an agent.

@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An AgentCallbackLogoffEvent is triggered when an agent that previously logged in using AgentLogin is logged of.<br/>

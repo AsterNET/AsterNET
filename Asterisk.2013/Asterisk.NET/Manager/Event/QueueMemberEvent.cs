@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueMemberEvent is triggered in response to a QueueStatusAction and contains information about a member of a queue.<br/>

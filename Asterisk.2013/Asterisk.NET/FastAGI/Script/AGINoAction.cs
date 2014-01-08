@@ -1,4 +1,4 @@
-namespace Asterisk.NET.FastAGI.Scripts
+namespace AsterNET.FastAGI.Scripts
 {
 	class AGINoAction : AGIScript
 	{

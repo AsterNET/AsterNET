@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// Adds or updates an entry in the Asterisk database for a given family, key, and value.<br/>

@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The AgentLogoffAction sets an agent as no longer logged in.

@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A ZapShowChannelsEvent is triggered in response to a ZapShowChannelsAction and shows the state of a zap channel.

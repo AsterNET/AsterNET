@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A ShutdownEvent is triggered when the asterisk server is shut down or restarted.<br/>

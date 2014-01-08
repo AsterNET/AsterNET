@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Asterisk.NET
+namespace AsterNET
 {
 	internal interface IParseSupport
 	{

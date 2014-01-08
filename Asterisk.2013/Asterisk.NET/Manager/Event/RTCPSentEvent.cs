@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	public class RTCPSentEvent : ManagerEvent
 	{

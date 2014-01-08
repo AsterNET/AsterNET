@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Net;
 using System;
 
-namespace Asterisk.NET.IO
+namespace AsterNET.IO
 {
 	public class SocketConnection
 	{

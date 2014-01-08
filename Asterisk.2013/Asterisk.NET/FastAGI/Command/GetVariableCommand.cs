@@ -1,4 +1,4 @@
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary>
 	/// Returns the value of the given channel varible.<br/>

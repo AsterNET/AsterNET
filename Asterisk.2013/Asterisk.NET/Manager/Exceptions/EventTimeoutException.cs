@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	/// <summary>
 	/// An EventTimeoutException is thrown if a ManagerResponse or some

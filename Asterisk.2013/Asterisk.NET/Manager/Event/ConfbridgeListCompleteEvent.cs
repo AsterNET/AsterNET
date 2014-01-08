@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
     class ConfbridgeListCompleteEvent
     {

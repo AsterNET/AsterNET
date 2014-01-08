@@ -1,9 +1,9 @@
-using Asterisk.NET.FastAGI.MappingStrategies;
+using AsterNET.FastAGI.MappingStrategies;
 using System.IO;
 using System.Net;
 using System.Text;
 
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	public class AsteriskFastAGI
     {

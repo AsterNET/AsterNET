@@ -1,4 +1,4 @@
-namespace Asterisk.NET.WinForm
+namespace AsterNET.WinForm
 {
 	partial class FormMain
 	{

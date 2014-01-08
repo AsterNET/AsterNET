@@ -7,11 +7,11 @@ using System.Threading;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Collections.Generic;
-using Asterisk.NET.Manager.Event;
-using Asterisk.NET.Manager.Response;
-using Asterisk.NET.Manager;
+using AsterNET.Manager.Event;
+using AsterNET.Manager.Response;
+using AsterNET.Manager;
 
-namespace Asterisk.NET
+namespace AsterNET
 {
 	internal class Helper
 	{

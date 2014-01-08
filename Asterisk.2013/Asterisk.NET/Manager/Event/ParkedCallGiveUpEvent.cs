@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A ParkedCallGiveUpEvent is triggered when a channel that has been parked is hung up.<br/>

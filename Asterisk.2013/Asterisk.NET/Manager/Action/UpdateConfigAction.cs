@@ -1,8 +1,8 @@
 using System;
-using Asterisk.NET.Manager.Response;
+using AsterNET.Manager.Response;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The UpdateConfigAction sends an UpdateConfig command to the asterisk server.

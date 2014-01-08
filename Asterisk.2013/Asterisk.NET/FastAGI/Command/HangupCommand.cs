@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary>
 	/// Hangs up the specified channel. If no channel name is given, hangs up the current channel.

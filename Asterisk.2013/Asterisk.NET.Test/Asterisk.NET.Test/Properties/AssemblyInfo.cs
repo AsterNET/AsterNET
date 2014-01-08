@@ -2,11 +2,11 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Asterisk.NET.Test")]
+[assembly: AssemblyTitle("AsterNET.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("x893")]
-[assembly: AssemblyProduct("Asterisk.NET.Test")]
+[assembly: AssemblyProduct("AsterNET.Test")]
 [assembly: AssemblyCopyright("Copyright © 2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

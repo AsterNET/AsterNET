@@ -4,7 +4,7 @@ using System.Threading;
 using System.Text;
 using System.Collections;
 
-namespace Asterisk.NET
+namespace AsterNET
 {
 #if LOGGER
 

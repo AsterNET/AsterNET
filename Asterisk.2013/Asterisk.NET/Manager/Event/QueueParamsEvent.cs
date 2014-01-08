@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueParamsEvent is triggered in response to a QueueStatusAction and contains the parameters of a queue.<br/>

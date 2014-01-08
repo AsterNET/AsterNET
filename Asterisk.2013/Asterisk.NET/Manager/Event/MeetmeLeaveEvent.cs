@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A MeetMeLeaveEvent is triggered if a channel leaves a meet me conference.<br/>

@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="customivr" xml:space="preserve">
-    <value>Asterisk.NET.Test.CustomIVR, Asterisk.NET.Test</value>
+    <value>AsterNET.Test.CustomIVR, AsterNET.Test</value>
   </data>
   <data name="noaction" xml:space="preserve">
-    <value>Asterisk.NET.FastAGI.Scripts.AGINoAction, Asterisk.NET</value>
+    <value>AsterNET.FastAGI.Scripts.AGINoAction, Asterisk.NET</value>
   </data>
 </root>

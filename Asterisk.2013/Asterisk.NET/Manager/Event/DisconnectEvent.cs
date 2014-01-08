@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A DisconnectEvent is triggered when the connection to the asterisk server is lost.<br/>

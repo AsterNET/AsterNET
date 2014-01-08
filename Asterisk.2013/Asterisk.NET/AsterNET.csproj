@@ -8,9 +8,9 @@
     <ProjectGuid>{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Asterisk.NET</RootNamespace>
-    <AssemblyName>Asterisk.NET</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>AsterNET</RootNamespace>
+    <AssemblyName>AsterNET</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -128,6 +128,8 @@
     <Compile Include="Manager\Action\AgentLogoffAction.cs" />
     <Compile Include="Manager\Action\AgentsAction.cs" />
     <Compile Include="Manager\Action\AGIAction.cs" />
+    <Compile Include="Manager\Action\AtxferAction.cs" />
+    <Compile Include="Manager\Action\BridgeAction.cs" />
     <Compile Include="Manager\Action\ChallengeAction.cs" />
     <Compile Include="Manager\Action\ChangeMonitorAction.cs" />
     <Compile Include="Manager\Action\CommandAction.cs" />
@@ -166,8 +168,13 @@
     <Compile Include="Manager\Action\PingAction.cs" />
     <Compile Include="Manager\Action\ProxyAction.cs" />
     <Compile Include="Manager\Action\QueueAddAction.cs" />
+    <Compile Include="Manager\Action\QueueLogAction.cs" />
     <Compile Include="Manager\Action\QueuePauseAction.cs" />
+    <Compile Include="Manager\Action\QueuePenaltyAction.cs" />
+    <Compile Include="Manager\Action\QueueReloadAction.cs" />
     <Compile Include="Manager\Action\QueueRemoveAction.cs" />
+    <Compile Include="Manager\Action\QueueResetAction.cs" />
+    <Compile Include="Manager\Action\QueueRuleAction.cs" />
     <Compile Include="Manager\Action\QueueStatusAction.cs" />
     <Compile Include="Manager\Action\RedirectAction.cs" />
     <Compile Include="Manager\Action\SetCDRUserFieldAction.cs" />
@@ -342,6 +349,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Manager\Documentation\Asterisk-1.8.x\" />
+    <Folder Include="Manager\Documentation\Asterisk-10\" />
+    <Folder Include="Manager\Documentation\Asterisk-11\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

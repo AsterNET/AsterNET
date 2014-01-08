@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Manager.Response
+namespace AsterNET.Manager.Response
 {
 	/// <summary>
 	/// Represents a response received from the Asterisk server as the result of a

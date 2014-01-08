@@ -5,11 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Asterisk.NET.Manager;
-using Asterisk.NET.Manager.Event;
+using AsterNET.Manager;
+using AsterNET.Manager.Event;
 using System.Diagnostics;
 
-namespace Asterisk.NET.WinForm
+namespace AsterNET.WinForm
 {
 	public partial class FormMain : Form
 	{

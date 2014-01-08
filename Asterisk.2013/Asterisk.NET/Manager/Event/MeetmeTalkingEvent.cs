@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A MeetMeTalkingEvent is triggered when a user starts talking in a meet me conference.

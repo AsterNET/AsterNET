@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The ExtensionStateAction queries the state of an extension in a given context.

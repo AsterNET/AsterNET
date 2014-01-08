@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// The BaseAGIScript provides some convinience methods to make it easier to

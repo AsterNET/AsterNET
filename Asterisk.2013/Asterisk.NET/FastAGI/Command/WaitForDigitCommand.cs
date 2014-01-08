@@ -1,4 +1,4 @@
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary>
 	/// Waits up to 'timeout' milliseconds for channel to receive a DTMF digit.<br/>

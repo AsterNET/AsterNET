@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	public class ModuleLoadReportEvent : ManagerEvent
 	{

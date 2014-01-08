@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Asterisk.NET.Manager.Response;
+using AsterNET.Manager.Response;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The GetConfigAction sends a GetConfig command to the asterisk server.

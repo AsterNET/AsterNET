@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-using Asterisk.NET.Manager.Action;
-using Asterisk.NET.Manager.Event;
-using Asterisk.NET.Manager.Response;
+using AsterNET.Manager.Action;
+using AsterNET.Manager.Event;
+using AsterNET.Manager.Response;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	/// <summary>
 	/// A combinded event and response handler that adds received events and the response to a ResponseEvents object.

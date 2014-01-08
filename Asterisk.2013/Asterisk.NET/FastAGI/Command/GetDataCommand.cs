@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary>
 	/// Stream the given file, and recieve DTMF data. The user may interrupt the streaming by starting to enter digits.<br/>

@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	public class AGIReader
 	{

@@ -2,7 +2,7 @@ using System;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace Asterisk.NET
+namespace AsterNET
 {
 	public static class Common
 	{

@@ -1,9 +1,9 @@
 using System;
 using System.Threading;
-using Asterisk.NET.Manager.Action;
-using Asterisk.NET.Manager.Response;
+using AsterNET.Manager.Action;
+using AsterNET.Manager.Response;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	/// <summary>
 	/// A simple response handler that stores the received response in a ResponseHandlerResult for further processing.

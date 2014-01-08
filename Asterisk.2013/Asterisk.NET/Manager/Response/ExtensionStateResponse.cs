@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Asterisk.NET.Manager.Response
+namespace AsterNET.Manager.Response
 {
 	public class ExtensionStateResponse : ManagerResponse
 	{

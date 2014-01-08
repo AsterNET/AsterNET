@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The ZapShowChannelsAction requests the state of all zap channels.<br/>

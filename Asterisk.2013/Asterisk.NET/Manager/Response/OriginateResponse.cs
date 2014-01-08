@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Asterisk.NET.Manager.Response
+namespace AsterNET.Manager.Response
 {
 	public class OriginateResponse
 	{

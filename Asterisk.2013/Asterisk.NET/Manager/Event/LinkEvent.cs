@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A LinkEvent is triggered when two voice channels are linked together and voice data exchange commences.<br/>

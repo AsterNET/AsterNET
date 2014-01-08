@@ -1,7 +1,7 @@
 using System;
-using Asterisk.NET.FastAGI;
+using AsterNET.FastAGI;
 
-namespace Asterisk.NET.Util
+namespace AsterNET.Util
 {
 	/// <summary>
 	/// A TaskThread sits in a loop, asking the pool for a job, and servicing it.

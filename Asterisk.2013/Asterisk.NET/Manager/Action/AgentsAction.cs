@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The AgentsAction requests the state of all agents.<br/>
@@ -8,8 +8,8 @@ namespace Asterisk.NET.Manager.Action
 	/// After the state of all agents has been reported an AgentsCompleteEvent is generated.<br/>
 	/// Available since Asterisk 1.2
 	/// </summary>
-	/// <seealso cref="Asterisk.NET.Manager.Event.AgentsEvent" />
-	/// <seealso cref="Asterisk.NET.Manager.Event.AgentsCompleteEvent" />
+	/// <seealso cref="AsterNET.Manager.Event.AgentsEvent" />
+	/// <seealso cref="AsterNET.Manager.Event.AgentsCompleteEvent" />
 	public class AgentsAction : ManagerActionEvent
 	{
 		#region Action 

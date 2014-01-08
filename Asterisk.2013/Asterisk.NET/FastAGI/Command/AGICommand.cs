@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	public abstract class AGICommand
 	{

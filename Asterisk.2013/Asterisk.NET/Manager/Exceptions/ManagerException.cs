@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	/// <summary>
 	/// An ManagerException is thrown when a Manager Error Response.

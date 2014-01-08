@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections;
 
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	public abstract class AbstractAgentVariables : ManagerEvent
 	{

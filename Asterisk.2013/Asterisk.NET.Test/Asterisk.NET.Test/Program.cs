@@ -1,14 +1,14 @@
 using System;
 
-using Asterisk.NET.Manager;
-using Asterisk.NET.Manager.Action;
-using Asterisk.NET.Manager.Response;
-using Asterisk.NET.FastAGI;
-using Asterisk.NET.Manager.Event;
-using Asterisk.NET.FastAGI.MappingStrategies;
+using AsterNET.Manager;
+using AsterNET.Manager.Action;
+using AsterNET.Manager.Response;
+using AsterNET.FastAGI;
+using AsterNET.Manager.Event;
+using AsterNET.FastAGI.MappingStrategies;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Test
+namespace AsterNET.Test
 {
 	class Program
 	{
@@ -58,7 +58,7 @@ Ctrl-C to exit");
             agi.MappingStrategy = new GeneralMappingStrategy(new List<ScriptMapping>()
             {
                 new ScriptMapping() {
-                    ScriptClass = "Asterisk.NET.Test.CustomIVR",
+                    ScriptClass = "AsterNET.Test.CustomIVR",
                     ScriptName = "customivr"
                 }
             });

@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Response
+namespace AsterNET.Manager.Response
 {
 	/// <summary>
 	/// A MailboxStatusResponse is sent in response to a MailboxStatusAction and indicates if a set

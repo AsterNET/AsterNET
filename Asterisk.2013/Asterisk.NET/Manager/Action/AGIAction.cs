@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
     /// <summary>
     /// This action lets you execute any AGI command through the Manager interface
-    /// For example, check the Asterisk.Net.Test project
+    /// For example, check the AsterNET.Test project
     /// </summary>
     public class AgiAction : ManagerAction
     {

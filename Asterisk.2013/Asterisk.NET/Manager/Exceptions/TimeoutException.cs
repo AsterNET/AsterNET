@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	/// <summary>
 	/// A TimeoutException is thrown if a ManagerResponse is not received within the expected time period.

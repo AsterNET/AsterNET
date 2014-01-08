@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// Default implementation of the AGIWriter interface.

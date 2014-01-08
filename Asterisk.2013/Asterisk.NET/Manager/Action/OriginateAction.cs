@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The OriginateAction generates an outgoing call to the extension in the given
@@ -20,8 +20,8 @@ namespace Asterisk.NET.Manager.Action
 	/// and OriginateFailureEvents. The action id of these events equals the action
 	/// id of this OriginateAction.
 	/// </summary>
-	/// <seealso cref="Asterisk.NET.Manager.Event.OriginateSuccessEvent" />
-	/// <seealso cref="Asterisk.NET.Manager.Event.OriginateFailureEvent" />
+	/// <seealso cref="AsterNET.Manager.Event.OriginateSuccessEvent" />
+	/// <seealso cref="AsterNET.Manager.Event.OriginateFailureEvent" />
 	public class OriginateAction : ManagerActionEvent
 	{
 		private string channel;

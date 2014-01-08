@@ -5,11 +5,11 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
-using Asterisk.NET.IO;
-using Asterisk.NET.Manager.Event;
-using Asterisk.NET.Manager.Response;
+using AsterNET.IO;
+using AsterNET.Manager.Event;
+using AsterNET.Manager.Response;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	
 	/// <summary>

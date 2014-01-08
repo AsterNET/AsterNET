@@ -1,5 +1,5 @@
 using System.Collections;
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An AgentCalledEvent is triggered when an agent is rung.<br/>

@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A NewCallerIdEvent is triggered when the caller id of a channel changes.<br/>

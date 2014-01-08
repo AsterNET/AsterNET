@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueMemberRemovedEvent is triggered when a queue member is removed from a queue.<br/>

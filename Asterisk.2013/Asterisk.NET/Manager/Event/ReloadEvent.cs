@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A ReloadEvent is triggerd when the <code>reload</code> console command is executed or the asterisk server is started.<br/>

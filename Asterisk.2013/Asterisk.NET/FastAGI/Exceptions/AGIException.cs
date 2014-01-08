@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// Abstract base class for all AGI specific exceptions.

@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	public enum AsteriskVersion
 	{

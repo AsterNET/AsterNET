@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace Asterisk.NET.Util
+namespace AsterNET.Util
 {
 	/// <summary>
 	/// Support class used to handle threads

@@ -1,3 +1,15 @@
+08.01.2014 (skrusty)
+	Migrated to Visual Studio 2013
+	Migrated from TFS to Git on Codeplex
+	Changed You can now set the way events are dispatched by the AMI connection handler. Events are now dispatched synchronously by default
+		and not Async. This can be changed by setting the property UseASyncEvents to true. This addresses issues raised in issue: 1238
+	Changed This is a big one, to bring the project in to line with release 1.0.0  I have changed the namespace for AsterNET, which was still
+		Asterisk.NET to AsterNET. This means you will need to update your code to reflect this change.
+	Changed Again, to bring us in line with release 1.0.0, the .NET version targeted has been set to 4.0. It was set to 4.5 (and currently the 
+		release still) but this simply isn't required.
+	Added missing QueueActions (QueueLog, QueuePenalty, QueueReload, QueueRule) in-line with Asterisk up to version 1.8
+	Added missing Actions: AtxferAction, BridgeAction
+
 03.01.2014 (skrusty)
 	Added patch submitted by Saritha Bhandarkar
 		Adds AGIAction to Asterisk Manager

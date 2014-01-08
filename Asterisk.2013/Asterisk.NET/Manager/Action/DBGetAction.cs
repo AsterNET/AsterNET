@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	
 	/// <summary>
@@ -7,7 +7,7 @@ namespace Asterisk.NET.Manager.Action
 	/// If an entry is found a DBGetResponseEvent is sent by Asterisk containing the
 	/// value, otherwise a ManagerError indicates that no entry matches.
 	/// </summary>
-	/// <seealso cref="Asterisk.NET.Manager.Event.DBGetResponseEvent" />
+	/// <seealso cref="AsterNET.Manager.Event.DBGetResponseEvent" />
 	public class DBGetAction : ManagerActionEvent
 	{
 		private string family;

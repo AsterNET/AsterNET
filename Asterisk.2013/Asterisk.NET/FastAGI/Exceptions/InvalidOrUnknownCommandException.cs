@@ -1,5 +1,5 @@
 using System;
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// An InvalidOrUnknownCommandException is thrown when the reader receives a reply with status code 510.

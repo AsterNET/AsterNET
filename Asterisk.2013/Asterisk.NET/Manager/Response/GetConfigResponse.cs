@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Asterisk.NET.Manager.Response
+namespace AsterNET.Manager.Response
 {
 	/// <summary>
 	/// Response that is received when sending a GetConfigAction.<br/>

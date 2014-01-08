@@ -2,18 +2,18 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Collections;
-using Asterisk.NET.Manager.Action;
-using Asterisk.NET.Manager.Event;
-using Asterisk.NET.Manager.Response;
+using AsterNET.Manager.Action;
+using AsterNET.Manager.Event;
+using AsterNET.Manager.Response;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Reflection;
-using Asterisk.NET.IO;
-using Asterisk.NET.Util;
+using AsterNET.IO;
+using AsterNET.Util;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	#region Event delegate
 
@@ -30,11 +30,11 @@ namespace Asterisk.NET.Manager
 	public delegate void AgentsEventHandler(object sender, Event.AgentsEvent e);
 	public delegate void AlarmClearEventHandler(object sender, Event.AlarmClearEvent e);
 	public delegate void AlarmEventHandler(object sender, Event.AlarmEvent e);
-    public delegate void BridgeEventHandler(object sender, Event.BridgeEvent e);
+	public delegate void BridgeEventHandler(object sender, Event.BridgeEvent e);
 	public delegate void CdrEventHandler(object sender, Event.CdrEvent e);
 	public delegate void DBGetResponseEventHandler(object sender, Event.DBGetResponseEvent e);
 	public delegate void DialEventHandler(object sender, Event.DialEvent e);
-    public delegate void DTMFEventHandler(object sender, Event.DTMFEvent e);
+	public delegate void DTMFEventHandler(object sender, Event.DTMFEvent e);
 	public delegate void DNDStateEventHandler(object sender, Event.DNDStateEvent e);
 	public delegate void ExtensionStatusEventHandler(object sender, Event.ExtensionStatusEvent e);
 	public delegate void HangupEventHandler(object sender, Event.HangupEvent e);
@@ -70,24 +70,24 @@ namespace Asterisk.NET.Manager
 	public delegate void QueueStatusCompleteEventHandler(object sender, Event.QueueStatusCompleteEvent e);
 	public delegate void RegistryEventHandler(object sender, Event.RegistryEvent e);
 	public delegate void RenameEventHandler(object sender, Event.RenameEvent e);
-    public delegate void TransferEventHandler(object sender, Event.TransferEvent e);
+	public delegate void TransferEventHandler(object sender, Event.TransferEvent e);
 	public delegate void StatusCompleteEventHandler(object sender, Event.StatusCompleteEvent e);
 	public delegate void StatusEventHandler(object sender, Event.StatusEvent e);
 	public delegate void UnholdEventHandler(object sender, Event.UnholdEvent e);
 	public delegate void UnlinkEventHandler(object sender, Event.UnlinkEvent e);
 	public delegate void UnparkedCallEventHandler(object sender, Event.UnparkedCallEvent e);
 	public delegate void UserEventHandler(object sender, Event.UserEvent e);
-    public delegate void QueueCallerAbandonEventHandler(object sender, Event.QueueCallerAbandonEvent e);
+	public delegate void QueueCallerAbandonEventHandler(object sender, Event.QueueCallerAbandonEvent e);
 	public delegate void ZapShowChannelsCompleteEventHandler(object sender, Event.ZapShowChannelsCompleteEvent e);
 	public delegate void ZapShowChannelsEventHandler(object sender, Event.ZapShowChannelsEvent e);
 	public delegate void ConnectionStateEventHandler(object sender, Event.ConnectionStateEvent e);
-    public delegate void VarSetEventHandler(object sender, Event.VarSetEvent e);
-    public delegate void AGIExecHandler(object sender, Event.AGIExecEvent e);
-    public delegate void ConfbridgeStartEventHandler(object sender, Event.ConfbridgeStartEvent e);
-    public delegate void ConfbridgeJoinEventHandler(object sender, Event.ConfbridgeJoinEvent e);
-    public delegate void ConfbridgeLeaveEventHandler(object sender, Event.ConfbridgeLeaveEvent e);
-    public delegate void ConfbridgeEndEventHandler(object sender, Event.ConfbridgeEndEvent e);
-    public delegate void ConfbridgeTalkingEventHandler(object sender, Event.ConfbridgeTalkingEvent e);
+	public delegate void VarSetEventHandler(object sender, Event.VarSetEvent e);
+	public delegate void AGIExecHandler(object sender, Event.AGIExecEvent e);
+	public delegate void ConfbridgeStartEventHandler(object sender, Event.ConfbridgeStartEvent e);
+	public delegate void ConfbridgeJoinEventHandler(object sender, Event.ConfbridgeJoinEvent e);
+	public delegate void ConfbridgeLeaveEventHandler(object sender, Event.ConfbridgeLeaveEvent e);
+	public delegate void ConfbridgeEndEventHandler(object sender, Event.ConfbridgeEndEvent e);
+	public delegate void ConfbridgeTalkingEventHandler(object sender, Event.ConfbridgeTalkingEvent e);
 
 	#endregion
 
@@ -151,6 +151,13 @@ namespace Asterisk.NET.Manager
 
 		#endregion
 
+        /// <summary>
+        /// Allows you to specifiy how events are fired. If false (default) then
+        /// events will be fired in order. Otherwise events will be fired as they arrive and 
+        /// control logic in your application will need to handle synchronization.
+        /// </summary>
+	    public bool UseASyncEvents = false;
+
 		#region Events
 
 		/// <summary>
@@ -202,10 +209,10 @@ namespace Asterisk.NET.Manager
 		/// An AlarmEvent is triggered when a Zap channel leaves alarm state.
 		/// </summary>
 		public event AlarmClearEventHandler AlarmClear;
-        /// <summary>
-        /// 
-        /// </summary>
-        public event BridgeEventHandler Bridge;
+		/// <summary>
+		/// 
+		/// </summary>
+		public event BridgeEventHandler Bridge;
 		/// <summary>
 		/// An AlarmEvent is triggered when a Zap channel enters or changes alarm state.
 		/// </summary>
@@ -219,7 +226,7 @@ namespace Asterisk.NET.Manager
 		/// A Dial is triggered whenever a phone attempts to dial someone.<br/>
 		/// </summary>
 		public event DialEventHandler Dial;
-        public event DTMFEventHandler DTMF;
+		public event DTMFEventHandler DTMF;
 		/// <summary>
 		/// A DNDStateEvent is triggered by the Zap channel driver when a channel enters or leaves DND (do not disturb) state.
 		/// </summary>
@@ -335,10 +342,10 @@ namespace Asterisk.NET.Manager
 		/// A PeerStatus is triggered when a SIP or IAX client attempts to registrer at this asterisk server.<br/>
 		/// </summary>
 		public event PeerStatusEventHandler PeerStatus;
-        /// <summary>
-        /// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.
-        /// </summary>
-        public event QueueCallerAbandonEventHandler QueueCallerAbandon;
+		/// <summary>
+		/// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.
+		/// </summary>
+		public event QueueCallerAbandonEventHandler QueueCallerAbandon;
 		/// <summary>
 		/// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.
 		/// </summary>
@@ -388,10 +395,10 @@ namespace Asterisk.NET.Manager
 		/// A StatusEvent is triggered for each active channel in response to a StatusAction.
 		/// </summary>
 		public event StatusEventHandler Status;
-        /// <summary>
-        /// 
-        /// </summary>
-        public event TransferEventHandler Transfer;
+		/// <summary>
+		/// 
+		/// </summary>
+		public event TransferEventHandler Transfer;
 		/// <summary>
 		/// An UnholdEvent is triggered by the SIP channel driver when a channel is no longer put on hold.
 		/// </summary>
@@ -421,40 +428,40 @@ namespace Asterisk.NET.Manager
 		/// </summary>
 		public event ConnectionStateEventHandler ConnectionState;
 
-        /// <summary>
-        /// When a variable is set
-        /// </summary>
-	    public event VarSetEventHandler VarSet;
+		/// <summary>
+		/// When a variable is set
+		/// </summary>
+		public event VarSetEventHandler VarSet;
 
-        /// <summary>
-        /// AgiExec is execute
-        /// </summary>
-        public event AGIExecHandler AGIExec;
+		/// <summary>
+		/// AgiExec is execute
+		/// </summary>
+		public event AGIExecHandler AGIExec;
 
-        /// <summary>
-        /// This event is sent when the first user requests a conference and it is instantiated
-        /// </summary>
-	    public event ConfbridgeStartEventHandler ConfbridgeStart;
+		/// <summary>
+		/// This event is sent when the first user requests a conference and it is instantiated
+		/// </summary>
+		public event ConfbridgeStartEventHandler ConfbridgeStart;
 
-        /// <summary>
-        /// This event is sent when a user joins a conference - either one already in progress or as the first user to join a newly instantiated bridge.
-        /// </summary>
-        public event ConfbridgeJoinEventHandler ConfbridgeJoin;
+		/// <summary>
+		/// This event is sent when a user joins a conference - either one already in progress or as the first user to join a newly instantiated bridge.
+		/// </summary>
+		public event ConfbridgeJoinEventHandler ConfbridgeJoin;
 
-        /// <summary>
-        /// This event is sent when a user leaves a conference.
-        /// </summary>
-        public event ConfbridgeLeaveEventHandler ConfbridgeLeave;
+		/// <summary>
+		/// This event is sent when a user leaves a conference.
+		/// </summary>
+		public event ConfbridgeLeaveEventHandler ConfbridgeLeave;
 
-        /// <summary>
-        /// This event is sent when the last user leaves a conference and it is torn down.
-        /// </summary>
-        public event ConfbridgeEndEventHandler ConfbridgeEnd;
+		/// <summary>
+		/// This event is sent when the last user leaves a conference and it is torn down.
+		/// </summary>
+		public event ConfbridgeEndEventHandler ConfbridgeEnd;
 
-        /// <summary>
-        /// This event is sent when the conference detects that a user has either begin or stopped talking.
-        /// </summary>
-        public event ConfbridgeTalkingEventHandler ConfbridgeTalking;
+		/// <summary>
+		/// This event is sent when the conference detects that a user has either begin or stopped talking.
+		/// </summary>
+		public event ConfbridgeTalkingEventHandler ConfbridgeTalking;
 
 		#endregion
 
@@ -527,7 +534,7 @@ namespace Asterisk.NET.Manager
 			Helper.RegisterEventHandler(registeredEventHandlers, 48, typeof(QueueParamsEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 49, typeof(QueueStatusCompleteEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 50, typeof(RegistryEvent));
-            Helper.RegisterEventHandler(registeredEventHandlers, 51, typeof(QueueCallerAbandonEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 51, typeof(QueueCallerAbandonEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 52, typeof(RenameEvent));
 
 			Helper.RegisterEventHandler(registeredEventHandlers, 54, typeof(StatusCompleteEvent));
@@ -544,18 +551,18 @@ namespace Asterisk.NET.Manager
 			Helper.RegisterEventHandler(registeredEventHandlers, 62, typeof(ReloadEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 62, typeof(ShutdownEvent));
 
-            Helper.RegisterEventHandler(registeredEventHandlers, 63, typeof(BridgeEvent));
-            Helper.RegisterEventHandler(registeredEventHandlers, 64, typeof(TransferEvent));
-            Helper.RegisterEventHandler(registeredEventHandlers, 65, typeof(DTMFEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 63, typeof(BridgeEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 64, typeof(TransferEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 65, typeof(DTMFEvent));
 
-            Helper.RegisterEventHandler(registeredEventHandlers, 70, typeof(VarSetEvent));
-            Helper.RegisterEventHandler(registeredEventHandlers, 80, typeof(AGIExecEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 70, typeof(VarSetEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 80, typeof(AGIExecEvent));
 
-            Helper.RegisterEventHandler(registeredEventHandlers, 81, typeof(ConfbridgeStartEventHandler));
-            Helper.RegisterEventHandler(registeredEventHandlers, 82, typeof(ConfbridgeJoinEventHandler));
-            Helper.RegisterEventHandler(registeredEventHandlers, 83, typeof(ConfbridgeLeaveEventHandler));
-            Helper.RegisterEventHandler(registeredEventHandlers, 84, typeof(ConfbridgeEndEventHandler));
-            Helper.RegisterEventHandler(registeredEventHandlers, 85, typeof(ConfbridgeTalkingEventHandler));
+			Helper.RegisterEventHandler(registeredEventHandlers, 81, typeof(ConfbridgeStartEventHandler));
+			Helper.RegisterEventHandler(registeredEventHandlers, 82, typeof(ConfbridgeJoinEventHandler));
+			Helper.RegisterEventHandler(registeredEventHandlers, 83, typeof(ConfbridgeLeaveEventHandler));
+			Helper.RegisterEventHandler(registeredEventHandlers, 84, typeof(ConfbridgeEndEventHandler));
+			Helper.RegisterEventHandler(registeredEventHandlers, 85, typeof(ConfbridgeTalkingEventHandler));
 
 
 			#endregion
@@ -1005,13 +1012,13 @@ namespace Asterisk.NET.Manager
 							return;
 						}
 						break;
-                    case 51:
-                        if (QueueCallerAbandon != null)
-                        {
-                            QueueCallerAbandon(this, (QueueCallerAbandonEvent)e);
-                            return;
-                        }
-                        break;
+					case 51:
+						if (QueueCallerAbandon != null)
+						{
+							QueueCallerAbandon(this, (QueueCallerAbandonEvent)e);
+							return;
+						}
+						break;
 					case 52:
 						if (Rename != null)
 						{
@@ -1084,66 +1091,66 @@ namespace Asterisk.NET.Manager
 							return;
 						}
 						break;
-                    case 63:
-                        if (Bridge != null)
-                        {
-                            Bridge(this, (BridgeEvent)e);
-                        }
-                        break;
-                    case 64:
-                        if (Transfer != null)
-                        {
-                            Transfer(this, (TransferEvent)e);
-                        }
-                        break;
-                    case 65:
-                        if (DTMF != null)
-                        {
-                            DTMF(this, (DTMFEvent)e);
-                        }
-                        break;
-                    case 70:
-                        if (VarSet != null)
-                        {
-                            VarSet(this, (VarSetEvent)e);
-                        }
-                        break;
-                    case 80:
-                        if (AGIExec != null)
-                        {
-                            AGIExec(this, (AGIExecEvent)e);
-                        }
-                        break;
-                    case 81:
-                        if (ConfbridgeStart != null)
-                        {
-                            ConfbridgeStart(this, (ConfbridgeStartEvent)e);
-                        }
-                        break;
-                    case 82:
-                        if (ConfbridgeJoin != null)
-                        {
-                            ConfbridgeJoin(this, (ConfbridgeJoinEvent)e);
-                        }
-                        break;
-                    case 83:
-                        if (ConfbridgeLeave != null)
-                        {
-                            ConfbridgeLeave(this, (ConfbridgeLeaveEvent)e);
-                        }
-                        break;
-                    case 84:
-                        if (ConfbridgeEnd != null)
-                        {
-                            ConfbridgeEnd(this, (ConfbridgeEndEvent)e);
-                        }
-                        break;
-                    case 85:
-                        if (ConfbridgeTalking != null)
-                        {
-                            ConfbridgeTalking(this, (ConfbridgeTalkingEvent)e);
-                        }
-                        break;
+					case 63:
+						if (Bridge != null)
+						{
+							Bridge(this, (BridgeEvent)e);
+						}
+						break;
+					case 64:
+						if (Transfer != null)
+						{
+							Transfer(this, (TransferEvent)e);
+						}
+						break;
+					case 65:
+						if (DTMF != null)
+						{
+							DTMF(this, (DTMFEvent)e);
+						}
+						break;
+					case 70:
+						if (VarSet != null)
+						{
+							VarSet(this, (VarSetEvent)e);
+						}
+						break;
+					case 80:
+						if (AGIExec != null)
+						{
+							AGIExec(this, (AGIExecEvent)e);
+						}
+						break;
+					case 81:
+						if (ConfbridgeStart != null)
+						{
+							ConfbridgeStart(this, (ConfbridgeStartEvent)e);
+						}
+						break;
+					case 82:
+						if (ConfbridgeJoin != null)
+						{
+							ConfbridgeJoin(this, (ConfbridgeJoinEvent)e);
+						}
+						break;
+					case 83:
+						if (ConfbridgeLeave != null)
+						{
+							ConfbridgeLeave(this, (ConfbridgeLeaveEvent)e);
+						}
+						break;
+					case 84:
+						if (ConfbridgeEnd != null)
+						{
+							ConfbridgeEnd(this, (ConfbridgeEndEvent)e);
+						}
+						break;
+					case 85:
+						if (ConfbridgeTalking != null)
+						{
+							ConfbridgeTalking(this, (ConfbridgeTalkingEvent)e);
+						}
+						break;
 					default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);
@@ -1438,20 +1445,20 @@ namespace Asterisk.NET.Manager
 						if (m.Groups.Count >= 2)
 						{
 							version = m.Groups[1].Value;
-                            if (version.StartsWith("1.4."))
-                                return AsteriskVersion.ASTERISK_1_4;
-                            else if (version.StartsWith("1.6."))
-                                return Manager.AsteriskVersion.ASTERISK_1_6;
-                            else if (version.StartsWith("1.8."))
-                                return Manager.AsteriskVersion.ASTERISK_1_8;
-                            else if (version.StartsWith("10."))
-                                return Manager.AsteriskVersion.ASTERISK_10;
-                            else if (version.StartsWith("11."))
-                                return Manager.AsteriskVersion.ASTERISK_11;
-                            else if (version.StartsWith("12."))
-                                return Manager.AsteriskVersion.ASTERISK_12;
-                            else
-                                throw new ManagerException("Unknown Asterisk version " + version);
+							if (version.StartsWith("1.4."))
+								return AsteriskVersion.ASTERISK_1_4;
+							else if (version.StartsWith("1.6."))
+								return Manager.AsteriskVersion.ASTERISK_1_6;
+							else if (version.StartsWith("1.8."))
+								return Manager.AsteriskVersion.ASTERISK_1_8;
+							else if (version.StartsWith("10."))
+								return Manager.AsteriskVersion.ASTERISK_10;
+							else if (version.StartsWith("11."))
+								return Manager.AsteriskVersion.ASTERISK_11;
+							else if (version.StartsWith("12."))
+								return Manager.AsteriskVersion.ASTERISK_12;
+							else
+								throw new ManagerException("Unknown Asterisk version " + version);
 						}
 					}
 				}
@@ -2124,7 +2131,7 @@ namespace Asterisk.NET.Manager
 			if (response != null)
 				actionId = response.ActionId;
 
-            if (!string.IsNullOrEmpty(actionId))
+			if (!string.IsNullOrEmpty(actionId))
 			{
 				int hash = Helper.GetInternalActionId(actionId).GetHashCode();
 				responseActionId = Helper.StripInternalActionId(actionId);
@@ -2159,7 +2166,7 @@ namespace Asterisk.NET.Manager
 				}
 			}
 			
-            if (response == null && buffer.ContainsKey("ping") && buffer["ping"] == "Pong")
+			if (response == null && buffer.ContainsKey("ping") && buffer["ping"] == "Pong")
 			{
 				response = Helper.BuildResponse(buffer);
 				foreach (ResponseHandler pingHandler in pingHandlers.Values)
@@ -2356,7 +2363,10 @@ namespace Asterisk.NET.Manager
 		private void fireEvent(ManagerEvent e)
 		{
 			if (enableEvents && internalEvent != null)
-				internalEvent.BeginInvoke(this, e, new AsyncCallback(eventComplete), null);
+                if(UseASyncEvents)
+				    internalEvent.BeginInvoke(this, e, new AsyncCallback(eventComplete), null);
+                else
+                    internalEvent.Invoke(this, e);
 		}
 		#endregion
 	}

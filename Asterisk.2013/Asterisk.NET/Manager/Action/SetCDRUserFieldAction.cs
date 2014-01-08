@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The SetCDRUserFieldAction causes the user field of the call detail record for the given channel to be changed.<br/>

@@ -1,7 +1,7 @@
 using System;
-using Asterisk.NET.FastAGI;
+using AsterNET.FastAGI;
 
-namespace Asterisk.NET.Test
+namespace AsterNET.Test
 {
 	public class CustomIVR : AGIScript
 	{

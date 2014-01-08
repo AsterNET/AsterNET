@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An AgentCallbackLoginEvent is triggered when an agent is successfully logged in using AgentCallbackLogin.<br/>

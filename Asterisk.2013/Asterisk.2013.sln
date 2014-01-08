@@ -1,33 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80ADC18F-2BFC-4B79-B264-5244E4F2FEED}"
 	ProjectSection(SolutionItems) = preProject
 		ChangeLog.txt = ChangeLog.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asterisk.NET", "Asterisk.NET\Asterisk.NET.csproj", "{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET", "Asterisk.NET\AsterNET.csproj", "{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asterisk.NET.WinForm", "Asterisk.NET.WinForm\Asterisk.NET.WinForm.csproj", "{03687626-613A-4E41-8F60-7C7839D6DD5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.WinForm", "Asterisk.NET.WinForm\AsterNET.WinForm.csproj", "{03687626-613A-4E41-8F60-7C7839D6DD5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asterisk.NET.Test", "..\..\dfd\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\Asterisk.NET.Test.csproj", "{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.Test", "Asterisk.NET.Test\Asterisk.NET.Test\AsterNET.Test.csproj", "{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Asterisk.NET.WinForm\\Asterisk.NET.WinForm.csproj
-		SccProjectName1 = Asterisk.NET.WinForm
-		SccLocalPath1 = Asterisk.NET.WinForm
-		SccProjectUniqueName2 = Asterisk.NET\\Asterisk.NET.csproj
-		SccProjectName2 = Asterisk.NET
-		SccLocalPath2 = Asterisk.NET
-		SccProjectUniqueName3 = ..\\..\\dfd\\Asterisk.NET.1.6.3.1\\Asterisk.NET.Test\\Asterisk.NET.Test.csproj
-		SccProjectName3 = Asterisk.NET.Test/Asterisk.NET.Test
-		SccLocalPath3 = ..\\..\\dfd\\Asterisk.NET.1.6.3.1\\Asterisk.NET.Test
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

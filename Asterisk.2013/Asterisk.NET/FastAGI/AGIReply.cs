@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	#region Enum - AGIReplyStatuses 
 	public enum AGIReplyStatuses

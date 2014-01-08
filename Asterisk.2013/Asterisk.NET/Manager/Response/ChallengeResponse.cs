@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Response
+namespace AsterNET.Manager.Response
 {
 	/// <summary>
 	/// Corresponds to a ChallengeAction and contains the challenge needed to log in using challenge/response.

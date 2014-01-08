@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Threading;
 
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// An AGIConnectionHandler is created and run by the AGIServer whenever a new

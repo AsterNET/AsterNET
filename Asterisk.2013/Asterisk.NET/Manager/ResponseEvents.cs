@@ -1,9 +1,9 @@
 using System.Collections;
-using Asterisk.NET.Manager.Response;
-using Asterisk.NET.Manager.Event;
+using AsterNET.Manager.Response;
+using AsterNET.Manager.Event;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	/// <summary>
 	/// Collection of ResponseEvent. Use in events generation actions.

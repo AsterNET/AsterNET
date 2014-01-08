@@ -1,7 +1,7 @@
 using System.Text;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// This class implements the ManagerAction interface

@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A PeerlistCompleteEvent is triggered after the details of all peers has been reported in response to an SIPPeersAction or SIPShowPeerAction.<br/>

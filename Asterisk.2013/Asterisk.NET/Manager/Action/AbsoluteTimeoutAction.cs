@@ -1,6 +1,6 @@
 using System;
 
-namespace Asterisk.NET.Manager.Action
+namespace AsterNET.Manager.Action
 {
 	/// <summary>
 	/// The AbsoluteTimeoutAction sets the absolute maximum amount of time permitted for a call on a given channel.<br/>

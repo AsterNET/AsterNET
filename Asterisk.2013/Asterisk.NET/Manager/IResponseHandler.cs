@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Asterisk.NET.Manager.Action;
+using AsterNET.Manager.Action;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	/// <summary>
 	/// An Interface to handle responses received from an asterisk server.

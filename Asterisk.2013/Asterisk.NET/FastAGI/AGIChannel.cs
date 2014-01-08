@@ -1,4 +1,4 @@
-namespace Asterisk.NET.FastAGI
+namespace AsterNET.FastAGI
 {
 	/// <summary>
 	/// Default implementation of the AGIChannel interface.

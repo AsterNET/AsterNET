@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueMemberPenaltyEvent is triggered when a queue member is assigned a new penalty.

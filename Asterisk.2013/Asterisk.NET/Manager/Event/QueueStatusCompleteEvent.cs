@@ -1,4 +1,4 @@
-namespace Asterisk.NET.Manager.Event
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueStatusCompleteEvent is triggered after the state of all queues has been reported in response to a QueueStatusAction.<br/>

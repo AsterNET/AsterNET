@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Asterisk.NET.FastAGI.Command
+namespace AsterNET.FastAGI.Command
 {
 	/// <summary>
 	/// Plays the given file, allowing playback to be interrupted by the given

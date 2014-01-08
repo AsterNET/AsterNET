@@ -1,5 +1,5 @@
-using Asterisk.NET.Manager.Event;
-namespace Asterisk.NET.Manager.Event
+using AsterNET.Manager.Event;
+namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A FaxReceivedEvent is triggered by spandsp after a new fax has been received.<br/>

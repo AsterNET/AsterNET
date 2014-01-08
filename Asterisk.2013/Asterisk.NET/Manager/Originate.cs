@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Asterisk.NET.Manager
+namespace AsterNET.Manager
 {
 	public class Originate
 	{
