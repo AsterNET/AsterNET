@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace AsterNET.Manager.Event
 {
-    public class ConfbridgeListRoomsEvent : ResponseEvent
+    public class ConfbridgeListRoomsEvent : AbstractConfbridgeEvent
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Conference { get; set; }
-
         /// <summary>
         /// 
         /// </summary>

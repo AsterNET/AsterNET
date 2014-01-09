@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AsterNET.Manager.Event
 {
-    class ConfbridgeListCompleteEvent
+    public class ConfbridgeListCompleteEvent : ResponseEvent
     {
+        public ConfbridgeListCompleteEvent(ManagerConnection source)
+			: base(source)
+		{
+		}
     }
 }

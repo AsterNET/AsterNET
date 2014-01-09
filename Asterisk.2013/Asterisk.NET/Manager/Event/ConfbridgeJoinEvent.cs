@@ -17,5 +17,10 @@ namespace AsterNET.Manager.Event
         /// 
         /// </summary>
         public string CallerIDname { get; set; }
+
+        public ConfbridgeJoinEvent(ManagerConnection source)
+			: base(source)
+		{
+		}
     }
 }

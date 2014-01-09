@@ -1,3 +1,6 @@
+09.09.2014 (skrusty)
+	Fixed issues with ConfBridge events causing AMI to fail. 
+
 08.01.2014 (skrusty)
 	Migrated to Visual Studio 2013
 	Migrated from TFS to Git on Codeplex

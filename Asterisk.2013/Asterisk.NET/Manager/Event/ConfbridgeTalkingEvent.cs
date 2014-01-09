@@ -12,5 +12,10 @@ namespace AsterNET.Manager.Event
         /// 
         /// </summary>
         public string TalkingStatus { get; set; }
+
+        public ConfbridgeTalkingEvent(ManagerConnection source)
+			: base(source)
+		{
+		}
     }
 }
