@@ -171,6 +171,20 @@ namespace AsterNET.FastAGI
 		}
 		#endregion
 
+        public AsteriskFastAGI(string ipaddress = Common.AGI_BIND_ADDRESS, 
+            int port = Common.AGI_BIND_PORT, 
+            int poolSize = Common.AGI_POOL_SIZE, 
+            bool sc511_CausesException = false, 
+            bool scHangUp_CausesException = false) 
+        { 
+            this.address = ipaddress; 
+            this.port = port; 
+            this.poolSize = poolSize; 
+            this.mappingStrategy = new ResourceMappingStrategy(); 
+            SC511_CAUSES_EXCEPTION = sc511_CausesException; 
+            SCHANGUP_CAUSES_EXCEPTION = scHangUp_CausesException; 
+        }
+
 		#region Start() 
 		public void Start()
 		{
