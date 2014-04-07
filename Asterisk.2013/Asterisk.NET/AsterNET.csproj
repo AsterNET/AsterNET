@@ -128,6 +128,7 @@
     <Compile Include="Manager\Action\AgentLogoffAction.cs" />
     <Compile Include="Manager\Action\AgentsAction.cs" />
     <Compile Include="Manager\Action\AGIAction.cs" />
+    <Compile Include="Manager\Action\AOCMessageAction.cs" />
     <Compile Include="Manager\Action\AtxferAction.cs" />
     <Compile Include="Manager\Action\BridgeAction.cs" />
     <Compile Include="Manager\Action\ChallengeAction.cs" />
@@ -143,6 +144,10 @@
     <Compile Include="Manager\Action\ConfbridgeStopRecordAction.cs" />
     <Compile Include="Manager\Action\ConfbridgeUnlockAction.cs" />
     <Compile Include="Manager\Action\ConfbridgeUnmuteAction.cs" />
+    <Compile Include="Manager\Action\CoreSettingsAction.cs" />
+    <Compile Include="Manager\Action\CoreShowChannelsAction.cs" />
+    <Compile Include="Manager\Action\CoreStatusAction.cs" />
+    <Compile Include="Manager\Action\CreateConfigAction.cs" />
     <Compile Include="Manager\Action\DBDelAction.cs" />
     <Compile Include="Manager\Action\DBDelTreeAction.cs" />
     <Compile Include="Manager\Action\DBGetAction.cs" />
@@ -164,6 +169,7 @@
     <Compile Include="Manager\Action\ManagerActionResponse.cs" />
     <Compile Include="Manager\Action\MonitorAction.cs" />
     <Compile Include="Manager\Action\OriginateAction.cs" />
+    <Compile Include="Manager\Action\ParkAction.cs" />
     <Compile Include="Manager\Action\ParkedCallsAction.cs" />
     <Compile Include="Manager\Action\PingAction.cs" />
     <Compile Include="Manager\Action\ProxyAction.cs" />
@@ -208,6 +214,7 @@
     <Compile Include="Manager\Event\BridgeEvent.cs" />
     <Compile Include="Manager\Event\ChannelReloadEvent.cs" />
     <Compile Include="Manager\Event\ChannelUpdateEvent.cs" />
+    <Compile Include="Manager\Event\FailedACLEvent.cs" />
     <Compile Include="Manager\Event\MeetmeMuteEvent.cs" />
     <Compile Include="Manager\Event\DTMFEvent.cs" />
     <Compile Include="Manager\Event\FaxReceivedEvent.cs" />
