@@ -12,6 +12,8 @@ namespace AsterNET.Manager.Event
 		private string callerIdName;
 		private string accountCode;
 		private string state;
+	    private string connectedLineNum;
+	    private string connectedLineName;
 
 		/// <summary>
 		/// Get/Set Channel State
@@ -83,7 +85,19 @@ namespace AsterNET.Manager.Event
 			set { this.accountCode = value; }
 		}
 
-		public AbstractChannelEvent(ManagerConnection source)
+	    public string Connectedlinenum
+	    {
+	        get { return connectedLineNum; }
+            set { connectedLineNum = value; }
+	    }
+
+	    public string ConnectedLineName
+	    {
+	        get { return connectedLineName; }
+	        set { connectedLineName = value; }
+	    }
+
+	    public AbstractChannelEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

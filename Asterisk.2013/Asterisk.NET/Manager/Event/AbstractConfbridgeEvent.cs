@@ -13,6 +13,10 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string Conference { get; set; }
 
+        public AbstractConfbridgeEvent()
+        : base()
+        { }
+
         public AbstractConfbridgeEvent(ManagerConnection source)
 			: base(source)
 		{

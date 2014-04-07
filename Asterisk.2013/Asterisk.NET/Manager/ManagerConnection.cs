@@ -88,6 +88,7 @@ namespace AsterNET.Manager
 	public delegate void ConfbridgeLeaveEventHandler(object sender, Event.ConfbridgeLeaveEvent e);
 	public delegate void ConfbridgeEndEventHandler(object sender, Event.ConfbridgeEndEvent e);
 	public delegate void ConfbridgeTalkingEventHandler(object sender, Event.ConfbridgeTalkingEvent e);
+    public delegate void FailedACLEventHandler(object sender, Event.FailedACLEvent e);
 
 	#endregion
 
@@ -463,6 +464,11 @@ namespace AsterNET.Manager
 		/// </summary>
 		public event ConfbridgeTalkingEventHandler ConfbridgeTalking;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public event FailedACLEventHandler FailedACL;
+
 		#endregion
 
 		#region Constructor - ManagerConnection()
@@ -558,11 +564,13 @@ namespace AsterNET.Manager
 			Helper.RegisterEventHandler(registeredEventHandlers, 70, typeof(VarSetEvent));
 			Helper.RegisterEventHandler(registeredEventHandlers, 80, typeof(AGIExecEvent));
 
-			Helper.RegisterEventHandler(registeredEventHandlers, 81, typeof(ConfbridgeStartEventHandler));
-			Helper.RegisterEventHandler(registeredEventHandlers, 82, typeof(ConfbridgeJoinEventHandler));
-			Helper.RegisterEventHandler(registeredEventHandlers, 83, typeof(ConfbridgeLeaveEventHandler));
-			Helper.RegisterEventHandler(registeredEventHandlers, 84, typeof(ConfbridgeEndEventHandler));
-			Helper.RegisterEventHandler(registeredEventHandlers, 85, typeof(ConfbridgeTalkingEventHandler));
+			Helper.RegisterEventHandler(registeredEventHandlers, 81, typeof(ConfbridgeStartEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 82, typeof(ConfbridgeJoinEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 83, typeof(ConfbridgeLeaveEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 84, typeof(ConfbridgeEndEvent));
+			Helper.RegisterEventHandler(registeredEventHandlers, 85, typeof(ConfbridgeTalkingEvent));
+
+            Helper.RegisterEventHandler(registeredEventHandlers, 86, typeof(FailedACLEvent));
 
 
 			#endregion
@@ -1151,6 +1159,12 @@ namespace AsterNET.Manager
 							ConfbridgeTalking(this, (ConfbridgeTalkingEvent)e);
 						}
 						break;
+                    case 86:
+                        if (FailedACL != null)
+                        {
+                            FailedACL(this, (FailedACLEvent)e);
+                        }
+                        break;
 					default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);

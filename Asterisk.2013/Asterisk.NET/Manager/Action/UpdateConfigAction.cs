@@ -132,22 +132,23 @@ namespace AsterNET.Manager.Action
 		/// <param name="match">Extra match required to match line</param>
 		public void AddCommand(string action, string category, string variable, string value, string match)
 		{
-			int i = actionCounter++;
+			var i = actionCounter++;
+            var index = i.ToString().PadLeft(6, '0');
 
 			if (!string.IsNullOrEmpty(action))
-				actions.Add("Action-" + i, action);
+                actions.Add("Action-" + index, action);
 
 			if (!string.IsNullOrEmpty(category))
-				actions.Add("Cat-" + i, category);
+                actions.Add("Cat-" + index, category);
 
 			if (!string.IsNullOrEmpty(variable))
-				actions.Add("Var-" + i, variable);
+                actions.Add("Var-" + index, variable);
 
 			if (!string.IsNullOrEmpty(value))
-				actions.Add("Value-" + i, value);
+                actions.Add("Value-" + index, value);
 
 			if (!string.IsNullOrEmpty(match))
-				actions.Add("Match-" + i, match);
+                actions.Add("Match-" + index, match);
 		}
 
 		public void AddCommand(string action, string category, string variable, string value)
