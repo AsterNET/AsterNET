@@ -244,11 +244,7 @@ namespace AsterNET.Manager
 								lastPacketTime = DateTime.Now;
 							}
 							Thread.Sleep(50);
-							if (mrConnector.TraceCallerThread && mrConnector.CallerThread != null && mrConnector.CallerThread.ThreadState == ThreadState.Stopped)
-							{
-								die = true;
-								break;
-							}
+
 							continue;
 						}
 						#endregion

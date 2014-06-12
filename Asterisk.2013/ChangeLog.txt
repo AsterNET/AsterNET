@@ -1,3 +1,7 @@
+12.06.2014 (mrmad)
+	Removed TraceCallerThread functionality. 
+	Changed ManagerReader worker thread creation logic (no longer uses Util.ThreadClass). Thread defaulted to stop automatically when application. 	ends.
+
 07.04.2014 (skrusty)
 	Fixed conf events not firing
 	Fixed missing default constructor from AbstractConfbridgeEvent

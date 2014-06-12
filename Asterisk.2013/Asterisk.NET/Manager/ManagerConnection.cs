@@ -109,7 +109,7 @@ namespace AsterNET.Manager
 		private string password;
 
 		private SocketConnection mrSocket;
-		private ThreadClass mrReaderThread;
+		private Thread mrReaderThread;
 		private ManagerReader mrReader;
 
 		private int defaultResponseTimeout = 2000;
@@ -139,7 +139,6 @@ namespace AsterNET.Manager
 		private event ManagerEventHandler internalEvent;
 		private bool fireAllEvents = false;
 		private Thread callerThread;
-		private bool traceCallerThread = true;
 
 		/// <summary> Default Fast Reconnect retry counter.</summary>
 		private int reconnectRetryFast = 5;
@@ -643,17 +642,6 @@ namespace AsterNET.Manager
 			get { return reconnectIntervalMax; }
 			set { reconnectIntervalMax = value; }
 		}
-
-		#region TraceCallerThread
-		/// <summary>
-		/// Enable 
-		/// </summary>
-		internal bool TraceCallerThread
-		{
-			get { return traceCallerThread; }
-			set { traceCallerThread = value; }
-		}
-		#endregion
 
 		#region CallerThread
 		internal Thread CallerThread
@@ -1523,26 +1511,33 @@ namespace AsterNET.Manager
 #endif
 						result = false;
 					}
-					if (result)
-					{
-						if (this.mrReader == null)
-						{
-							mrReader = new ManagerReader(this);
-							mrReaderThread = new Util.ThreadClass(new ThreadStart(this.mrReader.Run), "ManagerReader-" + DateTime.Now.Second);
-							mrReader.Socket = mrSocket;
-							startReader = true;
-						}
-						else
-							mrReader.Socket = mrSocket;
-						mrReader.Reinitialize();
-					}
-					else
-						mrSocket = null;
+                    if (result)
+                    {
+                        if (mrReader == null)
+                        {
+                            mrReader = new ManagerReader(this);
+                            mrReaderThread = new Thread(mrReader.Run) { IsBackground = true, Name = "ManagerReader-" + DateTime.Now.Second };
+                            mrReader.Socket = mrSocket;
+                            startReader = true;
+                        }
+                        else
+                        {
+                            mrReader.Socket = mrSocket;
+                        }
+
+                        mrReader.Reinitialize();
+                    }
+                    else
+                    {
+                        mrSocket = null;
+                    }
 				}
 			}
 
-			if (startReader)
-				mrReaderThread.Start();
+            if (startReader)
+            {
+                mrReaderThread.Start();
+            }
 
 			return IsConnected();
 		}
