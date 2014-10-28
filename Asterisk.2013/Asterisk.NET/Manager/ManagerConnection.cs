@@ -1459,6 +1459,8 @@ namespace AsterNET.Manager
 								return Manager.AsteriskVersion.ASTERISK_11;
 							else if (version.StartsWith("12."))
 								return Manager.AsteriskVersion.ASTERISK_12;
+                            else if (version.StartsWith("13."))
+                                return Manager.AsteriskVersion.ASTERISK_13;
 							else
 								throw new ManagerException("Unknown Asterisk version " + version);
 						}

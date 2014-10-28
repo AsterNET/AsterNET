@@ -1,3 +1,6 @@
+28.10.2014	(skrusty)
+	added support for Asterisk 13 in version parser in ManagerConnection.cs and AsteriskVersion.cs
+
 12.06.2014 (mrmad)
 	Removed TraceCallerThread functionality. 
 	Changed ManagerReader worker thread creation logic (no longer uses Util.ThreadClass). Thread defaulted to stop automatically when application. 	ends.
