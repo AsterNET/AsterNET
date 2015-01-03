@@ -1,42 +1,28 @@
 namespace AsterNET.Manager.Event
 {
-	/// <summary>
-	/// Abstract base class for several agent related events.
-	/// </summary>
-	public abstract class AbstractAgentEvent : AbstractAgentVariables
-	{
-		private string queue;
-		private string member;
-		private string memberName;
+    /// <summary>
+    ///     Abstract base class for several agent related events.
+    /// </summary>
+    public abstract class AbstractAgentEvent : AbstractAgentVariables
+    {
+        public AbstractAgentEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
 
-		/// <summary>
-		/// Get/Set the name of the queue.
-		/// </summary>
-		public string Queue
-		{
-			get { return queue; }
-			set { this.queue = value; }
-		}
-		/// <summary>
-		/// Get/Set the name of the member's interface.
-		/// </summary>
-		public string Member
-		{
-			get { return member; }
-			set { this.member = value; }
-		}
+        /// <summary>
+        ///     Get/Set the name of the queue.
+        /// </summary>
+        public string Queue { get; set; }
 
-		/// <summary>
-		/// Get/Set the name of the member's interface.
-		/// </summary>
-		public string MemberName
-		{
-			get { return memberName; }
-			set { this.memberName = value; }
-		}
+        /// <summary>
+        ///     Get/Set the name of the member's interface.
+        /// </summary>
+        public string Member { get; set; }
 
-		public AbstractAgentEvent(ManagerConnection source)
-			: base(source)
-		{ }
-	}
+        /// <summary>
+        ///     Get/Set the name of the member's interface.
+        /// </summary>
+        public string MemberName { get; set; }
+    }
 }

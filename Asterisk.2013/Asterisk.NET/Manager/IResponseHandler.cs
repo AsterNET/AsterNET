@@ -1,33 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using AsterNET.Manager.Action;
+using AsterNET.Manager.Response;
 
 namespace AsterNET.Manager
 {
-	/// <summary>
-	/// An Interface to handle responses received from an asterisk server.
-	/// </summary>
-	/// <seealso cref="ManagerResponse" />
-	public interface IResponseHandler
-	{
-		/// <summary>
-		/// This method is called when a response is received.
-		/// </summary>
-		/// <param name="response">the response received</param>
-		void HandleResponse(Response.ManagerResponse response);
+    /// <summary>
+    ///     An Interface to handle responses received from an asterisk server.
+    /// </summary>
+    /// <seealso cref="ManagerResponse" />
+    public interface IResponseHandler
+    {
+        ManagerAction Action { get; }
 
-		void Free();
+        int Hash { get; set; }
 
-		ManagerAction Action
-		{
-			get;
-		}
+        /// <summary>
+        ///     This method is called when a response is received.
+        /// </summary>
+        /// <param name="response">the response received</param>
+        void HandleResponse(ManagerResponse response);
 
-		int Hash
-		{
-			get;
-			set;
-		}
-	}
+        void Free();
+    }
 }

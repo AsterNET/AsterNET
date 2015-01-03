@@ -1,27 +1,14 @@
-using System;
-
 namespace AsterNET.Manager.Event
 {
-	public class NewAccountCodeEvent : ManagerEvent
-	{
-		private string accountCode;
-		private string oldAccountCode;
-		
-		public string AccountCode
-		{
-			get { return this.accountCode; }
-			set { this.accountCode = value; }
-		}
+    public class NewAccountCodeEvent : ManagerEvent
+    {
+        public NewAccountCodeEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
 
-		public string OldAccountCode
-		{
-			get { return this.oldAccountCode; }
-			set { this.oldAccountCode = value; }
-		}
+        public string AccountCode { get; set; }
 
-		public NewAccountCodeEvent(ManagerConnection source)
-			: base(source)
-		{
-		}
-	}
+        public string OldAccountCode { get; set; }
+    }
 }

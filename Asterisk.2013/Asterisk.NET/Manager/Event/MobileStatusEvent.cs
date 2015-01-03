@@ -1,27 +1,18 @@
-using System;
-
 namespace AsterNET.Manager.Event
 {
-	public class MobileStatusEvent : ManagerEvent
-	{
-		private string status;
-		private string device;
-		public string Status
-		{
-			get { return status; }
-			set { status = value; }
-		}
-		public string Device
-		{
-			get { return device; }
-			set { device = value; }
-		}
+    public class MobileStatusEvent : ManagerEvent
+    {
+        public string Status { get; set; }
 
-		#region Constructor - MobileStatus(ManagerConnection source)
-		public MobileStatusEvent(ManagerConnection source)
-			: base(source)
-		{
-		}
-		#endregion
-	}
+        public string Device { get; set; }
+
+        #region Constructor - MobileStatus(ManagerConnection source)
+
+        public MobileStatusEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
+
+        #endregion
+    }
 }

@@ -1,37 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AsterNET.Manager.Action
+﻿namespace AsterNET.Manager.Action
 {
     public class AOCMessageAction : ManagerAction
     {
-
-        private string _channel;
-        private string _channelPrefix;
-        private string _msgType;
-        private string _chargeType;
-        private int _unitAmount;
-        private int _unitType;
-        private string _currencyName;
-        private string _currencyAmount;
-        private string _currencyMultiplier;
-        private string _totalType;
-        private string _aocBillingId;
-        private string _chargingAssociationId;
-        private string _chargingAssociationNumber;
-        private string _chargingrAssociationPlan;
-
         /// <summary>
-        /// Generate an Advice of Charge message on a channel.
+        ///     Generate an Advice of Charge message on a channel.
         /// </summary>
         public AOCMessageAction()
         {
         }
 
         /// <summary>
-        /// Generate an Advice of Charge message on a channel.
+        ///     Generate an Advice of Charge message on a channel.
         /// </summary>
         /// <param name="channel"></param>
         /// <param name="channelPrefix"></param>
@@ -47,22 +26,25 @@ namespace AsterNET.Manager.Action
         /// <param name="chargingAssociationId"></param>
         /// <param name="chargingAssociationNumber"></param>
         /// <param name="chargingrAssociationPlan"></param>
-        public AOCMessageAction(string channel, string channelPrefix, string msgType, string chargeType, int unitAmount, int unitType, string currencyName, string currencyAmount, string currencyMultiplier, string totalType, string aocBillingId, string chargingAssociationId, string chargingAssociationNumber, string chargingrAssociationPlan)
+        public AOCMessageAction(string channel, string channelPrefix, string msgType, string chargeType, int unitAmount,
+            int unitType, string currencyName, string currencyAmount, string currencyMultiplier, string totalType,
+            string aocBillingId, string chargingAssociationId, string chargingAssociationNumber,
+            string chargingrAssociationPlan)
         {
-            _channel = channel;
-            _channelPrefix = channelPrefix;
-            _msgType = msgType;
-            _chargeType = chargeType;
-            _unitAmount = unitAmount;
-            _unitType = unitType;
-            _currencyName = currencyName;
-            _currencyAmount = currencyAmount;
-            _currencyMultiplier = currencyMultiplier;
-            _totalType = totalType;
-            _aocBillingId = aocBillingId;
-            _chargingAssociationId = chargingAssociationId;
-            _chargingAssociationNumber = chargingAssociationNumber;
-            _chargingrAssociationPlan = chargingrAssociationPlan;
+            Channel = channel;
+            ChannelPrefix = channelPrefix;
+            MsgType = msgType;
+            ChargeType = chargeType;
+            UnitAmount = unitAmount;
+            UnitType = unitType;
+            CurrencyName = currencyName;
+            CurrencyAmount = currencyAmount;
+            CurrencyMultiplier = currencyMultiplier;
+            TotalType = totalType;
+            AocBillingId = aocBillingId;
+            ChargingAssociationId = chargingAssociationId;
+            ChargingAssociationNumber = chargingAssociationNumber;
+            ChargingrAssociationPlan = chargingrAssociationPlan;
         }
 
         public override string Action
@@ -70,88 +52,32 @@ namespace AsterNET.Manager.Action
             get { return "AOCMessage"; }
         }
 
-        public string Channel
-        {
-            get { return _channel; }
-            set { _channel = value; }
-        }
+        public string Channel { get; set; }
 
-        public string ChannelPrefix
-        {
-            get { return _channelPrefix; }
-            set { _channelPrefix = value; }
-        }
+        public string ChannelPrefix { get; set; }
 
-        public string MsgType
-        {
-            get { return _msgType; }
-            set { _msgType = value; }
-        }
+        public string MsgType { get; set; }
 
-        public string ChargeType
-        {
-            get { return _chargeType; }
-            set { _chargeType = value; }
-        }
+        public string ChargeType { get; set; }
 
-        public int UnitAmount
-        {
-            get { return _unitAmount; }
-            set { _unitAmount = value; }
-        }
+        public int UnitAmount { get; set; }
 
-        public int UnitType
-        {
-            get { return _unitType; }
-            set { _unitType = value; }
-        }
+        public int UnitType { get; set; }
 
-        public string CurrencyName
-        {
-            get { return _currencyName; }
-            set { _currencyName = value; }
-        }
+        public string CurrencyName { get; set; }
 
-        public string CurrencyAmount
-        {
-            get { return _currencyAmount; }
-            set { _currencyAmount = value; }
-        }
+        public string CurrencyAmount { get; set; }
 
-        public string CurrencyMultiplier
-        {
-            get { return _currencyMultiplier; }
-            set { _currencyMultiplier = value; }
-        }
+        public string CurrencyMultiplier { get; set; }
 
-        public string TotalType
-        {
-            get { return _totalType; }
-            set { _totalType = value; }
-        }
+        public string TotalType { get; set; }
 
-        public string AocBillingId
-        {
-            get { return _aocBillingId; }
-            set { _aocBillingId = value; }
-        }
+        public string AocBillingId { get; set; }
 
-        public string ChargingAssociationId
-        {
-            get { return _chargingAssociationId; }
-            set { _chargingAssociationId = value; }
-        }
+        public string ChargingAssociationId { get; set; }
 
-        public string ChargingAssociationNumber
-        {
-            get { return _chargingAssociationNumber; }
-            set { _chargingAssociationNumber = value; }
-        }
+        public string ChargingAssociationNumber { get; set; }
 
-        public string ChargingrAssociationPlan
-        {
-            get { return _chargingrAssociationPlan; }
-            set { _chargingrAssociationPlan = value; }
-        }
+        public string ChargingrAssociationPlan { get; set; }
     }
 }

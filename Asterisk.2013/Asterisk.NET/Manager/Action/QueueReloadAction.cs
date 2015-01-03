@@ -1,27 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AsterNET.Manager.Action
+﻿namespace AsterNET.Manager.Action
 {
     public class QueueReloadAction : ManagerAction
     {
-
-        private string _queue;
-        private string _members;
-        private string _rules;
-        private string _parameters;
-
         /// <summary>
-        /// Reload a queue, queues, or any sub-section of a queue or queues.
+        ///     Reload a queue, queues, or any sub-section of a queue or queues.
         /// </summary>
         public QueueReloadAction()
         {
         }
 
         /// <summary>
-        /// Reload a queue, queues, or any sub-section of a queue or queues.
+        ///     Reload a queue, queues, or any sub-section of a queue or queues.
         /// </summary>
         /// <param name="queue"></param>
         /// <param name="members"></param>
@@ -29,10 +18,10 @@ namespace AsterNET.Manager.Action
         /// <param name="parameters"></param>
         public QueueReloadAction(string queue, string members, string rules, string parameters)
         {
-            _queue = queue;
-            _members = members;
-            _rules = rules;
-            _parameters = parameters;
+            Queue = queue;
+            Members = members;
+            Rules = rules;
+            Parameters = parameters;
         }
 
         public override string Action
@@ -40,28 +29,12 @@ namespace AsterNET.Manager.Action
             get { return "QueueReload"; }
         }
 
-        public string Queue
-        {
-            get { return _queue; }
-            set { _queue = value; }
-        }
+        public string Queue { get; set; }
 
-        public string Members
-        {
-            get { return _members; }
-            set { _members = value; }
-        }
+        public string Members { get; set; }
 
-        public string Rules
-        {
-            get { return _rules; }
-            set { _rules = value; }
-        }
+        public string Rules { get; set; }
 
-        public string Parameters
-        {
-            get { return _parameters; }
-            set { _parameters = value; }
-        }
+        public string Parameters { get; set; }
     }
 }

@@ -1,57 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AsterNET.Manager.Event
 {
-	public class ChannelReloadEvent : ManagerEvent
-	{
-		private string channelType;
-		private string reloadreason;
-		private int registryCount;
-		private int userCount;
-		private int peerCount;
+    public class ChannelReloadEvent : ManagerEvent
+    {
+        public ChannelReloadEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
 
-		/// <summary>
-		/// For SIP peers this is "SIP".
-		/// </summary>
-		public string ChannelType
-		{
-			get { return channelType; }
-			set { this.channelType = value; }
-		}
+        /// <summary>
+        ///     For SIP peers this is "SIP".
+        /// </summary>
+        public string ChannelType { get; set; }
 
-		/// <summary>
-		/// Get/Set the name of the channel.
-		/// </summary>
-		public string ReloadReason
-		{
-			get { return reloadreason; }
-			set { this.reloadreason = value; }
-		}
+        /// <summary>
+        ///     Get/Set the name of the channel.
+        /// </summary>
+        public string ReloadReason { get; set; }
 
-		public int UserCount
-		{
-			get { return userCount; }
-			set { this.userCount = value; }
-		}
+        public int UserCount { get; set; }
 
-		public int PeerCount
-		{
-			get { return peerCount; }
-			set { this.peerCount = value; }
-		}
+        public int PeerCount { get; set; }
 
-		public int RegistryCount
-		{
-			get { return registryCount; }
-			set { this.registryCount = value; }
-		}
-		
-		public ChannelReloadEvent(ManagerConnection source)
-			: base(source)
-		{
-		}
-
-	}
+        public int RegistryCount { get; set; }
+    }
 }

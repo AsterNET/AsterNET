@@ -1,3 +1,6 @@
+03.01.2015	(Skrusty)
+	Code tidy, comments cleaned up,moved to auto properties, using's cleaned up
+
 28.10.2014	(skrusty)
 	added support for Asterisk 13 in version parser in ManagerConnection.cs and AsteriskVersion.cs
 

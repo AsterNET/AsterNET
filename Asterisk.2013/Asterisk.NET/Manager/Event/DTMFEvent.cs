@@ -1,43 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AsterNET.Manager.Event
 {
-	public class DTMFEvent : ManagerEvent
-	{
-		private string digit;
-		private string direction;
-		private bool begin;
-		private bool end;
+    public class DTMFEvent : ManagerEvent
+    {
+        /// <summary>
+        ///     Creates a new DialEvent.
+        /// </summary>
+        public DTMFEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
 
-		public string Direction
-		{
-			get { return direction; }
-			set { this.direction = value; }
-		}
-		public string Digit
-		{
-			get { return digit; }
-			set { this.digit = value; }
-		}
-		public bool Begin
-		{
-			get { return begin; }
-			set { this.begin = value; }
-		}
-		public bool End
-		{
-			get { return end; }
-			set { this.end = value; }
-		}
+        public string Direction { get; set; }
 
-		/// <summary>
-		/// Creates a new DialEvent.
-		/// </summary>
-		public DTMFEvent(ManagerConnection source)
-			: base(source)
-		{
-		}
-	}
+        public string Digit { get; set; }
+
+        public bool Begin { get; set; }
+
+        public bool End { get; set; }
+    }
 }

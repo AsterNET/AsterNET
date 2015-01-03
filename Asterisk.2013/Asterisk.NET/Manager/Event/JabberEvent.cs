@@ -1,28 +1,18 @@
-using System;
-
 namespace AsterNET.Manager.Event
 {
-	public class JabberEvent : ManagerEvent
-	{
-		private string account;
-		private string packet;
+    public class JabberEvent : ManagerEvent
+    {
+        public string Account { get; set; }
 
-		public string Account
-		{
-			get { return account; }
-			set { account = value; }
-		}
-		public string Packet
-		{
-			get { return packet; }
-			set { packet = value; }
-		}
+        public string Packet { get; set; }
 
-		#region Constructor - JabberEvent(ManagerConnection source)
-		public JabberEvent(ManagerConnection source)
-			: base(source)
-		{
-		}
-		#endregion
-	}
+        #region Constructor - JabberEvent(ManagerConnection source)
+
+        public JabberEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
+
+        #endregion
+    }
 }

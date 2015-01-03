@@ -1,32 +1,16 @@
-using System;
-
 namespace AsterNET.Manager.Event
 {
-	public class ModuleLoadReportEvent : ManagerEvent
-	{
-		private string moduleLoadStatus;
-		private string moduleSelection;
-		private int moduleCount;
+    public class ModuleLoadReportEvent : ManagerEvent
+    {
+        public ModuleLoadReportEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
 
-		public string ModuleLoadStatus
-		{
-			get { return this.moduleLoadStatus; }
-			set { this.moduleLoadStatus = value; }
-		}
-		public string ModuleSelection
-		{
-			get { return this.moduleSelection; }
-			set { this.moduleSelection = value; }
-		}
-		public int ModuleCount
-		{
-			get { return this.moduleCount; }
-			set { this.moduleCount = value; }
-		}
+        public string ModuleLoadStatus { get; set; }
 
-		public ModuleLoadReportEvent(ManagerConnection source)
-			: base(source)
-		{
-		}
-	}
+        public string ModuleSelection { get; set; }
+
+        public int ModuleCount { get; set; }
+    }
 }

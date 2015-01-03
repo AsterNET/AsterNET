@@ -1,71 +1,71 @@
 using System;
-using System.IO;
 using System.Collections;
-using System.Threading;
 using System.Collections.Generic;
 using System.Net.Sockets;
-using System.Text;
+using System.Threading;
 using AsterNET.IO;
+using AsterNET.Manager.Action;
 using AsterNET.Manager.Event;
 using AsterNET.Manager.Response;
 
 namespace AsterNET.Manager
 {
-	
 	/// <summary>
-	/// Default implementation of the ManagerReader interface.
+	///     Default implementation of the ManagerReader interface.
 	/// </summary>
 	public class ManagerReader
 	{
 #if LOGGER
-		private Logger logger = Logger.Instance();
+		private readonly Logger logger = Logger.Instance();
 #endif
 
-		private ManagerConnection mrConnector;
+		private readonly ManagerConnection mrConnector;
 		private SocketConnection mrSocket;
 
-		private bool die = false;
-		private bool is_logoff = false;
-		private bool disconnect = false;
+		private bool die;
+		private bool is_logoff;
+		private bool disconnect;
 		private byte[] lineBytes;
 		private string lineBuffer;
-		private Queue<string> lineQueue;
+		private readonly Queue<string> lineQueue;
 		private ResponseHandler pingHandler;
 		private bool processingCommandResult;
 		private bool wait4identiier;
 		private DateTime lastPacketTime;
-		Dictionary<string, string> packet;
-		List<string> commandList;
+		private readonly Dictionary<string, string> packet;
+		private readonly List<string> commandList;
 
 		#region ManagerReader(dispatcher, asteriskServer) 
+
 		/// <summary>
-		/// Creates a new ManagerReader.
+		///     Creates a new ManagerReader.
 		/// </summary>
 		/// <param name="dispatcher">the dispatcher to use for dispatching events and responses.</param>
 		public ManagerReader(ManagerConnection connection)
 		{
-			this.mrConnector = connection;
-			this.die = false;
+			mrConnector = connection;
+			die = false;
 			lineQueue = new Queue<string>();
 			packet = new Dictionary<string, string>();
 			commandList = new List<string>();
 		}
+
 		#endregion
 
 		#region Socket 
+
 		/// <summary>
-		/// Sets the socket to use for reading from the asterisk server.
+		///     Sets the socket to use for reading from the asterisk server.
 		/// </summary>
-		internal IO.SocketConnection Socket
+		internal SocketConnection Socket
 		{
-			set
-			{
-				this.mrSocket = value;
-			}
+			set { mrSocket = value; }
 		}
+
 		#endregion
 
 		#region Die 
+
 		internal bool Die
 		{
 			get { return die; }
@@ -73,27 +73,31 @@ namespace AsterNET.Manager
 			{
 				die = value;
 				if (die)
-					this.mrSocket = null;
+					mrSocket = null;
 			}
 		}
+
 		#endregion
 
 		#region IsLogoff 
+
 		internal bool IsLogoff
 		{
 			set { is_logoff = value; }
 		}
+
 		#endregion
 
 		#region mrReaderCallbback(IAsyncResult ar) 
-		/// <summary>
+
+		//// <summary>
 		/// Async Read callback
 		/// </summary>
 		/// <param name="ar">IAsyncResult</param>
 		private void mrReaderCallbback(IAsyncResult ar)
 		{
 			// mreader = Mr.Reader
-			ManagerReader mrReader = (ManagerReader)ar.AsyncState;
+			var mrReader = (ManagerReader) ar.AsyncState;
 			if (mrReader.die)
 				return;
 
@@ -119,7 +123,7 @@ namespace AsterNET.Manager
 				if (count == 0)
 				{
 					// No received data - it's may be DISCONNECT !!!
-					if(!is_logoff)
+					if (!is_logoff)
 						disconnect = true;
 					return;
 				}
@@ -128,11 +132,13 @@ namespace AsterNET.Manager
 				int idx;
 				// \n - because not all dev in Digium use \r\n
 				// .Trim() kill \r
-				lock (((ICollection)lineQueue).SyncRoot)
+				lock (((ICollection) lineQueue).SyncRoot)
 					while (!string.IsNullOrEmpty(mrReader.lineBuffer) && (idx = mrReader.lineBuffer.IndexOf("\n")) >= 0)
 					{
 						line = idx > 0 ? mrReader.lineBuffer.Substring(0, idx).Trim() : string.Empty;
-						mrReader.lineBuffer = (idx + 1 < mrReader.lineBuffer.Length ? mrReader.lineBuffer.Substring(idx + 1) : string.Empty);
+						mrReader.lineBuffer = (idx + 1 < mrReader.lineBuffer.Length
+							? mrReader.lineBuffer.Substring(idx + 1)
+							: string.Empty);
 						lineQueue.Enqueue(line);
 					}
 				// Give a next portion !!!
@@ -153,9 +159,11 @@ namespace AsterNET.Manager
 				mrReader.mrSocket = null;
 			}
 		}
+
 		#endregion
 
 		#region Reinitialize 
+
 		internal void Reinitialize()
 		{
 			mrSocket.Initial = false;
@@ -171,17 +179,19 @@ namespace AsterNET.Manager
 			mrSocket.NetworkStream.BeginRead(lineBytes, 0, lineBytes.Length, mrReaderCallbback, this);
 			lastPacketTime = DateTime.Now;
 		}
+
 		#endregion
 
 		#region Run()
-		/// <summary>
+
+		//// <summary>
 		/// Reads line by line from the asterisk server, sets the protocol identifier as soon as it is
 		/// received and dispatches the received events and responses via the associated dispatcher.
 		/// </summary>
 		/// <seealso cref="ManagerConnection.DispatchEvent(ManagerEvent)" />
 		/// <seealso cref="ManagerConnection.DispatchResponse(Response.ManagerResponse)" />
 		/// <seealso cref="ManagerConnection.setProtocolIdentifier(String)" />
-		internal void  Run()
+		internal void Run()
 		{
 			if (mrSocket == null)
 				throw new SystemException("Unable to run: socket is null.");
@@ -195,6 +205,7 @@ namespace AsterNET.Manager
 					while (!die)
 					{
 						#region check line from *
+
 						if (!is_logoff)
 						{
 							if (mrSocket != null && mrSocket.Initial)
@@ -209,30 +220,30 @@ namespace AsterNET.Manager
 						}
 						if (lineQueue.Count == 0)
 						{
-                            if (lastPacketTime.AddMilliseconds(mrConnector.PingInterval) < DateTime.Now
-                                && mrConnector.PingInterval > 0
-                                && mrSocket != null
-                                && !wait4identiier
-                                && !is_logoff
-                                )
-                            {
-                                if (pingHandler != null)
-                                {
-                                    if (pingHandler.Response == null)
-                                    {
-                                        // If one PingInterval from Ping without Pong then send Disconnect event
-                                        mrConnector.RemoveResponseHandler(pingHandler);
-                                        mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
-                                    }
-                                    pingHandler.Free();
-                                    pingHandler = null;
+							if (lastPacketTime.AddMilliseconds(mrConnector.PingInterval) < DateTime.Now
+								&& mrConnector.PingInterval > 0
+								&& mrSocket != null
+								&& !wait4identiier
+								&& !is_logoff
+								)
+							{
+								if (pingHandler != null)
+								{
+									if (pingHandler.Response == null)
+									{
+										// If one PingInterval from Ping without Pong then send Disconnect event
+										mrConnector.RemoveResponseHandler(pingHandler);
+										mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
+									}
+									pingHandler.Free();
+									pingHandler = null;
 								}
 								else
 								{
 									// Send PING to *
 									try
 									{
-										pingHandler = new ResponseHandler(new Action.PingAction(), null);
+										pingHandler = new ResponseHandler(new PingAction(), null);
 										mrConnector.SendAction(pingHandler.Action, pingHandler);
 									}
 									catch
@@ -247,50 +258,51 @@ namespace AsterNET.Manager
 
 							continue;
 						}
+
 						#endregion
 
 						lastPacketTime = DateTime.Now;
-						lock (((ICollection)lineQueue).SyncRoot)
+						lock (((ICollection) lineQueue).SyncRoot)
 							line = lineQueue.Dequeue().Trim();
 #if LOGGER
 						logger.Debug(line);
 #endif
+
 						#region processing Response: Follows
+
 						if (processingCommandResult)
 						{
 							if (line == "--END COMMAND--")
 							{
-								Response.CommandResponse commandResponse = new Response.CommandResponse();
+								var commandResponse = new CommandResponse();
 								Helper.SetAttributes(commandResponse, packet);
 								commandResponse.Result = commandList;
 								processingCommandResult = false;
 								packet.Clear();
 								mrConnector.DispatchResponse(commandResponse);
-								continue;
 							}
+							string lineLower = line.ToLower(Helper.CultureInfo);
+							if (lineLower.StartsWith("privilege: ")
+								|| lineLower.StartsWith("actionid: ")
+								|| lineLower.StartsWith("timestamp: ")
+								|| lineLower.StartsWith("server: ")
+								)
+								Helper.AddKeyValue(packet, line);
 							else
-							{
-								string lineLower = line.ToLower(Helper.CultureInfo);
-								if (lineLower.StartsWith("privilege: ")
-									|| lineLower.StartsWith("actionid: ")
-									|| lineLower.StartsWith("timestamp: ")
-									|| lineLower.StartsWith("server: ")
-									)
-									Helper.AddKeyValue(packet, line);
-								else
-									commandList.Add(line);
-							}
+								commandList.Add(line);
 							continue;
 						}
+
 						#endregion
 
 						#region collect key: value and ProtocolIdentifier
+
 						if (!string.IsNullOrEmpty(line))
 						{
 							if (wait4identiier && line.StartsWith("Asterisk Call Manager"))
 							{
 								wait4identiier = false;
-								ConnectEvent connectEvent = new ConnectEvent(mrConnector);
+								var connectEvent = new ConnectEvent(mrConnector);
 								connectEvent.ProtocolIdentifier = line;
 								mrConnector.DispatchEvent(connectEvent);
 								continue;
@@ -307,6 +319,7 @@ namespace AsterNET.Manager
 							Helper.AddKeyValue(packet, line);
 							continue;
 						}
+
 						#endregion
 
 						#region process events and responses
@@ -321,7 +334,7 @@ namespace AsterNET.Manager
 
 						packet.Clear();
 					}
-					if(mrSocket != null)
+					if (mrSocket != null)
 						mrSocket.Close();
 					break;
 				}
@@ -344,6 +357,7 @@ namespace AsterNET.Manager
 				mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
 			}
 		}
+
 		#endregion
 	}
 }

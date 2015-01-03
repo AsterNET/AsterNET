@@ -1,18 +1,12 @@
 namespace AsterNET.Manager.Event
 {
-	public class MeetmeTalkRequestEvent : AbstractMeetmeEvent
-	{
-		private bool status;
+    public class MeetmeTalkRequestEvent : AbstractMeetmeEvent
+    {
+        public MeetmeTalkRequestEvent(ManagerConnection source)
+            : base(source)
+        {
+        }
 
-		public bool Status
-		{
-			get { return this.status; }
-			set { this.status = value; }
-		}
-
-		public MeetmeTalkRequestEvent(ManagerConnection source)
-			: base(source)
-		{
-		}
-	}
+        public bool Status { get; set; }
+    }
 }

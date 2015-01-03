@@ -1,27 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AsterNET.Manager.Action
+﻿namespace AsterNET.Manager.Action
 {
     public class AtxferAction : ManagerAction
     {
-
-        private string _channel;
-        private string _exten;
-        private string _context;
-        private string _priority;
-
         /// <summary>
-        /// Attended transfer.
+        ///     Attended transfer.
         /// </summary>
         public AtxferAction()
         {
         }
 
         /// <summary>
-        /// Attended transfer.
+        ///     Attended transfer.
         /// </summary>
         /// <param name="channel">Transferer's channel.</param>
         /// <param name="exten">Extension to transfer to.</param>
@@ -29,10 +18,10 @@ namespace AsterNET.Manager.Action
         /// <param name="priority">Priority to transfer to.</param>
         public AtxferAction(string channel, string exten, string context, string priority)
         {
-            _channel = channel;
-            _exten = exten;
-            _context = context;
-            _priority = priority;
+            Channel = channel;
+            Exten = exten;
+            Context = context;
+            Priority = priority;
         }
 
         public override string Action
@@ -41,39 +30,23 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        /// Transferer's channel.
+        ///     Transferer's channel.
         /// </summary>
-        public string Channel
-        {
-            get { return _channel; }
-            set { _channel = value; }
-        }
+        public string Channel { get; set; }
 
         /// <summary>
-        /// Extension to transfer to.
+        ///     Extension to transfer to.
         /// </summary>
-        public string Exten
-        {
-            get { return _exten; }
-            set { _exten = value; }
-        }
+        public string Exten { get; set; }
 
         /// <summary>
-        /// Context to transfer to.
+        ///     Context to transfer to.
         /// </summary>
-        public string Context
-        {
-            get { return _context; }
-            set { _context = value; }
-        }
+        public string Context { get; set; }
 
         /// <summary>
-        /// Priority to transfer to.
+        ///     Priority to transfer to.
         /// </summary>
-        public string Priority
-        {
-            get { return _priority; }
-            set { _priority = value; }
-        }
+        public string Priority { get; set; }
     }
 }

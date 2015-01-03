@@ -1,89 +1,90 @@
-using System;
-using System.IO;
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using AsterNET.IO;
 
 namespace AsterNET.FastAGI
 {
-	public class AGIReader
-	{
+    public class AGIReader
+    {
 #if LOGGER
-		private Logger logger = Logger.Instance();
+        private readonly Logger logger = Logger.Instance();
 #endif
-		private IO.SocketConnection socket;
-		public AGIReader(IO.SocketConnection socket)
-		{
-			this.socket = socket;
-		}
+        private readonly SocketConnection socket;
 
-		public AGIRequest ReadRequest()
-		{
-			string line;
-			List<string> lines = new List<string>();
-			try
-			{
+        public AGIReader(SocketConnection socket)
+        {
+            this.socket = socket;
+        }
+
+        public AGIRequest ReadRequest()
+        {
+            var lines = new List<string>();
+            try
+            {
 #if LOGGER
-				logger.Info("AGIReader.ReadRequest():");
+                logger.Info("AGIReader.ReadRequest():");
 #endif
-				while ((line = socket.ReadLine()) != null)
-				{
-					if (line.Length == 0)
-						break;			
-					lines.Add(line);
+                string line;
+                while ((line = socket.ReadLine()) != null)
+                {
+                    if (line.Length == 0)
+                        break;
+                    lines.Add(line);
 #if LOGGER
-					logger.Info(line);
+                    logger.Info(line);
 #endif
-				}
-			}
-			catch (IOException ex)
-			{
-				throw new AGINetworkException("Unable to read request from Asterisk: " + ex.Message, ex);
-			}
+                }
+            }
+            catch (IOException ex)
+            {
+                throw new AGINetworkException("Unable to read request from Asterisk: " + ex.Message, ex);
+            }
 
-			AGIRequest request = new AGIRequest(lines);
+            var request = new AGIRequest(lines)
+            {
+                LocalAddress = socket.LocalAddress,
+                LocalPort = socket.LocalPort,
+                RemoteAddress = socket.RemoteAddress,
+                RemotePort = socket.RemotePort
+            };
 
-			request.LocalAddress = socket.LocalAddress;
-			request.LocalPort = socket.LocalPort;
-			request.RemoteAddress = socket.RemoteAddress;
-			request.RemotePort = socket.RemotePort;
+            return request;
+        }
 
-			return request;
-		}
-		
-		public AGIReply ReadReply()
-		{
-			string line;
-			string badSyntax = ((int)AGIReplyStatuses.SC_INVALID_COMMAND_SYNTAX).ToString();
+        public AGIReply ReadReply()
+        {
+            string line;
+            var badSyntax = ((int) AGIReplyStatuses.SC_INVALID_COMMAND_SYNTAX).ToString();
 
-			List<string> lines = new List<string>();
-			try
-			{
-				line = socket.ReadLine();
-			}
-			catch (IOException ex)
-			{
-				throw new AGINetworkException("Unable to read reply from Asterisk: " + ex.Message, ex);
-			}
-			if (line == null)
-				throw new AGIHangupException();
+            var lines = new List<string>();
+            try
+            {
+                line = socket.ReadLine();
+            }
+            catch (IOException ex)
+            {
+                throw new AGINetworkException("Unable to read reply from Asterisk: " + ex.Message, ex);
+            }
+            if (line == null)
+                throw new AGIHangupException();
 
-			lines.Add(line);
-			// read synopsis and usage if statuscode is 520
-			if (line.StartsWith(badSyntax))
-				try
-				{
-					while ((line = socket.ReadLine()) != null)
-					{
-						lines.Add(line);
-						if (line.StartsWith(badSyntax))
-							break;
-					}
-				}
-				catch (IOException ex)
-				{
-					throw new AGINetworkException("Unable to read reply from Asterisk: " + ex.Message, ex);
-				}
-			return new AGIReply(lines);
-		}
-	}
+            lines.Add(line);
+            // read synopsis and usage if statuscode is 520
+            if (line.StartsWith(badSyntax))
+                try
+                {
+                    while ((line = socket.ReadLine()) != null)
+                    {
+                        lines.Add(line);
+                        if (line.StartsWith(badSyntax))
+                            break;
+                    }
+                }
+                catch (IOException ex)
+                {
+                    throw new AGINetworkException("Unable to read reply from Asterisk: " + ex.Message, ex);
+                }
+            return new AGIReply(lines);
+        }
+    }
 }
