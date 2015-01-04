@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The QueuePauseAction makes a queue member temporarily unavailabe (or available again).<br />
-    ///     It is implemented in <code>apps/app_queue.c</code><br />
+    ///     It is implemented in apps/app_queue.c<br />
     ///     Available since Asterisk 1.2.
     /// </summary>
     public class QueuePauseAction : ManagerAction
@@ -43,7 +43,7 @@ namespace AsterNET.Manager.Action
         ///     interface available or unavailable on all queues.
         /// </summary>
         /// <param name="iface">the interface of the member to make unavailable</param>
-        /// <param name="paused"><code>true</code> to make the member unavailbale, <code>false</code> to make the member available</param>
+        /// <param name="paused">true to make the member unavailbale, false to make the member available</param>
         public QueuePauseAction(string iface, bool paused)
         {
             this.Interface = iface;
@@ -56,7 +56,7 @@ namespace AsterNET.Manager.Action
         /// </summary>
         /// <param name="iface">the interface of the member to make unavailable</param>
         /// <param name="queue">the queue the member is made unvailable on</param>
-        /// <param name="paused"><code>true</code> to make the member unavailbale, <code>false</code> to make the member available</param>
+        /// <param name="paused">true to make the member unavailbale, false to make the member available</param>
         public QueuePauseAction(string iface, string queue, bool paused)
         {
             this.Interface = iface;
@@ -85,8 +85,8 @@ namespace AsterNET.Manager.Action
 
         /// <summary>
         ///     Get/Set if the member is made available or unavailable.<br />
-        ///     <code>true</code> to make the member unavailbale,<br />
-        ///     <code>false</code> make the member available
+        ///     true to make the member unavailbale,<br />
+        ///     false make the member available
         /// </summary>
         public bool Paused { get; set; }
     }

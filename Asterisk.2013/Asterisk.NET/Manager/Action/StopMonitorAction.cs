@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The StopMonitorAction ends monitoring (recording) a channel.<br />
-    ///     It is implemented in <code>res/res_monitor.c</code>
+    ///     It is implemented in res/res_monitor.c
     /// </summary>
     public class StopMonitorAction : ManagerAction
     {

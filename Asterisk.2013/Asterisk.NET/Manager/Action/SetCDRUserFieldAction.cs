@@ -4,7 +4,7 @@ namespace AsterNET.Manager.Action
     ///     The SetCDRUserFieldAction causes the user field of the call detail record for the given channel to be changed.
     ///     <br />
     ///     Depending on the value of the append property the value is appended or overwritten.<br />
-    ///     The SetCDRUserFieldAction is implemented in <code>apps/app_setcdruserfield.c</code>
+    ///     The SetCDRUserFieldAction is implemented in apps/app_setcdruserfield.c
     /// </summary>
     public class SetCDRUserFieldAction : ManagerAction
     {
@@ -63,7 +63,7 @@ namespace AsterNET.Manager.Action
 
         /// <summary>
         ///     Get/Set if the value of the cdr user field is appended or overwritten.<br />
-        ///     <code>true</code> to append the value to the cdr user field or <code>false</code> to overwrite.
+        ///     true to append the value to the cdr user field or false to overwrite.
         /// </summary>
         public bool Append { get; set; }
     }

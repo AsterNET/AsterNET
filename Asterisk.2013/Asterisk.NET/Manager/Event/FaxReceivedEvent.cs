@@ -4,7 +4,7 @@ namespace AsterNET.Manager.Event
     ///     A FaxReceivedEvent is triggered by spandsp after a new fax has been received.<br />
     ///     It is only available if you installed the spandsp patches to Asterisk.<br />
     ///     See http://soft-switch.org/installing-spandsp.html for details.<br />
-    ///     Implemented in <code>apps/app_rxfax.c</code>.
+    ///     Implemented in apps/app_rxfax.c.
     /// </summary>
     public class FaxReceivedEvent : AbstractAgentEvent
     {

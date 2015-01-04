@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueMemberEvent is triggered in response to a QueueStatusAction and contains information about a member of a queue.<br/>
-	/// It is implemented in <code>apps/app_queue.c</code>
+	/// It is implemented in apps/app_queue.c
 	/// </summary>
 	/// <seealso cref="Manager.Action.QueueStatusAction" />
 	public class QueueMemberEvent : ResponseEvent
@@ -56,7 +56,7 @@ namespace AsterNET.Manager.Event
 		/// <summary>
 		/// Get/Set value if this member has been dynamically added by the QueueAdd command
 		/// (in the dialplan or via the Manager API) or if this member is has been
-		/// statically defined in <code>queues.conf</code>.
+		/// statically defined in queues.conf.
 		/// "dynamic" if the added member is a dynamic queue member, "static" if the added member is a static queue member.
 		/// </summary>
 		public string Membership
@@ -115,8 +115,8 @@ namespace AsterNET.Manager.Event
 		/// <summary>
 		/// Is this queue member paused (not accepting calls)?<br/>
 		/// Available since Asterisk 1.2.<br/>
-		/// <code>true</code> if this member has been paused,
-		/// <code>false</code> if not
+		/// true if this member has been paused,
+		/// false if not
 		public bool Paused
 		{
 			get { return this.paused; }

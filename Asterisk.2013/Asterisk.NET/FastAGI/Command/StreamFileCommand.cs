@@ -104,7 +104,7 @@ namespace AsterNET.FastAGI.Command
 		/// </summary>
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that allow the user to interrupt this command.
-		/// Maybe <code>null</code> if you don't want the user to interrupt.
+		/// Maybe null if you don't want the user to interrupt.
 		/// </param>
 		/// <param name="offset">the offset samples to skip before streaming.</param>
 		public StreamFileCommand(string file, string escapeDigits, int offset)

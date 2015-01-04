@@ -16,7 +16,7 @@ namespace AsterNET.Manager.Action
     ///     The response to this action is sent when the channel has been answered and
     ///     asterisk starts connecting it to the given extension. So be careful not to
     ///     choose a too short timeout when waiting for the response.<br />
-    ///     If you set async to <code>true</code> Asterisk reports an OriginateSuccess-
+    ///     If you set async to true Asterisk reports an OriginateSuccess-
     ///     and OriginateFailureEvents. The action id of these events equals the action
     ///     id of this OriginateAction.
     /// </summary>
@@ -120,7 +120,7 @@ namespace AsterNET.Manager.Action
         #region Async 
 
         /// <summary>
-        ///     Get/Set <code>true</code> if this is a fast origination.<br />
+        ///     Get/Set true if this is a fast origination.<br />
         ///     For the origination to be asynchronous (allows multiple calls to be generated without waiting for a response).
         ///     <br />
         ///     Will send OriginateSuccess- and OriginateFailureEvents.

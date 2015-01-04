@@ -3,7 +3,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueParamsEvent is triggered in response to a QueueStatusAction and contains the parameters of a queue.<br/>
-	/// It is implemented in <code>apps/app_queue.c</code>
+	/// It is implemented in apps/app_queue.c
 	/// </summary>
 	/// <seealso cref="Manager.Action.QueueStatusAction" />
 	public class QueueParamsEvent : ResponseEvent
@@ -36,7 +36,7 @@ namespace AsterNET.Manager.Event
 			set { this.queue = value; }
 		}
 		/// <summary> Returns the maximum number of people waiting in the queue or 0 for unlimited.<br/>
-		/// This corresponds to the <code>maxlen</code> setting in <code>queues.conf</code>.
+		/// This corresponds to the maxlen setting in queues.conf.
 		/// </summary>
 		/// <summary> Sets the maximum number of people waiting in the queue.</summary>
 		public int Max
@@ -72,8 +72,8 @@ namespace AsterNET.Manager.Event
 			get { return abandoned; }
 			set { this.abandoned = value; }
 		}
-		/// <summary> Returns the service level (in seconds) as defined by the <code>servicelevel</code> setting
-		/// in <code>queues.conf</code>.
+		/// <summary> Returns the service level (in seconds) as defined by the servicelevel setting
+		/// in queues.conf.
 		/// </summary>
 		/// <summary> Sets the service level.</summary>
 		public int ServiceLevel

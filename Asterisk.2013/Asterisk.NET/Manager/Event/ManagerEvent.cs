@@ -79,7 +79,7 @@ namespace AsterNET.Manager.Event
 		/// <summary>
 		/// Get/Set the point in time this event was received from the Asterisk server.<br/>
 		/// Pseudo events that are not directly received from the asterisk server
-		/// (for example ConnectEvent and DisconnectEvent) may return <code>null</code>.
+		/// (for example ConnectEvent and DisconnectEvent) may return null.
 		/// </summary>
 		public DateTime DateReceived
 		{

@@ -38,7 +38,7 @@ namespace AsterNET.FastAGI.Command
 		#endregion
 		#region EscapeDigits
 		/// <summary>
-		/// Get/Set the digits that allow the user to interrupt this command or <code>null</code> for none.
+		/// Get/Set the digits that allow the user to interrupt this command or null for none.
 		/// </summary>
 		public string EscapeDigits
 		{
@@ -122,7 +122,7 @@ namespace AsterNET.FastAGI.Command
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">
 		/// contains the digits that allow the user to interrupt this command.
-		/// Maybe <code>null</code> if you don't want the user to interrupt.
+		/// Maybe null if you don't want the user to interrupt.
 		/// </param>
 		/// <param name="offset">the offset samples to skip before streaming.</param>
 		public ControlStreamFileCommand(string file, string escapeDigits, int offset)
@@ -139,7 +139,7 @@ namespace AsterNET.FastAGI.Command
 		/// support pausing.
 		/// </summary>
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
-		/// <param name="escapeDigits">contains the digits that allow the user to interrupt this command. Maybe <code>null</code> if you don't want the user to interrupt.</param>
+		/// <param name="escapeDigits">contains the digits that allow the user to interrupt this command. Maybe null if you don't want the user to interrupt.</param>
 		/// <param name="offset">the offset samples to skip before streaming.</param>
 		/// <param name="forwardDigit">the digit for fast forward.</param>
 		/// <param name="rewindDigit">the digit for rewind.</param>

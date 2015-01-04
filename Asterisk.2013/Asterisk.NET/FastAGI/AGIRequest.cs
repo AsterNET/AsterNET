@@ -293,7 +293,7 @@ namespace AsterNET.FastAGI
         /// <summary>
         ///     Returns wheather this agi is passed audio (EAGI - Enhanced AGI).<br />
         ///     Enhanced AGI is currently not supported on FastAGI.<br />
-        ///     <code>true</code> if this agi is passed audio, <code>false</code> otherwise.
+        ///     true if this agi is passed audio, false otherwise.
         /// </summary>
         public bool Enhanced
         {

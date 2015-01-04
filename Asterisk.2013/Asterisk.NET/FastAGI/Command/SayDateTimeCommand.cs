@@ -29,7 +29,7 @@ namespace AsterNET.FastAGI.Command
 		/// Creates a new SayDateTimeCommand that says the given time and allows interruption by one of the given escape digits.
 		/// </summary>
 		/// <param name="time">the time to say in seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC)</param>
-		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or <code>null</code> for none.</param>
+		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		public SayDateTimeCommand(long time, string escapeDigits)
 		{
 			this.time = time;
@@ -41,7 +41,7 @@ namespace AsterNET.FastAGI.Command
 		/// format and allows interruption by one of the given escape digits.
 		/// </summary>
 		/// <param name="time">the time to say in seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC)</param>
-		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or <code>null</code> for none.</param>
+		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		/// <param name="format">the format the time should be said in</param>
 		public SayDateTimeCommand(long time, string escapeDigits, string format)
 		{
@@ -56,7 +56,7 @@ namespace AsterNET.FastAGI.Command
 		/// digits.
 		/// </summary>
 		/// <param name="time">the time to say in seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC)</param>
-		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or <code>null</code> for none.</param>
+		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		/// <param name="format">the format the time should be said in</param>
 		/// <param name="timezone">the timezone to use when saying the time, for example "UTC" or "Europe/Berlin".</param>
 		public SayDateTimeCommand(long time, string escapeDigits, string format, string timezone)

@@ -3,7 +3,7 @@ namespace AsterNET.Manager.Event
 	
 	/// <summary>
 	/// A PeerStatusEvent is triggered when a SIP or IAX client attempts to registrer at this asterisk server.<br/>
-	/// This event is implemented in <code>channels/chan_iax2.c</code> and <code>channels/chan_sip.c</code>
+	/// This event is implemented in channels/chan_iax2.c and channels/chan_sip.c
 	/// </summary>
 	public class PeerStatusEvent : ManagerEvent
 	{

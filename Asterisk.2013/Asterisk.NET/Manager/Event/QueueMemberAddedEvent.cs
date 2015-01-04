@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A QueueMemberAddedEvent is triggered when a queue member is added to a queue.<br/>
-	/// It is implemented in <code>apps/app_queue.c</code>.<br/>
+	/// It is implemented in apps/app_queue.c.<br/>
 	/// Available since Asterisk 1.2
 	/// </summary>
 	public class QueueMemberAddedEvent : AbstractQueueMemberEvent
@@ -85,7 +85,7 @@ namespace AsterNET.Manager.Event
 		}
 		/// <summary>
 		/// Get/Set value if this queue member is paused (not accepting calls).<br/>
-		/// <code>true</code> if this member has been paused or <code>false</code> if not.
+		/// true if this member has been paused or false if not.
 		/// </summary>
 		public bool Paused
 		{

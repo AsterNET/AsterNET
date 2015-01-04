@@ -10,8 +10,8 @@ namespace AsterNET.FastAGI.Command
 		/// <summary>
 		/// Get/Set the music on hold class to play music from.
 		/// </summary>
-		/// <returns>the music on hold class to play music from or <code>null</code> for the default class.</returns>
-		/// <param name="musicOnHoldClass">the music on hold class to play music from or <code>null</code> for the default class.</param>
+		/// <returns>the music on hold class to play music from or null for the default class.</returns>
+		/// <param name="musicOnHoldClass">the music on hold class to play music from or null for the default class.</param>
 		public string MusicOnHoldClass
 		{
 			get { return musicOnHoldClass; }

@@ -18,7 +18,7 @@ namespace AsterNET.Manager
 		/// <returns>
 		/// the ResponseEvents object filled with the parts that have been
 		/// received before the timeout occured. Note: The response attribute
-		/// may be <code>null</code> when no response has been received.
+		/// may be null when no response has been received.
 		/// </returns>
 		public ResponseEvents PartialResult
 		{

@@ -3,7 +3,7 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     The ChangeMonitorAction changes the monitoring filename of a channel.
     ///     It has no effect if the channel is not monitored.<br />
-    ///     It is implemented in <code>res/res_monitor.c</code>
+    ///     It is implemented in res/res_monitor.c
     /// </summary>
     public class ChangeMonitorAction : ManagerAction
     {

@@ -65,7 +65,7 @@ namespace AsterNET.FastAGI
 		/// <summary>
 		/// Plays music on hold from the given music on hold class.
 		/// </summary>
-		/// <param name="musicOnHoldClass">the music on hold class to play music from as configures in Asterisk's <code><musiconhold.conf/code>.</param>
+		/// <param name="musicOnHoldClass">the music on hold class to play music from as configures in Asterisk's <musiconhold.conf/code>.</param>
 		protected internal void PlayMusicOnHold(string musicOnHoldClass)
 		{
 			this.Channel.SendCommand(new Command.SetMusicOnCommand(musicOnHoldClass));
@@ -437,7 +437,7 @@ namespace AsterNET.FastAGI
 		/// Returns the value of the given channel variable.
 		/// </summary>
 		/// <param name="name">the name of the variable to retrieve.</param>
-		/// <returns> the value of the given variable or <code>null</code> if not set.</returns>
+		/// <returns> the value of the given variable or null if not set.</returns>
 		protected internal string GetVariable(string name)
 		{
 			AGIChannel channel = this.Channel;
@@ -481,7 +481,7 @@ namespace AsterNET.FastAGI
 		/// Available since Asterisk 1.2.
 		/// </summary>
 		/// <param name="name">the name of the variable to retrieve.</param>
-		/// <returns>the value of the given variable or <code>null</code> if not et.</returns>
+		/// <returns>the value of the given variable or null if not et.</returns>
 		protected internal string GetFullVariable(string name)
 		{
 			AGIChannel channel = this.Channel;
@@ -499,7 +499,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="name">the name of the variable to retrieve.</param>
 		/// <param name="channel">the name of the channel.</param>
-		/// <returns>the value of the given variable or <code>null</code> if not set.</returns>
+		/// <returns>the value of the given variable or null if not set.</returns>
 		protected internal string GetFullVariable(string name, string channelName)
 		{
 			AGIChannel channel = this.Channel;
@@ -526,7 +526,7 @@ namespace AsterNET.FastAGI
 		/// Available since Asterisk 1.2.
 		/// </summary>
 		/// <param name="time">the time to say in seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC)</param>
-		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or <code>null</code> for none.</param>
+		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		/// <returns>the DTMF digit pressed or 0x0 if none was pressed.</returns>
 		protected internal char SayDateTime(long time, string escapeDigits)
 		{
@@ -540,7 +540,7 @@ namespace AsterNET.FastAGI
 		/// Available since Asterisk 1.2.
 		/// </summary>
 		/// <param name="time">the time to say in seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC)</param>
-		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or <code>null</code> for none.</param>
+		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		/// <param name="format">the format the time should be said in</param>
 		/// <returns>the DTMF digit pressed or 0x0 if none was pressed.</returns>
 		protected internal char SayDateTime(long time, string escapeDigits, string format)
@@ -555,7 +555,7 @@ namespace AsterNET.FastAGI
 		/// Available since Asterisk 1.2.
 		/// </summary>
 		/// <param name="time">the time to say in seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC)</param>
-		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or <code>null</code> for none.</param>
+		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		/// <param name="format">the format the time should be said in</param>
 		/// <param name="timezone">the timezone to use when saying the time, for example "UTC" or "Europe/Berlin".</param>
 		/// <returns>the DTMF digit pressed or 0x0 if none was pressed.</returns>
@@ -573,7 +573,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="family">the family of the entry to retrieve.</param>
 		/// <param name="key">key the key of the entry to retrieve.</param>
-		/// <return>the value of the given family and key or <code>null</code> if there is no such value.</return>
+		/// <return>the value of the given family and key or null if there is no such value.</return>
 		protected internal string DatabaseGet(string family, string key)
 		{
 			AGIChannel channel = this.Channel;
@@ -682,7 +682,7 @@ namespace AsterNET.FastAGI
 		/// <param name="escapeDigits">contains the digits that allow the user to end recording.</param>
 		/// <param name="timeout">the maximum record time in milliseconds, or -1 for no timeout.</param>
 		/// <param name="offset">the offset samples to skip.</param>
-		/// <param name="beep"><code>true</code> if a beep should be played before recording.</param>
+		/// <param name="beep">true if a beep should be played before recording.</param>
 		/// <param name="maxSilence">The amount of silence (in seconds) to allow before returning despite the lack of dtmf digits or reaching timeout.</param>
 		/// <returns>result code</returns>
 		protected internal int RecordFile(string file, string format, string escapeDigits, int timeout, int offset, bool beep, int maxSilence)

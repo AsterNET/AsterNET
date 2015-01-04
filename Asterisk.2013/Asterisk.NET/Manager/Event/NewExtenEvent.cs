@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A NewExtenEvent is triggered when a channel is connected to a new extension.<br/>
-	/// It is implemented in <code>pbx.c</code>
+	/// It is implemented in pbx.c
 	/// </summary>
 	public class NewExtenEvent : ManagerEvent
 	{

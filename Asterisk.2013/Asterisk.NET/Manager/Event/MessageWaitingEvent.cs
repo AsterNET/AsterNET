@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A MessageWaitingEvent is triggered when someone leaves voicemail.<br />
-    ///     It is implemented in <code>apps/app_voicemail.c</code>
+    ///     It is implemented in apps/app_voicemail.c
     /// </summary>
     public class MessageWaitingEvent : ManagerEvent
     {

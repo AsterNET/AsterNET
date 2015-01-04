@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An UnholdEvent is triggered by the SIP channel driver when a channel is no longer put on hold.<br/>
-	/// It is implemented in <code>channels/chan_sip.c</code>.<br/>
+	/// It is implemented in channels/chan_sip.c.<br/>
 	/// Available since Asterisk 1.2
 	/// </summary>
 	/// <seealso cref="Manager.event.HoldEvent"/>

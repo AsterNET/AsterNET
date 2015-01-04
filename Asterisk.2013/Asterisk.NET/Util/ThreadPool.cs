@@ -50,7 +50,7 @@ namespace AsterNET.Util
 		/// Gets a job from the queue. If none is availble the calling thread is
 		/// blocked until one is added.
 		/// </summary>
-		/// <returns>the next job to service, <code>null</code> if the worker thread should be shut down.</returns>
+		/// <returns>the next job to service, null if the worker thread should be shut down.</returns>
 		internal AGIConnectionHandler obtainJob()
 		{
 			AGIConnectionHandler job = null;

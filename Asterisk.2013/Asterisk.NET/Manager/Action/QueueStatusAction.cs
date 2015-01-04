@@ -9,7 +9,7 @@ namespace AsterNET.Manager.Action
     ///     QueueMemberEvent for each member of that queue and a QueueEntryEvent for each
     ///     entry in the queue.<br />
     ///     Since Asterisk 1.2 a QueueStatusCompleteEvent is sent to denote the end of the generated dump.<br />
-    ///     This action is implemented in <code>apps/app_queue.c</code>
+    ///     This action is implemented in apps/app_queue.c
     /// </summary>
     /// <seealso cref="Manager.event.QueueParamsEvent" />
     /// <seealso cref="Manager.event.QueueMemberEvent" />

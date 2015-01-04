@@ -3,8 +3,8 @@ namespace AsterNET.Manager.Event
 	/// <summary>
 	/// A RegistryEvent is triggered when this asterisk server attempts to register
 	/// as a client at another SIP or IAX server.<br/>
-	/// This event is implemented in <code>channels/chan_iax2.c</code> and
-	/// <code>channels/chan_sip.c</code>
+	/// This event is implemented in channels/chan_iax2.c and
+	/// channels/chan_sip.c
 	/// </summary>
 	public class RegistryEvent : ManagerEvent
 	{
@@ -26,8 +26,8 @@ namespace AsterNET.Manager.Event
 		}
 		/// <summary>
 		/// Get/Set the domain or host name of the SIP or IAX2 server.<br/>
-		/// This is the host part used in the <code>register</code> lines in
-		/// <code>iax.conf</code> and <code>sip.conf</code>.
+		/// This is the host part used in the register lines in
+		/// iax.conf and sip.conf.
 		/// </summary>
 		public string Domain
 		{
@@ -37,7 +37,7 @@ namespace AsterNET.Manager.Event
 		/// <summary>
 		/// Get/Set the username used for registration.<br/>
 		/// SIP send the username in case of a registration timeout, IAX2 in case of
-		/// a registration failure. Otherwise the username is <code>null</code>.
+		/// a registration failure. Otherwise the username is null.
 		/// </summary>
 		public string Username
 		{

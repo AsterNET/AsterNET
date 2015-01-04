@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A ShutdownEvent is triggered when the asterisk server is shut down or restarted.<br/>
-	/// It is implemented in <code>asterisk.c</code>
+	/// It is implemented in asterisk.c
 	/// </summary>
 	public class ShutdownEvent : ConnectionStateEvent
 	{
@@ -23,7 +23,7 @@ namespace AsterNET.Manager.Event
 			set { this.shutdown = value; }
 		}
 		/// <summary>
-		/// Get/Set <code>true</code> if the server has been restarted; <code>false</code> if it has been halted.
+		/// Get/Set true if the server has been restarted; false if it has been halted.
 		/// </summary>
 		public bool Restart
 		{

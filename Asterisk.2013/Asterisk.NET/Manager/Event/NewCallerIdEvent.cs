@@ -4,7 +4,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A NewCallerIdEvent is triggered when the caller id of a channel changes.<br />
-    ///     It is implemented in <code>channel.c</code>
+    ///     It is implemented in channel.c
     /// </summary>
     public class NewCallerIdEvent : ManagerEvent
     {

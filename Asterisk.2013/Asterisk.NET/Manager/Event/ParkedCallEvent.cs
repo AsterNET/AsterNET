@@ -3,7 +3,7 @@ namespace AsterNET.Manager.Event
 	/// <summary>
 	/// A ParkedCallEvent is triggered when a channel is parked (in this case no
 	/// action id is set) and in response to a ParkedCallsAction.<br/>
-	/// It is implemented in <code>res/res_features.c</code>
+	/// It is implemented in res/res_features.c
 	/// </summary>
 	/// <seealso cref="Manager.Action.ParkedCallsAction"/>
 	public class ParkedCallEvent : ResponseEvent
@@ -29,8 +29,8 @@ namespace AsterNET.Manager.Event
 		}
 		/// <summary>
 		/// Get/Set the number of seconds this call will be parked.<br/>
-		/// This corresponds to the <code>parkingtime</code> option in
-		/// <code>features.conf</code>.
+		/// This corresponds to the parkingtime option in
+		/// features.conf.
 		/// </summary>
 		public long Timeout
 		{

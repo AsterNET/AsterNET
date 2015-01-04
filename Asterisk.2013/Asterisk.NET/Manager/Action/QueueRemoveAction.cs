@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The QueueRemoveAction removes a member from a queue.<br />
-    ///     It is implemented in <code>apps/app_queue.c</code>
+    ///     It is implemented in apps/app_queue.c
     /// </summary>
     public class QueueRemoveAction : ManagerAction
     {

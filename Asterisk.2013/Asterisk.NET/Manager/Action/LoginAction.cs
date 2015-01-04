@@ -23,8 +23,8 @@ namespace AsterNET.Manager.Action
         ///     Creates a new LoginAction that performs a cleartext login.<br />
         ///     You should not use cleartext login if you are concerned about security and login with a password hash instead.
         /// </summary>
-        /// <param name="username">the username as configured in Asterisk's <code>manager.conf</code></param>
-        /// <param name="secret">the user's password as configured in Asterisk's <code>manager.conf</code></param>
+        /// <param name="username">the username as configured in Asterisk's manager.conf</param>
+        /// <param name="secret">the user's password as configured in Asterisk's manager.conf</param>
         /// <seealso cref="Manager.Action.ChallengeAction" />
         public LoginAction(string username, string secret)
         {
@@ -35,7 +35,7 @@ namespace AsterNET.Manager.Action
         /// <summary>
         ///     Creates a new LoginAction that performs a login via challenge/response.
         /// </summary>
-        /// <param name="username">the username as configured in Asterisk's <code>manager.conf</code></param>
+        /// <param name="username">the username as configured in Asterisk's manager.conf</param>
         /// <param name="authType">
         ///     the digest alogrithm, must match the digest algorithm that was used with the corresponding
         ///     ChallengeAction.
@@ -51,7 +51,7 @@ namespace AsterNET.Manager.Action
         /// <summary>
         ///     Creates a new LoginAction that performs a login via challenge/response.
         /// </summary>
-        /// <param name="username">the username as configured in Asterisk's <code>manager.conf</code></param>
+        /// <param name="username">the username as configured in Asterisk's manager.conf</param>
         /// <param name="authType">
         ///     the digest alogrithm, must match the digest algorithm that was used with the corresponding
         ///     ChallengeAction.
@@ -79,13 +79,13 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Get/Set the username as configured in asterik's <code>manager.conf</code>.
+        ///     Get/Set the username as configured in asterik's manager.conf.
         /// </summary>
         public string Username { get; set; }
 
         /// <summary>
         ///     Get/Set the secret to use when using cleartext login.<br />
-        ///     The secret contains the user's password as configured in Asterisk's <code>manager.conf</code>.<br />
+        ///     The secret contains the user's password as configured in Asterisk's manager.conf.<br />
         ///     The secret and key properties are mutually exclusive.
         /// </summary>
         public string Secret { get; set; }

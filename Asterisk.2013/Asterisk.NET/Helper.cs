@@ -93,13 +93,13 @@ namespace AsterNET
         #region IsTrue(string) 
 
         /// <summary>
-        ///     Checks if a String represents <code>true</code> or <code>false</code> according to Asterisk's logic.<br />
-        ///     The original implementation is <code>util.c</code> is as follows:
+        ///     Checks if a String represents true or false according to Asterisk's logic.<br />
+        ///     The original implementation is util.c is as follows:
         /// </summary>
-        /// <param name="s">the String to check for <code>true</code>.</param>
+        /// <param name="s">the String to check for true.</param>
         /// <returns>
-        ///     <code>true</code> if s represents <code>true</code>,
-        ///     <code>false</code> otherwise.
+        ///     true if s represents true,
+        ///     false otherwise.
         /// </returns>
         internal static bool IsTrue(string s)
         {
@@ -744,7 +744,7 @@ namespace AsterNET
         /// </summary>
         /// <param name="source">source attribute for the event</param>
         /// <param name="attributes">map containing event attributes</param>
-        /// <returns>a concrete instance of ManagerEvent or <code>null</code> if no event class was registered for the event type.</returns>
+        /// <returns>a concrete instance of ManagerEvent or null if no event class was registered for the event type.</returns>
         internal static ManagerEvent BuildEvent(IDictionary<int, ConstructorInfo> list, ManagerConnection source,
             Dictionary<string, string> attributes)
         {

@@ -184,7 +184,7 @@ namespace AsterNET.Manager.Response
         /// <param name="key">the key to lookup.</param>
         /// <returns>
         ///     the value of the attribute stored under this key or
-        ///     <code>null</code> if there is no such attribute.
+        ///     null if there is no such attribute.
         /// </returns>
         public string GetAttribute(string key)
         {

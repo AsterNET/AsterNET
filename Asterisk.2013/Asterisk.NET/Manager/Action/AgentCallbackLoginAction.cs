@@ -70,7 +70,7 @@ namespace AsterNET.Manager.Action
 
         /// <summary>
         ///     Get/Set if an acknowledgement is needed when agent is called back.<br />
-        ///     <code>true</code> if acknowledgement by '#' is required when agent is called back, <code>false</code> otherwise.
+        ///     true if acknowledgement by '#' is required when agent is called back, false otherwise.
         ///     This property is optional, it allows you to override the defaults defined in Asterisk's configuration.
         /// </summary>
         public bool AckCall { get; set; }

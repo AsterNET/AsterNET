@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A RenameEvent is triggered when the name of a channel is changed.<br/>
-	/// It is implemented in <code>channel.c</code>
+	/// It is implemented in channel.c
 	/// </summary>
 	public class RenameEvent : ManagerEvent
 	{

@@ -8,16 +8,16 @@ namespace AsterNET.FastAGI.Command
 	{
 
 		/// <summary>
-		/// The name of the channel to hangup or <code>null</code> for the current channel.
+		/// The name of the channel to hangup or null for the current channel.
 		/// </summary>
 		private string channel;
 
 		/// <summary>
 		/// Returns the name of the channel to hangup.
 		/// </summary>
-		/// <returns>the name of the channel to hangup or <code>null</code> for the current channel.</returns>
+		/// <returns>the name of the channel to hangup or null for the current channel.</returns>
 		/// <summary> Sets the name of the channel to hangup.</summary>
-		/// <param name="channel">the name of the channel to hangup or <code>null</code> for the current channel.</param>
+		/// <param name="channel">the name of the channel to hangup or null for the current channel.</param>
 		public string Channel
 		{
 			get { return channel; }

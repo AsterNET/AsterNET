@@ -41,7 +41,7 @@ namespace AsterNET.Manager.Action
         /// </summary>
         /// <returns>
         ///     true if existing calls should not be hung up, false otherwise.<br />
-        ///     <code>null</code> if default should be used.
+        ///     null if default should be used.
         /// </returns>
         public bool Soft { get; set; }
 

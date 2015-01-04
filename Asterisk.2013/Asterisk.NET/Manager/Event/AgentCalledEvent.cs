@@ -2,8 +2,8 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     An AgentCalledEvent is triggered when an agent is rung.<br />
-    ///     To enable AgentCalledEvents you have to set <code>eventwhencalled = yes</code> in <code>queues.conf</code>.<br />
-    ///     This event is implemented in <code>apps/app_queue.c</code>
+    ///     To enable AgentCalledEvents you have to set eventwhencalled = yes in queues.conf.<br />
+    ///     This event is implemented in apps/app_queue.c
     /// </summary>
     public class AgentCalledEvent : AbstractAgentVariables
     {

@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A NewStateEvent is triggered when the state of a channel has changed.<br/>
-	/// It is implemented in <code>channel.c</code>
+	/// It is implemented in channel.c
 	/// </summary>
 	public class NewStateEvent : AbstractChannelEvent
 	{

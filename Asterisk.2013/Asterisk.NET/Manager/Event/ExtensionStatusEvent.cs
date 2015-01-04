@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// An ExtensionStatusEvent is triggered when the state of an extension changes.<br/>
-	/// It is implemented in <code>manager.c</code>
+	/// It is implemented in manager.c
 	/// </summary>
 	public class ExtensionStatusEvent : ManagerEvent
 	{

@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A HangupEvent is triggered when a channel is hung up.<br/>
-	/// It is implemented in <code>channel.c</code>
+	/// It is implemented in channel.c
 	/// </summary>
 	public class HangupEvent : AbstractChannelEvent
 	{

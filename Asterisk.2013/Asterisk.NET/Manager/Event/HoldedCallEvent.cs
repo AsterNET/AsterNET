@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A HoldedCallEvent is triggered when a channel is put on hold.<br />
-    ///     It is implemented in <code>res/res_features.c</code>
+    ///     It is implemented in res/res_features.c
     /// </summary>
     public class HoldedCallEvent : ManagerEvent
     {

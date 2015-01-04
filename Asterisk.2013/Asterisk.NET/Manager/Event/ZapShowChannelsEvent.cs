@@ -45,7 +45,7 @@ namespace AsterNET.Manager.Event
 			set { this.signalling = value; }
 		}
 		/// <summary>
-		/// Get/Set the context of this zap channel as defined in <code>zapata.conf</code>.
+		/// Get/Set the context of this zap channel as defined in zapata.conf.
 		/// </summary>
 		public string Context
 		{

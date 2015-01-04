@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The QueueAddAction adds a new member to a queue.<br />
-    ///     It is implemented in <code>apps/app_queue.c</code>
+    ///     It is implemented in apps/app_queue.c
     /// </summary>
     public class QueueAddAction : ManagerAction
     {
@@ -91,7 +91,7 @@ namespace AsterNET.Manager.Action
 
         /// <summary>
         ///     Get/Set if the queue member should be paused when added.<br />
-        ///     <code>true</code> if the queue member should be paused when added.
+        ///     true if the queue member should be paused when added.
         /// </summary>
         public bool Paused { get; set; }
     }

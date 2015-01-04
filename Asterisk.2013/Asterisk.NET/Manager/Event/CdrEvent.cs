@@ -2,9 +2,9 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A CdrEvent is triggered when a call detail record is generated, usually at the end of a call.<br />
-    ///     To enable CdrEvents you have to add <code>enabled = yes</code> to the general section in
-    ///     <code>cdr_manager.conf</code>.<br />
-    ///     This event is implemented in <code>cdr/cdr_manager.c</code>
+    ///     To enable CdrEvents you have to add enabled = yes to the general section in
+    ///     cdr_manager.conf.<br />
+    ///     This event is implemented in cdr/cdr_manager.c
     /// </summary>
     public class CdrEvent : ManagerEvent
     {

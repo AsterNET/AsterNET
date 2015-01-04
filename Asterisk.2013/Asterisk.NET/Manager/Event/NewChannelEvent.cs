@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A NewChannelEvent is triggered when a new channel is created.<br/>
-	/// It is implemented in <code>channel.c</code>
+	/// It is implemented in channel.c
 	/// </summary>
 	public class NewChannelEvent : AbstractChannelEvent
 	{

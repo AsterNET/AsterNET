@@ -178,7 +178,7 @@ namespace AsterNET.FastAGI
         ///     contains a flag like "timeout" or "hangup" or - in case of the
         ///     GetVariableCommand - the value of the variable.
         /// </summary>
-        /// <returns>the text in the parenthesis or <code>null</code> if not set.</returns>
+        /// <returns>the text in the parenthesis or  null if not set.</returns>
         public string Extra
         {
             get
@@ -253,7 +253,7 @@ namespace AsterNET.FastAGI
         ///     This can be retrieved by calling getAttribute("endpos") on the corresponding reply.
         /// </summary>
         /// <param name="name">the name of the attribute to retrieve. The name is case insensitive.</param>
-        /// <returns>the value of the attribute or <code>null</code> if it is not set.</returns>
+        /// <returns>the value of the attribute or null if it is not set.</returns>
         public string GetAttribute(string name)
         {
             if (GetStatus() != (int) AGIReplyStatuses.SC_SUCCESS)
@@ -300,7 +300,7 @@ namespace AsterNET.FastAGI
         ///     Returns the synopsis of the command sent if Asterisk expected a different
         ///     syntax (getStatus() == SC_INVALID_COMMAND_SYNTAX).
         /// </summary>
-        /// <returns>the synopsis of the command sent, <code>null</code> if there were no syntax errors.</returns>
+        /// <returns>the synopsis of the command sent, null if there were no syntax errors.</returns>
         public string GetSynopsis()
         {
             if (GetStatus() != (int) AGIReplyStatuses.SC_INVALID_COMMAND_SYNTAX)
@@ -345,7 +345,7 @@ namespace AsterNET.FastAGI
         /// </summary>
         /// <returns>
         ///     the usage of the command sent,
-        ///     <code>null</code> if there were no syntax errors.
+        ///     null if there were no syntax errors.
         /// </returns>
         public string GetUsage()
         {

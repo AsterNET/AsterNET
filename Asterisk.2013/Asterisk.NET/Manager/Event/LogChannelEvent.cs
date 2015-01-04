@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A LogChannelEvent is triggered when logging is turned on or off.<br />
-    ///     It is implemented in <code>logger.c</code><br />
+    ///     It is implemented in logger.c<br />
     /// </summary>
     public class LogChannelEvent : ManagerEvent
     {

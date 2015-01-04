@@ -174,7 +174,7 @@ namespace AsterNET.Manager
 		public event AgentCallbackLogoffEventHandler AgentCallbackLogoff;
 		/// <summary>
 		/// An AgentCalled is triggered when an agent is ring.<br/>
-		/// To enable AgentCalled you have to set <code>eventwhencalled = yes</code> in <code>queues.conf</code>.<br/>
+		/// To enable AgentCalled you have to set eventwhencalled = yes in queues.conf.<br/>
 		/// </summary>
 		public event AgentCalledEventHandler AgentCalled;
 		/// <summary>
@@ -1190,7 +1190,7 @@ namespace AsterNET.Manager
 
 		#region Hostname
 		/// <summary> Sets the hostname of the asterisk server to connect to.<br/>
-		/// Default is <code>localhost</code>.
+		/// Default is localhost.
 		/// </summary>
 		public string Hostname
 		{
@@ -1202,7 +1202,7 @@ namespace AsterNET.Manager
 		#region Port
 		/// <summary>
 		/// Sets the port to use to connect to the asterisk server. This is the port
-		/// specified in asterisk's <code>manager.conf</code> file.<br/>
+		/// specified in asterisk's manager.conf file.<br/>
 		/// Default is 5038.
 		/// </summary>
 		public int Port
@@ -1215,7 +1215,7 @@ namespace AsterNET.Manager
 		#region UserName
 		/// <summary>
 		/// Sets the username to use to connect to the asterisk server. This is the
-		/// username specified in asterisk's <code>manager.conf</code> file.
+		/// username specified in asterisk's manager.conf file.
 		/// </summary>
 		public string Username
 		{
@@ -1227,7 +1227,7 @@ namespace AsterNET.Manager
 		#region Password
 		/// <summary>
 		/// Sets the password to use to connect to the asterisk server. This is the
-		/// password specified in asterisk's <code>manager.conf</code> file.
+		/// password specified in asterisk's manager.conf file.
 		/// </summary>
 		public string Password
 		{
@@ -1278,9 +1278,9 @@ namespace AsterNET.Manager
 		#endregion
 
 		#region KeepAliveAfterAuthenticationFailure
-		/// <summary> Set to <code>true</code> to try reconnecting to ther asterisk serve
+		/// <summary> Set to true to try reconnecting to ther asterisk serve
 		/// even if the reconnection attempt threw an AuthenticationFailedException.<br/>
-		/// Default is <code>false</code>.
+		/// Default is false.
 		/// </summary>
 		public bool KeepAliveAfterAuthenticationFailure
 		{
@@ -1292,7 +1292,7 @@ namespace AsterNET.Manager
 		#region KeepAlive
 		/// <summary>
 		/// Should we attempt to reconnect when the connection is lost?<br/>
-		/// This is set to <code>true</code> after successful login and to <code>false</code> after logoff or after an authentication failure when keepAliveAfterAuthenticationFailure is <code>false</code>.
+		/// This is set to true after successful login and to false after logoff or after an authentication failure when keepAliveAfterAuthenticationFailure is false.
 		/// </summary>
 		public bool KeepAlive
 		{
@@ -1585,7 +1585,7 @@ namespace AsterNET.Manager
 		#region reconnect(bool init)
 		/// <summary>
 		/// Reconnects to the asterisk server when the connection is lost.<br/>
-		/// While keepAlive is <code>true</code> we will try to reconnect.
+		/// While keepAlive is true we will try to reconnect.
 		/// Reconnection attempts will be stopped when the logoff() method
 		/// is called or when the login after a successful reconnect results in an
 		/// AuthenticationFailedException suggesting that the manager
@@ -1725,12 +1725,12 @@ namespace AsterNET.Manager
 		#endregion
 
 		#region IsConnected()
-		/// <summary> Returns <code>true</code> if there is a socket connection to the
-		/// asterisk server, <code>false</code> otherwise.
+		/// <summary> Returns true if there is a socket connection to the
+		/// asterisk server, false otherwise.
 		/// 
 		/// </summary>
-		/// <returns> <code>true</code> if there is a socket connection to the
-		/// asterisk server, <code>false</code> otherwise.
+		/// <returns> true if there is a socket connection to the
+		/// asterisk server, false otherwise.
 		/// </returns>
 		public bool IsConnected()
 		{

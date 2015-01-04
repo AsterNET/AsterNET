@@ -82,7 +82,7 @@ namespace AsterNET.FastAGI.Command
 		#endregion
 		#region Beep
 		/// <summary>
-		/// Get/Set <code>true</code> if a beep should be played before recording. <code>false</code> if not.
+		/// Get/Set true if a beep should be played before recording. false if not.
 		/// </summary>
 		public bool Beep
 		{
@@ -119,7 +119,7 @@ namespace AsterNET.FastAGI.Command
 		/// <param name="escapeDigits">contains the digits that allow the user to end recording.</param>
 		/// <param name="timeout">the maximum record time in milliseconds, or -1 for no timeout.</param>
 		/// <param name="offset">the offset samples to skip.</param>
-		/// <param name="beep"><code>true</code> if a beep should be played before recording.</param>
+		/// <param name="beep">true if a beep should be played before recording.</param>
 		/// <param name="maxSilence">The amount of silence (in seconds) to allow before returning despite the lack of dtmf digits or reaching timeout.</param>
 		public RecordFileCommand(string file, string format, string escapeDigits, int timeout, int offset, bool beep, int maxSilence)
 		{

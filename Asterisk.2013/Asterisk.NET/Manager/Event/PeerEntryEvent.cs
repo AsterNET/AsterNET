@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains information about a peer.<br/>
-	/// It is implemented in <code>channels/chan_sip.c</code>
+	/// It is implemented in channels/chan_sip.c
 	/// </summary>
 	public class PeerEntryEvent : ResponseEvent
 	{

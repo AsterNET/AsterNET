@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A MeetMeLeaveEvent is triggered if a channel leaves a meet me conference.<br />
-    ///     It is implemented in <code>apps/app_meetme.c</code>
+    ///     It is implemented in apps/app_meetme.c
     /// </summary>
     public class MeetmeLeaveEvent : AbstractMeetmeEvent
     {

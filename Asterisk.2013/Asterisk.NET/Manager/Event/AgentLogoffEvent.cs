@@ -2,8 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     An AgentCallbackLogoffEvent is triggered when an agent that previously logged in using AgentLogin is logged of.
-    ///     <br />
-    ///     It is implemented in <code>channels/chan_agent.c</code>
+    ///     It is implemented in channels/chan_agent.c
     /// </summary>
     /// <seealso cref="Manager.event.AgentLoginEvent" />
     public class AgentLogoffEvent : ManagerEvent

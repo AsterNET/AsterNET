@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The CommandAction sends a command line interface (CLI) command to the asterisk server.<br />
-    ///     For a list of supported commands type <code>help</code> on asterisk's command line.
+    ///     For a list of supported commands type help on asterisk's command line.
     /// </summary>
     public class CommandAction : ManagerAction
     {

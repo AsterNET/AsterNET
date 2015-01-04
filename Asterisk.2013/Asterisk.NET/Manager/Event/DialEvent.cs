@@ -2,7 +2,7 @@ namespace AsterNET.Manager.Event
 {
 	/// <summary>
 	/// A dial event is triggered whenever a phone attempts to dial someone.<br/>
-	/// This event is implemented in <code>apps/app_dial.c</code>.<br/>
+	/// This event is implemented in apps/app_dial.c.<br/>
 	/// Available since Asterisk 1.2.
 	/// </summary>
 	public class DialEvent : ManagerEvent
