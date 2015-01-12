@@ -21,9 +21,6 @@ You can read about AsterNET and related projects at my blog www.xdev.net. I'll p
 ## History
 AsterNET is a fork of Asterisk.NET. Now we've reached release status and AsterNET version 1.0.0 we feel this is a good separation point from the original project.
 
-There are 2 reasons I have renamed it to AsterNET on codeplex. Asterisk .NET was taken. It will help separate the project from the original codeplex project- in case the guys come back. And keep AsterNET as the new revived project. So it will stop confusing links on search engines, and sharing.
-
-
 *Special Thanks*
 http://www.zapappi.com and http://www.jetbrains.com/resharper/
 
