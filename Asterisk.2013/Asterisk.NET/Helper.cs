@@ -772,7 +772,9 @@ namespace AsterNET
                 constructor = list[hashEvent];
 
             if (constructor == null)
+            {
                 e = new UnknownEvent(source);
+            }
             else
             {
                 try

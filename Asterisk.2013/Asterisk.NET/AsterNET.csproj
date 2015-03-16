@@ -201,6 +201,13 @@
     <Compile Include="Manager\AsteriskVersion.cs" />
     <Compile Include="Manager\Event\AbstractAgentVariables.cs" />
     <Compile Include="Manager\Event\AbstractConfbridgeEvent.cs" />
+    <Compile Include="Manager\Event\BlindTransferEvent.cs" />
+    <Compile Include="Manager\Event\BridgeActivityEvent.cs" />
+    <Compile Include="Manager\Event\BridgeCreateEvent.cs" />
+    <Compile Include="Manager\Event\BridgeDestroyEvent.cs" />
+    <Compile Include="Manager\Event\BridgeStateEvent.cs" />
+    <Compile Include="Manager\Event\BridgeEnterEvent.cs" />
+    <Compile Include="Manager\Event\BridgeLeaveEvent.cs" />
     <Compile Include="Manager\Event\ConfbridgeEndEvent.cs" />
     <Compile Include="Manager\Event\ConfbridgeJoinEvent.cs" />
     <Compile Include="Manager\Event\ConfbridgeLeaveEvent.cs" />
@@ -237,6 +244,7 @@
     <Compile Include="Manager\Event\RTCPReceivedEvent.cs" />
     <Compile Include="Manager\Event\RTPSenderStatEvent.cs" />
     <Compile Include="Manager\Event\ShowDialPlanCompleteEvent.cs" />
+    <Compile Include="Manager\Event\AttendedTransferEvent.cs" />
     <Compile Include="Manager\Event\TransferEvent.cs" />
     <Compile Include="Manager\Event\UnknownEvent.cs" />
     <Compile Include="Manager\Event\VarSet.cs" />
