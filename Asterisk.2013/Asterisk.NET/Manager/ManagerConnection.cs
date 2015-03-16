@@ -89,6 +89,14 @@ namespace AsterNET.Manager
 	public delegate void ConfbridgeEndEventHandler(object sender, Event.ConfbridgeEndEvent e);
 	public delegate void ConfbridgeTalkingEventHandler(object sender, Event.ConfbridgeTalkingEvent e);
     public delegate void FailedACLEventHandler(object sender, Event.FailedACLEvent e);
+    public delegate void AttendedTransferEventHandler(object sender, Event.AttendedTransferEvent e);
+    public delegate void BlindTransferEventHandler(object sender, Event.BlindTransferEvent e);
+    public delegate void BridgeCreateEventHandler(object sender, Event.BridgeCreateEvent e);
+    public delegate void BridgeDestroyEventHandler(object sender, Event.BridgeDestroyEvent e);
+    public delegate void BridgeEnterEventHandler(object sender, Event.BridgeEnterEvent e);
+    public delegate void BridgeLeaveEventHandler(object sender, Event.BridgeLeaveEvent e);
+
+
 
 	#endregion
 
@@ -468,6 +476,14 @@ namespace AsterNET.Manager
         /// </summary>
         public event FailedACLEventHandler FailedACL;
 
+	    public event AttendedTransferEventHandler AttendedTransfer;
+        public event BlindTransferEventHandler BlindTransfer;
+
+        public event BridgeCreateEventHandler BridgeCreate;
+        public event BridgeDestroyEventHandler BridgeDestroy;
+        public event BridgeEnterEventHandler BridgeEnter;
+        public event BridgeLeaveEventHandler BridgeLeave;
+
 		#endregion
 
 		#region Constructor - ManagerConnection()
@@ -571,6 +587,13 @@ namespace AsterNET.Manager
 
             Helper.RegisterEventHandler(registeredEventHandlers, 86, typeof(FailedACLEvent));
 
+            Helper.RegisterEventHandler(registeredEventHandlers, 87, typeof(AttendedTransferEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 88, typeof(BridgeCreateEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 89, typeof(BridgeDestroyEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 90, typeof(BridgeEnterEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 91, typeof(BridgeLeaveEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 92, typeof(BlindTransferEvent));
+            
 
 			#endregion
 
@@ -1151,6 +1174,42 @@ namespace AsterNET.Manager
                         if (FailedACL != null)
                         {
                             FailedACL(this, (FailedACLEvent)e);
+                        }
+                        break;
+                    case 87:
+				        if (AttendedTransfer != null)
+				        {
+				            AttendedTransfer(this, (AttendedTransferEvent) e);
+				        }
+				        break;
+                    case 88:
+				        if (BridgeCreate != null)
+				        {
+				            BridgeCreate(this, (BridgeCreateEvent) e);
+				        }
+				        break;
+                    case 89:
+                        if (BridgeDestroy != null)
+                        {
+                            BridgeDestroy(this, (BridgeDestroyEvent)e);
+                        }
+                        break;
+                    case 90:
+                        if (BridgeEnter != null)
+                        {
+                            BridgeEnter(this, (BridgeEnterEvent)e);
+                        }
+                        break;
+                    case 91:
+                        if (BridgeLeave != null)
+                        {
+                            BridgeLeave(this, (BridgeLeaveEvent)e);
+                        }
+                        break;
+                    case 92:
+                        if (BlindTransfer != null)
+                        {
+                            BlindTransfer(this, (BlindTransferEvent)e);
                         }
                         break;
 					default:
