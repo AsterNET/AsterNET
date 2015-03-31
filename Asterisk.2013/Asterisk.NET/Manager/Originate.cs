@@ -141,22 +141,6 @@ namespace AsterNET.Manager
 
         #endregion
 
-        #region Variable
-
-        /// <summary>
-        ///     Get/Set the variables to set on the originated call.<br />
-        ///     Variable assignments are of the form "VARNAME=VALUE". You can specify
-        ///     multiple variable assignments separated by the '|' character.<br />
-        ///     Example: "VAR1=abc|VAR2=def" sets the channel variables VAR1 to "abc" and VAR2 to "def".
-        /// </summary>
-        public string Variable
-        {
-            get { return Helper.JoinVariables(variables, Common.VAR_DELIMITER, "="); }
-            set { variables = Helper.ParseVariables(variables, value, Common.VAR_DELIMITER); }
-        }
-
-        #endregion
-
         #region GetVariables()
 
         /// <summary>

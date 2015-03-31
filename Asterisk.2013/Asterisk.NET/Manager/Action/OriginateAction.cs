@@ -160,8 +160,8 @@ namespace AsterNET.Manager.Action
         /// </summary>
         public string Variable
         {
-            get { return Helper.JoinVariables(variables, Common.VAR_DELIMITER, "="); }
-            set { variables = Helper.ParseVariables(variables, value, Common.VAR_DELIMITER); }
+            get { return Helper.JoinVariables(variables, Common.GET_VAR_DELIMITER(this.Server), "="); }
+            set { variables = Helper.ParseVariables(variables, value, Common.GET_VAR_DELIMITER(this.Server)); }
         }
 
         #endregion
