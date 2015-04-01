@@ -41,14 +41,9 @@ namespace AsterNET
         }
 
         /// <summary> Variables delimiter setter </summary>
-        public static char[] SET_VAR_DELIMITER(string hostname, char[] delimiter)
+        public static void SET_VAR_DELIMITER(string hostname, char[] delimiter)
         {
-            if (!VAR_DELIMITERS.ContainsKey(hostname))
-            {
-                VAR_DELIMITERS.Add(hostname, new char[] { '|' });
-            }
-
-            return VAR_DELIMITERS[hostname] = delimiter;
+            VAR_DELIMITERS[hostname] = delimiter;
         }
 
         public static IFormatProvider CultureInfoEn = new CultureInfo("en-US", false);
