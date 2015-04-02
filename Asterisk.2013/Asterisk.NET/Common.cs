@@ -26,25 +26,8 @@ namespace AsterNET
         public static char[] MINUS_SEPARATOR = {'-'};
         public static char INTERNAL_ACTION_ID_DELIMITER = '#';
 
-        /// <summary> Variables delimiter </summary>
-        public static Dictionary<string, char[]> VAR_DELIMITERS = new Dictionary<string, char[]>();
-
-        /// <summary> Variables delimiter getter </summary>
-        public static char[] GET_VAR_DELIMITER(string hostname)
-        {
-            if (!VAR_DELIMITERS.ContainsKey(hostname))
-            {
-                VAR_DELIMITERS.Add(hostname, new char[] { '|' });
-            }
-
-            return VAR_DELIMITERS[hostname];
-        }
-
-        /// <summary> Variables delimiter setter </summary>
-        public static void SET_VAR_DELIMITER(string hostname, char[] delimiter)
-        {
-            VAR_DELIMITERS[hostname] = delimiter;
-        }
+        [Obsolete("VAR_DELIMITER moved to ManagerConnection", true)]
+        public static char[] VAR_DELIMITER = {'|'};
 
         public static IFormatProvider CultureInfoEn = new CultureInfo("en-US", false);
 
