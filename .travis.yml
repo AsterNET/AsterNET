@@ -1,2 +1,3 @@
 language: csharp
 solution: ./Asterisk.2013/Asterisk.2013.sln
+script: xbuild /p:Configuration=Travis ./Asterisk.2013/Asterisk.2013.sln
