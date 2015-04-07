@@ -21,24 +21,32 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Travis|Any CPU = Travis|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.Build.0 = Travis|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Travis|Any CPU.Build.0 = Travis|Any CPU
 		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}.Travis|Any CPU.Build.0 = Travis|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
