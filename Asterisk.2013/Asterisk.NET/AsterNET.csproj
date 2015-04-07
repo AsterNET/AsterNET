@@ -260,6 +260,7 @@
     <Compile Include="Manager\Event\QueueCallerAbandonEvent.cs" />
     <Compile Include="Manager\Event\MasqueradeEvent.cs" />
     <Compile Include="Manager\Exceptions\AuthenticationFailedException.cs" />
+    <Compile Include="Manager\IActionVariable.cs" />
     <Compile Include="Manager\Response\GetConfigResponse.cs" />
     <Compile Include="Manager\Response\OriginateResponse.cs" />
     <Compile Include="Manager\ManagerConnection.cs" />

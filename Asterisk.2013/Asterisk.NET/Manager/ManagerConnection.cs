@@ -157,6 +157,8 @@ namespace AsterNET.Manager
 		/// <summary> Default Slow Reconnect interval in milliseconds.</summary>
 		private int reconnectIntervalMax = 10000;
 
+        public char[] VAR_DELIMITER = { '|' };
+
 		#endregion
 
         /// <summary>
@@ -1506,22 +1508,43 @@ namespace AsterNET.Manager
 						if (m.Groups.Count >= 2)
 						{
 							version = m.Groups[1].Value;
-							if (version.StartsWith("1.4."))
-								return AsteriskVersion.ASTERISK_1_4;
-							else if (version.StartsWith("1.6."))
-								return Manager.AsteriskVersion.ASTERISK_1_6;
-							else if (version.StartsWith("1.8."))
-								return Manager.AsteriskVersion.ASTERISK_1_8;
-							else if (version.StartsWith("10."))
-								return Manager.AsteriskVersion.ASTERISK_10;
-							else if (version.StartsWith("11."))
-								return Manager.AsteriskVersion.ASTERISK_11;
-							else if (version.StartsWith("12."))
-								return Manager.AsteriskVersion.ASTERISK_12;
+                            if (version.StartsWith("1.4."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return AsteriskVersion.ASTERISK_1_4;
+                            }
+                            else if (version.StartsWith("1.6."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return Manager.AsteriskVersion.ASTERISK_1_6;
+                            }
+                            else if (version.StartsWith("1.8."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return Manager.AsteriskVersion.ASTERISK_1_8;
+                            }
+                            else if (version.StartsWith("10."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return Manager.AsteriskVersion.ASTERISK_10;
+                            }
+                            else if (version.StartsWith("11."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_11;
+                            }
+                            else if (version.StartsWith("12."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_12;
+                            }
                             else if (version.StartsWith("13."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
                                 return Manager.AsteriskVersion.ASTERISK_13;
-							else
-								throw new ManagerException("Unknown Asterisk version " + version);
+                            }
+                            else
+                                throw new ManagerException("Unknown Asterisk version " + version);
 						}
 					}
 				}
@@ -2137,6 +2160,12 @@ namespace AsterNET.Manager
 
 				sb.Append(string.Concat(name, ": ", valueAsString, Common.LINE_SEPARATOR));
 			}
+
+            IActionVariable actionVar = action as IActionVariable;
+            if(actionVar != null && actionVar.GetVariables().Count > 0)
+            {
+                sb.Append(string.Concat("Variable: ", Helper.JoinVariables(actionVar.GetVariables(), VAR_DELIMITER, "="), Common.LINE_SEPARATOR));
+            }
 
 			sb.Append(Common.LINE_SEPARATOR);
 			return sb.ToString();

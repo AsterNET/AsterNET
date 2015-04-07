@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -25,7 +26,7 @@ namespace AsterNET
         public static char[] MINUS_SEPARATOR = {'-'};
         public static char INTERNAL_ACTION_ID_DELIMITER = '#';
 
-        /// <summary> Variables delimiter </summary>
+        [Obsolete("VAR_DELIMITER moved to ManagerConnection", true)]
         public static char[] VAR_DELIMITER = {'|'};
 
         public static IFormatProvider CultureInfoEn = new CultureInfo("en-US", false);

@@ -22,7 +22,7 @@ namespace AsterNET.Manager.Action
     /// </summary>
     /// <seealso cref="AsterNET.Manager.Event.OriginateSuccessEvent" />
     /// <seealso cref="AsterNET.Manager.Event.OriginateFailureEvent" />
-    public class OriginateAction : ManagerActionEvent
+    public class OriginateAction : ManagerActionEvent, IActionVariable
     {
         private Dictionary<string, string> variables;
 
@@ -158,10 +158,12 @@ namespace AsterNET.Manager.Action
         ///     multiple variable assignments separated by the '|' character.<br />
         ///     Example: "VAR1=abc|VAR2=def" sets the channel variables VAR1 to "abc" and VAR2 to "def".
         /// </summary>
+        
+        [Obsolete("Don't use this anymore - the delimiter is not server context aware", true)]
         public string Variable
         {
-            get { return Helper.JoinVariables(variables, Common.VAR_DELIMITER, "="); }
-            set { variables = Helper.ParseVariables(variables, value, Common.VAR_DELIMITER); }
+            get { return null; /* return Helper.JoinVariables(variables, Common.GET_VAR_DELIMITER(this.Server), "="); */ }
+            set { /* variables = Helper.ParseVariables(variables, value, Common.GET_VAR_DELIMITER(this.Server)); */ }
         }
 
         #endregion
