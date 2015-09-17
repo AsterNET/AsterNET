@@ -32,8 +32,10 @@ namespace AsterNET.Manager
 	public delegate void AlarmEventHandler(object sender, Event.AlarmEvent e);
 	public delegate void BridgeEventHandler(object sender, Event.BridgeEvent e);
 	public delegate void CdrEventHandler(object sender, Event.CdrEvent e);
+	public delegate void ConnectEventHandler(object sender, Event.ConnectEvent e);
 	public delegate void DBGetResponseEventHandler(object sender, Event.DBGetResponseEvent e);
 	public delegate void DialEventHandler(object sender, Event.DialEvent e);
+	public delegate void DisconnectEventHandler(object sender, Event.DisconnectEvent e);
 	public delegate void DTMFEventHandler(object sender, Event.DTMFEvent e);
 	public delegate void DNDStateEventHandler(object sender, Event.DNDStateEvent e);
 	public delegate void ExtensionStatusEventHandler(object sender, Event.ExtensionStatusEvent e);
@@ -69,8 +71,10 @@ namespace AsterNET.Manager
 	public delegate void QueueParamsEventHandler(object sender, Event.QueueParamsEvent e);
 	public delegate void QueueStatusCompleteEventHandler(object sender, Event.QueueStatusCompleteEvent e);
 	public delegate void RegistryEventHandler(object sender, Event.RegistryEvent e);
+	public delegate void ReloadEventHandler(object sender, Event.ReloadEvent e);
 	public delegate void RenameEventHandler(object sender, Event.RenameEvent e);
 	public delegate void TransferEventHandler(object sender, Event.TransferEvent e);
+	public delegate void ShutDownEventHandler(object sender, Event.ShutdownEvent e);
 	public delegate void StatusCompleteEventHandler(object sender, Event.StatusCompleteEvent e);
 	public delegate void StatusEventHandler(object sender, Event.StatusEvent e);
 	public delegate void UnholdEventHandler(object sender, Event.UnholdEvent e);
@@ -80,7 +84,6 @@ namespace AsterNET.Manager
 	public delegate void QueueCallerAbandonEventHandler(object sender, Event.QueueCallerAbandonEvent e);
 	public delegate void ZapShowChannelsCompleteEventHandler(object sender, Event.ZapShowChannelsCompleteEvent e);
 	public delegate void ZapShowChannelsEventHandler(object sender, Event.ZapShowChannelsEvent e);
-	public delegate void ConnectionStateEventHandler(object sender, Event.ConnectionStateEvent e);
 	public delegate void VarSetEventHandler(object sender, Event.VarSetEvent e);
 	public delegate void AGIExecHandler(object sender, Event.AGIExecEvent e);
 	public delegate void ConfbridgeStartEventHandler(object sender, Event.ConfbridgeStartEvent e);
@@ -231,11 +234,19 @@ namespace AsterNET.Manager
 		/// A CdrEvent is triggered when a call detail record is generated, usually at the end of a call.
 		/// </summary>
 		public event CdrEventHandler Cdr;
+		/// <summary>
+        	/// A Connect is triggered after a succesfully AMI Connection.
+        	/// </summary>
+        	public event ConnectEventHandler Connect;
 		public event DBGetResponseEventHandler DBGetResponse;
 		/// <summary>
 		/// A Dial is triggered whenever a phone attempts to dial someone.<br/>
 		/// </summary>
 		public event DialEventHandler Dial;
+		/// <summary>
+        	/// A Disconnect is triggered when AMI connection disconnects.
+        	/// </summary>
+        	public event DisconnectEventHandler Disconnect;
 		public event DTMFEventHandler DTMF;
 		/// <summary>
 		/// A DNDStateEvent is triggered by the Zap channel driver when a channel enters or leaves DND (do not disturb) state.
@@ -394,9 +405,17 @@ namespace AsterNET.Manager
 		/// </summary>
 		public event RegistryEventHandler Registry;
 		/// <summary>
+	        /// A Reload is triggered when Asterisk is reloaded
+        	/// </summary>
+        	public event ReloadEventHandler Reload;
+		/// <summary>
 		/// A RenameEvent is triggered when the name of a channel is changed.
 		/// </summary>
 		public event RenameEventHandler Rename;
+		/// <summary>
+	        /// A Shutdown is triggered when Asterisk is doing a controlled shutting down 
+	        /// </summary>
+	        public event ShutDownEventHandler Shutdown;
 		/// <summary>
 		/// A StatusCompleteEvent is triggered after the state of all channels has been reported in response to a StatusAction.
 		/// </summary>
@@ -433,10 +452,6 @@ namespace AsterNET.Manager
 		/// A ZapShowChannelsEvent is triggered in response to a ZapShowChannelsAction and shows the state of a zap channel.
 		/// </summary>
 		public event ZapShowChannelsEventHandler ZapShowChannels;
-		/// <summary>
-		/// A ConnectionState is triggered after Connect/Disconnect/Reload/Shutdown events.
-		/// </summary>
-		public event ConnectionStateEventHandler ConnectionState;
 
 		/// <summary>
 		/// When a variable is set
@@ -1106,11 +1121,29 @@ namespace AsterNET.Manager
 					#endregion
 
 					case 62:
-						if (ConnectionState != null)
-						{
-							ConnectionState(this, (ConnectionStateEvent)e);
-							return;
-						}
+						if (Connect != null)
+			                        {
+			                            Connect(this, (ConnectEvent)e);
+			                            return;
+			
+			                        }
+			                        else if (Disconnect != null)
+			                        {
+			                            Disconnect(this, (DisconnectEvent)e);
+			                            return;
+			
+			                        }
+			                        else if (Reload != null)
+			                        {
+			                            Reload(this, (ReloadEvent)e);
+			                            return;
+			
+			                        }
+			                        else if (Shutdown != null)
+			                        {
+			                            Shutdown(this, (ShutdownEvent)e);
+			                            return;
+			                        }
 						break;
 					case 63:
 						if (Bridge != null)
