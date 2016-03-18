@@ -2162,12 +2162,16 @@ namespace AsterNET.Manager
 			}
 
             IActionVariable actionVar = action as IActionVariable;
-            if(actionVar != null && actionVar.GetVariables().Count > 0)
+            if ( actionVar != null )
             {
-                sb.Append(string.Concat("Variable: ", Helper.JoinVariables(actionVar.GetVariables(), VAR_DELIMITER, "="), Common.LINE_SEPARATOR));
+                var variables = actionVar.GetVariables();
+                if ( variables != null && variables.Count > 0 )
+                {
+                    sb.Append( string.Concat( "Variable: ", Helper.JoinVariables( actionVar.GetVariables(), VAR_DELIMITER, "=" ), Common.LINE_SEPARATOR ) );
+                }
             }
 
-			sb.Append(Common.LINE_SEPARATOR);
+            sb.Append(Common.LINE_SEPARATOR);
 			return sb.ToString();
 		}
 		#endregion
