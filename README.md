@@ -14,12 +14,6 @@ You can now get AsterNET via nuget by doing
 
 or by visiting: https://www.nuget.org/packages/AsterNET/
 
-## The AGI Gallery
-We want the community to share as much as possible, so if you've written an AGI that is either commercial or general purpose, then why not list if on http://www.theagigallery.co.uk. This site has been setup to allow developers to share their creations, open or closed source.
-
-## Blog
-You can read about AsterNET and related projects at my blog www.xdev.net. I'll post about AsterNET and related subjects as well as samples I'm working on. Feel free to check it out. Or follow me on twitter (@benjmerrills) to get involved.
-
 ## History
 AsterNET is a fork of Asterisk.NET. Now we've reached release status and AsterNET version 1.0.0 we feel this is a good separation point from the original project.
 
