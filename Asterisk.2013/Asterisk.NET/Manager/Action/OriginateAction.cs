@@ -141,7 +141,7 @@ namespace AsterNET.Manager.Action
         #region Timeout 
 
         /// <summary>
-        ///     Get/Set the timeout for the origination in seconds.<br />
+        ///     Get/Set the timeout for the origination in milliseconds.<br />
         ///     The channel must be answered within this time, otherwise the origination
         ///     is considered to have failed and an OriginateFailureEvent is generated.<br />
         ///     If not set, Asterisk assumes a default value of 30000 meaning 30 seconds.
