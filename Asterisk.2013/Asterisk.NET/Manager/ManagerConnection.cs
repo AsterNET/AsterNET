@@ -95,15 +95,16 @@ namespace AsterNET.Manager
     public delegate void BridgeDestroyEventHandler(object sender, Event.BridgeDestroyEvent e);
     public delegate void BridgeEnterEventHandler(object sender, Event.BridgeEnterEvent e);
     public delegate void BridgeLeaveEventHandler(object sender, Event.BridgeLeaveEvent e);
+    public delegate void DialBeginEventHandler(object sender, Event.DialBeginEvent e);
 
 
 
-	#endregion
+    #endregion
 
-	/// <summary>
-	/// Default implemention of the ManagerConnection interface.
-	/// </summary>
-	public class ManagerConnection
+    /// <summary>
+    /// Default implemention of the ManagerConnection interface.
+    /// </summary>
+    public class ManagerConnection
 	{
 		#region Variables
 
@@ -486,11 +487,16 @@ namespace AsterNET.Manager
         public event BridgeEnterEventHandler BridgeEnter;
         public event BridgeLeaveEventHandler BridgeLeave;
 
-		#endregion
+        /// <summary>
+        /// Raised when a dial action has started.<br/>
+        /// </summary>
+        public event DialBeginEventHandler DialBegin;
 
-		#region Constructor - ManagerConnection()
-		/// <summary> Creates a new instance.</summary>
-		public ManagerConnection()
+        #endregion
+
+        #region Constructor - ManagerConnection()
+        /// <summary> Creates a new instance.</summary>
+        public ManagerConnection()
 		{
 			callerThread = Thread.CurrentThread;
 
@@ -595,11 +601,11 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 90, typeof(BridgeEnterEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 91, typeof(BridgeLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 92, typeof(BlindTransferEvent));
-            
+            Helper.RegisterEventHandler(registeredEventHandlers, 93, typeof(DialBeginEvent));
 
-			#endregion
+            #endregion
 
-			this.internalEvent += new ManagerEventHandler(internalEventHandler);
+            this.internalEvent += new ManagerEventHandler(internalEventHandler);
 		}
 		#endregion
 
@@ -1214,7 +1220,13 @@ namespace AsterNET.Manager
                             BlindTransfer(this, (BlindTransferEvent)e);
                         }
                         break;
-					default:
+                    case 93:
+                        if (DialBegin != null)
+                        {
+                            DialBegin(this, (DialBeginEvent)e);
+                        }
+                        break;
+                    default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);
 						return;
