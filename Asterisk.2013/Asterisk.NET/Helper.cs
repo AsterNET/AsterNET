@@ -754,6 +754,10 @@ namespace AsterNET
             int hash, hashEvent;
 
             eventType = attributes["event"].ToLower(CultureInfo);
+            if (eventType == "queuememberpause") //temporary fix for Asterisk 13 pause QueueMemberPause
+            {
+                eventType = "queuememberpaused";
+            }
             // Remove Event tail from event name (ex. JabberEvent)
             if (eventType.EndsWith("event"))
                 eventType = eventType.Substring(0, eventType.Length - 5);
