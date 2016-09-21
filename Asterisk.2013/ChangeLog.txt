@@ -1,3 +1,6 @@
+21.09.2016	(herman1vdb)
+	Added events DialEndEvent, QueueCallerJoinEvent, QueueCallerLeaveEvent for further Asterisk 13 support
+	
 20.09.2016	(herman1vdb)
 	Added DialBeginEvent
 

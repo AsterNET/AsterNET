@@ -96,6 +96,9 @@ namespace AsterNET.Manager
     public delegate void BridgeEnterEventHandler(object sender, Event.BridgeEnterEvent e);
     public delegate void BridgeLeaveEventHandler(object sender, Event.BridgeLeaveEvent e);
     public delegate void DialBeginEventHandler(object sender, Event.DialBeginEvent e);
+    public delegate void DialEndEventHandler(object sender, Event.DialEndEvent e);
+    public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
+    public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
 
 
 
@@ -492,6 +495,21 @@ namespace AsterNET.Manager
         /// </summary>
         public event DialBeginEventHandler DialBegin;
 
+        /// <summary>
+        /// Raised when a dial action has completed.<br/>
+        /// </summary>
+        public event DialEndEventHandler DialEnd;
+
+        /// <summary>
+        /// Raised when a caller joins a Queue.<br/>
+        /// </summary>
+        public event QueueCallerJoinEventHandler QueueCallerJoin;
+
+        /// <summary>
+        /// Raised when a caller leaves a Queue.<br/>
+        /// </summary>
+        public event QueueCallerLeaveEventHandler QueueCallerLeave;
+
         #endregion
 
         #region Constructor - ManagerConnection()
@@ -602,6 +620,9 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 91, typeof(BridgeLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 92, typeof(BlindTransferEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 93, typeof(DialBeginEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 94, typeof(DialEndEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 95, typeof(QueueCallerJoinEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
 
             #endregion
 
@@ -1224,6 +1245,24 @@ namespace AsterNET.Manager
                         if (DialBegin != null)
                         {
                             DialBegin(this, (DialBeginEvent)e);
+                        }
+                        break;
+                    case 94:
+                        if (DialEnd != null)
+                        {
+                            DialEnd(this, (DialEndEvent)e);
+                        }
+                        break;
+                    case 95:
+                        if (QueueCallerJoin != null)
+                        {
+                            QueueCallerJoin(this, (QueueCallerJoinEvent)e);
+                        }
+                        break;
+                    case 96:
+                        if (QueueCallerLeave != null)
+                        {
+                            QueueCallerLeave(this, (QueueCallerLeaveEvent)e);
                         }
                         break;
                     default:
