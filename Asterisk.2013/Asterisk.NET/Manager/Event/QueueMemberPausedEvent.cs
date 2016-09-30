@@ -1,3 +1,5 @@
+using System;
+
 namespace AsterNET.Manager.Event
 {
 	/// <summary>
@@ -5,6 +7,7 @@ namespace AsterNET.Manager.Event
 	/// It is implemented in apps/app_queue.c.<br/>
 	/// Available since Asterisk 1.2
 	/// </summary>
+    [Obsolete("Removed since Asterisk 13", false)]
 	public class QueueMemberPausedEvent : AbstractQueueMemberEvent
 	{
 		private string memberName;
