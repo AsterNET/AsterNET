@@ -16,7 +16,6 @@
     <HelpKINode Title="AbstractAgentEvent Class" Url="html/T_AsterNET_Manager_Event_AbstractAgentEvent.htm" />
     <HelpKINode Title="about AbstractAgentEvent class" Url="html/T_AsterNET_Manager_Event_AbstractAgentEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AbstractAgentEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AbstractAgentEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AbstractAgentEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractAgentEvent.htm" />
   </HelpKINode>
@@ -28,7 +27,6 @@
     <HelpKINode Title="AbstractAgentVariables Class" Url="html/T_AsterNET_Manager_Event_AbstractAgentVariables.htm" />
     <HelpKINode Title="about AbstractAgentVariables class" Url="html/T_AsterNET_Manager_Event_AbstractAgentVariables.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AbstractAgentVariables__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AbstractAgentVariables.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AbstractAgentVariables.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractAgentVariables.htm" />
   </HelpKINode>
@@ -42,7 +40,6 @@
     <HelpKINode Title="AbstractChannelEvent Class" Url="html/T_AsterNET_Manager_Event_AbstractChannelEvent.htm" />
     <HelpKINode Title="about AbstractChannelEvent class" Url="html/T_AsterNET_Manager_Event_AbstractChannelEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AbstractChannelEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AbstractChannelEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AbstractChannelEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractChannelEvent.htm" />
   </HelpKINode>
@@ -60,7 +57,6 @@
     <HelpKINode Title="AbstractConfbridgeEvent Class" Url="html/T_AsterNET_Manager_Event_AbstractConfbridgeEvent.htm" />
     <HelpKINode Title="about AbstractConfbridgeEvent class" Url="html/T_AsterNET_Manager_Event_AbstractConfbridgeEvent.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_AsterNET_Manager_Event_AbstractConfbridgeEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AbstractConfbridgeEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AbstractConfbridgeEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractConfbridgeEvent.htm" />
   </HelpKINode>
@@ -70,7 +66,6 @@
     <HelpKINode Title="AbstractMeetmeEvent Class" Url="html/T_AsterNET_Manager_Event_AbstractMeetmeEvent.htm" />
     <HelpKINode Title="about AbstractMeetmeEvent class" Url="html/T_AsterNET_Manager_Event_AbstractMeetmeEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AbstractMeetmeEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AbstractMeetmeEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AbstractMeetmeEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractMeetmeEvent.htm" />
   </HelpKINode>
@@ -81,7 +76,6 @@
     <HelpKINode Title="AbstractParkedCallEvent Class" Url="html/T_AsterNET_Manager_Event_AbstractParkedCallEvent.htm" />
     <HelpKINode Title="about AbstractParkedCallEvent class" Url="html/T_AsterNET_Manager_Event_AbstractParkedCallEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AbstractParkedCallEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AbstractParkedCallEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AbstractParkedCallEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractParkedCallEvent.htm" />
   </HelpKINode>
@@ -94,7 +88,6 @@
     <HelpKINode Title="AbstractQueueMemberEvent Class" Url="html/T_AsterNET_Manager_Event_AbstractQueueMemberEvent.htm" />
     <HelpKINode Title="about AbstractQueueMemberEvent class" Url="html/T_AsterNET_Manager_Event_AbstractQueueMemberEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AbstractQueueMemberEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AbstractQueueMemberEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AbstractQueueMemberEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractQueueMemberEvent.htm" />
   </HelpKINode>
@@ -253,7 +246,6 @@
     <HelpKINode Title="AgentCallbackLoginEvent Class" Url="html/T_AsterNET_Manager_Event_AgentCallbackLoginEvent.htm" />
     <HelpKINode Title="about AgentCallbackLoginEvent class" Url="html/T_AsterNET_Manager_Event_AgentCallbackLoginEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentCallbackLoginEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentCallbackLoginEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentCallbackLoginEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentCallbackLoginEvent.htm" />
   </HelpKINode>
@@ -266,7 +258,6 @@
     <HelpKINode Title="AgentCallbackLogoffEvent Class" Url="html/T_AsterNET_Manager_Event_AgentCallbackLogoffEvent.htm" />
     <HelpKINode Title="about AgentCallbackLogoffEvent class" Url="html/T_AsterNET_Manager_Event_AgentCallbackLogoffEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentCallbackLogoffEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentCallbackLogoffEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentCallbackLogoffEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentCallbackLogoffEvent.htm" />
   </HelpKINode>
@@ -282,7 +273,6 @@
     <HelpKINode Title="AgentCalledEvent Class" Url="html/T_AsterNET_Manager_Event_AgentCalledEvent.htm" />
     <HelpKINode Title="about AgentCalledEvent class" Url="html/T_AsterNET_Manager_Event_AgentCalledEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentCalledEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentCalledEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentCalledEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentCalledEvent.htm" />
   </HelpKINode>
@@ -304,7 +294,6 @@
     <HelpKINode Title="AgentCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_AgentCompleteEvent.htm" />
     <HelpKINode Title="about AgentCompleteEvent class" Url="html/T_AsterNET_Manager_Event_AgentCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentCompleteEvent.htm" />
   </HelpKINode>
@@ -318,7 +307,6 @@
     <HelpKINode Title="AgentConnectEvent Class" Url="html/T_AsterNET_Manager_Event_AgentConnectEvent.htm" />
     <HelpKINode Title="about AgentConnectEvent class" Url="html/T_AsterNET_Manager_Event_AgentConnectEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentConnectEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentConnectEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentConnectEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentConnectEvent.htm" />
   </HelpKINode>
@@ -332,7 +320,6 @@
     <HelpKINode Title="AgentDumpEvent Class" Url="html/T_AsterNET_Manager_Event_AgentDumpEvent.htm" />
     <HelpKINode Title="about AgentDumpEvent class" Url="html/T_AsterNET_Manager_Event_AgentDumpEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentDumpEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentDumpEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentDumpEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentDumpEvent.htm" />
   </HelpKINode>
@@ -343,7 +330,6 @@
     <HelpKINode Title="AgentLoginEvent Class" Url="html/T_AsterNET_Manager_Event_AgentLoginEvent.htm" />
     <HelpKINode Title="about AgentLoginEvent class" Url="html/T_AsterNET_Manager_Event_AgentLoginEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentLoginEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentLoginEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentLoginEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentLoginEvent.htm" />
   </HelpKINode>
@@ -367,7 +353,6 @@
     <HelpKINode Title="AgentLogoffEvent Class" Url="html/T_AsterNET_Manager_Event_AgentLogoffEvent.htm" />
     <HelpKINode Title="about AgentLogoffEvent class" Url="html/T_AsterNET_Manager_Event_AgentLogoffEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentLogoffEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentLogoffEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentLogoffEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentLogoffEvent.htm" />
   </HelpKINode>
@@ -392,7 +377,6 @@
     <HelpKINode Title="AgentsCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_AgentsCompleteEvent.htm" />
     <HelpKINode Title="about AgentsCompleteEvent class" Url="html/T_AsterNET_Manager_Event_AgentsCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentsCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentsCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentsCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentsCompleteEvent.htm" />
   </HelpKINode>
@@ -402,7 +386,6 @@
     <HelpKINode Title="AgentsEvent Class" Url="html/T_AsterNET_Manager_Event_AgentsEvent.htm" />
     <HelpKINode Title="about AgentsEvent class" Url="html/T_AsterNET_Manager_Event_AgentsEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AgentsEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AgentsEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AgentsEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AgentsEvent.htm" />
   </HelpKINode>
@@ -467,7 +450,6 @@
     <HelpKINode Title="AGIExecEvent Class" Url="html/T_AsterNET_Manager_Event_AGIExecEvent.htm" />
     <HelpKINode Title="about AGIExecEvent class" Url="html/T_AsterNET_Manager_Event_AGIExecEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AGIExecEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AGIExecEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AGIExecEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AGIExecEvent.htm" />
   </HelpKINode>
@@ -635,7 +617,6 @@
     <HelpKINode Title="AlarmClearEvent Class" Url="html/T_AsterNET_Manager_Event_AlarmClearEvent.htm" />
     <HelpKINode Title="about AlarmClearEvent class" Url="html/T_AsterNET_Manager_Event_AlarmClearEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AlarmClearEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AlarmClearEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AlarmClearEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AlarmClearEvent.htm" />
   </HelpKINode>
@@ -645,7 +626,6 @@
     <HelpKINode Title="AlarmEvent Class" Url="html/T_AsterNET_Manager_Event_AlarmEvent.htm" />
     <HelpKINode Title="about AlarmEvent class" Url="html/T_AsterNET_Manager_Event_AlarmEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AlarmEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AlarmEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AlarmEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AlarmEvent.htm" />
   </HelpKINode>
@@ -895,6 +875,7 @@
   <HelpKINode Title="AsterNET.Manager.ConnectionStateEventHandler delegate" Url="html/T_AsterNET_Manager_ConnectionStateEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.DBGetResponseEventHandler delegate" Url="html/T_AsterNET_Manager_DBGetResponseEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.DialBeginEventHandler delegate" Url="html/T_AsterNET_Manager_DialBeginEventHandler.htm" />
+  <HelpKINode Title="AsterNET.Manager.DialEndEventHandler delegate" Url="html/T_AsterNET_Manager_DialEndEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.DialEventHandler delegate" Url="html/T_AsterNET_Manager_DialEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.DNDStateEventHandler delegate" Url="html/T_AsterNET_Manager_DNDStateEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.DTMFEventHandler delegate" Url="html/T_AsterNET_Manager_DTMFEventHandler.htm" />
@@ -947,6 +928,7 @@
   <HelpKINode Title="AsterNET.Manager.Event.ConnectionStateEvent class" Url="html/T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.DBGetResponseEvent class" Url="html/T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.DialBeginEvent class" Url="html/T_AsterNET_Manager_Event_DialBeginEvent.htm" />
+  <HelpKINode Title="AsterNET.Manager.Event.DialEndEvent class" Url="html/T_AsterNET_Manager_Event_DialEndEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.DialEvent class" Url="html/T_AsterNET_Manager_Event_DialEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.DisconnectEvent class" Url="html/T_AsterNET_Manager_Event_DisconnectEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.DNDStateEvent class" Url="html/T_AsterNET_Manager_Event_DNDStateEvent.htm" />
@@ -991,11 +973,14 @@
   <HelpKINode Title="AsterNET.Manager.Event.PeerStatusEvent class" Url="html/T_AsterNET_Manager_Event_PeerStatusEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.PRIEvent class" Url="html/T_AsterNET_Manager_Event_PRIEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueCallerAbandonEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
+  <HelpKINode Title="AsterNET.Manager.Event.QueueCallerJoinEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerJoinEvent.htm" />
+  <HelpKINode Title="AsterNET.Manager.Event.QueueCallerLeaveEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerLeaveEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueEntryEvent class" Url="html/T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueEvent class" Url="html/T_AsterNET_Manager_Event_QueueEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberAddedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberPausedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
+  <HelpKINode Title="AsterNET.Manager.Event.QueueMemberPauseEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberPenaltyEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberRemovedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberStatusEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
@@ -1055,6 +1040,8 @@
   <HelpKINode Title="AsterNET.Manager.PeerlistCompleteEventHandler delegate" Url="html/T_AsterNET_Manager_PeerlistCompleteEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.PeerStatusEventHandler delegate" Url="html/T_AsterNET_Manager_PeerStatusEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueCallerAbandonEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerAbandonEventHandler.htm" />
+  <HelpKINode Title="AsterNET.Manager.QueueCallerJoinEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerJoinEventHandler.htm" />
+  <HelpKINode Title="AsterNET.Manager.QueueCallerLeaveEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerLeaveEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueEntryEventHandler delegate" Url="html/T_AsterNET_Manager_QueueEntryEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueMemberAddedEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberAddedEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueMemberEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberEventHandler.htm" />
@@ -1098,7 +1085,6 @@
     <HelpKINode Title="AsyncAGIEvent Class" Url="html/T_AsterNET_Manager_Event_AsyncAGIEvent.htm" />
     <HelpKINode Title="about AsyncAGIEvent class" Url="html/T_AsterNET_Manager_Event_AsyncAGIEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AsyncAGIEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AsyncAGIEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AsyncAGIEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AsyncAGIEvent.htm" />
   </HelpKINode>
@@ -1112,7 +1098,6 @@
     <HelpKINode Title="AttendedTransferEvent Class" Url="html/T_AsterNET_Manager_Event_AttendedTransferEvent.htm" />
     <HelpKINode Title="about AttendedTransferEvent class" Url="html/T_AsterNET_Manager_Event_AttendedTransferEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_AttendedTransferEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_AttendedTransferEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_AttendedTransferEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AttendedTransferEvent.htm" />
   </HelpKINode>
@@ -1184,10 +1169,7 @@
   <HelpKINode Title="AttendedTransferEvent.TransferTargetPriority property" Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransferTargetPriority.htm" />
   <HelpKINode Title="AttendedTransferEvent.TransferTargetUniqueId property" Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransferTargetUniqueId.htm" />
   <HelpKINode Title="AttendedTransferEventHandler delegate" Url="html/T_AsterNET_Manager_AttendedTransferEventHandler.htm" />
-  <HelpKINode Title="attributes field">
-    <HelpKINode Title="ManagerEvent.attributes Field" Url="html/F_AsterNET_Manager_Event_ManagerEvent_attributes.htm" />
-    <HelpKINode Title="ManagerResponse.attributes Field" Url="html/F_AsterNET_Manager_Response_ManagerResponse_attributes.htm" />
-  </HelpKINode>
+  <HelpKINode Title="attributes field" Url="html/F_AsterNET_Manager_Response_ManagerResponse_attributes.htm" />
   <HelpKINode Title="Attributes property">
     <HelpKINode Title="ManagerEvent.Attributes Property " Url="html/P_AsterNET_Manager_Event_ManagerEvent_Attributes.htm" />
     <HelpKINode Title="ManagerResponse.Attributes Property " Url="html/P_AsterNET_Manager_Response_ManagerResponse_Attributes.htm" />
@@ -1227,7 +1209,6 @@
     <HelpKINode Title="BlindTransferEvent Class" Url="html/T_AsterNET_Manager_Event_BlindTransferEvent.htm" />
     <HelpKINode Title="about BlindTransferEvent class" Url="html/T_AsterNET_Manager_Event_BlindTransferEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BlindTransferEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BlindTransferEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BlindTransferEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BlindTransferEvent.htm" />
   </HelpKINode>
@@ -1285,7 +1266,6 @@
     <HelpKINode Title="BridgeActivityEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeActivityEvent.htm" />
     <HelpKINode Title="about BridgeActivityEvent class" Url="html/T_AsterNET_Manager_Event_BridgeActivityEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BridgeActivityEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BridgeActivityEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BridgeActivityEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BridgeActivityEvent.htm" />
   </HelpKINode>
@@ -1312,7 +1292,6 @@
     <HelpKINode Title="BridgeCreateEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeCreateEvent.htm" />
     <HelpKINode Title="about BridgeCreateEvent class" Url="html/T_AsterNET_Manager_Event_BridgeCreateEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BridgeCreateEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BridgeCreateEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BridgeCreateEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BridgeCreateEvent.htm" />
   </HelpKINode>
@@ -1329,7 +1308,6 @@
     <HelpKINode Title="BridgeDestroyEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeDestroyEvent.htm" />
     <HelpKINode Title="about BridgeDestroyEvent class" Url="html/T_AsterNET_Manager_Event_BridgeDestroyEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BridgeDestroyEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BridgeDestroyEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BridgeDestroyEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BridgeDestroyEvent.htm" />
   </HelpKINode>
@@ -1340,7 +1318,6 @@
     <HelpKINode Title="BridgeEnterEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeEnterEvent.htm" />
     <HelpKINode Title="about BridgeEnterEvent class" Url="html/T_AsterNET_Manager_Event_BridgeEnterEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BridgeEnterEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BridgeEnterEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BridgeEnterEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BridgeEnterEvent.htm" />
   </HelpKINode>
@@ -1350,7 +1327,6 @@
     <HelpKINode Title="BridgeEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeEvent.htm" />
     <HelpKINode Title="about BridgeEvent class" Url="html/T_AsterNET_Manager_Event_BridgeEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BridgeEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BridgeEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BridgeEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BridgeEvent.htm" />
   </HelpKINode>
@@ -1374,7 +1350,6 @@
     <HelpKINode Title="BridgeLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeLeaveEvent.htm" />
     <HelpKINode Title="about BridgeLeaveEvent class" Url="html/T_AsterNET_Manager_Event_BridgeLeaveEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BridgeLeaveEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BridgeLeaveEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BridgeLeaveEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BridgeLeaveEvent.htm" />
   </HelpKINode>
@@ -1395,7 +1370,6 @@
     <HelpKINode Title="BridgeStateEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeStateEvent.htm" />
     <HelpKINode Title="about BridgeStateEvent class" Url="html/T_AsterNET_Manager_Event_BridgeStateEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_BridgeStateEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_BridgeStateEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_BridgeStateEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_BridgeStateEvent.htm" />
   </HelpKINode>
@@ -1491,8 +1465,8 @@
   <HelpKINode Title="CallerId1 property" Url="html/P_AsterNET_Manager_Event_BridgeEvent_CallerId1.htm" />
   <HelpKINode Title="CallerId2 property" Url="html/P_AsterNET_Manager_Event_BridgeEvent_CallerId2.htm" />
   <HelpKINode Title="CallerIDname property">
-    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDname Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDname.htm" />
     <HelpKINode Title="ConfbridgeLeaveEvent.CallerIDname Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeLeaveEvent_CallerIDname.htm" />
+    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDname Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDname.htm" />
   </HelpKINode>
   <HelpKINode Title="CallerIDName property" Url="html/P_AsterNET_Manager_Event_ConfbridgeListEvent_CallerIDName.htm" />
   <HelpKINode Title="CallerIdName property">
@@ -1511,22 +1485,22 @@
     <HelpKINode Title="QueueEntryEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_QueueEntryEvent_CallerIdName.htm" />
     <HelpKINode Title="StatusEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_StatusEvent_CallerIdName.htm" />
   </HelpKINode>
+  <HelpKINode Title="CallerIDnum property">
+    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDnum.htm" />
+    <HelpKINode Title="ConfbridgeLeaveEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeLeaveEvent_CallerIDnum.htm" />
+  </HelpKINode>
   <HelpKINode Title="CallerIdNum property">
-    <HelpKINode Title="AbstractChannelEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AbstractChannelEvent_CallerIdNum.htm" />
     <HelpKINode Title="AbstractParkedCallEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AbstractParkedCallEvent_CallerIdNum.htm" />
+    <HelpKINode Title="AbstractChannelEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AbstractChannelEvent_CallerIdNum.htm" />
     <HelpKINode Title="AgentCalledEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AgentCalledEvent_CallerIdNum.htm" />
     <HelpKINode Title="BridgeActivityEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_BridgeActivityEvent_CallerIdNum.htm" />
     <HelpKINode Title="DialEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_DialEvent_CallerIdNum.htm" />
     <HelpKINode Title="MeetmeJoinEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_MeetmeJoinEvent_CallerIdNum.htm" />
+    <HelpKINode Title="MeetmeLeaveEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_MeetmeLeaveEvent_CallerIdNum.htm" />
+    <HelpKINode Title="NewCallerIdEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_NewCallerIdEvent_CallerIdNum.htm" />
     <HelpKINode Title="OriginateResponseEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_OriginateResponseEvent_CallerIdNum.htm" />
     <HelpKINode Title="ParkedCallEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_ParkedCallEvent_CallerIdNum.htm" />
     <HelpKINode Title="StatusEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_StatusEvent_CallerIdNum.htm" />
-    <HelpKINode Title="MeetmeLeaveEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_MeetmeLeaveEvent_CallerIdNum.htm" />
-    <HelpKINode Title="NewCallerIdEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_NewCallerIdEvent_CallerIdNum.htm" />
-  </HelpKINode>
-  <HelpKINode Title="CallerIDnum property">
-    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDnum.htm" />
-    <HelpKINode Title="ConfbridgeLeaveEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeLeaveEvent_CallerIDnum.htm" />
   </HelpKINode>
   <HelpKINode Title="CallerIDNum property" Url="html/P_AsterNET_Manager_Event_ConfbridgeListEvent_CallerIDNum.htm" />
   <HelpKINode Title="CallingAni2 property" Url="html/P_AsterNET_FastAGI_AGIRequest_CallingAni2.htm" />
@@ -1550,7 +1524,6 @@
     <HelpKINode Title="CdrEvent Class" Url="html/T_AsterNET_Manager_Event_CdrEvent.htm" />
     <HelpKINode Title="about CdrEvent class" Url="html/T_AsterNET_Manager_Event_CdrEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_CdrEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_CdrEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_CdrEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_CdrEvent.htm" />
   </HelpKINode>
@@ -1651,7 +1624,6 @@
     <HelpKINode Title="ChannelReloadEvent Class" Url="html/T_AsterNET_Manager_Event_ChannelReloadEvent.htm" />
     <HelpKINode Title="about ChannelReloadEvent class" Url="html/T_AsterNET_Manager_Event_ChannelReloadEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ChannelReloadEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ChannelReloadEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ChannelReloadEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ChannelReloadEvent.htm" />
   </HelpKINode>
@@ -1688,7 +1660,6 @@
     <HelpKINode Title="ChannelUpdateEvent Class" Url="html/T_AsterNET_Manager_Event_ChannelUpdateEvent.htm" />
     <HelpKINode Title="about ChannelUpdateEvent class" Url="html/T_AsterNET_Manager_Event_ChannelUpdateEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ChannelUpdateEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ChannelUpdateEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ChannelUpdateEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ChannelUpdateEvent.htm" />
   </HelpKINode>
@@ -1782,7 +1753,6 @@
     <HelpKINode Title="ConfbridgeEndEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeEndEvent.htm" />
     <HelpKINode Title="about ConfbridgeEndEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeEndEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeEndEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeEndEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeEndEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeEndEvent.htm" />
   </HelpKINode>
@@ -1793,7 +1763,6 @@
     <HelpKINode Title="ConfbridgeJoinEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeJoinEvent.htm" />
     <HelpKINode Title="about ConfbridgeJoinEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeJoinEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeJoinEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeJoinEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeJoinEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeJoinEvent.htm" />
   </HelpKINode>
@@ -1817,7 +1786,6 @@
     <HelpKINode Title="ConfbridgeLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeLeaveEvent.htm" />
     <HelpKINode Title="about ConfbridgeLeaveEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeLeaveEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeLeaveEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeLeaveEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeLeaveEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeLeaveEvent.htm" />
   </HelpKINode>
@@ -1840,7 +1808,6 @@
     <HelpKINode Title="ConfbridgeListCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListCompleteEvent.htm" />
     <HelpKINode Title="about ConfbridgeListCompleteEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeListCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeListCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeListCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeListCompleteEvent.htm" />
   </HelpKINode>
@@ -1849,7 +1816,6 @@
     <HelpKINode Title="ConfbridgeListEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListEvent.htm" />
     <HelpKINode Title="about ConfbridgeListEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeListEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeListEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeListEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeListEvent.htm" />
   </HelpKINode>
@@ -1872,7 +1838,6 @@
     <HelpKINode Title="ConfbridgeListRoomsCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListRoomsCompleteEvent.htm" />
     <HelpKINode Title="about ConfbridgeListRoomsCompleteEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListRoomsCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeListRoomsCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeListRoomsCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeListRoomsCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeListRoomsCompleteEvent.htm" />
   </HelpKINode>
@@ -1881,7 +1846,6 @@
     <HelpKINode Title="ConfbridgeListRoomsEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListRoomsEvent.htm" />
     <HelpKINode Title="about ConfbridgeListRoomsEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeListRoomsEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeListRoomsEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeListRoomsEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeListRoomsEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeListRoomsEvent.htm" />
   </HelpKINode>
@@ -1926,7 +1890,6 @@
     <HelpKINode Title="ConfbridgeStartEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeStartEvent.htm" />
     <HelpKINode Title="about ConfbridgeStartEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeStartEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeStartEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeStartEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeStartEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeStartEvent.htm" />
   </HelpKINode>
@@ -1957,7 +1920,6 @@
     <HelpKINode Title="ConfbridgeTalkingEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeTalkingEvent.htm" />
     <HelpKINode Title="about ConfbridgeTalkingEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeTalkingEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeTalkingEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConfbridgeTalkingEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConfbridgeTalkingEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConfbridgeTalkingEvent.htm" />
   </HelpKINode>
@@ -2008,7 +1970,6 @@
     <HelpKINode Title="ConnectEvent Class" Url="html/T_AsterNET_Manager_Event_ConnectEvent.htm" />
     <HelpKINode Title="about ConnectEvent class" Url="html/T_AsterNET_Manager_Event_ConnectEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConnectEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConnectEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConnectEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConnectEvent.htm" />
   </HelpKINode>
@@ -2019,7 +1980,6 @@
     <HelpKINode Title="ConnectionStateEvent Class" Url="html/T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
     <HelpKINode Title="about ConnectionStateEvent class" Url="html/T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ConnectionStateEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
   </HelpKINode>
@@ -2202,7 +2162,6 @@
     <HelpKINode Title="DBGetResponseEvent Class" Url="html/T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
     <HelpKINode Title="about DBGetResponseEvent class" Url="html/T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_DBGetResponseEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
   </HelpKINode>
@@ -2256,17 +2215,26 @@
     <HelpKINode Title="DialBeginEvent Class" Url="html/T_AsterNET_Manager_Event_DialBeginEvent.htm" />
     <HelpKINode Title="about DialBeginEvent class" Url="html/T_AsterNET_Manager_Event_DialBeginEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_DialBeginEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_DialBeginEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_DialBeginEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_DialBeginEvent.htm" />
   </HelpKINode>
   <HelpKINode Title="DialBeginEvent.DialBeginEvent constructor" Url="html/M_AsterNET_Manager_Event_DialBeginEvent__ctor.htm" />
   <HelpKINode Title="DialBeginEventHandler delegate" Url="html/T_AsterNET_Manager_DialBeginEventHandler.htm" />
+  <HelpKINode Title="DialEnd event" Url="html/E_AsterNET_Manager_ManagerConnection_DialEnd.htm" />
+  <HelpKINode Title="DialEndEvent class">
+    <HelpKINode Title="DialEndEvent Class" Url="html/T_AsterNET_Manager_Event_DialEndEvent.htm" />
+    <HelpKINode Title="about DialEndEvent class" Url="html/T_AsterNET_Manager_Event_DialEndEvent.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_DialEndEvent__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_DialEndEvent.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_DialEndEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DialEndEvent.DialEndEvent constructor" Url="html/M_AsterNET_Manager_Event_DialEndEvent__ctor.htm" />
+  <HelpKINode Title="DialEndEvent.Forward property" Url="html/P_AsterNET_Manager_Event_DialEndEvent_Forward.htm" />
+  <HelpKINode Title="DialEndEventHandler delegate" Url="html/T_AsterNET_Manager_DialEndEventHandler.htm" />
   <HelpKINode Title="DialEvent class">
     <HelpKINode Title="DialEvent Class" Url="html/T_AsterNET_Manager_Event_DialEvent.htm" />
     <HelpKINode Title="about DialEvent class" Url="html/T_AsterNET_Manager_Event_DialEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_DialEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_DialEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_DialEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_DialEvent.htm" />
   </HelpKINode>
@@ -2292,7 +2260,6 @@
     <HelpKINode Title="DisconnectEvent Class" Url="html/T_AsterNET_Manager_Event_DisconnectEvent.htm" />
     <HelpKINode Title="about DisconnectEvent class" Url="html/T_AsterNET_Manager_Event_DisconnectEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_DisconnectEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_DisconnectEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_DisconnectEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_DisconnectEvent.htm" />
   </HelpKINode>
@@ -2305,7 +2272,6 @@
     <HelpKINode Title="DNDStateEvent Class" Url="html/T_AsterNET_Manager_Event_DNDStateEvent.htm" />
     <HelpKINode Title="about DNDStateEvent class" Url="html/T_AsterNET_Manager_Event_DNDStateEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_DNDStateEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_DNDStateEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_DNDStateEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_DNDStateEvent.htm" />
   </HelpKINode>
@@ -2321,7 +2287,6 @@
     <HelpKINode Title="DTMFEvent Class" Url="html/T_AsterNET_Manager_Event_DTMFEvent.htm" />
     <HelpKINode Title="about DTMFEvent class" Url="html/T_AsterNET_Manager_Event_DTMFEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_DTMFEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_DTMFEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_DTMFEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_DTMFEvent.htm" />
   </HelpKINode>
@@ -2450,7 +2415,6 @@
     <HelpKINode Title="ExtensionStatusEvent Class" Url="html/T_AsterNET_Manager_Event_ExtensionStatusEvent.htm" />
     <HelpKINode Title="about ExtensionStatusEvent class" Url="html/T_AsterNET_Manager_Event_ExtensionStatusEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ExtensionStatusEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ExtensionStatusEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ExtensionStatusEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ExtensionStatusEvent.htm" />
   </HelpKINode>
@@ -2467,7 +2431,6 @@
     <HelpKINode Title="FailedACLEvent Class" Url="html/T_AsterNET_Manager_Event_FailedACLEvent.htm" />
     <HelpKINode Title="about FailedACLEvent class" Url="html/T_AsterNET_Manager_Event_FailedACLEvent.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_AsterNET_Manager_Event_FailedACLEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_FailedACLEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_FailedACLEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_FailedACLEvent.htm" />
   </HelpKINode>
@@ -2491,7 +2454,6 @@
     <HelpKINode Title="FaxReceivedEvent Class" Url="html/T_AsterNET_Manager_Event_FaxReceivedEvent.htm" />
     <HelpKINode Title="about FaxReceivedEvent class" Url="html/T_AsterNET_Manager_Event_FaxReceivedEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_FaxReceivedEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_FaxReceivedEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_FaxReceivedEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_FaxReceivedEvent.htm" />
   </HelpKINode>
@@ -2527,6 +2489,7 @@
     <HelpKINode Title="RecordFileCommand.Format Property " Url="html/P_AsterNET_FastAGI_Command_RecordFileCommand_Format.htm" />
     <HelpKINode Title="SayDateTimeCommand.Format Property " Url="html/P_AsterNET_FastAGI_Command_SayDateTimeCommand_Format.htm" />
   </HelpKINode>
+  <HelpKINode Title="Forward property" Url="html/P_AsterNET_Manager_Event_DialEndEvent_Forward.htm" />
   <HelpKINode Title="ForwardDigit property" Url="html/P_AsterNET_FastAGI_Command_ControlStreamFileCommand_ForwardDigit.htm" />
   <HelpKINode Title="FractionLost property">
     <HelpKINode Title="RTCPReceivedEvent.FractionLost Property " Url="html/P_AsterNET_Manager_Event_RTCPReceivedEvent_FractionLost.htm" />
@@ -2692,7 +2655,6 @@
     <HelpKINode Title="HangupEvent Class" Url="html/T_AsterNET_Manager_Event_HangupEvent.htm" />
     <HelpKINode Title="about HangupEvent class" Url="html/T_AsterNET_Manager_Event_HangupEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_HangupEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_HangupEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_HangupEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_HangupEvent.htm" />
   </HelpKINode>
@@ -2716,7 +2678,6 @@
     <HelpKINode Title="HoldedCallEvent Class" Url="html/T_AsterNET_Manager_Event_HoldedCallEvent.htm" />
     <HelpKINode Title="about HoldedCallEvent class" Url="html/T_AsterNET_Manager_Event_HoldedCallEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_HoldedCallEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_HoldedCallEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_HoldedCallEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_HoldedCallEvent.htm" />
   </HelpKINode>
@@ -2730,7 +2691,6 @@
     <HelpKINode Title="HoldEvent Class" Url="html/T_AsterNET_Manager_Event_HoldEvent.htm" />
     <HelpKINode Title="about HoldEvent class" Url="html/T_AsterNET_Manager_Event_HoldEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_HoldEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_HoldEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_HoldEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_HoldEvent.htm" />
   </HelpKINode>
@@ -2738,8 +2698,8 @@
   <HelpKINode Title="HoldEvent.Status property" Url="html/P_AsterNET_Manager_Event_HoldEvent_Status.htm" />
   <HelpKINode Title="HoldEventHandler delegate" Url="html/T_AsterNET_Manager_HoldEventHandler.htm" />
   <HelpKINode Title="HoldTime property">
-    <HelpKINode Title="AgentConnectEvent.HoldTime Property " Url="html/P_AsterNET_Manager_Event_AgentConnectEvent_HoldTime.htm" />
     <HelpKINode Title="AgentCompleteEvent.HoldTime Property " Url="html/P_AsterNET_Manager_Event_AgentCompleteEvent_HoldTime.htm" />
+    <HelpKINode Title="AgentConnectEvent.HoldTime Property " Url="html/P_AsterNET_Manager_Event_AgentConnectEvent_HoldTime.htm" />
     <HelpKINode Title="QueueCallerAbandonEvent.HoldTime Property " Url="html/P_AsterNET_Manager_Event_QueueCallerAbandonEvent_HoldTime.htm" />
   </HelpKINode>
   <HelpKINode Title="Holdtime property" Url="html/P_AsterNET_Manager_Event_QueueParamsEvent_Holdtime.htm" />
@@ -2759,6 +2719,7 @@
   </HelpKINode>
   <HelpKINode Title="IMappingStrategy.DetermineScript method" Url="html/M_AsterNET_FastAGI_IMappingStrategy_DetermineScript.htm" />
   <HelpKINode Title="IMappingStrategy.Load method" Url="html/M_AsterNET_FastAGI_IMappingStrategy_Load.htm" />
+  <HelpKINode Title="InCall property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_InCall.htm" />
   <HelpKINode Title="Info enumeration member" Url="html/T_AsterNET_Logger_MessageLevel.htm" />
   <HelpKINode Title="Info method" Url="html/Overload_AsterNET_Logger_Info.htm" />
   <HelpKINode Title="Initial property" Url="html/P_AsterNET_IO_SocketConnection_Initial.htm" />
@@ -2821,7 +2782,6 @@
     <HelpKINode Title="JabberEvent Class" Url="html/T_AsterNET_Manager_Event_JabberEvent.htm" />
     <HelpKINode Title="about JabberEvent class" Url="html/T_AsterNET_Manager_Event_JabberEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_JabberEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_JabberEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_JabberEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_JabberEvent.htm" />
   </HelpKINode>
@@ -2836,7 +2796,6 @@
     <HelpKINode Title="JitterBufStatsEvent Class" Url="html/T_AsterNET_Manager_Event_JitterBufStatsEvent.htm" />
     <HelpKINode Title="about JitterBufStatsEvent class" Url="html/T_AsterNET_Manager_Event_JitterBufStatsEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_JitterBufStatsEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_JitterBufStatsEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_JitterBufStatsEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_JitterBufStatsEvent.htm" />
   </HelpKINode>
@@ -2862,7 +2821,6 @@
     <HelpKINode Title="JoinEvent Class" Url="html/T_AsterNET_Manager_Event_JoinEvent.htm" />
     <HelpKINode Title="about JoinEvent class" Url="html/T_AsterNET_Manager_Event_JoinEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_JoinEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_JoinEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_JoinEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_JoinEvent.htm" />
   </HelpKINode>
@@ -2905,7 +2863,6 @@
     <HelpKINode Title="LeaveEvent Class" Url="html/T_AsterNET_Manager_Event_LeaveEvent.htm" />
     <HelpKINode Title="about LeaveEvent class" Url="html/T_AsterNET_Manager_Event_LeaveEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_LeaveEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_LeaveEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_LeaveEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_LeaveEvent.htm" />
   </HelpKINode>
@@ -2925,7 +2882,6 @@
     <HelpKINode Title="LinkEvent Class" Url="html/T_AsterNET_Manager_Event_LinkEvent.htm" />
     <HelpKINode Title="about LinkEvent class" Url="html/T_AsterNET_Manager_Event_LinkEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_LinkEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_LinkEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_LinkEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_LinkEvent.htm" />
   </HelpKINode>
@@ -2972,7 +2928,6 @@
     <HelpKINode Title="LogChannelEvent Class" Url="html/T_AsterNET_Manager_Event_LogChannelEvent.htm" />
     <HelpKINode Title="about LogChannelEvent class" Url="html/T_AsterNET_Manager_Event_LogChannelEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_LogChannelEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_LogChannelEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_LogChannelEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_LogChannelEvent.htm" />
   </HelpKINode>
@@ -3162,6 +3117,7 @@
   <HelpKINode Title="ManagerConnection.determineVersion method" Url="html/M_AsterNET_Manager_ManagerConnection_determineVersion.htm" />
   <HelpKINode Title="ManagerConnection.Dial event" Url="html/E_AsterNET_Manager_ManagerConnection_Dial.htm" />
   <HelpKINode Title="ManagerConnection.DialBegin event" Url="html/E_AsterNET_Manager_ManagerConnection_DialBegin.htm" />
+  <HelpKINode Title="ManagerConnection.DialEnd event" Url="html/E_AsterNET_Manager_ManagerConnection_DialEnd.htm" />
   <HelpKINode Title="ManagerConnection.DNDState event" Url="html/E_AsterNET_Manager_ManagerConnection_DNDState.htm" />
   <HelpKINode Title="ManagerConnection.DTMF event" Url="html/E_AsterNET_Manager_ManagerConnection_DTMF.htm" />
   <HelpKINode Title="ManagerConnection.ExtensionStatus event" Url="html/E_AsterNET_Manager_ManagerConnection_ExtensionStatus.htm" />
@@ -3202,6 +3158,8 @@
   <HelpKINode Title="ManagerConnection.PingInterval property" Url="html/P_AsterNET_Manager_ManagerConnection_PingInterval.htm" />
   <HelpKINode Title="ManagerConnection.Port property" Url="html/P_AsterNET_Manager_ManagerConnection_Port.htm" />
   <HelpKINode Title="ManagerConnection.QueueCallerAbandon event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerAbandon.htm" />
+  <HelpKINode Title="ManagerConnection.QueueCallerJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerJoin.htm" />
+  <HelpKINode Title="ManagerConnection.QueueCallerLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerLeave.htm" />
   <HelpKINode Title="ManagerConnection.QueueEntry event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueEntry.htm" />
   <HelpKINode Title="ManagerConnection.QueueMember event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMember.htm" />
   <HelpKINode Title="ManagerConnection.QueueMemberAdded event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberAdded.htm" />
@@ -3249,11 +3207,9 @@
     <HelpKINode Title="ManagerEvent Class" Url="html/T_AsterNET_Manager_Event_ManagerEvent.htm" />
     <HelpKINode Title="about ManagerEvent class" Url="html/T_AsterNET_Manager_Event_ManagerEvent.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_AsterNET_Manager_Event_ManagerEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ManagerEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ManagerEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ManagerEvent.htm" />
   </HelpKINode>
-  <HelpKINode Title="ManagerEvent.attributes field" Url="html/F_AsterNET_Manager_Event_ManagerEvent_attributes.htm" />
   <HelpKINode Title="ManagerEvent.Attributes property" Url="html/P_AsterNET_Manager_Event_ManagerEvent_Attributes.htm" />
   <HelpKINode Title="ManagerEvent.Channel property" Url="html/P_AsterNET_Manager_Event_ManagerEvent_Channel.htm" />
   <HelpKINode Title="ManagerEvent.DateReceived property" Url="html/P_AsterNET_Manager_Event_ManagerEvent_DateReceived.htm" />
@@ -3338,7 +3294,6 @@
     <HelpKINode Title="MeetmeEndEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeEndEvent.htm" />
     <HelpKINode Title="about MeetmeEndEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeEndEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MeetmeEndEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MeetmeEndEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MeetmeEndEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeEndEvent.htm" />
   </HelpKINode>
@@ -3348,7 +3303,6 @@
     <HelpKINode Title="MeetmeJoinEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeJoinEvent.htm" />
     <HelpKINode Title="about MeetmeJoinEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeJoinEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MeetmeJoinEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MeetmeJoinEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MeetmeJoinEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeJoinEvent.htm" />
   </HelpKINode>
@@ -3361,7 +3315,6 @@
     <HelpKINode Title="MeetmeLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeLeaveEvent.htm" />
     <HelpKINode Title="about MeetmeLeaveEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeLeaveEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MeetmeLeaveEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MeetmeLeaveEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MeetmeLeaveEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeLeaveEvent.htm" />
   </HelpKINode>
@@ -3374,7 +3327,6 @@
     <HelpKINode Title="MeetmeMuteEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeMuteEvent.htm" />
     <HelpKINode Title="about MeetmeMuteEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeMuteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MeetmeMuteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MeetmeMuteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MeetmeMuteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeMuteEvent.htm" />
   </HelpKINode>
@@ -3384,7 +3336,6 @@
     <HelpKINode Title="MeetmeStopTalkingEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeStopTalkingEvent.htm" />
     <HelpKINode Title="about MeetmeStopTalkingEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeStopTalkingEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MeetmeStopTalkingEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MeetmeStopTalkingEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MeetmeStopTalkingEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeStopTalkingEvent.htm" />
   </HelpKINode>
@@ -3394,7 +3345,6 @@
     <HelpKINode Title="MeetmeTalkingEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeTalkingEvent.htm" />
     <HelpKINode Title="about MeetmeTalkingEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeTalkingEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MeetmeTalkingEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MeetmeTalkingEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MeetmeTalkingEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeTalkingEvent.htm" />
   </HelpKINode>
@@ -3405,7 +3355,6 @@
     <HelpKINode Title="MeetmeTalkRequestEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeTalkRequestEvent.htm" />
     <HelpKINode Title="about MeetmeTalkRequestEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeTalkRequestEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MeetmeTalkRequestEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MeetmeTalkRequestEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MeetmeTalkRequestEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeTalkRequestEvent.htm" />
   </HelpKINode>
@@ -3421,6 +3370,7 @@
     <HelpKINode Title="QueueMemberAddedEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_MemberName.htm" />
     <HelpKINode Title="QueueMemberEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_MemberName.htm" />
     <HelpKINode Title="QueueMemberPausedEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_MemberName.htm" />
+    <HelpKINode Title="QueueMemberPauseEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_MemberName.htm" />
     <HelpKINode Title="QueueMemberRemovedEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberRemovedEvent_MemberName.htm" />
   </HelpKINode>
   <HelpKINode Title="Members property" Url="html/P_AsterNET_Manager_Action_QueueReloadAction_Members.htm" />
@@ -3439,7 +3389,6 @@
     <HelpKINode Title="MessageWaitingEvent Class" Url="html/T_AsterNET_Manager_Event_MessageWaitingEvent.htm" />
     <HelpKINode Title="about MessageWaitingEvent class" Url="html/T_AsterNET_Manager_Event_MessageWaitingEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MessageWaitingEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MessageWaitingEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MessageWaitingEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MessageWaitingEvent.htm" />
   </HelpKINode>
@@ -3455,7 +3404,6 @@
     <HelpKINode Title="MobileStatusEvent Class" Url="html/T_AsterNET_Manager_Event_MobileStatusEvent.htm" />
     <HelpKINode Title="about MobileStatusEvent class" Url="html/T_AsterNET_Manager_Event_MobileStatusEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MobileStatusEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MobileStatusEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MobileStatusEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MobileStatusEvent.htm" />
   </HelpKINode>
@@ -3469,7 +3417,6 @@
     <HelpKINode Title="ModuleLoadReportEvent Class" Url="html/T_AsterNET_Manager_Event_ModuleLoadReportEvent.htm" />
     <HelpKINode Title="about ModuleLoadReportEvent class" Url="html/T_AsterNET_Manager_Event_ModuleLoadReportEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ModuleLoadReportEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ModuleLoadReportEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ModuleLoadReportEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ModuleLoadReportEvent.htm" />
   </HelpKINode>
@@ -3496,7 +3443,6 @@
     <HelpKINode Title="MonitorStartEvent Class" Url="html/T_AsterNET_Manager_Event_MonitorStartEvent.htm" />
     <HelpKINode Title="about MonitorStartEvent class" Url="html/T_AsterNET_Manager_Event_MonitorStartEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MonitorStartEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MonitorStartEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MonitorStartEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MonitorStartEvent.htm" />
   </HelpKINode>
@@ -3505,7 +3451,6 @@
     <HelpKINode Title="MonitorStopEvent Class" Url="html/T_AsterNET_Manager_Event_MonitorStopEvent.htm" />
     <HelpKINode Title="about MonitorStopEvent class" Url="html/T_AsterNET_Manager_Event_MonitorStopEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_MonitorStopEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_MonitorStopEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_MonitorStopEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MonitorStopEvent.htm" />
   </HelpKINode>
@@ -3524,7 +3469,6 @@
     <HelpKINode Title="NewAccountCodeEvent Class" Url="html/T_AsterNET_Manager_Event_NewAccountCodeEvent.htm" />
     <HelpKINode Title="about NewAccountCodeEvent class" Url="html/T_AsterNET_Manager_Event_NewAccountCodeEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_NewAccountCodeEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_NewAccountCodeEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_NewAccountCodeEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_NewAccountCodeEvent.htm" />
   </HelpKINode>
@@ -3536,7 +3480,6 @@
     <HelpKINode Title="NewCallerIdEvent Class" Url="html/T_AsterNET_Manager_Event_NewCallerIdEvent.htm" />
     <HelpKINode Title="about NewCallerIdEvent class" Url="html/T_AsterNET_Manager_Event_NewCallerIdEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_NewCallerIdEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_NewCallerIdEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_NewCallerIdEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_NewCallerIdEvent.htm" />
   </HelpKINode>
@@ -3552,7 +3495,6 @@
     <HelpKINode Title="NewChannelEvent Class" Url="html/T_AsterNET_Manager_Event_NewChannelEvent.htm" />
     <HelpKINode Title="about NewChannelEvent class" Url="html/T_AsterNET_Manager_Event_NewChannelEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_NewChannelEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_NewChannelEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_NewChannelEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_NewChannelEvent.htm" />
   </HelpKINode>
@@ -3563,7 +3505,6 @@
     <HelpKINode Title="NewExtenEvent Class" Url="html/T_AsterNET_Manager_Event_NewExtenEvent.htm" />
     <HelpKINode Title="about NewExtenEvent class" Url="html/T_AsterNET_Manager_Event_NewExtenEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_NewExtenEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_NewExtenEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_NewExtenEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_NewExtenEvent.htm" />
   </HelpKINode>
@@ -3583,7 +3524,6 @@
     <HelpKINode Title="NewStateEvent Class" Url="html/T_AsterNET_Manager_Event_NewStateEvent.htm" />
     <HelpKINode Title="about NewStateEvent class" Url="html/T_AsterNET_Manager_Event_NewStateEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_NewStateEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_NewStateEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_NewStateEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_NewStateEvent.htm" />
   </HelpKINode>
@@ -3689,7 +3629,6 @@
     <HelpKINode Title="OriginateResponseEvent Class" Url="html/T_AsterNET_Manager_Event_OriginateResponseEvent.htm" />
     <HelpKINode Title="about OriginateResponseEvent class" Url="html/T_AsterNET_Manager_Event_OriginateResponseEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_OriginateResponseEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_OriginateResponseEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_OriginateResponseEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_OriginateResponseEvent.htm" />
   </HelpKINode>
@@ -3741,7 +3680,6 @@
     <HelpKINode Title="ParkedCallEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallEvent.htm" />
     <HelpKINode Title="about ParkedCallEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ParkedCallEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ParkedCallEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ParkedCallEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ParkedCallEvent.htm" />
   </HelpKINode>
@@ -3758,7 +3696,6 @@
     <HelpKINode Title="ParkedCallGiveUpEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallGiveUpEvent.htm" />
     <HelpKINode Title="about ParkedCallGiveUpEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallGiveUpEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ParkedCallGiveUpEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ParkedCallGiveUpEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ParkedCallGiveUpEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ParkedCallGiveUpEvent.htm" />
   </HelpKINode>
@@ -3779,7 +3716,6 @@
     <HelpKINode Title="ParkedCallsCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallsCompleteEvent.htm" />
     <HelpKINode Title="about ParkedCallsCompleteEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallsCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ParkedCallsCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ParkedCallsCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ParkedCallsCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ParkedCallsCompleteEvent.htm" />
   </HelpKINode>
@@ -3790,7 +3726,6 @@
     <HelpKINode Title="ParkedCallTimeOutEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallTimeOutEvent.htm" />
     <HelpKINode Title="about ParkedCallTimeOutEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallTimeOutEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ParkedCallTimeOutEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ParkedCallTimeOutEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ParkedCallTimeOutEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ParkedCallTimeOutEvent.htm" />
   </HelpKINode>
@@ -3815,9 +3750,11 @@
     <HelpKINode Title="QueueMemberAddedEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_Paused.htm" />
     <HelpKINode Title="QueueMemberEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_Paused.htm" />
     <HelpKINode Title="QueueMemberPausedEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_Paused.htm" />
+    <HelpKINode Title="QueueMemberPauseEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_Paused.htm" />
     <HelpKINode Title="QueuePauseAction.Paused Property " Url="html/P_AsterNET_Manager_Action_QueuePauseAction_Paused.htm" />
   </HelpKINode>
   <HelpKINode Title="PauseDigit property" Url="html/P_AsterNET_FastAGI_Command_ControlStreamFileCommand_PauseDigit.htm" />
+  <HelpKINode Title="PausedReason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_PausedReason.htm" />
   <HelpKINode Title="Peer property">
     <HelpKINode Title="PeerStatusEvent.Peer Property " Url="html/P_AsterNET_Manager_Event_PeerStatusEvent_Peer.htm" />
     <HelpKINode Title="SIPShowPeerAction.Peer Property " Url="html/P_AsterNET_Manager_Action_SIPShowPeerAction_Peer.htm" />
@@ -3828,7 +3765,6 @@
     <HelpKINode Title="PeerEntryEvent Class" Url="html/T_AsterNET_Manager_Event_PeerEntryEvent.htm" />
     <HelpKINode Title="about PeerEntryEvent class" Url="html/T_AsterNET_Manager_Event_PeerEntryEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_PeerEntryEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_PeerEntryEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_PeerEntryEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_PeerEntryEvent.htm" />
   </HelpKINode>
@@ -3851,7 +3787,6 @@
     <HelpKINode Title="PeerlistCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_PeerlistCompleteEvent.htm" />
     <HelpKINode Title="about PeerlistCompleteEvent class" Url="html/T_AsterNET_Manager_Event_PeerlistCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_PeerlistCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_PeerlistCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_PeerlistCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_PeerlistCompleteEvent.htm" />
   </HelpKINode>
@@ -3865,7 +3800,6 @@
     <HelpKINode Title="PeerStatusEvent Class" Url="html/T_AsterNET_Manager_Event_PeerStatusEvent.htm" />
     <HelpKINode Title="about PeerStatusEvent class" Url="html/T_AsterNET_Manager_Event_PeerStatusEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_PeerStatusEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_PeerStatusEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_PeerStatusEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_PeerStatusEvent.htm" />
   </HelpKINode>
@@ -3900,6 +3834,8 @@
   <HelpKINode Title="Position property">
     <HelpKINode Title="JoinEvent.Position Property " Url="html/P_AsterNET_Manager_Event_JoinEvent_Position.htm" />
     <HelpKINode Title="QueueCallerAbandonEvent.Position Property " Url="html/P_AsterNET_Manager_Event_QueueCallerAbandonEvent_Position.htm" />
+    <HelpKINode Title="QueueCallerJoinEvent.Position Property " Url="html/P_AsterNET_Manager_Event_QueueCallerJoinEvent_Position.htm" />
+    <HelpKINode Title="QueueCallerLeaveEvent.Position Property " Url="html/P_AsterNET_Manager_Event_QueueCallerLeaveEvent_Position.htm" />
     <HelpKINode Title="QueueEntryEvent.Position Property " Url="html/P_AsterNET_Manager_Event_QueueEntryEvent_Position.htm" />
   </HelpKINode>
   <HelpKINode Title="PreLoadedAssembly property" Url="html/P_AsterNET_FastAGI_MappingStrategies_ScriptMapping_PreLoadedAssembly.htm" />
@@ -3907,7 +3843,6 @@
     <HelpKINode Title="PRIEvent Class" Url="html/T_AsterNET_Manager_Event_PRIEvent.htm" />
     <HelpKINode Title="about PRIEvent class" Url="html/T_AsterNET_Manager_Event_PRIEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_PRIEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_PRIEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_PRIEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_PRIEvent.htm" />
   </HelpKINode>
@@ -3982,7 +3917,6 @@
     <HelpKINode Title="QueueCallerAbandonEvent Class" Url="html/T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
     <HelpKINode Title="about QueueCallerAbandonEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerAbandonEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
   </HelpKINode>
@@ -3992,12 +3926,33 @@
   <HelpKINode Title="QueueCallerAbandonEvent.Queue property" Url="html/P_AsterNET_Manager_Event_QueueCallerAbandonEvent_Queue.htm" />
   <HelpKINode Title="QueueCallerAbandonEvent.QueueCallerAbandonEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerAbandonEvent__ctor.htm" />
   <HelpKINode Title="QueueCallerAbandonEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerAbandonEventHandler.htm" />
+  <HelpKINode Title="QueueCallerJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerJoin.htm" />
+  <HelpKINode Title="QueueCallerJoinEvent class">
+    <HelpKINode Title="QueueCallerJoinEvent Class" Url="html/T_AsterNET_Manager_Event_QueueCallerJoinEvent.htm" />
+    <HelpKINode Title="about QueueCallerJoinEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerJoinEvent.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerJoinEvent__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueCallerJoinEvent.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueCallerJoinEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="QueueCallerJoinEvent.Position property" Url="html/P_AsterNET_Manager_Event_QueueCallerJoinEvent_Position.htm" />
+  <HelpKINode Title="QueueCallerJoinEvent.QueueCallerJoinEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerJoinEvent__ctor.htm" />
+  <HelpKINode Title="QueueCallerJoinEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerJoinEventHandler.htm" />
+  <HelpKINode Title="QueueCallerLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerLeave.htm" />
+  <HelpKINode Title="QueueCallerLeaveEvent class">
+    <HelpKINode Title="QueueCallerLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_QueueCallerLeaveEvent.htm" />
+    <HelpKINode Title="about QueueCallerLeaveEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerLeaveEvent.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerLeaveEvent__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueCallerLeaveEvent.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueCallerLeaveEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="QueueCallerLeaveEvent.Position property" Url="html/P_AsterNET_Manager_Event_QueueCallerLeaveEvent_Position.htm" />
+  <HelpKINode Title="QueueCallerLeaveEvent.QueueCallerLeaveEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerLeaveEvent__ctor.htm" />
+  <HelpKINode Title="QueueCallerLeaveEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerLeaveEventHandler.htm" />
   <HelpKINode Title="QueueEntry event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueEntry.htm" />
   <HelpKINode Title="QueueEntryEvent class">
     <HelpKINode Title="QueueEntryEvent Class" Url="html/T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
     <HelpKINode Title="about QueueEntryEvent class" Url="html/T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueEntryEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
   </HelpKINode>
@@ -4012,7 +3967,6 @@
     <HelpKINode Title="QueueEvent Class" Url="html/T_AsterNET_Manager_Event_QueueEvent.htm" />
     <HelpKINode Title="about QueueEvent class" Url="html/T_AsterNET_Manager_Event_QueueEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueEvent.htm" />
   </HelpKINode>
@@ -4039,7 +3993,6 @@
     <HelpKINode Title="QueueMemberAddedEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
     <HelpKINode Title="about QueueMemberAddedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberAddedEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
   </HelpKINode>
@@ -4056,7 +4009,6 @@
     <HelpKINode Title="QueueMemberEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberEvent.htm" />
     <HelpKINode Title="about QueueMemberEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueMemberEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberEvent.htm" />
   </HelpKINode>
@@ -4077,7 +4029,6 @@
     <HelpKINode Title="QueueMemberPausedEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
     <HelpKINode Title="about QueueMemberPausedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPausedEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
   </HelpKINode>
@@ -4086,11 +4037,23 @@
   <HelpKINode Title="QueueMemberPausedEvent.QueueMemberPausedEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPausedEvent__ctor.htm" />
   <HelpKINode Title="QueueMemberPausedEvent.Reason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_Reason.htm" />
   <HelpKINode Title="QueueMemberPausedEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberPausedEventHandler.htm" />
+  <HelpKINode Title="QueueMemberPauseEvent class">
+    <HelpKINode Title="QueueMemberPauseEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
+    <HelpKINode Title="about QueueMemberPauseEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPauseEvent__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="QueueMemberPauseEvent.InCall property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_InCall.htm" />
+  <HelpKINode Title="QueueMemberPauseEvent.MemberName property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_MemberName.htm" />
+  <HelpKINode Title="QueueMemberPauseEvent.Paused property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_Paused.htm" />
+  <HelpKINode Title="QueueMemberPauseEvent.PausedReason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_PausedReason.htm" />
+  <HelpKINode Title="QueueMemberPauseEvent.QueueMemberPauseEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPauseEvent__ctor.htm" />
+  <HelpKINode Title="QueueMemberPauseEvent.Reason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_Reason.htm" />
   <HelpKINode Title="QueueMemberPenaltyEvent class">
     <HelpKINode Title="QueueMemberPenaltyEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
     <HelpKINode Title="about QueueMemberPenaltyEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPenaltyEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
   </HelpKINode>
@@ -4101,7 +4064,6 @@
     <HelpKINode Title="QueueMemberRemovedEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
     <HelpKINode Title="about QueueMemberRemovedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberRemovedEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
   </HelpKINode>
@@ -4113,7 +4075,6 @@
     <HelpKINode Title="QueueMemberStatusEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
     <HelpKINode Title="about QueueMemberStatusEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberStatusEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
   </HelpKINode>
@@ -4124,7 +4085,6 @@
     <HelpKINode Title="QueueParamsEvent Class" Url="html/T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
     <HelpKINode Title="about QueueParamsEvent class" Url="html/T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueParamsEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
   </HelpKINode>
@@ -4225,7 +4185,6 @@
     <HelpKINode Title="QueueStatusCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
     <HelpKINode Title="about QueueStatusCompleteEvent class" Url="html/T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueStatusCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
   </HelpKINode>
@@ -4244,6 +4203,7 @@
     <HelpKINode Title="OriginateResponse.Reason Property " Url="html/P_AsterNET_Manager_Response_OriginateResponse_Reason.htm" />
     <HelpKINode Title="OriginateResponseEvent.Reason Property " Url="html/P_AsterNET_Manager_Event_OriginateResponseEvent_Reason.htm" />
     <HelpKINode Title="QueueMemberPausedEvent.Reason Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_Reason.htm" />
+    <HelpKINode Title="QueueMemberPauseEvent.Reason Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_Reason.htm" />
   </HelpKINode>
   <HelpKINode Title="ReasonCode property" Url="html/P_AsterNET_Manager_Event_LogChannelEvent_ReasonCode.htm" />
   <HelpKINode Title="ReceiveCharCommand class">
@@ -4310,7 +4270,6 @@
     <HelpKINode Title="RegistryEvent Class" Url="html/T_AsterNET_Manager_Event_RegistryEvent.htm" />
     <HelpKINode Title="about RegistryEvent class" Url="html/T_AsterNET_Manager_Event_RegistryEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_RegistryEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_RegistryEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_RegistryEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_RegistryEvent.htm" />
   </HelpKINode>
@@ -4327,7 +4286,6 @@
     <HelpKINode Title="ReloadEvent Class" Url="html/T_AsterNET_Manager_Event_ReloadEvent.htm" />
     <HelpKINode Title="about ReloadEvent class" Url="html/T_AsterNET_Manager_Event_ReloadEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ReloadEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ReloadEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ReloadEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ReloadEvent.htm" />
   </HelpKINode>
@@ -4399,7 +4357,6 @@
     <HelpKINode Title="ResponseEvent Class" Url="html/T_AsterNET_Manager_Event_ResponseEvent.htm" />
     <HelpKINode Title="about ResponseEvent class" Url="html/T_AsterNET_Manager_Event_ResponseEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ResponseEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ResponseEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ResponseEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ResponseEvent.htm" />
   </HelpKINode>
@@ -4468,7 +4425,6 @@
     <HelpKINode Title="RTCPReceivedEvent Class" Url="html/T_AsterNET_Manager_Event_RTCPReceivedEvent.htm" />
     <HelpKINode Title="about RTCPReceivedEvent class" Url="html/T_AsterNET_Manager_Event_RTCPReceivedEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_RTCPReceivedEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_RTCPReceivedEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_RTCPReceivedEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_RTCPReceivedEvent.htm" />
   </HelpKINode>
@@ -4489,7 +4445,6 @@
     <HelpKINode Title="RTCPSentEvent Class" Url="html/T_AsterNET_Manager_Event_RTCPSentEvent.htm" />
     <HelpKINode Title="about RTCPSentEvent class" Url="html/T_AsterNET_Manager_Event_RTCPSentEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_RTCPSentEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_RTCPSentEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_RTCPSentEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_RTCPSentEvent.htm" />
   </HelpKINode>
@@ -4510,7 +4465,6 @@
     <HelpKINode Title="RTPReceiverStatEvent Class" Url="html/T_AsterNET_Manager_Event_RTPReceiverStatEvent.htm" />
     <HelpKINode Title="about RTPReceiverStatEvent class" Url="html/T_AsterNET_Manager_Event_RTPReceiverStatEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_RTPReceiverStatEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_RTPReceiverStatEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_RTPReceiverStatEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_RTPReceiverStatEvent.htm" />
   </HelpKINode>
@@ -4525,7 +4479,6 @@
     <HelpKINode Title="RTPSenderStatEvent Class" Url="html/T_AsterNET_Manager_Event_RTPSenderStatEvent.htm" />
     <HelpKINode Title="about RTPSenderStatEvent class" Url="html/T_AsterNET_Manager_Event_RTPSenderStatEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_RTPSenderStatEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_RTPSenderStatEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_RTPSenderStatEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_RTPSenderStatEvent.htm" />
   </HelpKINode>
@@ -4850,7 +4803,6 @@
     <HelpKINode Title="ShowDialPlanCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_ShowDialPlanCompleteEvent.htm" />
     <HelpKINode Title="about ShowDialPlanCompleteEvent class" Url="html/T_AsterNET_Manager_Event_ShowDialPlanCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ShowDialPlanCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ShowDialPlanCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ShowDialPlanCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ShowDialPlanCompleteEvent.htm" />
   </HelpKINode>
@@ -4867,7 +4819,6 @@
     <HelpKINode Title="ShutdownEvent Class" Url="html/T_AsterNET_Manager_Event_ShutdownEvent.htm" />
     <HelpKINode Title="about ShutdownEvent class" Url="html/T_AsterNET_Manager_Event_ShutdownEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ShutdownEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ShutdownEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ShutdownEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ShutdownEvent.htm" />
   </HelpKINode>
@@ -4990,7 +4941,6 @@
     <HelpKINode Title="StatusCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_StatusCompleteEvent.htm" />
     <HelpKINode Title="about StatusCompleteEvent class" Url="html/T_AsterNET_Manager_Event_StatusCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_StatusCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_StatusCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_StatusCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_StatusCompleteEvent.htm" />
   </HelpKINode>
@@ -5001,7 +4951,6 @@
     <HelpKINode Title="StatusEvent Class" Url="html/T_AsterNET_Manager_Event_StatusEvent.htm" />
     <HelpKINode Title="about StatusEvent class" Url="html/T_AsterNET_Manager_Event_StatusEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_StatusEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_StatusEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_StatusEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_StatusEvent.htm" />
   </HelpKINode>
@@ -5158,8 +5107,8 @@
     <HelpKINode Title="AttendedTransferEvent.TransfereeChannelState Property " Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeChannelState.htm" />
     <HelpKINode Title="BlindTransferEvent.TransfereeChannelState Property " Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeChannelState.htm" />
   </HelpKINode>
-  <HelpKINode Title="TransfereeChannelStateDesc property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeChannelStateDesc.htm" />
   <HelpKINode Title="TransfereeChannelStatedesc property" Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeChannelStatedesc.htm" />
+  <HelpKINode Title="TransfereeChannelStateDesc property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeChannelStateDesc.htm" />
   <HelpKINode Title="TransfereeConnectedLineName property">
     <HelpKINode Title="AttendedTransferEvent.TransfereeConnectedLineName Property " Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeConnectedLineName.htm" />
     <HelpKINode Title="BlindTransferEvent.TransfereeConnectedLineName Property " Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeConnectedLineName.htm" />
@@ -5204,7 +5153,6 @@
     <HelpKINode Title="TransferEvent Class" Url="html/T_AsterNET_Manager_Event_TransferEvent.htm" />
     <HelpKINode Title="about TransferEvent class" Url="html/T_AsterNET_Manager_Event_TransferEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_TransferEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_TransferEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_TransferEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_TransferEvent.htm" />
   </HelpKINode>
@@ -5242,19 +5190,18 @@
     <HelpKINode Title="UnholdEvent Class" Url="html/T_AsterNET_Manager_Event_UnholdEvent.htm" />
     <HelpKINode Title="about UnholdEvent class" Url="html/T_AsterNET_Manager_Event_UnholdEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_UnholdEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_UnholdEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_UnholdEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_UnholdEvent.htm" />
   </HelpKINode>
   <HelpKINode Title="UnholdEvent.UnholdEvent constructor" Url="html/M_AsterNET_Manager_Event_UnholdEvent__ctor.htm" />
   <HelpKINode Title="UnholdEventHandler delegate" Url="html/T_AsterNET_Manager_UnholdEventHandler.htm" />
+  <HelpKINode Title="Uniqueid property" Url="html/P_AsterNET_Manager_Action_QueueLogAction_Uniqueid.htm" />
   <HelpKINode Title="UniqueId property">
-    <HelpKINode Title="ManagerResponse.UniqueId Property " Url="html/P_AsterNET_Manager_Response_ManagerResponse_UniqueId.htm" />
-    <HelpKINode Title="OriginateResponse.UniqueId Property " Url="html/P_AsterNET_Manager_Response_OriginateResponse_UniqueId.htm" />
     <HelpKINode Title="AGIRequest.UniqueId Property " Url="html/P_AsterNET_FastAGI_AGIRequest_UniqueId.htm" />
     <HelpKINode Title="ManagerEvent.UniqueId Property " Url="html/P_AsterNET_Manager_Event_ManagerEvent_UniqueId.htm" />
+    <HelpKINode Title="ManagerResponse.UniqueId Property " Url="html/P_AsterNET_Manager_Response_ManagerResponse_UniqueId.htm" />
+    <HelpKINode Title="OriginateResponse.UniqueId Property " Url="html/P_AsterNET_Manager_Response_OriginateResponse_UniqueId.htm" />
   </HelpKINode>
-  <HelpKINode Title="Uniqueid property" Url="html/P_AsterNET_Manager_Action_QueueLogAction_Uniqueid.htm" />
   <HelpKINode Title="UniqueId1 property">
     <HelpKINode Title="BridgeEvent.UniqueId1 Property " Url="html/P_AsterNET_Manager_Event_BridgeEvent_UniqueId1.htm" />
     <HelpKINode Title="HoldedCallEvent.UniqueId1 Property " Url="html/P_AsterNET_Manager_Event_HoldedCallEvent_UniqueId1.htm" />
@@ -5271,7 +5218,6 @@
     <HelpKINode Title="UnknownEvent Class" Url="html/T_AsterNET_Manager_Event_UnknownEvent.htm" />
     <HelpKINode Title="about UnknownEvent class" Url="html/T_AsterNET_Manager_Event_UnknownEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_UnknownEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_UnknownEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_UnknownEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_UnknownEvent.htm" />
   </HelpKINode>
@@ -5281,7 +5227,6 @@
     <HelpKINode Title="UnlinkEvent Class" Url="html/T_AsterNET_Manager_Event_UnlinkEvent.htm" />
     <HelpKINode Title="about UnlinkEvent class" Url="html/T_AsterNET_Manager_Event_UnlinkEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_UnlinkEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_UnlinkEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_UnlinkEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_UnlinkEvent.htm" />
   </HelpKINode>
@@ -5292,7 +5237,6 @@
     <HelpKINode Title="UnparkedCallEvent Class" Url="html/T_AsterNET_Manager_Event_UnparkedCallEvent.htm" />
     <HelpKINode Title="about UnparkedCallEvent class" Url="html/T_AsterNET_Manager_Event_UnparkedCallEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_UnparkedCallEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_UnparkedCallEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_UnparkedCallEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_UnparkedCallEvent.htm" />
   </HelpKINode>
@@ -5330,7 +5274,6 @@
     <HelpKINode Title="UserEvent Class" Url="html/T_AsterNET_Manager_Event_UserEvent.htm" />
     <HelpKINode Title="about UserEvent class" Url="html/T_AsterNET_Manager_Event_UserEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_UserEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_UserEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_UserEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_UserEvent.htm" />
   </HelpKINode>
@@ -5376,7 +5319,6 @@
     <HelpKINode Title="VarSetEvent Class" Url="html/T_AsterNET_Manager_Event_VarSetEvent.htm" />
     <HelpKINode Title="about VarSetEvent class" Url="html/T_AsterNET_Manager_Event_VarSetEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_VarSetEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_VarSetEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_VarSetEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_VarSetEvent.htm" />
   </HelpKINode>
@@ -5499,7 +5441,6 @@
     <HelpKINode Title="ZapShowChannelsCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent.htm" />
     <HelpKINode Title="about ZapShowChannelsCompleteEvent class" Url="html/T_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent.htm" />
   </HelpKINode>
@@ -5509,7 +5450,6 @@
     <HelpKINode Title="ZapShowChannelsEvent Class" Url="html/T_AsterNET_Manager_Event_ZapShowChannelsEvent.htm" />
     <HelpKINode Title="about ZapShowChannelsEvent class" Url="html/T_AsterNET_Manager_Event_ZapShowChannelsEvent.htm" />
     <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_ZapShowChannelsEvent__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_Event_ZapShowChannelsEvent.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_ZapShowChannelsEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_ZapShowChannelsEvent.htm" />
   </HelpKINode>
