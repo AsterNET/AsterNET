@@ -3,7 +3,7 @@ using System;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    /// Raised when a member is paused/unpaused in the queue.<br/>
+    /// Raised when a member is paused/unpaused in the queue.<br />
     /// Available since Asterisk 12
     /// </summary>
     public class QueueMemberPauseEvent : AbstractQueueMemberEvent

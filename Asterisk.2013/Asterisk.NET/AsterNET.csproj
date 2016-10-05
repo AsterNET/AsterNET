@@ -251,6 +251,7 @@
     <Compile Include="Manager\Event\NewAccountCodeEvent.cs" />
     <Compile Include="Manager\Event\OriginateResponseEvent.cs" />
     <Compile Include="Manager\Event\PRIEvent.cs" />
+    <Compile Include="Manager\Event\QueueMemberPauseEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberPenaltyEvent.cs" />
     <Compile Include="Manager\Event\RTPReceiverStatEvent.cs" />
     <Compile Include="Manager\Event\RTCPSentEvent.cs" />
