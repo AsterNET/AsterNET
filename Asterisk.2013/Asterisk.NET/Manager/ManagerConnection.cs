@@ -95,15 +95,17 @@ namespace AsterNET.Manager
     public delegate void BridgeDestroyEventHandler(object sender, Event.BridgeDestroyEvent e);
     public delegate void BridgeEnterEventHandler(object sender, Event.BridgeEnterEvent e);
     public delegate void BridgeLeaveEventHandler(object sender, Event.BridgeLeaveEvent e);
+    public delegate void DTMFBeginEventHandler(object sender, Event.DTMFBeginEvent e);
+    public delegate void DTMFEndEventHandler(object sender, Event.DTMFEndEvent e);
 
 
 
-	#endregion
+    #endregion
 
-	/// <summary>
-	/// Default implemention of the ManagerConnection interface.
-	/// </summary>
-	public class ManagerConnection
+    /// <summary>
+    /// Default implemention of the ManagerConnection interface.
+    /// </summary>
+    public class ManagerConnection
 	{
 		#region Variables
 
@@ -486,11 +488,14 @@ namespace AsterNET.Manager
         public event BridgeEnterEventHandler BridgeEnter;
         public event BridgeLeaveEventHandler BridgeLeave;
 
-		#endregion
+        public event DTMFBeginEventHandler DTMFBegin;
+        public event DTMFEndEventHandler DTMFEnd;
 
-		#region Constructor - ManagerConnection()
-		/// <summary> Creates a new instance.</summary>
-		public ManagerConnection()
+        #endregion
+
+        #region Constructor - ManagerConnection()
+        /// <summary> Creates a new instance.</summary>
+        public ManagerConnection()
 		{
 			callerThread = Thread.CurrentThread;
 
@@ -595,11 +600,13 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 90, typeof(BridgeEnterEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 91, typeof(BridgeLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 92, typeof(BlindTransferEvent));
-            
 
-			#endregion
+            Helper.RegisterEventHandler(registeredEventHandlers, 93, typeof(DTMFBeginEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 94, typeof(DTMFEndEvent));
 
-			this.internalEvent += new ManagerEventHandler(internalEventHandler);
+            #endregion
+
+            this.internalEvent += new ManagerEventHandler(internalEventHandler);
 		}
 		#endregion
 
@@ -1214,7 +1221,19 @@ namespace AsterNET.Manager
                             BlindTransfer(this, (BlindTransferEvent)e);
                         }
                         break;
-					default:
+                    case 93:
+                        if (DTMFBegin != null)
+                        {
+                            DTMFBegin(this, (DTMFBeginEvent)e);
+                        }
+                        break;
+                    case 94:
+                        if (DTMFEnd != null)
+                        {
+                            DTMFEnd(this, (DTMFEndEvent)e);
+                        }
+                        break;
+                    default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);
 						return;
