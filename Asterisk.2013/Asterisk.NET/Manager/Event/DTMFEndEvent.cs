@@ -3,7 +3,7 @@ namespace AsterNET.Manager.Event
     public class DTMFEndEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new DialEvent.
+        ///     Creates a new DTMFEndEvent.
         /// </summary>
         public DTMFEndEvent(ManagerConnection source)
             : base(source)

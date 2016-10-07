@@ -601,8 +601,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 91, typeof(BridgeLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 92, typeof(BlindTransferEvent));
 
-            Helper.RegisterEventHandler(registeredEventHandlers, 93, typeof(DTMFBeginEvent));
-            Helper.RegisterEventHandler(registeredEventHandlers, 94, typeof(DTMFEndEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 100, typeof(DTMFBeginEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 101, typeof(DTMFEndEvent));
 
             #endregion
 
@@ -1221,13 +1221,13 @@ namespace AsterNET.Manager
                             BlindTransfer(this, (BlindTransferEvent)e);
                         }
                         break;
-                    case 93:
+                    case 100:
                         if (DTMFBegin != null)
                         {
                             DTMFBegin(this, (DTMFBeginEvent)e);
                         }
                         break;
-                    case 94:
+                    case 101:
                         if (DTMFEnd != null)
                         {
                             DTMFEnd(this, (DTMFEndEvent)e);
