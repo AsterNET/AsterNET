@@ -99,6 +99,7 @@ namespace AsterNET.Manager
     public delegate void DialEndEventHandler(object sender, Event.DialEndEvent e);
     public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
     public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
+    public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
 
 
 
@@ -510,6 +511,12 @@ namespace AsterNET.Manager
         /// </summary>
         public event QueueCallerLeaveEventHandler QueueCallerLeave;
 
+        /// <summary>
+        /// A QueueMemberPauseEvent is triggered when a queue member is paused or unpaused.<br />
+        /// Available since Asterisk 12
+        /// </summary>
+        public event QueueMemberPauseEventHandler QueueMemberPause;
+
         #endregion
 
         #region Constructor - ManagerConnection()
@@ -623,6 +630,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 94, typeof(DialEndEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 95, typeof(QueueCallerJoinEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 97, typeof(QueueMemberPauseEvent));
 
             #endregion
 
@@ -1263,6 +1271,12 @@ namespace AsterNET.Manager
                         if (QueueCallerLeave != null)
                         {
                             QueueCallerLeave(this, (QueueCallerLeaveEvent)e);
+                        }
+                        break;
+                    case 97:
+                        if (QueueMemberPause != null)
+                        {
+                            QueueMemberPause(this, (QueueMemberPauseEvent)e);
                         }
                         break;
                     default:
