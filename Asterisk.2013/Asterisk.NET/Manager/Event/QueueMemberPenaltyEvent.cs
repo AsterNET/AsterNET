@@ -5,18 +5,16 @@ namespace AsterNET.Manager.Event
 	/// </summary>
 	public class QueueMemberPenaltyEvent : AbstractQueueMemberEvent
 	{
-		private int penalty;
-
 		/// <summary>
 		/// Get/Set the penalty for the queue location.
 		/// </summary>
-		public int Penalty
-		{
-			get { return this.penalty; }
-			set { this.penalty = value; }
-		}
+		public new int Penalty { get; set; }
 
-		public QueueMemberPenaltyEvent(ManagerConnection source)
+        /// <summary>
+        /// Creates a new QueueMemberPenaltyEvent
+        /// </summary>
+        /// <param name="source">ManagerConnection passed through in the event.</param>
+        public QueueMemberPenaltyEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

@@ -6,46 +6,35 @@ namespace AsterNET.Manager.Event
     /// A QueueMemberPausedEvent is triggered when a queue member is paused or unpaused.<br/>
     /// It is implemented in apps/app_queue.c.<br/>
     /// <para>
-    /// Available since Asterisk 1.2.<br/>
-    /// Replaced by <see cref="QueueMemberPauseEvent"/> since Asterisk 12.<br/>
-    /// Removed since Asterisk 13.<br/>
+    /// <b>Available since : </b> <see href="http://www.voip-info.org/wiki/view/Asterisk+v1.2" target="_blank" alt="Asterisk 1.2 wiki docs">Asterisk 1.2</see>.<br/>
+    /// <b>Replaced by : </b> <see cref="QueueMemberPauseEvent"/> since <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.<br/>
+    /// <b>Removed since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+13+Documentation" target="_blank" alt="Asterisk 13 wiki docs">Asterisk 13</see>.<br/>
     /// </para>
     /// </summary>
 	public class QueueMemberPausedEvent : AbstractQueueMemberEvent
 	{
-		private string memberName;
-		private bool paused;
-		private string reason;
+        /// <summary>
+        /// The reason a member was paused
+        /// </summary>
+        public string Reason { get; set; }
 
-		/// <summary>
-		/// Returns the name of the member's interface.<br/>
-		/// E.g. the channel name or agent group.
-		/// </summary>
-		public string MemberName
-		{
-			get { return this.memberName; }
-			set { this.memberName = value; }
-		}
+        /// <summary>
+        /// <b>Not Available</b>, use <see cref="QueueMemberPauseEvent"/> instead.
+        /// </summary>
+        public new string PausedReason { get; set; }
 
-		/// <summary>
-		/// Get/Set if this queue member is paused (not accepting calls).<br/>
-		/// true if this member has been paused or
-		/// false if not.
-		/// </summary>
-		public bool Paused
-		{
-			get { return this.paused; }
-			set { this.paused = value; }
-		}
+        /// <summary>
+        /// <b>Not Available</b>, use <see cref="QueueMemberPauseEvent"/> instead.
+        /// </summary>
+        public new bool InCall { get; set; }
 
-		public string Reason
-		{
-			get { return this.reason; }
-			set { this.reason = value; }
-		}
-		public QueueMemberPausedEvent(ManagerConnection source)
+        /// <summary>
+        /// Creates a new QueueMemberPausedEvent
+        /// </summary>
+        /// <param name="source">ManagerConnection passed through in the event.</param>
+        public QueueMemberPausedEvent(ManagerConnection source)
 			: base(source)
 		{
-		}
+        }
 	}
 }
