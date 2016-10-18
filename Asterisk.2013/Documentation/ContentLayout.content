@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Topics>
-  <Topic id="79b6241e-05a3-441c-b6a1-51f2b5b7f265" visible="True" isDefault="true" isSelected="true" title="Welcome to the [TODO: Add project name]">
+  <Topic id="79b6241e-05a3-441c-b6a1-51f2b5b7f265" visible="True" isSelected="true" title="Welcome to AsterNet Class library" linkText="Welcome">
     <HelpKeywords>
       <HelpKeyword index="K" term="Welcome" />
     </HelpKeywords>
