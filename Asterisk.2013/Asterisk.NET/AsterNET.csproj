@@ -57,6 +57,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\AsterNET.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Travis|AnyCPU'">
     <OutputPath>bin\Travis\</OutputPath>
@@ -66,6 +67,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Travis\AsterNET.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -253,6 +255,7 @@
     <Compile Include="Manager\Event\PRIEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberPauseEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberPenaltyEvent.cs" />
+    <Compile Include="Manager\Event\QueueMemberRinginuseEvent.cs" />
     <Compile Include="Manager\Event\RTPReceiverStatEvent.cs" />
     <Compile Include="Manager\Event\RTCPSentEvent.cs" />
     <Compile Include="Manager\Event\RTCPReceivedEvent.cs" />

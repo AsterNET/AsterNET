@@ -43,7 +43,7 @@ namespace AsterNET.FastAGI
 		#region SetCallerId
 		/// <summary>
 		/// Sets the caller id on the current channel.<br/>
-		/// The raw caller id to set, for example "John Doe<1234>".
+		/// The raw caller id to set, for example "John Doe&lt;1234&gt;".
 		/// </summary>
 		protected internal void SetCallerId(string callerId)
 		{
@@ -65,7 +65,7 @@ namespace AsterNET.FastAGI
 		/// <summary>
 		/// Plays music on hold from the given music on hold class.
 		/// </summary>
-		/// <param name="musicOnHoldClass">the music on hold class to play music from as configures in Asterisk's <musiconhold.conf/code>.</param>
+		/// <param name="musicOnHoldClass">the music on hold class to play music from as configures in Asterisk's &lt;musiconhold.conf/code$gt;.</param>
 		protected internal void PlayMusicOnHold(string musicOnHoldClass)
 		{
 			this.Channel.SendCommand(new Command.SetMusicOnCommand(musicOnHoldClass));
@@ -87,16 +87,15 @@ namespace AsterNET.FastAGI
 		/// Returns the status of the channel.<br/>
 		/// Return values:
 		/// <ul>
-		/// <li>0 Channel is down and available
-		/// <li>1 Channel is down, but reserved
-		/// <li>2 Channel is off hook
-		/// <li>3 Digits (or equivalent) have been dialed
-		/// <li>4 Line is ringing
-		/// <li>5 Remote end is ringing
-		/// <li>6 Line is up
-		/// <li>7 Line is busy
+		/// <li>0 Channel is down and available</li>
+		/// <li>1 Channel is down, but reserved</li>
+		/// <li>2 Channel is off hook</li>
+		/// <li>3 Digits (or equivalent) have been dialed</li>
+		/// <li>4 Line is ringing</li>
+		/// <li>5 Remote end is ringing</li>
+		/// <li>6 Line is up</li>
+		/// <li>7 Line is busy</li>
 		/// </ul>
-		/// 
 		/// </summary>
 		/// <returns> the status of the channel.
 		/// </returns>

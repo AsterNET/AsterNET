@@ -44,7 +44,7 @@ namespace AsterNET.Manager.Action
 
         /// <summary>
         ///     You can use this as a simple authentication mechanism.<br />
-        ///     Rather than have to login with a username & password,
+        ///     Rather than have to login with a username &amp; password,
         ///     you can specify a <b>ProxyKey</b> that must be passed from
         ///     a client before requests are processed.<br />
         ///     This is helpful in situations where you would like to authenticate and

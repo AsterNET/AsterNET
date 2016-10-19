@@ -12,7 +12,7 @@ namespace AsterNET.FastAGI.Command
 		private string varName;
 
 		/// <summary>
-		/// Get/Set the name of the variable to retrieve.<br>
+		/// Get/Set the name of the variable to retrieve.<br />
 		/// Since Asterisk 1.2 you can also use custom dialplan functions (like "func(args)") as variable.
 		/// </summary>
 		public string Variable

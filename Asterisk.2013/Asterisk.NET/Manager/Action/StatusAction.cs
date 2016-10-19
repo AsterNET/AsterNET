@@ -8,8 +8,8 @@ namespace AsterNET.Manager.Action
     ///     For each active channel a StatusEvent is generated. After the state of all
     ///     channels has been reported a StatusCompleteEvent is generated.
     /// </summary>
-    /// <seealso cref="Manager.event.StatusEvent" />
-    /// <seealso cref="Manager.event.StatusCompleteEvent" />
+    /// <seealso cref="Manager.Event.StatusEvent" />
+    /// <seealso cref="Manager.Event.StatusCompleteEvent" />
     public class StatusAction : ManagerActionEvent
     {
         /// <summary>

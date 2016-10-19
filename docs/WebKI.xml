@@ -92,8 +92,20 @@
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_AbstractQueueMemberEvent.htm" />
   </HelpKINode>
   <HelpKINode Title="AbstractQueueMemberEvent.AbstractQueueMemberEvent constructor" Url="html/M_AsterNET_Manager_Event_AbstractQueueMemberEvent__ctor.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.CallsTaken property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_CallsTaken.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.InCall property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_InCall.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.Interface property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Interface.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.LastCall property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_LastCall.htm" />
   <HelpKINode Title="AbstractQueueMemberEvent.Location property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Location.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.MemberName property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_MemberName.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.Membership property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Membership.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.Paused property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Paused.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.PausedReason property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_PausedReason.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.Penalty property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Penalty.htm" />
   <HelpKINode Title="AbstractQueueMemberEvent.Queue property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Queue.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.Ringinuse property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Ringinuse.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.StateInterface property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_StateInterface.htm" />
+  <HelpKINode Title="AbstractQueueMemberEvent.Status property" Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Status.htm" />
   <HelpKINode Title="Accept method" Url="html/M_AsterNET_IO_ServerSocket_Accept.htm" />
   <HelpKINode Title="Account property">
     <HelpKINode Title="JabberEvent.Account Property " Url="html/P_AsterNET_Manager_Event_JabberEvent_Account.htm" />
@@ -227,7 +239,6 @@
     <HelpKINode Title="AgentLogoffEvent.Agent Property " Url="html/P_AsterNET_Manager_Event_AgentLogoffEvent_Agent.htm" />
     <HelpKINode Title="AgentsEvent.Agent Property " Url="html/P_AsterNET_Manager_Event_AgentsEvent_Agent.htm" />
   </HelpKINode>
-  <HelpKINode Title="AgentCallbackLogin event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentCallbackLogin.htm" />
   <HelpKINode Title="AgentCallbackLoginAction class">
     <HelpKINode Title="AgentCallbackLoginAction Class" Url="html/T_AsterNET_Manager_Action_AgentCallbackLoginAction.htm" />
     <HelpKINode Title="about AgentCallbackLoginAction class" Url="html/T_AsterNET_Manager_Action_AgentCallbackLoginAction.htm" />
@@ -253,7 +264,6 @@
   <HelpKINode Title="AgentCallbackLoginEvent.AgentCallbackLoginEvent constructor" Url="html/M_AsterNET_Manager_Event_AgentCallbackLoginEvent__ctor.htm" />
   <HelpKINode Title="AgentCallbackLoginEvent.LoginChan property" Url="html/P_AsterNET_Manager_Event_AgentCallbackLoginEvent_LoginChan.htm" />
   <HelpKINode Title="AgentCallbackLoginEventHandler delegate" Url="html/T_AsterNET_Manager_AgentCallbackLoginEventHandler.htm" />
-  <HelpKINode Title="AgentCallbackLogoff event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentCallbackLogoff.htm" />
   <HelpKINode Title="AgentCallbackLogoffEvent class">
     <HelpKINode Title="AgentCallbackLogoffEvent Class" Url="html/T_AsterNET_Manager_Event_AgentCallbackLogoffEvent.htm" />
     <HelpKINode Title="about AgentCallbackLogoffEvent class" Url="html/T_AsterNET_Manager_Event_AgentCallbackLogoffEvent.htm" />
@@ -267,7 +277,6 @@
   <HelpKINode Title="AgentCallbackLogoffEvent.LoginTime property" Url="html/P_AsterNET_Manager_Event_AgentCallbackLogoffEvent_LoginTime.htm" />
   <HelpKINode Title="AgentCallbackLogoffEvent.Reason property" Url="html/P_AsterNET_Manager_Event_AgentCallbackLogoffEvent_Reason.htm" />
   <HelpKINode Title="AgentCallbackLogoffEventHandler delegate" Url="html/T_AsterNET_Manager_AgentCallbackLogoffEventHandler.htm" />
-  <HelpKINode Title="AgentCalled event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentCalled.htm" />
   <HelpKINode Title="AgentCalled property" Url="html/P_AsterNET_Manager_Event_AgentCalledEvent_AgentCalled.htm" />
   <HelpKINode Title="AgentCalledEvent class">
     <HelpKINode Title="AgentCalledEvent Class" Url="html/T_AsterNET_Manager_Event_AgentCalledEvent.htm" />
@@ -289,7 +298,6 @@
   <HelpKINode Title="AgentCalledEvent.Priority property" Url="html/P_AsterNET_Manager_Event_AgentCalledEvent_Priority.htm" />
   <HelpKINode Title="AgentCalledEvent.Queue property" Url="html/P_AsterNET_Manager_Event_AgentCalledEvent_Queue.htm" />
   <HelpKINode Title="AgentCalledEventHandler delegate" Url="html/T_AsterNET_Manager_AgentCalledEventHandler.htm" />
-  <HelpKINode Title="AgentComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentComplete.htm" />
   <HelpKINode Title="AgentCompleteEvent class">
     <HelpKINode Title="AgentCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_AgentCompleteEvent.htm" />
     <HelpKINode Title="about AgentCompleteEvent class" Url="html/T_AsterNET_Manager_Event_AgentCompleteEvent.htm" />
@@ -302,7 +310,6 @@
   <HelpKINode Title="AgentCompleteEvent.Reason property" Url="html/P_AsterNET_Manager_Event_AgentCompleteEvent_Reason.htm" />
   <HelpKINode Title="AgentCompleteEvent.TalkTime property" Url="html/P_AsterNET_Manager_Event_AgentCompleteEvent_TalkTime.htm" />
   <HelpKINode Title="AgentCompleteEventHandler delegate" Url="html/T_AsterNET_Manager_AgentCompleteEventHandler.htm" />
-  <HelpKINode Title="AgentConnect event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentConnect.htm" />
   <HelpKINode Title="AgentConnectEvent class">
     <HelpKINode Title="AgentConnectEvent Class" Url="html/T_AsterNET_Manager_Event_AgentConnectEvent.htm" />
     <HelpKINode Title="about AgentConnectEvent class" Url="html/T_AsterNET_Manager_Event_AgentConnectEvent.htm" />
@@ -315,7 +322,6 @@
   <HelpKINode Title="AgentConnectEvent.HoldTime property" Url="html/P_AsterNET_Manager_Event_AgentConnectEvent_HoldTime.htm" />
   <HelpKINode Title="AgentConnectEvent.RingTime property" Url="html/P_AsterNET_Manager_Event_AgentConnectEvent_RingTime.htm" />
   <HelpKINode Title="AgentConnectEventHandler delegate" Url="html/T_AsterNET_Manager_AgentConnectEventHandler.htm" />
-  <HelpKINode Title="AgentDump event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentDump.htm" />
   <HelpKINode Title="AgentDumpEvent class">
     <HelpKINode Title="AgentDumpEvent Class" Url="html/T_AsterNET_Manager_Event_AgentDumpEvent.htm" />
     <HelpKINode Title="about AgentDumpEvent class" Url="html/T_AsterNET_Manager_Event_AgentDumpEvent.htm" />
@@ -325,7 +331,6 @@
   </HelpKINode>
   <HelpKINode Title="AgentDumpEvent.AgentDumpEvent constructor" Url="html/M_AsterNET_Manager_Event_AgentDumpEvent__ctor.htm" />
   <HelpKINode Title="AgentDumpEventHandler delegate" Url="html/T_AsterNET_Manager_AgentDumpEventHandler.htm" />
-  <HelpKINode Title="AgentLogin event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentLogin.htm" />
   <HelpKINode Title="AgentLoginEvent class">
     <HelpKINode Title="AgentLoginEvent Class" Url="html/T_AsterNET_Manager_Event_AgentLoginEvent.htm" />
     <HelpKINode Title="about AgentLoginEvent class" Url="html/T_AsterNET_Manager_Event_AgentLoginEvent.htm" />
@@ -337,7 +342,6 @@
   <HelpKINode Title="AgentLoginEvent.AgentLoginEvent constructor" Url="html/M_AsterNET_Manager_Event_AgentLoginEvent__ctor.htm" />
   <HelpKINode Title="AgentLoginEvent.LoginChan property" Url="html/P_AsterNET_Manager_Event_AgentLoginEvent_LoginChan.htm" />
   <HelpKINode Title="AgentLoginEventHandler delegate" Url="html/T_AsterNET_Manager_AgentLoginEventHandler.htm" />
-  <HelpKINode Title="AgentLogoff event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentLogoff.htm" />
   <HelpKINode Title="AgentLogoffAction class">
     <HelpKINode Title="AgentLogoffAction Class" Url="html/T_AsterNET_Manager_Action_AgentLogoffAction.htm" />
     <HelpKINode Title="about AgentLogoffAction class" Url="html/T_AsterNET_Manager_Action_AgentLogoffAction.htm" />
@@ -361,7 +365,6 @@
   <HelpKINode Title="AgentLogoffEvent.LoginTime property" Url="html/P_AsterNET_Manager_Event_AgentLogoffEvent_LoginTime.htm" />
   <HelpKINode Title="AgentLogoffEventHandler delegate" Url="html/T_AsterNET_Manager_AgentLogoffEventHandler.htm" />
   <HelpKINode Title="AgentName property" Url="html/P_AsterNET_Manager_Event_AgentCalledEvent_AgentName.htm" />
-  <HelpKINode Title="Agents event" Url="html/E_AsterNET_Manager_ManagerConnection_Agents.htm" />
   <HelpKINode Title="AgentsAction class">
     <HelpKINode Title="AgentsAction Class" Url="html/T_AsterNET_Manager_Action_AgentsAction.htm" />
     <HelpKINode Title="about AgentsAction class" Url="html/T_AsterNET_Manager_Action_AgentsAction.htm" />
@@ -372,7 +375,6 @@
   <HelpKINode Title="AgentsAction.Action property" Url="html/P_AsterNET_Manager_Action_AgentsAction_Action.htm" />
   <HelpKINode Title="AgentsAction.ActionCompleteEventClass method" Url="html/M_AsterNET_Manager_Action_AgentsAction_ActionCompleteEventClass.htm" />
   <HelpKINode Title="AgentsAction.AgentsAction constructor" Url="html/M_AsterNET_Manager_Action_AgentsAction__ctor.htm" />
-  <HelpKINode Title="AgentsComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentsComplete.htm" />
   <HelpKINode Title="AgentsCompleteEvent class">
     <HelpKINode Title="AgentsCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_AgentsCompleteEvent.htm" />
     <HelpKINode Title="about AgentsCompleteEvent class" Url="html/T_AsterNET_Manager_Event_AgentsCompleteEvent.htm" />
@@ -445,7 +447,6 @@
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_FastAGI_AGIException.htm" />
   </HelpKINode>
   <HelpKINode Title="AGIException.AGIException constructor" Url="html/Overload_AsterNET_FastAGI_AGIException__ctor.htm" />
-  <HelpKINode Title="AGIExec event" Url="html/E_AsterNET_Manager_ManagerConnection_AGIExec.htm" />
   <HelpKINode Title="AGIExecEvent class">
     <HelpKINode Title="AGIExecEvent Class" Url="html/T_AsterNET_Manager_Event_AGIExecEvent.htm" />
     <HelpKINode Title="about AGIExecEvent class" Url="html/T_AsterNET_Manager_Event_AGIExecEvent.htm" />
@@ -607,12 +608,10 @@
   <HelpKINode Title="AGI_SCRIPT_PATTERN field" Url="html/F_AsterNET_Common_AGI_SCRIPT_PATTERN.htm" />
   <HelpKINode Title="AGI_STATUS_PATTERN field" Url="html/F_AsterNET_Common_AGI_STATUS_PATTERN.htm" />
   <HelpKINode Title="AGI_SYNOPSIS_PATTERN field" Url="html/F_AsterNET_Common_AGI_SYNOPSIS_PATTERN.htm" />
-  <HelpKINode Title="Alarm event" Url="html/E_AsterNET_Manager_ManagerConnection_Alarm.htm" />
   <HelpKINode Title="Alarm property">
     <HelpKINode Title="AlarmEvent.Alarm Property " Url="html/P_AsterNET_Manager_Event_AlarmEvent_Alarm.htm" />
     <HelpKINode Title="ZapShowChannelsEvent.Alarm Property " Url="html/P_AsterNET_Manager_Event_ZapShowChannelsEvent_Alarm.htm" />
   </HelpKINode>
-  <HelpKINode Title="AlarmClear event" Url="html/E_AsterNET_Manager_ManagerConnection_AlarmClear.htm" />
   <HelpKINode Title="AlarmClearEvent class">
     <HelpKINode Title="AlarmClearEvent Class" Url="html/T_AsterNET_Manager_Event_AlarmClearEvent.htm" />
     <HelpKINode Title="about AlarmClearEvent class" Url="html/T_AsterNET_Manager_Event_AlarmClearEvent.htm" />
@@ -983,6 +982,7 @@
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberPauseEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberPenaltyEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberRemovedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
+  <HelpKINode Title="AsterNET.Manager.Event.QueueMemberRinginuseEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberRinginuseEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueMemberStatusEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueParamsEvent class" Url="html/T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
   <HelpKINode Title="AsterNET.Manager.Event.QueueStatusCompleteEvent class" Url="html/T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
@@ -1046,6 +1046,7 @@
   <HelpKINode Title="AsterNET.Manager.QueueMemberAddedEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberAddedEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueMemberEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueMemberPausedEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberPausedEventHandler.htm" />
+  <HelpKINode Title="AsterNET.Manager.QueueMemberPauseEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberPauseEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueMemberRemovedEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberRemovedEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueMemberStatusEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberStatusEventHandler.htm" />
   <HelpKINode Title="AsterNET.Manager.QueueParamsEventHandler delegate" Url="html/T_AsterNET_Manager_QueueParamsEventHandler.htm" />
@@ -1093,7 +1094,6 @@
   <HelpKINode Title="AsyncAGIEvent.Env property" Url="html/P_AsterNET_Manager_Event_AsyncAGIEvent_Env.htm" />
   <HelpKINode Title="AsyncAGIEvent.Result property" Url="html/P_AsterNET_Manager_Event_AsyncAGIEvent_Result.htm" />
   <HelpKINode Title="AsyncAGIEvent.SubEvent property" Url="html/P_AsterNET_Manager_Event_AsyncAGIEvent_SubEvent.htm" />
-  <HelpKINode Title="AttendedTransfer event" Url="html/E_AsterNET_Manager_ManagerConnection_AttendedTransfer.htm" />
   <HelpKINode Title="AttendedTransferEvent class">
     <HelpKINode Title="AttendedTransferEvent Class" Url="html/T_AsterNET_Manager_Event_AttendedTransferEvent.htm" />
     <HelpKINode Title="about AttendedTransferEvent class" Url="html/T_AsterNET_Manager_Event_AttendedTransferEvent.htm" />
@@ -1204,7 +1204,6 @@
   <HelpKINode Title="Begin property" Url="html/P_AsterNET_Manager_Event_DTMFEvent_Begin.htm" />
   <HelpKINode Title="BillableSeconds property" Url="html/P_AsterNET_Manager_Event_CdrEvent_BillableSeconds.htm" />
   <HelpKINode Title="BindPort property" Url="html/P_AsterNET_FastAGI_AsteriskFastAGI_BindPort.htm" />
-  <HelpKINode Title="BlindTransfer event" Url="html/E_AsterNET_Manager_ManagerConnection_BlindTransfer.htm" />
   <HelpKINode Title="BlindTransferEvent class">
     <HelpKINode Title="BlindTransferEvent Class" Url="html/T_AsterNET_Manager_Event_BlindTransferEvent.htm" />
     <HelpKINode Title="about BlindTransferEvent class" Url="html/T_AsterNET_Manager_Event_BlindTransferEvent.htm" />
@@ -1249,7 +1248,6 @@
   <HelpKINode Title="BlindTransferEvent.TransfererPriority property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfererPriority.htm" />
   <HelpKINode Title="BlindTransferEvent.TransfererUniqueId property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfererUniqueId.htm" />
   <HelpKINode Title="BlindTransferEventHandler delegate" Url="html/T_AsterNET_Manager_BlindTransferEventHandler.htm" />
-  <HelpKINode Title="Bridge event" Url="html/E_AsterNET_Manager_ManagerConnection_Bridge.htm" />
   <HelpKINode Title="BridgeAction class">
     <HelpKINode Title="BridgeAction Class" Url="html/T_AsterNET_Manager_Action_BridgeAction.htm" />
     <HelpKINode Title="about BridgeAction class" Url="html/T_AsterNET_Manager_Action_BridgeAction.htm" />
@@ -1287,7 +1285,6 @@
   <HelpKINode Title="BridgeActivityEvent.Exten property" Url="html/P_AsterNET_Manager_Event_BridgeActivityEvent_Exten.htm" />
   <HelpKINode Title="BridgeActivityEvent.Language property" Url="html/P_AsterNET_Manager_Event_BridgeActivityEvent_Language.htm" />
   <HelpKINode Title="BridgeActivityEvent.Priority property" Url="html/P_AsterNET_Manager_Event_BridgeActivityEvent_Priority.htm" />
-  <HelpKINode Title="BridgeCreate event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeCreate.htm" />
   <HelpKINode Title="BridgeCreateEvent class">
     <HelpKINode Title="BridgeCreateEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeCreateEvent.htm" />
     <HelpKINode Title="about BridgeCreateEvent class" Url="html/T_AsterNET_Manager_Event_BridgeCreateEvent.htm" />
@@ -1303,7 +1300,6 @@
     <HelpKINode Title="BridgeStateEvent.BridgeCreator Property " Url="html/P_AsterNET_Manager_Event_BridgeStateEvent_BridgeCreator.htm" />
   </HelpKINode>
   <HelpKINode Title="BridgedChannel property" Url="html/P_AsterNET_Manager_Event_AgentConnectEvent_BridgedChannel.htm" />
-  <HelpKINode Title="BridgeDestroy event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeDestroy.htm" />
   <HelpKINode Title="BridgeDestroyEvent class">
     <HelpKINode Title="BridgeDestroyEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeDestroyEvent.htm" />
     <HelpKINode Title="about BridgeDestroyEvent class" Url="html/T_AsterNET_Manager_Event_BridgeDestroyEvent.htm" />
@@ -1313,7 +1309,6 @@
   </HelpKINode>
   <HelpKINode Title="BridgeDestroyEvent.BridgeDestroyEvent constructor" Url="html/M_AsterNET_Manager_Event_BridgeDestroyEvent__ctor.htm" />
   <HelpKINode Title="BridgeDestroyEventHandler delegate" Url="html/T_AsterNET_Manager_BridgeDestroyEventHandler.htm" />
-  <HelpKINode Title="BridgeEnter event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeEnter.htm" />
   <HelpKINode Title="BridgeEnterEvent class">
     <HelpKINode Title="BridgeEnterEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeEnterEvent.htm" />
     <HelpKINode Title="about BridgeEnterEvent class" Url="html/T_AsterNET_Manager_Event_BridgeEnterEvent.htm" />
@@ -1345,7 +1340,6 @@
   <HelpKINode Title="BridgeEvent.UniqueId1 property" Url="html/P_AsterNET_Manager_Event_BridgeEvent_UniqueId1.htm" />
   <HelpKINode Title="BridgeEvent.UniqueId2 property" Url="html/P_AsterNET_Manager_Event_BridgeEvent_UniqueId2.htm" />
   <HelpKINode Title="BridgeEventHandler delegate" Url="html/T_AsterNET_Manager_BridgeEventHandler.htm" />
-  <HelpKINode Title="BridgeLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeLeave.htm" />
   <HelpKINode Title="BridgeLeaveEvent class">
     <HelpKINode Title="BridgeLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_BridgeLeaveEvent.htm" />
     <HelpKINode Title="about BridgeLeaveEvent class" Url="html/T_AsterNET_Manager_Event_BridgeLeaveEvent.htm" />
@@ -1464,11 +1458,6 @@
   </HelpKINode>
   <HelpKINode Title="CallerId1 property" Url="html/P_AsterNET_Manager_Event_BridgeEvent_CallerId1.htm" />
   <HelpKINode Title="CallerId2 property" Url="html/P_AsterNET_Manager_Event_BridgeEvent_CallerId2.htm" />
-  <HelpKINode Title="CallerIDname property">
-    <HelpKINode Title="ConfbridgeLeaveEvent.CallerIDname Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeLeaveEvent_CallerIDname.htm" />
-    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDname Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDname.htm" />
-  </HelpKINode>
-  <HelpKINode Title="CallerIDName property" Url="html/P_AsterNET_Manager_Event_ConfbridgeListEvent_CallerIDName.htm" />
   <HelpKINode Title="CallerIdName property">
     <HelpKINode Title="AbstractChannelEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_AbstractChannelEvent_CallerIdName.htm" />
     <HelpKINode Title="AbstractParkedCallEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_AbstractParkedCallEvent_CallerIdName.htm" />
@@ -1482,16 +1471,17 @@
     <HelpKINode Title="NewCallerIdEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_NewCallerIdEvent_CallerIdName.htm" />
     <HelpKINode Title="OriginateResponseEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_OriginateResponseEvent_CallerIdName.htm" />
     <HelpKINode Title="ParkedCallEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_ParkedCallEvent_CallerIdName.htm" />
-    <HelpKINode Title="QueueEntryEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_QueueEntryEvent_CallerIdName.htm" />
     <HelpKINode Title="StatusEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_StatusEvent_CallerIdName.htm" />
+    <HelpKINode Title="QueueEntryEvent.CallerIdName Property " Url="html/P_AsterNET_Manager_Event_QueueEntryEvent_CallerIdName.htm" />
   </HelpKINode>
-  <HelpKINode Title="CallerIDnum property">
-    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDnum.htm" />
-    <HelpKINode Title="ConfbridgeLeaveEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeLeaveEvent_CallerIDnum.htm" />
+  <HelpKINode Title="CallerIDname property">
+    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDname Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDname.htm" />
+    <HelpKINode Title="ConfbridgeLeaveEvent.CallerIDname Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeLeaveEvent_CallerIDname.htm" />
   </HelpKINode>
+  <HelpKINode Title="CallerIDName property" Url="html/P_AsterNET_Manager_Event_ConfbridgeListEvent_CallerIDName.htm" />
   <HelpKINode Title="CallerIdNum property">
-    <HelpKINode Title="AbstractParkedCallEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AbstractParkedCallEvent_CallerIdNum.htm" />
     <HelpKINode Title="AbstractChannelEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AbstractChannelEvent_CallerIdNum.htm" />
+    <HelpKINode Title="AbstractParkedCallEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AbstractParkedCallEvent_CallerIdNum.htm" />
     <HelpKINode Title="AgentCalledEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_AgentCalledEvent_CallerIdNum.htm" />
     <HelpKINode Title="BridgeActivityEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_BridgeActivityEvent_CallerIdNum.htm" />
     <HelpKINode Title="DialEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_DialEvent_CallerIdNum.htm" />
@@ -1502,6 +1492,10 @@
     <HelpKINode Title="ParkedCallEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_ParkedCallEvent_CallerIdNum.htm" />
     <HelpKINode Title="StatusEvent.CallerIdNum Property " Url="html/P_AsterNET_Manager_Event_StatusEvent_CallerIdNum.htm" />
   </HelpKINode>
+  <HelpKINode Title="CallerIDnum property">
+    <HelpKINode Title="ConfbridgeJoinEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeJoinEvent_CallerIDnum.htm" />
+    <HelpKINode Title="ConfbridgeLeaveEvent.CallerIDnum Property " Url="html/P_AsterNET_Manager_Event_ConfbridgeLeaveEvent_CallerIDnum.htm" />
+  </HelpKINode>
   <HelpKINode Title="CallerIDNum property" Url="html/P_AsterNET_Manager_Event_ConfbridgeListEvent_CallerIDNum.htm" />
   <HelpKINode Title="CallingAni2 property" Url="html/P_AsterNET_FastAGI_AGIRequest_CallingAni2.htm" />
   <HelpKINode Title="CallingPres property" Url="html/P_AsterNET_FastAGI_AGIRequest_CallingPres.htm" />
@@ -1509,8 +1503,10 @@
   <HelpKINode Title="CallingTon property" Url="html/P_AsterNET_FastAGI_AGIRequest_CallingTon.htm" />
   <HelpKINode Title="Calls property" Url="html/P_AsterNET_Manager_Event_QueueParamsEvent_Calls.htm" />
   <HelpKINode Title="CallsTaken property">
+    <HelpKINode Title="AbstractQueueMemberEvent.CallsTaken Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_CallsTaken.htm" />
     <HelpKINode Title="QueueMemberAddedEvent.CallsTaken Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_CallsTaken.htm" />
     <HelpKINode Title="QueueMemberEvent.CallsTaken Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_CallsTaken.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.CallsTaken Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_CallsTaken.htm" />
   </HelpKINode>
   <HelpKINode Title="Categories property" Url="html/P_AsterNET_Manager_Response_GetConfigResponse_Categories.htm" />
   <HelpKINode Title="Cause property">
@@ -1519,7 +1515,6 @@
     <HelpKINode Title="RegistryEvent.Cause Property " Url="html/P_AsterNET_Manager_Event_RegistryEvent_Cause.htm" />
   </HelpKINode>
   <HelpKINode Title="CauseTxt property" Url="html/P_AsterNET_Manager_Event_HangupEvent_CauseTxt.htm" />
-  <HelpKINode Title="Cdr event" Url="html/E_AsterNET_Manager_ManagerConnection_Cdr.htm" />
   <HelpKINode Title="CdrEvent class">
     <HelpKINode Title="CdrEvent Class" Url="html/T_AsterNET_Manager_Event_CdrEvent.htm" />
     <HelpKINode Title="about CdrEvent class" Url="html/T_AsterNET_Manager_Event_CdrEvent.htm" />
@@ -1748,7 +1743,6 @@
   <HelpKINode Title="Common.VAR_DELIMITER field" Url="html/F_AsterNET_Common_VAR_DELIMITER.htm" />
   <HelpKINode Title="Complete property" Url="html/P_AsterNET_Manager_ResponseEvents_Complete.htm" />
   <HelpKINode Title="Completed property" Url="html/P_AsterNET_Manager_Event_QueueParamsEvent_Completed.htm" />
-  <HelpKINode Title="ConfbridgeEnd event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeEnd.htm" />
   <HelpKINode Title="ConfbridgeEndEvent class">
     <HelpKINode Title="ConfbridgeEndEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeEndEvent.htm" />
     <HelpKINode Title="about ConfbridgeEndEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeEndEvent.htm" />
@@ -1758,7 +1752,6 @@
   </HelpKINode>
   <HelpKINode Title="ConfbridgeEndEvent.ConfbridgeEndEvent constructor" Url="html/M_AsterNET_Manager_Event_ConfbridgeEndEvent__ctor.htm" />
   <HelpKINode Title="ConfbridgeEndEventHandler delegate" Url="html/T_AsterNET_Manager_ConfbridgeEndEventHandler.htm" />
-  <HelpKINode Title="ConfbridgeJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeJoin.htm" />
   <HelpKINode Title="ConfbridgeJoinEvent class">
     <HelpKINode Title="ConfbridgeJoinEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeJoinEvent.htm" />
     <HelpKINode Title="about ConfbridgeJoinEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeJoinEvent.htm" />
@@ -1781,7 +1774,6 @@
   <HelpKINode Title="ConfbridgeKickAction.Channel property" Url="html/P_AsterNET_Manager_Action_ConfbridgeKickAction_Channel.htm" />
   <HelpKINode Title="ConfbridgeKickAction.ConfbridgeKickAction constructor" Url="html/Overload_AsterNET_Manager_Action_ConfbridgeKickAction__ctor.htm" />
   <HelpKINode Title="ConfbridgeKickAction.Conference property" Url="html/P_AsterNET_Manager_Action_ConfbridgeKickAction_Conference.htm" />
-  <HelpKINode Title="ConfbridgeLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeLeave.htm" />
   <HelpKINode Title="ConfbridgeLeaveEvent class">
     <HelpKINode Title="ConfbridgeLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeLeaveEvent.htm" />
     <HelpKINode Title="about ConfbridgeLeaveEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeLeaveEvent.htm" />
@@ -1885,7 +1877,6 @@
   <HelpKINode Title="ConfbridgeSetSingleVideoSrcAction.Channel property" Url="html/P_AsterNET_Manager_Action_ConfbridgeSetSingleVideoSrcAction_Channel.htm" />
   <HelpKINode Title="ConfbridgeSetSingleVideoSrcAction.ConfbridgeSetSingleVideoSrcAction constructor" Url="html/Overload_AsterNET_Manager_Action_ConfbridgeSetSingleVideoSrcAction__ctor.htm" />
   <HelpKINode Title="ConfbridgeSetSingleVideoSrcAction.Conference property" Url="html/P_AsterNET_Manager_Action_ConfbridgeSetSingleVideoSrcAction_Conference.htm" />
-  <HelpKINode Title="ConfbridgeStart event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeStart.htm" />
   <HelpKINode Title="ConfbridgeStartEvent class">
     <HelpKINode Title="ConfbridgeStartEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeStartEvent.htm" />
     <HelpKINode Title="about ConfbridgeStartEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeStartEvent.htm" />
@@ -1915,7 +1906,6 @@
   <HelpKINode Title="ConfbridgeStopRecordAction.Action property" Url="html/P_AsterNET_Manager_Action_ConfbridgeStopRecordAction_Action.htm" />
   <HelpKINode Title="ConfbridgeStopRecordAction.ConfbridgeStopRecordAction constructor" Url="html/Overload_AsterNET_Manager_Action_ConfbridgeStopRecordAction__ctor.htm" />
   <HelpKINode Title="ConfbridgeStopRecordAction.Conference property" Url="html/P_AsterNET_Manager_Action_ConfbridgeStopRecordAction_Conference.htm" />
-  <HelpKINode Title="ConfbridgeTalking event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeTalking.htm" />
   <HelpKINode Title="ConfbridgeTalkingEvent class">
     <HelpKINode Title="ConfbridgeTalkingEvent Class" Url="html/T_AsterNET_Manager_Event_ConfbridgeTalkingEvent.htm" />
     <HelpKINode Title="about ConfbridgeTalkingEvent class" Url="html/T_AsterNET_Manager_Event_ConfbridgeTalkingEvent.htm" />
@@ -1975,7 +1965,6 @@
   </HelpKINode>
   <HelpKINode Title="ConnectEvent.ConnectEvent constructor" Url="html/M_AsterNET_Manager_Event_ConnectEvent__ctor.htm" />
   <HelpKINode Title="ConnectEvent.ProtocolIdentifier property" Url="html/P_AsterNET_Manager_Event_ConnectEvent_ProtocolIdentifier.htm" />
-  <HelpKINode Title="ConnectionState event" Url="html/E_AsterNET_Manager_ManagerConnection_ConnectionState.htm" />
   <HelpKINode Title="ConnectionStateEvent class">
     <HelpKINode Title="ConnectionStateEvent Class" Url="html/T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
     <HelpKINode Title="about ConnectionStateEvent class" Url="html/T_AsterNET_Manager_Event_ConnectionStateEvent.htm" />
@@ -2157,7 +2146,6 @@
   <HelpKINode Title="DBGetAction.DBGetAction constructor" Url="html/Overload_AsterNET_Manager_Action_DBGetAction__ctor.htm" />
   <HelpKINode Title="DBGetAction.Family property" Url="html/P_AsterNET_Manager_Action_DBGetAction_Family.htm" />
   <HelpKINode Title="DBGetAction.Key property" Url="html/P_AsterNET_Manager_Action_DBGetAction_Key.htm" />
-  <HelpKINode Title="DBGetResponse event" Url="html/E_AsterNET_Manager_ManagerConnection_DBGetResponse.htm" />
   <HelpKINode Title="DBGetResponseEvent class">
     <HelpKINode Title="DBGetResponseEvent Class" Url="html/T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
     <HelpKINode Title="about DBGetResponseEvent class" Url="html/T_AsterNET_Manager_Event_DBGetResponseEvent.htm" />
@@ -2209,8 +2197,6 @@
   </HelpKINode>
   <HelpKINode Title="determineVersion method" Url="html/M_AsterNET_Manager_ManagerConnection_determineVersion.htm" />
   <HelpKINode Title="Device property" Url="html/P_AsterNET_Manager_Event_MobileStatusEvent_Device.htm" />
-  <HelpKINode Title="Dial event" Url="html/E_AsterNET_Manager_ManagerConnection_Dial.htm" />
-  <HelpKINode Title="DialBegin event" Url="html/E_AsterNET_Manager_ManagerConnection_DialBegin.htm" />
   <HelpKINode Title="DialBeginEvent class">
     <HelpKINode Title="DialBeginEvent Class" Url="html/T_AsterNET_Manager_Event_DialBeginEvent.htm" />
     <HelpKINode Title="about DialBeginEvent class" Url="html/T_AsterNET_Manager_Event_DialBeginEvent.htm" />
@@ -2220,7 +2206,6 @@
   </HelpKINode>
   <HelpKINode Title="DialBeginEvent.DialBeginEvent constructor" Url="html/M_AsterNET_Manager_Event_DialBeginEvent__ctor.htm" />
   <HelpKINode Title="DialBeginEventHandler delegate" Url="html/T_AsterNET_Manager_DialBeginEventHandler.htm" />
-  <HelpKINode Title="DialEnd event" Url="html/E_AsterNET_Manager_ManagerConnection_DialEnd.htm" />
   <HelpKINode Title="DialEndEvent class">
     <HelpKINode Title="DialEndEvent Class" Url="html/T_AsterNET_Manager_Event_DialEndEvent.htm" />
     <HelpKINode Title="about DialEndEvent class" Url="html/T_AsterNET_Manager_Event_DialEndEvent.htm" />
@@ -2265,9 +2250,8 @@
   </HelpKINode>
   <HelpKINode Title="DisconnectEvent.DisconnectEvent constructor" Url="html/M_AsterNET_Manager_Event_DisconnectEvent__ctor.htm" />
   <HelpKINode Title="Disposition property" Url="html/P_AsterNET_Manager_Event_CdrEvent_Disposition.htm" />
-  <HelpKINode Title="DLSR property" Url="html/P_AsterNET_Manager_Event_RTCPReceivedEvent_DLSR.htm" />
   <HelpKINode Title="DlSr property" Url="html/P_AsterNET_Manager_Event_RTCPSentEvent_DlSr.htm" />
-  <HelpKINode Title="DNDState event" Url="html/E_AsterNET_Manager_ManagerConnection_DNDState.htm" />
+  <HelpKINode Title="DLSR property" Url="html/P_AsterNET_Manager_Event_RTCPReceivedEvent_DLSR.htm" />
   <HelpKINode Title="DNDStateEvent class">
     <HelpKINode Title="DNDStateEvent Class" Url="html/T_AsterNET_Manager_Event_DNDStateEvent.htm" />
     <HelpKINode Title="about DNDStateEvent class" Url="html/T_AsterNET_Manager_Event_DNDStateEvent.htm" />
@@ -2282,7 +2266,6 @@
   <HelpKINode Title="Dnid property" Url="html/P_AsterNET_FastAGI_AGIRequest_Dnid.htm" />
   <HelpKINode Title="Domain property" Url="html/P_AsterNET_Manager_Event_RegistryEvent_Domain.htm" />
   <HelpKINode Title="DstFileName property" Url="html/P_AsterNET_Manager_Action_UpdateConfigAction_DstFileName.htm" />
-  <HelpKINode Title="DTMF event" Url="html/E_AsterNET_Manager_ManagerConnection_DTMF.htm" />
   <HelpKINode Title="DTMFEvent class">
     <HelpKINode Title="DTMFEvent Class" Url="html/T_AsterNET_Manager_Event_DTMFEvent.htm" />
     <HelpKINode Title="about DTMFEvent class" Url="html/T_AsterNET_Manager_Event_DTMFEvent.htm" />
@@ -2410,7 +2393,6 @@
   <HelpKINode Title="ExtensionStateResponse.ExtensionStateResponse constructor" Url="html/M_AsterNET_Manager_Response_ExtensionStateResponse__ctor.htm" />
   <HelpKINode Title="ExtensionStateResponse.Hint property" Url="html/P_AsterNET_Manager_Response_ExtensionStateResponse_Hint.htm" />
   <HelpKINode Title="ExtensionStateResponse.Status property" Url="html/P_AsterNET_Manager_Response_ExtensionStateResponse_Status.htm" />
-  <HelpKINode Title="ExtensionStatus event" Url="html/E_AsterNET_Manager_ManagerConnection_ExtensionStatus.htm" />
   <HelpKINode Title="ExtensionStatusEvent class">
     <HelpKINode Title="ExtensionStatusEvent Class" Url="html/T_AsterNET_Manager_Event_ExtensionStatusEvent.htm" />
     <HelpKINode Title="about ExtensionStatusEvent class" Url="html/T_AsterNET_Manager_Event_ExtensionStatusEvent.htm" />
@@ -2426,7 +2408,6 @@
   <HelpKINode Title="ExtensionStatusEventHandler delegate" Url="html/T_AsterNET_Manager_ExtensionStatusEventHandler.htm" />
   <HelpKINode Title="Extra property" Url="html/P_AsterNET_FastAGI_AGIReply_Extra.htm" />
   <HelpKINode Title="ExtraChannel property" Url="html/P_AsterNET_Manager_Action_RedirectAction_ExtraChannel.htm" />
-  <HelpKINode Title="FailedACL event" Url="html/E_AsterNET_Manager_ManagerConnection_FailedACL.htm" />
   <HelpKINode Title="FailedACLEvent class">
     <HelpKINode Title="FailedACLEvent Class" Url="html/T_AsterNET_Manager_Event_FailedACLEvent.htm" />
     <HelpKINode Title="about FailedACLEvent class" Url="html/T_AsterNET_Manager_Event_FailedACLEvent.htm" />
@@ -2629,7 +2610,6 @@
     <HelpKINode Title="ResponseEventHandler.HandleResponse Method " Url="html/M_AsterNET_Manager_ResponseEventHandler_HandleResponse.htm" />
     <HelpKINode Title="ResponseHandler.HandleResponse Method " Url="html/M_AsterNET_Manager_ResponseHandler_HandleResponse.htm" />
   </HelpKINode>
-  <HelpKINode Title="Hangup event" Url="html/E_AsterNET_Manager_ManagerConnection_Hangup.htm" />
   <HelpKINode Title="Hangup method" Url="html/M_AsterNET_FastAGI_AGIScript_Hangup.htm" />
   <HelpKINode Title="HangupAction class">
     <HelpKINode Title="HangupAction Class" Url="html/T_AsterNET_Manager_Action_HangupAction.htm" />
@@ -2672,8 +2652,6 @@
     <HelpKINode Title="ExtensionStateResponse.Hint Property " Url="html/P_AsterNET_Manager_Response_ExtensionStateResponse_Hint.htm" />
     <HelpKINode Title="ExtensionStatusEvent.Hint Property " Url="html/P_AsterNET_Manager_Event_ExtensionStatusEvent_Hint.htm" />
   </HelpKINode>
-  <HelpKINode Title="Hold event" Url="html/E_AsterNET_Manager_ManagerConnection_Hold.htm" />
-  <HelpKINode Title="HoldedCall event" Url="html/E_AsterNET_Manager_ManagerConnection_HoldedCall.htm" />
   <HelpKINode Title="HoldedCallEvent class">
     <HelpKINode Title="HoldedCallEvent Class" Url="html/T_AsterNET_Manager_Event_HoldedCallEvent.htm" />
     <HelpKINode Title="about HoldedCallEvent class" Url="html/T_AsterNET_Manager_Event_HoldedCallEvent.htm" />
@@ -2719,12 +2697,17 @@
   </HelpKINode>
   <HelpKINode Title="IMappingStrategy.DetermineScript method" Url="html/M_AsterNET_FastAGI_IMappingStrategy_DetermineScript.htm" />
   <HelpKINode Title="IMappingStrategy.Load method" Url="html/M_AsterNET_FastAGI_IMappingStrategy_Load.htm" />
-  <HelpKINode Title="InCall property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_InCall.htm" />
+  <HelpKINode Title="InCall property">
+    <HelpKINode Title="AbstractQueueMemberEvent.InCall Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_InCall.htm" />
+    <HelpKINode Title="QueueMemberPausedEvent.InCall Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_InCall.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.InCall Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_InCall.htm" />
+  </HelpKINode>
   <HelpKINode Title="Info enumeration member" Url="html/T_AsterNET_Logger_MessageLevel.htm" />
   <HelpKINode Title="Info method" Url="html/Overload_AsterNET_Logger_Info.htm" />
   <HelpKINode Title="Initial property" Url="html/P_AsterNET_IO_SocketConnection_Initial.htm" />
   <HelpKINode Title="Instance method" Url="html/M_AsterNET_Logger_Instance.htm" />
   <HelpKINode Title="Interface property">
+    <HelpKINode Title="AbstractQueueMemberEvent.Interface Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Interface.htm" />
     <HelpKINode Title="QueueAddAction.Interface Property " Url="html/P_AsterNET_Manager_Action_QueueAddAction_Interface.htm" />
     <HelpKINode Title="QueueLogAction.Interface Property " Url="html/P_AsterNET_Manager_Action_QueueLogAction_Interface.htm" />
     <HelpKINode Title="QueuePauseAction.Interface Property " Url="html/P_AsterNET_Manager_Action_QueuePauseAction_Interface.htm" />
@@ -2816,7 +2799,6 @@
   <HelpKINode Title="JitterBufStatsEvent.Remoteooo property" Url="html/P_AsterNET_Manager_Event_JitterBufStatsEvent_Remoteooo.htm" />
   <HelpKINode Title="JitterBufStatsEvent.RemoteReceived property" Url="html/P_AsterNET_Manager_Event_JitterBufStatsEvent_RemoteReceived.htm" />
   <HelpKINode Title="JitterBufStatsEvent.RemoteTotalLost property" Url="html/P_AsterNET_Manager_Event_JitterBufStatsEvent_RemoteTotalLost.htm" />
-  <HelpKINode Title="Join event" Url="html/E_AsterNET_Manager_ManagerConnection_Join.htm" />
   <HelpKINode Title="JoinEvent class">
     <HelpKINode Title="JoinEvent Class" Url="html/T_AsterNET_Manager_Event_JoinEvent.htm" />
     <HelpKINode Title="about JoinEvent class" Url="html/T_AsterNET_Manager_Event_JoinEvent.htm" />
@@ -2852,13 +2834,14 @@
   </HelpKINode>
   <HelpKINode Title="LastApplication property" Url="html/P_AsterNET_Manager_Event_CdrEvent_LastApplication.htm" />
   <HelpKINode Title="LastCall property">
+    <HelpKINode Title="AbstractQueueMemberEvent.LastCall Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_LastCall.htm" />
     <HelpKINode Title="QueueMemberAddedEvent.LastCall Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_LastCall.htm" />
     <HelpKINode Title="QueueMemberEvent.LastCall Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_LastCall.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.LastCall Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_LastCall.htm" />
   </HelpKINode>
   <HelpKINode Title="LastData property" Url="html/P_AsterNET_Manager_Event_CdrEvent_LastData.htm" />
   <HelpKINode Title="LastReply property" Url="html/P_AsterNET_FastAGI_AGIChannel_LastReply.htm" />
   <HelpKINode Title="LastSR property" Url="html/P_AsterNET_Manager_Event_RTCPReceivedEvent_LastSR.htm" />
-  <HelpKINode Title="Leave event" Url="html/E_AsterNET_Manager_ManagerConnection_Leave.htm" />
   <HelpKINode Title="LeaveEvent class">
     <HelpKINode Title="LeaveEvent Class" Url="html/T_AsterNET_Manager_Event_LeaveEvent.htm" />
     <HelpKINode Title="about LeaveEvent class" Url="html/T_AsterNET_Manager_Event_LeaveEvent.htm" />
@@ -2876,7 +2859,6 @@
   <HelpKINode Title="Lines method" Url="html/M_AsterNET_Manager_Response_GetConfigResponse_Lines.htm" />
   <HelpKINode Title="Lines property" Url="html/P_AsterNET_FastAGI_AGIReply_Lines.htm" />
   <HelpKINode Title="LINE_SEPARATOR field" Url="html/F_AsterNET_Common_LINE_SEPARATOR.htm" />
-  <HelpKINode Title="Link event" Url="html/E_AsterNET_Manager_ManagerConnection_Link.htm" />
   <HelpKINode Title="Link property" Url="html/P_AsterNET_Manager_Event_StatusEvent_Link.htm" />
   <HelpKINode Title="LinkEvent class">
     <HelpKINode Title="LinkEvent Class" Url="html/T_AsterNET_Manager_Event_LinkEvent.htm" />
@@ -2923,7 +2905,6 @@
     <HelpKINode Title="QueueMemberEvent.Location Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_Location.htm" />
   </HelpKINode>
   <HelpKINode Title="Locked property" Url="html/P_AsterNET_Manager_Event_ConfbridgeListRoomsEvent_Locked.htm" />
-  <HelpKINode Title="LogChannel event" Url="html/E_AsterNET_Manager_ManagerConnection_LogChannel.htm" />
   <HelpKINode Title="LogChannelEvent class">
     <HelpKINode Title="LogChannelEvent Class" Url="html/T_AsterNET_Manager_Event_LogChannelEvent.htm" />
     <HelpKINode Title="about LogChannelEvent class" Url="html/T_AsterNET_Manager_Event_LogChannelEvent.htm" />
@@ -3076,124 +3057,41 @@
     <HelpKINode Title="ManagerConnection Class" Url="html/T_AsterNET_Manager_ManagerConnection.htm" />
     <HelpKINode Title="about ManagerConnection class" Url="html/T_AsterNET_Manager_ManagerConnection.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_AsterNET_Manager_ManagerConnection__ctor.htm" />
-    <HelpKINode Title="events" Url="html/Events_T_AsterNET_Manager_ManagerConnection.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_AsterNET_Manager_ManagerConnection.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_ManagerConnection.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_ManagerConnection.htm" />
   </HelpKINode>
-  <HelpKINode Title="ManagerConnection.AgentCallbackLogin event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentCallbackLogin.htm" />
-  <HelpKINode Title="ManagerConnection.AgentCallbackLogoff event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentCallbackLogoff.htm" />
-  <HelpKINode Title="ManagerConnection.AgentCalled event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentCalled.htm" />
-  <HelpKINode Title="ManagerConnection.AgentComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentComplete.htm" />
-  <HelpKINode Title="ManagerConnection.AgentConnect event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentConnect.htm" />
-  <HelpKINode Title="ManagerConnection.AgentDump event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentDump.htm" />
-  <HelpKINode Title="ManagerConnection.AgentLogin event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentLogin.htm" />
-  <HelpKINode Title="ManagerConnection.AgentLogoff event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentLogoff.htm" />
-  <HelpKINode Title="ManagerConnection.Agents event" Url="html/E_AsterNET_Manager_ManagerConnection_Agents.htm" />
-  <HelpKINode Title="ManagerConnection.AgentsComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_AgentsComplete.htm" />
-  <HelpKINode Title="ManagerConnection.AGIExec event" Url="html/E_AsterNET_Manager_ManagerConnection_AGIExec.htm" />
-  <HelpKINode Title="ManagerConnection.Alarm event" Url="html/E_AsterNET_Manager_ManagerConnection_Alarm.htm" />
-  <HelpKINode Title="ManagerConnection.AlarmClear event" Url="html/E_AsterNET_Manager_ManagerConnection_AlarmClear.htm" />
   <HelpKINode Title="ManagerConnection.AsteriskVersion property" Url="html/P_AsterNET_Manager_ManagerConnection_AsteriskVersion.htm" />
-  <HelpKINode Title="ManagerConnection.AttendedTransfer event" Url="html/E_AsterNET_Manager_ManagerConnection_AttendedTransfer.htm" />
-  <HelpKINode Title="ManagerConnection.BlindTransfer event" Url="html/E_AsterNET_Manager_ManagerConnection_BlindTransfer.htm" />
-  <HelpKINode Title="ManagerConnection.Bridge event" Url="html/E_AsterNET_Manager_ManagerConnection_Bridge.htm" />
-  <HelpKINode Title="ManagerConnection.BridgeCreate event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeCreate.htm" />
-  <HelpKINode Title="ManagerConnection.BridgeDestroy event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeDestroy.htm" />
-  <HelpKINode Title="ManagerConnection.BridgeEnter event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeEnter.htm" />
-  <HelpKINode Title="ManagerConnection.BridgeLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_BridgeLeave.htm" />
   <HelpKINode Title="ManagerConnection.BuildAction method" Url="html/Overload_AsterNET_Manager_ManagerConnection_BuildAction.htm" />
-  <HelpKINode Title="ManagerConnection.Cdr event" Url="html/E_AsterNET_Manager_ManagerConnection_Cdr.htm" />
-  <HelpKINode Title="ManagerConnection.ConfbridgeEnd event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeEnd.htm" />
-  <HelpKINode Title="ManagerConnection.ConfbridgeJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeJoin.htm" />
-  <HelpKINode Title="ManagerConnection.ConfbridgeLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeLeave.htm" />
-  <HelpKINode Title="ManagerConnection.ConfbridgeStart event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeStart.htm" />
-  <HelpKINode Title="ManagerConnection.ConfbridgeTalking event" Url="html/E_AsterNET_Manager_ManagerConnection_ConfbridgeTalking.htm" />
   <HelpKINode Title="ManagerConnection.connect method" Url="html/M_AsterNET_Manager_ManagerConnection_connect.htm" />
-  <HelpKINode Title="ManagerConnection.ConnectionState event" Url="html/E_AsterNET_Manager_ManagerConnection_ConnectionState.htm" />
-  <HelpKINode Title="ManagerConnection.DBGetResponse event" Url="html/E_AsterNET_Manager_ManagerConnection_DBGetResponse.htm" />
   <HelpKINode Title="ManagerConnection.DefaultEventTimeout property" Url="html/P_AsterNET_Manager_ManagerConnection_DefaultEventTimeout.htm" />
   <HelpKINode Title="ManagerConnection.DefaultResponseTimeout property" Url="html/P_AsterNET_Manager_ManagerConnection_DefaultResponseTimeout.htm" />
   <HelpKINode Title="ManagerConnection.determineVersion method" Url="html/M_AsterNET_Manager_ManagerConnection_determineVersion.htm" />
-  <HelpKINode Title="ManagerConnection.Dial event" Url="html/E_AsterNET_Manager_ManagerConnection_Dial.htm" />
-  <HelpKINode Title="ManagerConnection.DialBegin event" Url="html/E_AsterNET_Manager_ManagerConnection_DialBegin.htm" />
-  <HelpKINode Title="ManagerConnection.DialEnd event" Url="html/E_AsterNET_Manager_ManagerConnection_DialEnd.htm" />
-  <HelpKINode Title="ManagerConnection.DNDState event" Url="html/E_AsterNET_Manager_ManagerConnection_DNDState.htm" />
-  <HelpKINode Title="ManagerConnection.DTMF event" Url="html/E_AsterNET_Manager_ManagerConnection_DTMF.htm" />
-  <HelpKINode Title="ManagerConnection.ExtensionStatus event" Url="html/E_AsterNET_Manager_ManagerConnection_ExtensionStatus.htm" />
-  <HelpKINode Title="ManagerConnection.FailedACL event" Url="html/E_AsterNET_Manager_ManagerConnection_FailedACL.htm" />
   <HelpKINode Title="ManagerConnection.FireAllEvents property" Url="html/P_AsterNET_Manager_ManagerConnection_FireAllEvents.htm" />
   <HelpKINode Title="ManagerConnection.GetProtocolIdentifier method" Url="html/M_AsterNET_Manager_ManagerConnection_GetProtocolIdentifier.htm" />
-  <HelpKINode Title="ManagerConnection.Hangup event" Url="html/E_AsterNET_Manager_ManagerConnection_Hangup.htm" />
-  <HelpKINode Title="ManagerConnection.Hold event" Url="html/E_AsterNET_Manager_ManagerConnection_Hold.htm" />
-  <HelpKINode Title="ManagerConnection.HoldedCall event" Url="html/E_AsterNET_Manager_ManagerConnection_HoldedCall.htm" />
   <HelpKINode Title="ManagerConnection.Hostname property" Url="html/P_AsterNET_Manager_ManagerConnection_Hostname.htm" />
   <HelpKINode Title="ManagerConnection.IsConnected method" Url="html/M_AsterNET_Manager_ManagerConnection_IsConnected.htm" />
-  <HelpKINode Title="ManagerConnection.Join event" Url="html/E_AsterNET_Manager_ManagerConnection_Join.htm" />
   <HelpKINode Title="ManagerConnection.KeepAlive property" Url="html/P_AsterNET_Manager_ManagerConnection_KeepAlive.htm" />
   <HelpKINode Title="ManagerConnection.KeepAliveAfterAuthenticationFailure property" Url="html/P_AsterNET_Manager_ManagerConnection_KeepAliveAfterAuthenticationFailure.htm" />
-  <HelpKINode Title="ManagerConnection.Leave event" Url="html/E_AsterNET_Manager_ManagerConnection_Leave.htm" />
-  <HelpKINode Title="ManagerConnection.Link event" Url="html/E_AsterNET_Manager_ManagerConnection_Link.htm" />
-  <HelpKINode Title="ManagerConnection.LogChannel event" Url="html/E_AsterNET_Manager_ManagerConnection_LogChannel.htm" />
   <HelpKINode Title="ManagerConnection.Login method" Url="html/Overload_AsterNET_Manager_ManagerConnection_Login.htm" />
   <HelpKINode Title="ManagerConnection.Logoff method" Url="html/M_AsterNET_Manager_ManagerConnection_Logoff.htm" />
   <HelpKINode Title="ManagerConnection.ManagerConnection constructor" Url="html/Overload_AsterNET_Manager_ManagerConnection__ctor.htm" />
-  <HelpKINode Title="ManagerConnection.MeetMeJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_MeetMeJoin.htm" />
-  <HelpKINode Title="ManagerConnection.MeetMeLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_MeetMeLeave.htm" />
-  <HelpKINode Title="ManagerConnection.MeetMeTalking event" Url="html/E_AsterNET_Manager_ManagerConnection_MeetMeTalking.htm" />
-  <HelpKINode Title="ManagerConnection.MessageWaiting event" Url="html/E_AsterNET_Manager_ManagerConnection_MessageWaiting.htm" />
-  <HelpKINode Title="ManagerConnection.NewCallerId event" Url="html/E_AsterNET_Manager_ManagerConnection_NewCallerId.htm" />
-  <HelpKINode Title="ManagerConnection.NewChannel event" Url="html/E_AsterNET_Manager_ManagerConnection_NewChannel.htm" />
-  <HelpKINode Title="ManagerConnection.NewExten event" Url="html/E_AsterNET_Manager_ManagerConnection_NewExten.htm" />
-  <HelpKINode Title="ManagerConnection.NewState event" Url="html/E_AsterNET_Manager_ManagerConnection_NewState.htm" />
-  <HelpKINode Title="ManagerConnection.OriginateResponse event" Url="html/E_AsterNET_Manager_ManagerConnection_OriginateResponse.htm" />
-  <HelpKINode Title="ManagerConnection.ParkedCall event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCall.htm" />
-  <HelpKINode Title="ManagerConnection.ParkedCallGiveUp event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCallGiveUp.htm" />
-  <HelpKINode Title="ManagerConnection.ParkedCallsComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCallsComplete.htm" />
-  <HelpKINode Title="ManagerConnection.ParkedCallTimeOut event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCallTimeOut.htm" />
   <HelpKINode Title="ManagerConnection.Password property" Url="html/P_AsterNET_Manager_ManagerConnection_Password.htm" />
-  <HelpKINode Title="ManagerConnection.PeerEntry event" Url="html/E_AsterNET_Manager_ManagerConnection_PeerEntry.htm" />
-  <HelpKINode Title="ManagerConnection.PeerlistComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_PeerlistComplete.htm" />
-  <HelpKINode Title="ManagerConnection.PeerStatus event" Url="html/E_AsterNET_Manager_ManagerConnection_PeerStatus.htm" />
   <HelpKINode Title="ManagerConnection.PingInterval property" Url="html/P_AsterNET_Manager_ManagerConnection_PingInterval.htm" />
   <HelpKINode Title="ManagerConnection.Port property" Url="html/P_AsterNET_Manager_ManagerConnection_Port.htm" />
-  <HelpKINode Title="ManagerConnection.QueueCallerAbandon event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerAbandon.htm" />
-  <HelpKINode Title="ManagerConnection.QueueCallerJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerJoin.htm" />
-  <HelpKINode Title="ManagerConnection.QueueCallerLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerLeave.htm" />
-  <HelpKINode Title="ManagerConnection.QueueEntry event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueEntry.htm" />
-  <HelpKINode Title="ManagerConnection.QueueMember event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMember.htm" />
-  <HelpKINode Title="ManagerConnection.QueueMemberAdded event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberAdded.htm" />
-  <HelpKINode Title="ManagerConnection.QueueMemberPaused event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberPaused.htm" />
-  <HelpKINode Title="ManagerConnection.QueueMemberRemoved event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberRemoved.htm" />
-  <HelpKINode Title="ManagerConnection.QueueMemberStatus event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberStatus.htm" />
-  <HelpKINode Title="ManagerConnection.QueueParams event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueParams.htm" />
-  <HelpKINode Title="ManagerConnection.QueueStatusComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueStatusComplete.htm" />
   <HelpKINode Title="ManagerConnection.ReconnectIntervalFast property" Url="html/P_AsterNET_Manager_ManagerConnection_ReconnectIntervalFast.htm" />
   <HelpKINode Title="ManagerConnection.ReconnectIntervalMax property" Url="html/P_AsterNET_Manager_ManagerConnection_ReconnectIntervalMax.htm" />
   <HelpKINode Title="ManagerConnection.ReconnectRetryFast property" Url="html/P_AsterNET_Manager_ManagerConnection_ReconnectRetryFast.htm" />
   <HelpKINode Title="ManagerConnection.ReconnectRetryMax property" Url="html/P_AsterNET_Manager_ManagerConnection_ReconnectRetryMax.htm" />
   <HelpKINode Title="ManagerConnection.RegisterUserEventClass method" Url="html/M_AsterNET_Manager_ManagerConnection_RegisterUserEventClass.htm" />
-  <HelpKINode Title="ManagerConnection.Registry event" Url="html/E_AsterNET_Manager_ManagerConnection_Registry.htm" />
-  <HelpKINode Title="ManagerConnection.Rename event" Url="html/E_AsterNET_Manager_ManagerConnection_Rename.htm" />
   <HelpKINode Title="ManagerConnection.SendAction method" Url="html/Overload_AsterNET_Manager_ManagerConnection_SendAction.htm" />
   <HelpKINode Title="ManagerConnection.SendEventGeneratingAction method" Url="html/Overload_AsterNET_Manager_ManagerConnection_SendEventGeneratingAction.htm" />
   <HelpKINode Title="ManagerConnection.SleepTime property" Url="html/P_AsterNET_Manager_ManagerConnection_SleepTime.htm" />
   <HelpKINode Title="ManagerConnection.SocketEncoding property" Url="html/P_AsterNET_Manager_ManagerConnection_SocketEncoding.htm" />
-  <HelpKINode Title="ManagerConnection.Status event" Url="html/E_AsterNET_Manager_ManagerConnection_Status.htm" />
-  <HelpKINode Title="ManagerConnection.StatusComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_StatusComplete.htm" />
-  <HelpKINode Title="ManagerConnection.Transfer event" Url="html/E_AsterNET_Manager_ManagerConnection_Transfer.htm" />
-  <HelpKINode Title="ManagerConnection.UnhandledEvent event" Url="html/E_AsterNET_Manager_ManagerConnection_UnhandledEvent.htm" />
-  <HelpKINode Title="ManagerConnection.Unhold event" Url="html/E_AsterNET_Manager_ManagerConnection_Unhold.htm" />
-  <HelpKINode Title="ManagerConnection.Unlink event" Url="html/E_AsterNET_Manager_ManagerConnection_Unlink.htm" />
-  <HelpKINode Title="ManagerConnection.UnparkedCall event" Url="html/E_AsterNET_Manager_ManagerConnection_UnparkedCall.htm" />
   <HelpKINode Title="ManagerConnection.UseASyncEvents field" Url="html/F_AsterNET_Manager_ManagerConnection_UseASyncEvents.htm" />
-  <HelpKINode Title="ManagerConnection.UserEvents event" Url="html/E_AsterNET_Manager_ManagerConnection_UserEvents.htm" />
   <HelpKINode Title="ManagerConnection.Username property" Url="html/P_AsterNET_Manager_ManagerConnection_Username.htm" />
-  <HelpKINode Title="ManagerConnection.VarSet event" Url="html/E_AsterNET_Manager_ManagerConnection_VarSet.htm" />
   <HelpKINode Title="ManagerConnection.VAR_DELIMITER field" Url="html/F_AsterNET_Manager_ManagerConnection_VAR_DELIMITER.htm" />
   <HelpKINode Title="ManagerConnection.Version property" Url="html/P_AsterNET_Manager_ManagerConnection_Version.htm" />
-  <HelpKINode Title="ManagerConnection.ZapShowChannels event" Url="html/E_AsterNET_Manager_ManagerConnection_ZapShowChannels.htm" />
-  <HelpKINode Title="ManagerConnection.ZapShowChannelsComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_ZapShowChannelsComplete.htm" />
   <HelpKINode Title="ManagerError class">
     <HelpKINode Title="ManagerError Class" Url="html/T_AsterNET_Manager_Response_ManagerError.htm" />
     <HelpKINode Title="about ManagerError class" Url="html/T_AsterNET_Manager_Response_ManagerError.htm" />
@@ -3298,7 +3196,6 @@
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeEndEvent.htm" />
   </HelpKINode>
   <HelpKINode Title="MeetmeEndEvent.MeetmeEndEvent constructor" Url="html/M_AsterNET_Manager_Event_MeetmeEndEvent__ctor.htm" />
-  <HelpKINode Title="MeetMeJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_MeetMeJoin.htm" />
   <HelpKINode Title="MeetmeJoinEvent class">
     <HelpKINode Title="MeetmeJoinEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeJoinEvent.htm" />
     <HelpKINode Title="about MeetmeJoinEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeJoinEvent.htm" />
@@ -3310,7 +3207,6 @@
   <HelpKINode Title="MeetmeJoinEvent.CallerIdNum property" Url="html/P_AsterNET_Manager_Event_MeetmeJoinEvent_CallerIdNum.htm" />
   <HelpKINode Title="MeetmeJoinEvent.MeetmeJoinEvent constructor" Url="html/M_AsterNET_Manager_Event_MeetmeJoinEvent__ctor.htm" />
   <HelpKINode Title="MeetMeJoinEventHandler delegate" Url="html/T_AsterNET_Manager_MeetMeJoinEventHandler.htm" />
-  <HelpKINode Title="MeetMeLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_MeetMeLeave.htm" />
   <HelpKINode Title="MeetmeLeaveEvent class">
     <HelpKINode Title="MeetmeLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeLeaveEvent.htm" />
     <HelpKINode Title="about MeetmeLeaveEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeLeaveEvent.htm" />
@@ -3340,7 +3236,6 @@
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_MeetmeStopTalkingEvent.htm" />
   </HelpKINode>
   <HelpKINode Title="MeetmeStopTalkingEvent.MeetmeStopTalkingEvent constructor" Url="html/M_AsterNET_Manager_Event_MeetmeStopTalkingEvent__ctor.htm" />
-  <HelpKINode Title="MeetMeTalking event" Url="html/E_AsterNET_Manager_ManagerConnection_MeetMeTalking.htm" />
   <HelpKINode Title="MeetmeTalkingEvent class">
     <HelpKINode Title="MeetmeTalkingEvent Class" Url="html/T_AsterNET_Manager_Event_MeetmeTalkingEvent.htm" />
     <HelpKINode Title="about MeetmeTalkingEvent class" Url="html/T_AsterNET_Manager_Event_MeetmeTalkingEvent.htm" />
@@ -3366,17 +3261,19 @@
   </HelpKINode>
   <HelpKINode Title="MemberName property">
     <HelpKINode Title="AbstractAgentEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_AbstractAgentEvent_MemberName.htm" />
+    <HelpKINode Title="AbstractQueueMemberEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_MemberName.htm" />
     <HelpKINode Title="QueueAddAction.MemberName Property " Url="html/P_AsterNET_Manager_Action_QueueAddAction_MemberName.htm" />
     <HelpKINode Title="QueueMemberAddedEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_MemberName.htm" />
     <HelpKINode Title="QueueMemberEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_MemberName.htm" />
-    <HelpKINode Title="QueueMemberPausedEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_MemberName.htm" />
-    <HelpKINode Title="QueueMemberPauseEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_MemberName.htm" />
     <HelpKINode Title="QueueMemberRemovedEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberRemovedEvent_MemberName.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.MemberName Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_MemberName.htm" />
   </HelpKINode>
   <HelpKINode Title="Members property" Url="html/P_AsterNET_Manager_Action_QueueReloadAction_Members.htm" />
   <HelpKINode Title="Membership property">
+    <HelpKINode Title="AbstractQueueMemberEvent.Membership Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Membership.htm" />
     <HelpKINode Title="QueueMemberAddedEvent.Membership Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_Membership.htm" />
     <HelpKINode Title="QueueMemberEvent.Membership Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_Membership.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.Membership Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Membership.htm" />
   </HelpKINode>
   <HelpKINode Title="Message property">
     <HelpKINode Title="ManagerResponse.Message Property " Url="html/P_AsterNET_Manager_Response_ManagerResponse_Message.htm" />
@@ -3384,7 +3281,6 @@
     <HelpKINode Title="ReloadEvent.Message Property " Url="html/P_AsterNET_Manager_Event_ReloadEvent_Message.htm" />
     <HelpKINode Title="VerboseCommand.Message Property " Url="html/P_AsterNET_FastAGI_Command_VerboseCommand_Message.htm" />
   </HelpKINode>
-  <HelpKINode Title="MessageWaiting event" Url="html/E_AsterNET_Manager_ManagerConnection_MessageWaiting.htm" />
   <HelpKINode Title="MessageWaitingEvent class">
     <HelpKINode Title="MessageWaitingEvent Class" Url="html/T_AsterNET_Manager_Event_MessageWaitingEvent.htm" />
     <HelpKINode Title="about MessageWaitingEvent class" Url="html/T_AsterNET_Manager_Event_MessageWaitingEvent.htm" />
@@ -3475,7 +3371,6 @@
   <HelpKINode Title="NewAccountCodeEvent.AccountCode property" Url="html/P_AsterNET_Manager_Event_NewAccountCodeEvent_AccountCode.htm" />
   <HelpKINode Title="NewAccountCodeEvent.NewAccountCodeEvent constructor" Url="html/M_AsterNET_Manager_Event_NewAccountCodeEvent__ctor.htm" />
   <HelpKINode Title="NewAccountCodeEvent.OldAccountCode property" Url="html/P_AsterNET_Manager_Event_NewAccountCodeEvent_OldAccountCode.htm" />
-  <HelpKINode Title="NewCallerId event" Url="html/E_AsterNET_Manager_ManagerConnection_NewCallerId.htm" />
   <HelpKINode Title="NewCallerIdEvent class">
     <HelpKINode Title="NewCallerIdEvent Class" Url="html/T_AsterNET_Manager_Event_NewCallerIdEvent.htm" />
     <HelpKINode Title="about NewCallerIdEvent class" Url="html/T_AsterNET_Manager_Event_NewCallerIdEvent.htm" />
@@ -3490,7 +3385,6 @@
   <HelpKINode Title="NewCallerIdEvent.CidCallingPresNumeric property" Url="html/P_AsterNET_Manager_Event_NewCallerIdEvent_CidCallingPresNumeric.htm" />
   <HelpKINode Title="NewCallerIdEvent.NewCallerIdEvent constructor" Url="html/M_AsterNET_Manager_Event_NewCallerIdEvent__ctor.htm" />
   <HelpKINode Title="NewCallerIdEventHandler delegate" Url="html/T_AsterNET_Manager_NewCallerIdEventHandler.htm" />
-  <HelpKINode Title="NewChannel event" Url="html/E_AsterNET_Manager_ManagerConnection_NewChannel.htm" />
   <HelpKINode Title="NewChannelEvent class">
     <HelpKINode Title="NewChannelEvent Class" Url="html/T_AsterNET_Manager_Event_NewChannelEvent.htm" />
     <HelpKINode Title="about NewChannelEvent class" Url="html/T_AsterNET_Manager_Event_NewChannelEvent.htm" />
@@ -3500,7 +3394,6 @@
   </HelpKINode>
   <HelpKINode Title="NewChannelEvent.NewChannelEvent constructor" Url="html/M_AsterNET_Manager_Event_NewChannelEvent__ctor.htm" />
   <HelpKINode Title="NewChannelEventHandler delegate" Url="html/T_AsterNET_Manager_NewChannelEventHandler.htm" />
-  <HelpKINode Title="NewExten event" Url="html/E_AsterNET_Manager_ManagerConnection_NewExten.htm" />
   <HelpKINode Title="NewExtenEvent class">
     <HelpKINode Title="NewExtenEvent Class" Url="html/T_AsterNET_Manager_Event_NewExtenEvent.htm" />
     <HelpKINode Title="about NewExtenEvent class" Url="html/T_AsterNET_Manager_Event_NewExtenEvent.htm" />
@@ -3519,7 +3412,6 @@
   <HelpKINode Title="NewMessages property" Url="html/P_AsterNET_Manager_Response_MailboxCountResponse_NewMessages.htm" />
   <HelpKINode Title="newName field" Url="html/F_AsterNET_Manager_Event_RenameEvent_newName.htm" />
   <HelpKINode Title="NewName property" Url="html/P_AsterNET_Manager_Event_RenameEvent_NewName.htm" />
-  <HelpKINode Title="NewState event" Url="html/E_AsterNET_Manager_ManagerConnection_NewState.htm" />
   <HelpKINode Title="NewStateEvent class">
     <HelpKINode Title="NewStateEvent Class" Url="html/T_AsterNET_Manager_Event_NewStateEvent.htm" />
     <HelpKINode Title="about NewStateEvent class" Url="html/T_AsterNET_Manager_Event_NewStateEvent.htm" />
@@ -3613,7 +3505,6 @@
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Response_OriginateResponse.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Response_OriginateResponse.htm" />
   </HelpKINode>
-  <HelpKINode Title="OriginateResponse event" Url="html/E_AsterNET_Manager_ManagerConnection_OriginateResponse.htm" />
   <HelpKINode Title="OriginateResponse.CalcDuration method" Url="html/M_AsterNET_Manager_Response_OriginateResponse_CalcDuration.htm" />
   <HelpKINode Title="OriginateResponse.Channel property" Url="html/P_AsterNET_Manager_Response_OriginateResponse_Channel.htm" />
   <HelpKINode Title="OriginateResponse.ChannelName property" Url="html/P_AsterNET_Manager_Response_OriginateResponse_ChannelName.htm" />
@@ -3675,7 +3566,6 @@
   <HelpKINode Title="ParkAction.ParkAction constructor" Url="html/Overload_AsterNET_Manager_Action_ParkAction__ctor.htm" />
   <HelpKINode Title="ParkAction.Parkinglot property" Url="html/P_AsterNET_Manager_Action_ParkAction_Parkinglot.htm" />
   <HelpKINode Title="ParkAction.Timeout property" Url="html/P_AsterNET_Manager_Action_ParkAction_Timeout.htm" />
-  <HelpKINode Title="ParkedCall event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCall.htm" />
   <HelpKINode Title="ParkedCallEvent class">
     <HelpKINode Title="ParkedCallEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallEvent.htm" />
     <HelpKINode Title="about ParkedCallEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallEvent.htm" />
@@ -3691,7 +3581,6 @@
   <HelpKINode Title="ParkedCallEvent.ParkedCallEvent constructor" Url="html/M_AsterNET_Manager_Event_ParkedCallEvent__ctor.htm" />
   <HelpKINode Title="ParkedCallEvent.Timeout property" Url="html/P_AsterNET_Manager_Event_ParkedCallEvent_Timeout.htm" />
   <HelpKINode Title="ParkedCallEventHandler delegate" Url="html/T_AsterNET_Manager_ParkedCallEventHandler.htm" />
-  <HelpKINode Title="ParkedCallGiveUp event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCallGiveUp.htm" />
   <HelpKINode Title="ParkedCallGiveUpEvent class">
     <HelpKINode Title="ParkedCallGiveUpEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallGiveUpEvent.htm" />
     <HelpKINode Title="about ParkedCallGiveUpEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallGiveUpEvent.htm" />
@@ -3711,7 +3600,6 @@
   <HelpKINode Title="ParkedCallsAction.Action property" Url="html/P_AsterNET_Manager_Action_ParkedCallsAction_Action.htm" />
   <HelpKINode Title="ParkedCallsAction.ActionCompleteEventClass method" Url="html/M_AsterNET_Manager_Action_ParkedCallsAction_ActionCompleteEventClass.htm" />
   <HelpKINode Title="ParkedCallsAction.ParkedCallsAction constructor" Url="html/M_AsterNET_Manager_Action_ParkedCallsAction__ctor.htm" />
-  <HelpKINode Title="ParkedCallsComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCallsComplete.htm" />
   <HelpKINode Title="ParkedCallsCompleteEvent class">
     <HelpKINode Title="ParkedCallsCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallsCompleteEvent.htm" />
     <HelpKINode Title="about ParkedCallsCompleteEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallsCompleteEvent.htm" />
@@ -3721,7 +3609,6 @@
   </HelpKINode>
   <HelpKINode Title="ParkedCallsCompleteEvent.ParkedCallsCompleteEvent constructor" Url="html/M_AsterNET_Manager_Event_ParkedCallsCompleteEvent__ctor.htm" />
   <HelpKINode Title="ParkedCallsCompleteEventHandler delegate" Url="html/T_AsterNET_Manager_ParkedCallsCompleteEventHandler.htm" />
-  <HelpKINode Title="ParkedCallTimeOut event" Url="html/E_AsterNET_Manager_ManagerConnection_ParkedCallTimeOut.htm" />
   <HelpKINode Title="ParkedCallTimeOutEvent class">
     <HelpKINode Title="ParkedCallTimeOutEvent Class" Url="html/T_AsterNET_Manager_Event_ParkedCallTimeOutEvent.htm" />
     <HelpKINode Title="about ParkedCallTimeOutEvent class" Url="html/T_AsterNET_Manager_Event_ParkedCallTimeOutEvent.htm" />
@@ -3746,21 +3633,23 @@
   <HelpKINode Title="Parties property" Url="html/P_AsterNET_Manager_Event_ConfbridgeListRoomsEvent_Parties.htm" />
   <HelpKINode Title="Password property" Url="html/P_AsterNET_Manager_ManagerConnection_Password.htm" />
   <HelpKINode Title="Paused property">
+    <HelpKINode Title="AbstractQueueMemberEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Paused.htm" />
     <HelpKINode Title="QueueAddAction.Paused Property " Url="html/P_AsterNET_Manager_Action_QueueAddAction_Paused.htm" />
     <HelpKINode Title="QueueMemberAddedEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_Paused.htm" />
     <HelpKINode Title="QueueMemberEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_Paused.htm" />
-    <HelpKINode Title="QueueMemberPausedEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_Paused.htm" />
-    <HelpKINode Title="QueueMemberPauseEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_Paused.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.Paused Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Paused.htm" />
     <HelpKINode Title="QueuePauseAction.Paused Property " Url="html/P_AsterNET_Manager_Action_QueuePauseAction_Paused.htm" />
   </HelpKINode>
   <HelpKINode Title="PauseDigit property" Url="html/P_AsterNET_FastAGI_Command_ControlStreamFileCommand_PauseDigit.htm" />
-  <HelpKINode Title="PausedReason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_PausedReason.htm" />
+  <HelpKINode Title="PausedReason property">
+    <HelpKINode Title="AbstractQueueMemberEvent.PausedReason Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_PausedReason.htm" />
+    <HelpKINode Title="QueueMemberPausedEvent.PausedReason Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_PausedReason.htm" />
+  </HelpKINode>
   <HelpKINode Title="Peer property">
     <HelpKINode Title="PeerStatusEvent.Peer Property " Url="html/P_AsterNET_Manager_Event_PeerStatusEvent_Peer.htm" />
     <HelpKINode Title="SIPShowPeerAction.Peer Property " Url="html/P_AsterNET_Manager_Action_SIPShowPeerAction_Peer.htm" />
   </HelpKINode>
   <HelpKINode Title="PeerCount property" Url="html/P_AsterNET_Manager_Event_ChannelReloadEvent_PeerCount.htm" />
-  <HelpKINode Title="PeerEntry event" Url="html/E_AsterNET_Manager_ManagerConnection_PeerEntry.htm" />
   <HelpKINode Title="PeerEntryEvent class">
     <HelpKINode Title="PeerEntryEvent Class" Url="html/T_AsterNET_Manager_Event_PeerEntryEvent.htm" />
     <HelpKINode Title="about PeerEntryEvent class" Url="html/T_AsterNET_Manager_Event_PeerEntryEvent.htm" />
@@ -3782,7 +3671,6 @@
   <HelpKINode Title="PeerEntryEvent.TextSupport property" Url="html/P_AsterNET_Manager_Event_PeerEntryEvent_TextSupport.htm" />
   <HelpKINode Title="PeerEntryEvent.VideoSupport property" Url="html/P_AsterNET_Manager_Event_PeerEntryEvent_VideoSupport.htm" />
   <HelpKINode Title="PeerEntryEventHandler delegate" Url="html/T_AsterNET_Manager_PeerEntryEventHandler.htm" />
-  <HelpKINode Title="PeerlistComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_PeerlistComplete.htm" />
   <HelpKINode Title="PeerlistCompleteEvent class">
     <HelpKINode Title="PeerlistCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_PeerlistCompleteEvent.htm" />
     <HelpKINode Title="about PeerlistCompleteEvent class" Url="html/T_AsterNET_Manager_Event_PeerlistCompleteEvent.htm" />
@@ -3794,7 +3682,6 @@
   <HelpKINode Title="PeerlistCompleteEvent.PeerlistCompleteEvent constructor" Url="html/M_AsterNET_Manager_Event_PeerlistCompleteEvent__ctor.htm" />
   <HelpKINode Title="PeerlistCompleteEventHandler delegate" Url="html/T_AsterNET_Manager_PeerlistCompleteEventHandler.htm" />
   <HelpKINode Title="PeerName property" Url="html/P_AsterNET_Manager_Event_ChannelUpdateEvent_PeerName.htm" />
-  <HelpKINode Title="PeerStatus event" Url="html/E_AsterNET_Manager_ManagerConnection_PeerStatus.htm" />
   <HelpKINode Title="PeerStatus property" Url="html/P_AsterNET_Manager_Event_PeerStatusEvent_PeerStatus.htm" />
   <HelpKINode Title="PeerStatusEvent class">
     <HelpKINode Title="PeerStatusEvent Class" Url="html/T_AsterNET_Manager_Event_PeerStatusEvent.htm" />
@@ -3811,10 +3698,12 @@
   <HelpKINode Title="PeerStatusEvent.Time property" Url="html/P_AsterNET_Manager_Event_PeerStatusEvent_Time.htm" />
   <HelpKINode Title="PeerStatusEventHandler delegate" Url="html/T_AsterNET_Manager_PeerStatusEventHandler.htm" />
   <HelpKINode Title="Penalty property">
+    <HelpKINode Title="AbstractQueueMemberEvent.Penalty Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Penalty.htm" />
     <HelpKINode Title="QueueAddAction.Penalty Property " Url="html/P_AsterNET_Manager_Action_QueueAddAction_Penalty.htm" />
     <HelpKINode Title="QueueMemberAddedEvent.Penalty Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_Penalty.htm" />
     <HelpKINode Title="QueueMemberEvent.Penalty Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_Penalty.htm" />
     <HelpKINode Title="QueueMemberPenaltyEvent.Penalty Property " Url="html/P_AsterNET_Manager_Event_QueueMemberPenaltyEvent_Penalty.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.Penalty Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Penalty.htm" />
     <HelpKINode Title="QueuePenaltyAction.Penalty Property " Url="html/P_AsterNET_Manager_Action_QueuePenaltyAction_Penalty.htm" />
   </HelpKINode>
   <HelpKINode Title="Ping property" Url="html/P_AsterNET_Manager_Event_JitterBufStatsEvent_Ping.htm" />
@@ -3912,7 +3801,6 @@
   <HelpKINode Title="QueueAddAction.Penalty property" Url="html/P_AsterNET_Manager_Action_QueueAddAction_Penalty.htm" />
   <HelpKINode Title="QueueAddAction.Queue property" Url="html/P_AsterNET_Manager_Action_QueueAddAction_Queue.htm" />
   <HelpKINode Title="QueueAddAction.QueueAddAction constructor" Url="html/Overload_AsterNET_Manager_Action_QueueAddAction__ctor.htm" />
-  <HelpKINode Title="QueueCallerAbandon event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerAbandon.htm" />
   <HelpKINode Title="QueueCallerAbandonEvent class">
     <HelpKINode Title="QueueCallerAbandonEvent Class" Url="html/T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
     <HelpKINode Title="about QueueCallerAbandonEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerAbandonEvent.htm" />
@@ -3926,7 +3814,6 @@
   <HelpKINode Title="QueueCallerAbandonEvent.Queue property" Url="html/P_AsterNET_Manager_Event_QueueCallerAbandonEvent_Queue.htm" />
   <HelpKINode Title="QueueCallerAbandonEvent.QueueCallerAbandonEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerAbandonEvent__ctor.htm" />
   <HelpKINode Title="QueueCallerAbandonEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerAbandonEventHandler.htm" />
-  <HelpKINode Title="QueueCallerJoin event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerJoin.htm" />
   <HelpKINode Title="QueueCallerJoinEvent class">
     <HelpKINode Title="QueueCallerJoinEvent Class" Url="html/T_AsterNET_Manager_Event_QueueCallerJoinEvent.htm" />
     <HelpKINode Title="about QueueCallerJoinEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerJoinEvent.htm" />
@@ -3937,7 +3824,6 @@
   <HelpKINode Title="QueueCallerJoinEvent.Position property" Url="html/P_AsterNET_Manager_Event_QueueCallerJoinEvent_Position.htm" />
   <HelpKINode Title="QueueCallerJoinEvent.QueueCallerJoinEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerJoinEvent__ctor.htm" />
   <HelpKINode Title="QueueCallerJoinEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerJoinEventHandler.htm" />
-  <HelpKINode Title="QueueCallerLeave event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueCallerLeave.htm" />
   <HelpKINode Title="QueueCallerLeaveEvent class">
     <HelpKINode Title="QueueCallerLeaveEvent Class" Url="html/T_AsterNET_Manager_Event_QueueCallerLeaveEvent.htm" />
     <HelpKINode Title="about QueueCallerLeaveEvent class" Url="html/T_AsterNET_Manager_Event_QueueCallerLeaveEvent.htm" />
@@ -3948,7 +3834,6 @@
   <HelpKINode Title="QueueCallerLeaveEvent.Position property" Url="html/P_AsterNET_Manager_Event_QueueCallerLeaveEvent_Position.htm" />
   <HelpKINode Title="QueueCallerLeaveEvent.QueueCallerLeaveEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueCallerLeaveEvent__ctor.htm" />
   <HelpKINode Title="QueueCallerLeaveEventHandler delegate" Url="html/T_AsterNET_Manager_QueueCallerLeaveEventHandler.htm" />
-  <HelpKINode Title="QueueEntry event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueEntry.htm" />
   <HelpKINode Title="QueueEntryEvent class">
     <HelpKINode Title="QueueEntryEvent Class" Url="html/T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
     <HelpKINode Title="about QueueEntryEvent class" Url="html/T_AsterNET_Manager_Event_QueueEntryEvent.htm" />
@@ -3987,8 +3872,6 @@
   <HelpKINode Title="QueueLogAction.Queue property" Url="html/P_AsterNET_Manager_Action_QueueLogAction_Queue.htm" />
   <HelpKINode Title="QueueLogAction.QueueLogAction constructor" Url="html/Overload_AsterNET_Manager_Action_QueueLogAction__ctor.htm" />
   <HelpKINode Title="QueueLogAction.Uniqueid property" Url="html/P_AsterNET_Manager_Action_QueueLogAction_Uniqueid.htm" />
-  <HelpKINode Title="QueueMember event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMember.htm" />
-  <HelpKINode Title="QueueMemberAdded event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberAdded.htm" />
   <HelpKINode Title="QueueMemberAddedEvent class">
     <HelpKINode Title="QueueMemberAddedEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
     <HelpKINode Title="about QueueMemberAddedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberAddedEvent.htm" />
@@ -4024,7 +3907,6 @@
   <HelpKINode Title="QueueMemberEvent.QueueMemberEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberEvent__ctor.htm" />
   <HelpKINode Title="QueueMemberEvent.Status property" Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_Status.htm" />
   <HelpKINode Title="QueueMemberEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberEventHandler.htm" />
-  <HelpKINode Title="QueueMemberPaused event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberPaused.htm" />
   <HelpKINode Title="QueueMemberPausedEvent class">
     <HelpKINode Title="QueueMemberPausedEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
     <HelpKINode Title="about QueueMemberPausedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
@@ -4032,8 +3914,8 @@
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberPausedEvent.htm" />
   </HelpKINode>
-  <HelpKINode Title="QueueMemberPausedEvent.MemberName property" Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_MemberName.htm" />
-  <HelpKINode Title="QueueMemberPausedEvent.Paused property" Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_Paused.htm" />
+  <HelpKINode Title="QueueMemberPausedEvent.InCall property" Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_InCall.htm" />
+  <HelpKINode Title="QueueMemberPausedEvent.PausedReason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_PausedReason.htm" />
   <HelpKINode Title="QueueMemberPausedEvent.QueueMemberPausedEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPausedEvent__ctor.htm" />
   <HelpKINode Title="QueueMemberPausedEvent.Reason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPausedEvent_Reason.htm" />
   <HelpKINode Title="QueueMemberPausedEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberPausedEventHandler.htm" />
@@ -4044,12 +3926,9 @@
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberPauseEvent.htm" />
   </HelpKINode>
-  <HelpKINode Title="QueueMemberPauseEvent.InCall property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_InCall.htm" />
-  <HelpKINode Title="QueueMemberPauseEvent.MemberName property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_MemberName.htm" />
-  <HelpKINode Title="QueueMemberPauseEvent.Paused property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_Paused.htm" />
-  <HelpKINode Title="QueueMemberPauseEvent.PausedReason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_PausedReason.htm" />
   <HelpKINode Title="QueueMemberPauseEvent.QueueMemberPauseEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPauseEvent__ctor.htm" />
   <HelpKINode Title="QueueMemberPauseEvent.Reason property" Url="html/P_AsterNET_Manager_Event_QueueMemberPauseEvent_Reason.htm" />
+  <HelpKINode Title="QueueMemberPauseEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberPauseEventHandler.htm" />
   <HelpKINode Title="QueueMemberPenaltyEvent class">
     <HelpKINode Title="QueueMemberPenaltyEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
     <HelpKINode Title="about QueueMemberPenaltyEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberPenaltyEvent.htm" />
@@ -4059,7 +3938,6 @@
   </HelpKINode>
   <HelpKINode Title="QueueMemberPenaltyEvent.Penalty property" Url="html/P_AsterNET_Manager_Event_QueueMemberPenaltyEvent_Penalty.htm" />
   <HelpKINode Title="QueueMemberPenaltyEvent.QueueMemberPenaltyEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberPenaltyEvent__ctor.htm" />
-  <HelpKINode Title="QueueMemberRemoved event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberRemoved.htm" />
   <HelpKINode Title="QueueMemberRemovedEvent class">
     <HelpKINode Title="QueueMemberRemovedEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
     <HelpKINode Title="about QueueMemberRemovedEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberRemovedEvent.htm" />
@@ -4070,7 +3948,15 @@
   <HelpKINode Title="QueueMemberRemovedEvent.MemberName property" Url="html/P_AsterNET_Manager_Event_QueueMemberRemovedEvent_MemberName.htm" />
   <HelpKINode Title="QueueMemberRemovedEvent.QueueMemberRemovedEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberRemovedEvent__ctor.htm" />
   <HelpKINode Title="QueueMemberRemovedEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberRemovedEventHandler.htm" />
-  <HelpKINode Title="QueueMemberStatus event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueMemberStatus.htm" />
+  <HelpKINode Title="QueueMemberRinginuseEvent class">
+    <HelpKINode Title="QueueMemberRinginuseEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberRinginuseEvent.htm" />
+    <HelpKINode Title="about QueueMemberRinginuseEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberRinginuseEvent.htm" />
+    <HelpKINode Title="constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberRinginuseEvent__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberRinginuseEvent.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberRinginuseEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="QueueMemberRinginuseEvent.QueueMemberRinginuseEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberRinginuseEvent__ctor.htm" />
+  <HelpKINode Title="QueueMemberRinginuseEvent.Ringinuse property" Url="html/P_AsterNET_Manager_Event_QueueMemberRinginuseEvent_Ringinuse.htm" />
   <HelpKINode Title="QueueMemberStatusEvent class">
     <HelpKINode Title="QueueMemberStatusEvent Class" Url="html/T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
     <HelpKINode Title="about QueueMemberStatusEvent class" Url="html/T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
@@ -4078,9 +3964,17 @@
     <HelpKINode Title="methods" Url="html/Methods_T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_QueueMemberStatusEvent.htm" />
   </HelpKINode>
+  <HelpKINode Title="QueueMemberStatusEvent.CallsTaken property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_CallsTaken.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.InCall property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_InCall.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.LastCall property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_LastCall.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.MemberName property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_MemberName.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.Membership property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Membership.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.Paused property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Paused.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.Penalty property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Penalty.htm" />
   <HelpKINode Title="QueueMemberStatusEvent.QueueMemberStatusEvent constructor" Url="html/M_AsterNET_Manager_Event_QueueMemberStatusEvent__ctor.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.StateInterface property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_StateInterface.htm" />
+  <HelpKINode Title="QueueMemberStatusEvent.Status property" Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Status.htm" />
   <HelpKINode Title="QueueMemberStatusEventHandler delegate" Url="html/T_AsterNET_Manager_QueueMemberStatusEventHandler.htm" />
-  <HelpKINode Title="QueueParams event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueParams.htm" />
   <HelpKINode Title="QueueParamsEvent class">
     <HelpKINode Title="QueueParamsEvent Class" Url="html/T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
     <HelpKINode Title="about QueueParamsEvent class" Url="html/T_AsterNET_Manager_Event_QueueParamsEvent.htm" />
@@ -4180,7 +4074,6 @@
   <HelpKINode Title="QueueStatusAction.Member property" Url="html/P_AsterNET_Manager_Action_QueueStatusAction_Member.htm" />
   <HelpKINode Title="QueueStatusAction.Queue property" Url="html/P_AsterNET_Manager_Action_QueueStatusAction_Queue.htm" />
   <HelpKINode Title="QueueStatusAction.QueueStatusAction constructor" Url="html/M_AsterNET_Manager_Action_QueueStatusAction__ctor.htm" />
-  <HelpKINode Title="QueueStatusComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_QueueStatusComplete.htm" />
   <HelpKINode Title="QueueStatusCompleteEvent class">
     <HelpKINode Title="QueueStatusCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
     <HelpKINode Title="about QueueStatusCompleteEvent class" Url="html/T_AsterNET_Manager_Event_QueueStatusCompleteEvent.htm" />
@@ -4264,7 +4157,6 @@
   <HelpKINode Title="RedirectAction.Priority property" Url="html/P_AsterNET_Manager_Action_RedirectAction_Priority.htm" />
   <HelpKINode Title="RedirectAction.RedirectAction constructor" Url="html/Overload_AsterNET_Manager_Action_RedirectAction__ctor.htm" />
   <HelpKINode Title="RegisterUserEventClass method" Url="html/M_AsterNET_Manager_ManagerConnection_RegisterUserEventClass.htm" />
-  <HelpKINode Title="Registry event" Url="html/E_AsterNET_Manager_ManagerConnection_Registry.htm" />
   <HelpKINode Title="RegistryCount property" Url="html/P_AsterNET_Manager_Event_ChannelReloadEvent_RegistryCount.htm" />
   <HelpKINode Title="RegistryEvent class">
     <HelpKINode Title="RegistryEvent Class" Url="html/T_AsterNET_Manager_Event_RegistryEvent.htm" />
@@ -4311,7 +4203,6 @@
   <HelpKINode Title="RemoteReceived property" Url="html/P_AsterNET_Manager_Event_JitterBufStatsEvent_RemoteReceived.htm" />
   <HelpKINode Title="RemoteStationId property" Url="html/P_AsterNET_Manager_Event_FaxReceivedEvent_RemoteStationId.htm" />
   <HelpKINode Title="RemoteTotalLost property" Url="html/P_AsterNET_Manager_Event_JitterBufStatsEvent_RemoteTotalLost.htm" />
-  <HelpKINode Title="Rename event" Url="html/E_AsterNET_Manager_ManagerConnection_Rename.htm" />
   <HelpKINode Title="RenameEvent class">
     <HelpKINode Title="RenameEvent Class" Url="html/T_AsterNET_Manager_Event_RenameEvent.htm" />
     <HelpKINode Title="about RenameEvent class" Url="html/T_AsterNET_Manager_Event_RenameEvent.htm" />
@@ -4419,6 +4310,10 @@
   </HelpKINode>
   <HelpKINode Title="ResultCodeAsChar property" Url="html/P_AsterNET_FastAGI_AGIReply_ResultCodeAsChar.htm" />
   <HelpKINode Title="RewindDigit property" Url="html/P_AsterNET_FastAGI_Command_ControlStreamFileCommand_RewindDigit.htm" />
+  <HelpKINode Title="Ringinuse property">
+    <HelpKINode Title="AbstractQueueMemberEvent.Ringinuse Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Ringinuse.htm" />
+    <HelpKINode Title="QueueMemberRinginuseEvent.Ringinuse Property " Url="html/P_AsterNET_Manager_Event_QueueMemberRinginuseEvent_Ringinuse.htm" />
+  </HelpKINode>
   <HelpKINode Title="RingTime property" Url="html/P_AsterNET_Manager_Event_AgentConnectEvent_RingTime.htm" />
   <HelpKINode Title="RRCount property" Url="html/P_AsterNET_Manager_Event_RTPReceiverStatEvent_RRCount.htm" />
   <HelpKINode Title="RTCPReceivedEvent class">
@@ -4909,8 +4804,12 @@
     <HelpKINode Title="DNDStateEvent.State Property " Url="html/P_AsterNET_Manager_Event_DNDStateEvent_State.htm" />
     <HelpKINode Title="StatusEvent.State Property " Url="html/P_AsterNET_Manager_Event_StatusEvent_State.htm" />
   </HelpKINode>
-  <HelpKINode Title="Status event" Url="html/E_AsterNET_Manager_ManagerConnection_Status.htm" />
+  <HelpKINode Title="StateInterface property">
+    <HelpKINode Title="AbstractQueueMemberEvent.StateInterface Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_StateInterface.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.StateInterface Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_StateInterface.htm" />
+  </HelpKINode>
   <HelpKINode Title="Status property">
+    <HelpKINode Title="AbstractQueueMemberEvent.Status Property " Url="html/P_AsterNET_Manager_Event_AbstractQueueMemberEvent_Status.htm" />
     <HelpKINode Title="AgentsEvent.Status Property " Url="html/P_AsterNET_Manager_Event_AgentsEvent_Status.htm" />
     <HelpKINode Title="DNDStateEvent.Status Property " Url="html/P_AsterNET_Manager_Event_DNDStateEvent_Status.htm" />
     <HelpKINode Title="ExtensionStateResponse.Status Property " Url="html/P_AsterNET_Manager_Response_ExtensionStateResponse_Status.htm" />
@@ -4923,6 +4822,7 @@
     <HelpKINode Title="PeerEntryEvent.Status Property " Url="html/P_AsterNET_Manager_Event_PeerEntryEvent_Status.htm" />
     <HelpKINode Title="QueueMemberAddedEvent.Status Property " Url="html/P_AsterNET_Manager_Event_QueueMemberAddedEvent_Status.htm" />
     <HelpKINode Title="QueueMemberEvent.Status Property " Url="html/P_AsterNET_Manager_Event_QueueMemberEvent_Status.htm" />
+    <HelpKINode Title="QueueMemberStatusEvent.Status Property " Url="html/P_AsterNET_Manager_Event_QueueMemberStatusEvent_Status.htm" />
     <HelpKINode Title="RegistryEvent.Status Property " Url="html/P_AsterNET_Manager_Event_RegistryEvent_Status.htm" />
     <HelpKINode Title="ReloadEvent.Status Property " Url="html/P_AsterNET_Manager_Event_ReloadEvent_Status.htm" />
   </HelpKINode>
@@ -4936,7 +4836,6 @@
   <HelpKINode Title="StatusAction.Action property" Url="html/P_AsterNET_Manager_Action_StatusAction_Action.htm" />
   <HelpKINode Title="StatusAction.ActionCompleteEventClass method" Url="html/M_AsterNET_Manager_Action_StatusAction_ActionCompleteEventClass.htm" />
   <HelpKINode Title="StatusAction.StatusAction constructor" Url="html/M_AsterNET_Manager_Action_StatusAction__ctor.htm" />
-  <HelpKINode Title="StatusComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_StatusComplete.htm" />
   <HelpKINode Title="StatusCompleteEvent class">
     <HelpKINode Title="StatusCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_StatusCompleteEvent.htm" />
     <HelpKINode Title="about StatusCompleteEvent class" Url="html/T_AsterNET_Manager_Event_StatusCompleteEvent.htm" />
@@ -5088,17 +4987,16 @@
     <HelpKINode Title="OriginateResponse.ToString Method " Url="html/M_AsterNET_Manager_Response_OriginateResponse_ToString.htm" />
   </HelpKINode>
   <HelpKINode Title="TotalType property" Url="html/P_AsterNET_Manager_Action_AOCMessageAction_TotalType.htm" />
-  <HelpKINode Title="Transfer event" Url="html/E_AsterNET_Manager_ManagerConnection_Transfer.htm" />
   <HelpKINode Title="Transfer2Parking property" Url="html/P_AsterNET_Manager_Event_TransferEvent_Transfer2Parking.htm" />
   <HelpKINode Title="TransferContext property" Url="html/P_AsterNET_Manager_Event_TransferEvent_TransferContext.htm" />
   <HelpKINode Title="TransfereeAccountCode property">
     <HelpKINode Title="AttendedTransferEvent.TransfereeAccountCode Property " Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeAccountCode.htm" />
     <HelpKINode Title="BlindTransferEvent.TransfereeAccountCode Property " Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeAccountCode.htm" />
   </HelpKINode>
-  <HelpKINode Title="TransfereeCallerIdName property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeCallerIdName.htm" />
   <HelpKINode Title="TransfereeCalleridName property" Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeCalleridName.htm" />
-  <HelpKINode Title="TransfereeCallerIdNum property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeCallerIdNum.htm" />
+  <HelpKINode Title="TransfereeCallerIdName property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeCallerIdName.htm" />
   <HelpKINode Title="TransfereeCalleridNum property" Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeCalleridNum.htm" />
+  <HelpKINode Title="TransfereeCallerIdNum property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeCallerIdNum.htm" />
   <HelpKINode Title="TransfereeChannel property">
     <HelpKINode Title="AttendedTransferEvent.TransfereeChannel Property " Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeChannel.htm" />
     <HelpKINode Title="BlindTransferEvent.TransfereeChannel Property " Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeChannel.htm" />
@@ -5107,8 +5005,8 @@
     <HelpKINode Title="AttendedTransferEvent.TransfereeChannelState Property " Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeChannelState.htm" />
     <HelpKINode Title="BlindTransferEvent.TransfereeChannelState Property " Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeChannelState.htm" />
   </HelpKINode>
-  <HelpKINode Title="TransfereeChannelStatedesc property" Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeChannelStatedesc.htm" />
   <HelpKINode Title="TransfereeChannelStateDesc property" Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeChannelStateDesc.htm" />
+  <HelpKINode Title="TransfereeChannelStatedesc property" Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeChannelStatedesc.htm" />
   <HelpKINode Title="TransfereeConnectedLineName property">
     <HelpKINode Title="AttendedTransferEvent.TransfereeConnectedLineName Property " Url="html/P_AsterNET_Manager_Event_AttendedTransferEvent_TransfereeConnectedLineName.htm" />
     <HelpKINode Title="BlindTransferEvent.TransfereeConnectedLineName Property " Url="html/P_AsterNET_Manager_Event_BlindTransferEvent_TransfereeConnectedLineName.htm" />
@@ -5184,8 +5082,6 @@
   <HelpKINode Title="TransferType property" Url="html/P_AsterNET_Manager_Event_TransferEvent_TransferType.htm" />
   <HelpKINode Title="Transit property" Url="html/P_AsterNET_Manager_Event_RTPReceiverStatEvent_Transit.htm" />
   <HelpKINode Title="Type property" Url="html/P_AsterNET_FastAGI_AGIRequest_Type.htm" />
-  <HelpKINode Title="UnhandledEvent event" Url="html/E_AsterNET_Manager_ManagerConnection_UnhandledEvent.htm" />
-  <HelpKINode Title="Unhold event" Url="html/E_AsterNET_Manager_ManagerConnection_Unhold.htm" />
   <HelpKINode Title="UnholdEvent class">
     <HelpKINode Title="UnholdEvent Class" Url="html/T_AsterNET_Manager_Event_UnholdEvent.htm" />
     <HelpKINode Title="about UnholdEvent class" Url="html/T_AsterNET_Manager_Event_UnholdEvent.htm" />
@@ -5195,13 +5091,13 @@
   </HelpKINode>
   <HelpKINode Title="UnholdEvent.UnholdEvent constructor" Url="html/M_AsterNET_Manager_Event_UnholdEvent__ctor.htm" />
   <HelpKINode Title="UnholdEventHandler delegate" Url="html/T_AsterNET_Manager_UnholdEventHandler.htm" />
-  <HelpKINode Title="Uniqueid property" Url="html/P_AsterNET_Manager_Action_QueueLogAction_Uniqueid.htm" />
   <HelpKINode Title="UniqueId property">
     <HelpKINode Title="AGIRequest.UniqueId Property " Url="html/P_AsterNET_FastAGI_AGIRequest_UniqueId.htm" />
     <HelpKINode Title="ManagerEvent.UniqueId Property " Url="html/P_AsterNET_Manager_Event_ManagerEvent_UniqueId.htm" />
     <HelpKINode Title="ManagerResponse.UniqueId Property " Url="html/P_AsterNET_Manager_Response_ManagerResponse_UniqueId.htm" />
     <HelpKINode Title="OriginateResponse.UniqueId Property " Url="html/P_AsterNET_Manager_Response_OriginateResponse_UniqueId.htm" />
   </HelpKINode>
+  <HelpKINode Title="Uniqueid property" Url="html/P_AsterNET_Manager_Action_QueueLogAction_Uniqueid.htm" />
   <HelpKINode Title="UniqueId1 property">
     <HelpKINode Title="BridgeEvent.UniqueId1 Property " Url="html/P_AsterNET_Manager_Event_BridgeEvent_UniqueId1.htm" />
     <HelpKINode Title="HoldedCallEvent.UniqueId1 Property " Url="html/P_AsterNET_Manager_Event_HoldedCallEvent_UniqueId1.htm" />
@@ -5222,7 +5118,6 @@
     <HelpKINode Title="properties" Url="html/Properties_T_AsterNET_Manager_Event_UnknownEvent.htm" />
   </HelpKINode>
   <HelpKINode Title="UnknownEvent.UnknownEvent constructor" Url="html/M_AsterNET_Manager_Event_UnknownEvent__ctor.htm" />
-  <HelpKINode Title="Unlink event" Url="html/E_AsterNET_Manager_ManagerConnection_Unlink.htm" />
   <HelpKINode Title="UnlinkEvent class">
     <HelpKINode Title="UnlinkEvent Class" Url="html/T_AsterNET_Manager_Event_UnlinkEvent.htm" />
     <HelpKINode Title="about UnlinkEvent class" Url="html/T_AsterNET_Manager_Event_UnlinkEvent.htm" />
@@ -5232,7 +5127,6 @@
   </HelpKINode>
   <HelpKINode Title="UnlinkEvent.UnlinkEvent constructor" Url="html/M_AsterNET_Manager_Event_UnlinkEvent__ctor.htm" />
   <HelpKINode Title="UnlinkEventHandler delegate" Url="html/T_AsterNET_Manager_UnlinkEventHandler.htm" />
-  <HelpKINode Title="UnparkedCall event" Url="html/E_AsterNET_Manager_ManagerConnection_UnparkedCall.htm" />
   <HelpKINode Title="UnparkedCallEvent class">
     <HelpKINode Title="UnparkedCallEvent Class" Url="html/T_AsterNET_Manager_Event_UnparkedCallEvent.htm" />
     <HelpKINode Title="about UnparkedCallEvent class" Url="html/T_AsterNET_Manager_Event_UnparkedCallEvent.htm" />
@@ -5282,7 +5176,6 @@
   <HelpKINode Title="UserEvent.UserEventName property" Url="html/P_AsterNET_Manager_Event_UserEvent_UserEventName.htm" />
   <HelpKINode Title="UserEventHandler delegate" Url="html/T_AsterNET_Manager_UserEventHandler.htm" />
   <HelpKINode Title="UserEventName property" Url="html/P_AsterNET_Manager_Event_UserEvent_UserEventName.htm" />
-  <HelpKINode Title="UserEvents event" Url="html/E_AsterNET_Manager_ManagerConnection_UserEvents.htm" />
   <HelpKINode Title="UserField property">
     <HelpKINode Title="CdrEvent.UserField Property " Url="html/P_AsterNET_Manager_Event_CdrEvent_UserField.htm" />
     <HelpKINode Title="SetCDRUserFieldAction.UserField Property " Url="html/P_AsterNET_Manager_Action_SetCDRUserFieldAction_UserField.htm" />
@@ -5314,7 +5207,6 @@
     <HelpKINode Title="VarSetEvent.Variable Property " Url="html/P_AsterNET_Manager_Event_VarSetEvent_Variable.htm" />
   </HelpKINode>
   <HelpKINode Title="varName field" Url="html/F_AsterNET_Manager_Action_SetVarAction_varName.htm" />
-  <HelpKINode Title="VarSet event" Url="html/E_AsterNET_Manager_ManagerConnection_VarSet.htm" />
   <HelpKINode Title="VarSetEvent class">
     <HelpKINode Title="VarSetEvent Class" Url="html/T_AsterNET_Manager_Event_VarSetEvent.htm" />
     <HelpKINode Title="about VarSetEvent class" Url="html/T_AsterNET_Manager_Event_VarSetEvent.htm" />
@@ -5425,7 +5317,6 @@
   <HelpKINode Title="ZapHangupAction.Action property" Url="html/P_AsterNET_Manager_Action_ZapHangupAction_Action.htm" />
   <HelpKINode Title="ZapHangupAction.ZapChannel property" Url="html/P_AsterNET_Manager_Action_ZapHangupAction_ZapChannel.htm" />
   <HelpKINode Title="ZapHangupAction.ZapHangupAction constructor" Url="html/Overload_AsterNET_Manager_Action_ZapHangupAction__ctor.htm" />
-  <HelpKINode Title="ZapShowChannels event" Url="html/E_AsterNET_Manager_ManagerConnection_ZapShowChannels.htm" />
   <HelpKINode Title="ZapShowChannelsAction class">
     <HelpKINode Title="ZapShowChannelsAction Class" Url="html/T_AsterNET_Manager_Action_ZapShowChannelsAction.htm" />
     <HelpKINode Title="about ZapShowChannelsAction class" Url="html/T_AsterNET_Manager_Action_ZapShowChannelsAction.htm" />
@@ -5436,7 +5327,6 @@
   <HelpKINode Title="ZapShowChannelsAction.Action property" Url="html/P_AsterNET_Manager_Action_ZapShowChannelsAction_Action.htm" />
   <HelpKINode Title="ZapShowChannelsAction.ActionCompleteEventClass method" Url="html/M_AsterNET_Manager_Action_ZapShowChannelsAction_ActionCompleteEventClass.htm" />
   <HelpKINode Title="ZapShowChannelsAction.ZapShowChannelsAction constructor" Url="html/M_AsterNET_Manager_Action_ZapShowChannelsAction__ctor.htm" />
-  <HelpKINode Title="ZapShowChannelsComplete event" Url="html/E_AsterNET_Manager_ManagerConnection_ZapShowChannelsComplete.htm" />
   <HelpKINode Title="ZapShowChannelsCompleteEvent class">
     <HelpKINode Title="ZapShowChannelsCompleteEvent Class" Url="html/T_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent.htm" />
     <HelpKINode Title="about ZapShowChannelsCompleteEvent class" Url="html/T_AsterNET_Manager_Event_ZapShowChannelsCompleteEvent.htm" />

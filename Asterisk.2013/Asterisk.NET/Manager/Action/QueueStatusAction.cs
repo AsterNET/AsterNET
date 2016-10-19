@@ -11,10 +11,10 @@ namespace AsterNET.Manager.Action
     ///     Since Asterisk 1.2 a QueueStatusCompleteEvent is sent to denote the end of the generated dump.<br />
     ///     This action is implemented in apps/app_queue.c
     /// </summary>
-    /// <seealso cref="Manager.event.QueueParamsEvent" />
-    /// <seealso cref="Manager.event.QueueMemberEvent" />
-    /// <seealso cref="Manager.event.QueueEntryEvent" />
-    /// <seealso cref="Manager.event.QueueStatusCompleteEvent" />
+    /// <seealso cref="Manager.Event.QueueParamsEvent" />
+    /// <seealso cref="Manager.Event.QueueMemberEvent" />
+    /// <seealso cref="Manager.Event.QueueEntryEvent" />
+    /// <seealso cref="Manager.Event.QueueStatusCompleteEvent" />
     public class QueueStatusAction : ManagerActionEvent
     {
         #region Action

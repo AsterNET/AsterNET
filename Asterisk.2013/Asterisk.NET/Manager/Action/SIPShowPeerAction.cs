@@ -9,8 +9,8 @@ namespace AsterNET.Manager.Action
     ///     followed by a PeerlistCompleteEvent.<br />
     ///     Available since Asterisk 1.2
     /// </summary>
-    /// <seealso cref="Manager.event.PeerEntryEvent" />
-    /// <seealso cref="Manager.event.PeerlistCompleteEvent" />
+    /// <seealso cref="Manager.Event.PeerEntryEvent" />
+    /// <seealso cref="Manager.Event.PeerlistCompleteEvent" />
     public class SIPShowPeerAction : ManagerActionEvent
     {
         /// <summary> Creates a new empty SIPShowPeerAction.</summary>

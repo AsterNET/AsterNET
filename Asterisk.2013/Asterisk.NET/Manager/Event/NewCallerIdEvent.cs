@@ -22,7 +22,7 @@ namespace AsterNET.Manager.Event
         public string CallerId { get; set; }
 
         /// <summary>
-        ///     Get/Set the new Caller*ID Name if set or "&lg;Unknown&gt;" if none has been set.
+        ///     Get/Set the new Caller*ID Name if set or "&lt;Unknown&gt;" if none has been set.
         /// </summary>
         public string CallerIdName { get; set; }
 

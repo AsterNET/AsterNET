@@ -40,7 +40,7 @@ namespace AsterNET.Manager.Response
 
         /// <summary>
         ///     Store all unknown (without setter) keys from manager event.<br />
-        ///     Use in default Parse method <see cref="Parse(string key, string value)" />.
+        ///     Use in default Parse method <see cref="Parse" />.
         /// </summary>
         public Dictionary<string, string> Attributes
         {

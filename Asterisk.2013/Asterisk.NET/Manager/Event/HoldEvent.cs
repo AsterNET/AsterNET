@@ -5,7 +5,7 @@ namespace AsterNET.Manager.Event
     ///     It is implemented in channels/chan_sip.c.<br />
     ///     Available since Asterisk 1.2
     /// </summary>
-    /// <seealso cref="Manager.event.UnholdEvent" />
+    /// <seealso cref="Manager.Event.UnholdEvent" />
     public class HoldEvent : ManagerEvent
     {
         public HoldEvent(ManagerConnection source)

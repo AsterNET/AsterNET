@@ -10,36 +10,36 @@ namespace AsterNET.Manager.Event
 		private string context;
 		private string alarm;
 
-		/// <summary>
-		/// Get/Set the signalling of this zap channel.<br/>
-		/// Possible values are:
-		/// <ul>
-		/// <li>E & M Immediate</li>
-		/// <li>E & M Wink</li>
-		/// <li>E & M E1</li>
-		/// <li>Feature Group D (DTMF)</li>
-		/// <li>Feature Group D (MF)</li>
-		/// <li>Feature Group B (MF)</li>
-		/// <li>E911 (MF)</li>
-		/// <li>FXS Loopstart</li>
-		/// <li>FXS Groundstart</li>
-		/// <li>FXS Kewlstart</li>
-		/// <li>FXO Loopstart</li>
-		/// <li>FXO Groundstart</li>
-		/// <li>FXO Kewlstart</li>
-		/// <li>PRI Signalling</li>
-		/// <li>R2 Signalling</li>
-		/// <li>SF (Tone) Signalling Immediate</li>
-		/// <li>SF (Tone) Signalling Wink</li>
-		/// <li>SF (Tone) Signalling with Feature Group D (DTMF)</li>
-		/// <li>SF (Tone) Signalling with Feature Group D (MF)</li>
-		/// <li>SF (Tone) Signalling with Feature Group B (MF)</li>
-		/// <li>GR-303 Signalling with FXOKS</li>
-		/// <li>GR-303 Signalling with FXSKS</li>
-		/// <li>Pseudo Signalling</li>
-		/// </ul>
-		/// </summary>
-		public string Signalling
+        /// <summary>
+        /// Get/Set the signalling of this zap channel.<br/>
+        /// Possible values are:
+        /// <ul>
+        /// <li>E &amp; M Immediate</li>
+        /// <li>E &amp; M Wink</li>
+        /// <li>E &amp; M E1</li>
+        /// <li>Feature Group D (DTMF)</li>
+        /// <li>Feature Group D (MF)</li>
+        /// <li>Feature Group B (MF)</li>
+        /// <li>E911 (MF)</li>
+        /// <li>FXS Loopstart</li>
+        /// <li>FXS Groundstart</li>
+        /// <li>FXS Kewlstart</li>
+        /// <li>FXO Loopstart</li>
+        /// <li>FXO Groundstart</li>
+        /// <li>FXO Kewlstart</li>
+        /// <li>PRI Signalling</li>
+        /// <li>R2 Signalling</li>
+        /// <li>SF (Tone) Signalling Immediate</li>
+        /// <li>SF (Tone) Signalling Wink</li>
+        /// <li>SF (Tone) Signalling with Feature Group D (DTMF)</li>
+        /// <li>SF (Tone) Signalling with Feature Group D (MF)</li>
+        /// <li>SF (Tone) Signalling with Feature Group B (MF)</li>
+        /// <li>GR-303 Signalling with FXOKS</li>
+        /// <li>GR-303 Signalling with FXSKS</li>
+        /// <li>Pseudo Signalling</li>
+        /// </ul>
+        /// </summary>
+        public string Signalling
 		{
 			get { return signalling; }
 			set { this.signalling = value; }

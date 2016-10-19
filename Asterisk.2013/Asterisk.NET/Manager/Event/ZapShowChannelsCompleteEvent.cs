@@ -5,7 +5,7 @@ namespace AsterNET.Manager.Event
 	/// in response to a ZapShowChannelsAction.
 	/// </summary>
 	/// <seealso cref="Manager.Action.ZapShowChannelsAction" />
-	/// <seealso cref="Manager.event.ZapShowChannelsEvent" />
+	/// <seealso cref="Manager.Event.ZapShowChannelsEvent" />
 	public class ZapShowChannelsCompleteEvent : ResponseEvent
 	{
 		public ZapShowChannelsCompleteEvent(ManagerConnection source)
