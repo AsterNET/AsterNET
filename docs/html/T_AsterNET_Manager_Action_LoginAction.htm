@@ -37,7 +37,14 @@
                 "system", "call" and "log" (separated by ',') to specify what kind of events should be sent.
             </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_AsterNET_Manager_Action_LoginAction_Key.htm">Key</a></td><td><div class="summary">
                 Get/Set the key.
-            </div></td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_AsterNET_Manager_Action_ManagerAction_ProxyKey.htm">ProxyKey</a></td><td> (Inherited from <a href="T_AsterNET_Manager_Action_ManagerAction.htm">ManagerAction</a>.)</td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_AsterNET_Manager_Action_LoginAction_Secret.htm">Secret</a></td><td><div class="summary">
+            </div></td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_AsterNET_Manager_Action_ManagerAction_ProxyKey.htm">ProxyKey</a></td><td><div class="summary">
+                You can use this as a simple authentication mechanism.<br />
+                Rather than have to login with a username &amp; password,
+                you can specify a <b>ProxyKey</b> that must be passed from
+                a client before requests are processed.<br />
+                This is helpful in situations where you would like to authenticate and
+                execute an action in a single step.
+            </div> (Inherited from <a href="T_AsterNET_Manager_Action_ManagerAction.htm">ManagerAction</a>.)</td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_AsterNET_Manager_Action_LoginAction_Secret.htm">Secret</a></td><td><div class="summary">
                 Get/Set the secret to use when using cleartext login.<br />
                 The secret contains the user's password as configured in Asterisk's manager.conf.<br />
                 The secret and key properties are mutually exclusive.
