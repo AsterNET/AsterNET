@@ -232,7 +232,11 @@
     <Compile Include="Manager\Event\BridgeEvent.cs" />
     <Compile Include="Manager\Event\ChannelReloadEvent.cs" />
     <Compile Include="Manager\Event\ChannelUpdateEvent.cs" />
+    <Compile Include="Manager\Event\DialEndEvent.cs" />
+    <Compile Include="Manager\Event\DialBeginEvent.cs" />
     <Compile Include="Manager\Event\FailedACLEvent.cs" />
+    <Compile Include="Manager\Event\QueueCallerJoinEvent.cs" />
+    <Compile Include="Manager\Event\QueueCallerLeaveEvent.cs" />
     <Compile Include="Manager\Event\MeetmeMuteEvent.cs" />
     <Compile Include="Manager\Event\DTMFEvent.cs" />
     <Compile Include="Manager\Event\FaxReceivedEvent.cs" />
@@ -247,6 +251,7 @@
     <Compile Include="Manager\Event\NewAccountCodeEvent.cs" />
     <Compile Include="Manager\Event\OriginateResponseEvent.cs" />
     <Compile Include="Manager\Event\PRIEvent.cs" />
+    <Compile Include="Manager\Event\QueueMemberPauseEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberPenaltyEvent.cs" />
     <Compile Include="Manager\Event\RTPReceiverStatEvent.cs" />
     <Compile Include="Manager\Event\RTCPSentEvent.cs" />

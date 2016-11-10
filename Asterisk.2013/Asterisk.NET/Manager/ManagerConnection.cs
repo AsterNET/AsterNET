@@ -95,15 +95,20 @@ namespace AsterNET.Manager
     public delegate void BridgeDestroyEventHandler(object sender, Event.BridgeDestroyEvent e);
     public delegate void BridgeEnterEventHandler(object sender, Event.BridgeEnterEvent e);
     public delegate void BridgeLeaveEventHandler(object sender, Event.BridgeLeaveEvent e);
+    public delegate void DialBeginEventHandler(object sender, Event.DialBeginEvent e);
+    public delegate void DialEndEventHandler(object sender, Event.DialEndEvent e);
+    public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
+    public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
+    public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
 
 
 
-	#endregion
+    #endregion
 
-	/// <summary>
-	/// Default implemention of the ManagerConnection interface.
-	/// </summary>
-	public class ManagerConnection
+    /// <summary>
+    /// Default implemention of the ManagerConnection interface.
+    /// </summary>
+    public class ManagerConnection
 	{
 		#region Variables
 
@@ -486,11 +491,37 @@ namespace AsterNET.Manager
         public event BridgeEnterEventHandler BridgeEnter;
         public event BridgeLeaveEventHandler BridgeLeave;
 
-		#endregion
+        /// <summary>
+        /// Raised when a dial action has started.<br/>
+        /// </summary>
+        public event DialBeginEventHandler DialBegin;
 
-		#region Constructor - ManagerConnection()
-		/// <summary> Creates a new instance.</summary>
-		public ManagerConnection()
+        /// <summary>
+        /// Raised when a dial action has completed.<br/>
+        /// </summary>
+        public event DialEndEventHandler DialEnd;
+
+        /// <summary>
+        /// Raised when a caller joins a Queue.<br/>
+        /// </summary>
+        public event QueueCallerJoinEventHandler QueueCallerJoin;
+
+        /// <summary>
+        /// Raised when a caller leaves a Queue.<br/>
+        /// </summary>
+        public event QueueCallerLeaveEventHandler QueueCallerLeave;
+
+        /// <summary>
+        /// A QueueMemberPauseEvent is triggered when a queue member is paused or unpaused.<br />
+        /// Available since Asterisk 12
+        /// </summary>
+        public event QueueMemberPauseEventHandler QueueMemberPause;
+
+        #endregion
+
+        #region Constructor - ManagerConnection()
+        /// <summary> Creates a new instance.</summary>
+        public ManagerConnection()
 		{
 			callerThread = Thread.CurrentThread;
 
@@ -595,11 +626,15 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 90, typeof(BridgeEnterEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 91, typeof(BridgeLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 92, typeof(BlindTransferEvent));
-            
+            Helper.RegisterEventHandler(registeredEventHandlers, 93, typeof(DialBeginEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 94, typeof(DialEndEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 95, typeof(QueueCallerJoinEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 97, typeof(QueueMemberPauseEvent));
 
-			#endregion
+            #endregion
 
-			this.internalEvent += new ManagerEventHandler(internalEventHandler);
+            this.internalEvent += new ManagerEventHandler(internalEventHandler);
 		}
 		#endregion
 
@@ -1214,7 +1249,37 @@ namespace AsterNET.Manager
                             BlindTransfer(this, (BlindTransferEvent)e);
                         }
                         break;
-					default:
+                    case 93:
+                        if (DialBegin != null)
+                        {
+                            DialBegin(this, (DialBeginEvent)e);
+                        }
+                        break;
+                    case 94:
+                        if (DialEnd != null)
+                        {
+                            DialEnd(this, (DialEndEvent)e);
+                        }
+                        break;
+                    case 95:
+                        if (QueueCallerJoin != null)
+                        {
+                            QueueCallerJoin(this, (QueueCallerJoinEvent)e);
+                        }
+                        break;
+                    case 96:
+                        if (QueueCallerLeave != null)
+                        {
+                            QueueCallerLeave(this, (QueueCallerLeaveEvent)e);
+                        }
+                        break;
+                    case 97:
+                        if (QueueMemberPause != null)
+                        {
+                            QueueMemberPause(this, (QueueMemberPauseEvent)e);
+                        }
+                        break;
+                    default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);
 						return;
