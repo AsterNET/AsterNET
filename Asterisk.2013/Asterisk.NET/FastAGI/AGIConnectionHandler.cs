@@ -61,28 +61,41 @@ namespace AsterNET.FastAGI
                 var reader = new AGIReader(socket);
                 var writer = new AGIWriter(socket);
                 AGIRequest request = reader.ReadRequest();
-                var channel = new AGIChannel(writer, reader, _SC511_CAUSES_EXCEPTION, _SCHANGUP_CAUSES_EXCEPTION);
-                AGIScript script = mappingStrategy.DetermineScript(request);
-                Thread.SetData(_channel, channel);
 
-                if (script != null)
+                //Added check for when the request is empty
+                //eg. telnet to the service 
+                if (request.Request.Count > 0)
                 {
-#if LOGGER
-                    logger.Info("Begin AGIScript " + script.GetType().FullName + " on " + Thread.CurrentThread.Name);
-#endif
-                    script.Service(request, channel);
-#if LOGGER
-                    logger.Info("End AGIScript " + script.GetType().FullName + " on " + Thread.CurrentThread.Name);
-#endif
+                    var channel = new AGIChannel(writer, reader, _SC511_CAUSES_EXCEPTION, _SCHANGUP_CAUSES_EXCEPTION);
+                    AGIScript script = mappingStrategy.DetermineScript(request);
+                    Thread.SetData(_channel, channel);
+
+                    if (script != null)
+                    {
+                        #if LOGGER
+                            logger.Info("Begin AGIScript " + script.GetType().FullName + " on " + Thread.CurrentThread.Name);
+                        #endif
+                        script.Service(request, channel);
+                        #if LOGGER
+                            logger.Info("End AGIScript " + script.GetType().FullName + " on " + Thread.CurrentThread.Name);
+                        #endif
+                    }
+                    else
+                    {
+                        var error = "No script configured for URL '" + request.RequestURL + "' (script '" + request.Script +
+                                    "')";
+                        channel.SendCommand(new VerboseCommand(error, 1));
+                        #if LOGGER
+                            logger.Error(error);
+                        #endif
+                    }
                 }
                 else
                 {
-                    var error = "No script configured for URL '" + request.RequestURL + "' (script '" + request.Script +
-                                "')";
-                    channel.SendCommand(new VerboseCommand(error, 1));
-#if LOGGER
-                    logger.Error(error);
-#endif
+                    var error = "A connection was made with no requests";
+                    #if LOGGER
+                        logger.Error(error);
+                    #endif
                 }
             }
             catch (AGIHangupException)
@@ -93,19 +106,19 @@ namespace AsterNET.FastAGI
             }
             catch (AGIException ex)
             {
-#if LOGGER
-                logger.Error("AGIException while handling request", ex);
-#else
-				throw ex;
-#endif
+                #if LOGGER
+                    logger.Error("AGIException while handling request", ex);
+                #else
+				    throw ex;
+                #endif
             }
             catch (Exception ex)
             {
-#if LOGGER
-                logger.Error("Unexpected Exception while handling request", ex);
-#else
-				throw ex;
-#endif
+                #if LOGGER
+                    logger.Error("Unexpected Exception while handling request", ex);
+                #else
+				    throw ex;
+                #endif
             }
 
             Thread.SetData(_channel, null);
@@ -113,14 +126,14 @@ namespace AsterNET.FastAGI
             {
                 socket.Close();
             }
-#if LOGGER
-            catch (IOException ex)
-            {
-                logger.Error("Error on close socket", ex);
-            }
-#else
-			catch { }
-#endif
+            #if LOGGER
+                catch (IOException ex)
+                {
+                    logger.Error("Error on close socket", ex);
+                }
+            #else
+			    catch { }
+            #endif
         }
     }
 }
