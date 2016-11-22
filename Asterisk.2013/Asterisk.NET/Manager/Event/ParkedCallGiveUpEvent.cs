@@ -9,7 +9,8 @@ namespace AsterNET.Manager.Event
 	{
 		public ParkedCallGiveUpEvent(ManagerConnection source)
 			: base(source)
-		{
+        {
+            
 		}
 	}
 }

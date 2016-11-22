@@ -9,8 +9,8 @@ namespace AsterNET.Manager.Action
     ///     the details. When all peers have been reported a PeerlistCompleteEvent is sent.<br />
     ///     Available since Asterisk 1.2
     /// </summary>
-    /// <seealso cref="Manager.event.PeerEntryEvent" />
-    /// <seealso cref="Manager.event.PeerlistCompleteEvent" />
+    /// <seealso cref="Manager.Event.PeerEntryEvent" />
+    /// <seealso cref="Manager.Event.PeerlistCompleteEvent" />
     public class SIPPeersAction : ManagerActionEvent
     {
         public override string Action

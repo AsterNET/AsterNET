@@ -1,6 +1,12 @@
+19.10.2016	(herman1vdb)
+	Update documentation and fix XML comments and enable xml documentation output
+
+18.10.2016	(herman1vdb)
+	Refactor QueueMemberEvent classes, update comments and update sandcastle documentation to be able to work with Git Hub Pages
+
 21.09.2016	(herman1vdb)
 	Added events DialEndEvent, QueueCallerJoinEvent, QueueCallerLeaveEvent for further Asterisk 13 support
-	
+
 20.09.2016	(herman1vdb)
 	Added DialBeginEvent
 

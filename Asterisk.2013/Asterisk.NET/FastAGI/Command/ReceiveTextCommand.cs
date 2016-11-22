@@ -25,7 +25,7 @@ namespace AsterNET.FastAGI.Command
 
 		/// <summary>
 		/// Creates a new ReceiveTextCommand.
-		/// <param name=timeout>the milliseconds to wait for the channel to receive the text.</param>
+		/// <param name="timeout">the milliseconds to wait for the channel to receive the text.</param>
 		/// </summary>
 		public ReceiveTextCommand(int timeout)
 		{

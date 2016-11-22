@@ -373,10 +373,12 @@ namespace AsterNET.Manager
 		/// A QueueMemberEvent is triggered in response to a QueueStatusAction and contains information about a member of a queue.
 		/// </summary>
 		public event QueueMemberEventHandler QueueMember;
-		/// <summary>
-		/// A QueueMemberPausedEvent is triggered when a queue member is paused or unpaused.
-		/// </summary>
-		public event QueueMemberPausedEventHandler QueueMemberPaused;
+        /// <summary>
+        /// A QueueMemberPausedEvent is triggered when a queue member is paused or unpaused.
+        /// <b>Replaced by : </b> <see cref="QueueMemberPauseEvent"/> since <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.<br/>
+        /// <b>Removed since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+13+Documentation" target="_blank" alt="Asterisk 13 wiki docs">Asterisk 13</see>.<br/>
+        /// </summary>
+        public event QueueMemberPausedEventHandler QueueMemberPaused;
 		/// <summary>
 		/// A QueueMemberRemovedEvent is triggered when a queue member is removed from a queue.
 		/// </summary>
@@ -513,7 +515,7 @@ namespace AsterNET.Manager
 
         /// <summary>
         /// A QueueMemberPauseEvent is triggered when a queue member is paused or unpaused.<br />
-        /// Available since Asterisk 12
+        /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public event QueueMemberPauseEventHandler QueueMemberPause;
 
