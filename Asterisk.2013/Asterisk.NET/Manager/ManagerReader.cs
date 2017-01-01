@@ -272,17 +272,18 @@ namespace AsterNET.Manager
 
 						if (processingCommandResult)
 						{
-							if (line == "--END COMMAND--")
+							string lineLower = line.ToLower(Helper.CultureInfo);
+							if (lineLower == "--end command--")
 							{
 								var commandResponse = new CommandResponse();
 								Helper.SetAttributes(commandResponse, packet);
+								commandList.Add(line);
 								commandResponse.Result = commandList;
 								processingCommandResult = false;
 								packet.Clear();
 								mrConnector.DispatchResponse(commandResponse);
 							}
-							string lineLower = line.ToLower(Helper.CultureInfo);
-							if (lineLower.StartsWith("privilege: ")
+							else if (lineLower.StartsWith("privilege: ")
 								|| lineLower.StartsWith("actionid: ")
 								|| lineLower.StartsWith("timestamp: ")
 								|| lineLower.StartsWith("server: ")
