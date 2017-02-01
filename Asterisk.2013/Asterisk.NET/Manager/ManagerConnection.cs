@@ -2036,7 +2036,11 @@ namespace AsterNET.Manager
 				responseEventHandlers[handler.Hash] = handler;
 		}
 
-		internal void RemoveResponseHandler(IResponseHandler handler)
+        /// <summary>
+        /// Delete an instance of a class <see cref="IResponseHandler"/> from handlers list.
+        /// </summary>
+        /// <param name="handler">Class instance <see cref="IResponseHandler"/>.</param>
+		public void RemoveResponseHandler(IResponseHandler handler)
 		{
 			int hash = handler.Hash;
 			if (hash != 0)
@@ -2045,11 +2049,7 @@ namespace AsterNET.Manager
 						responseHandlers.Remove(hash);
 		}
 
-        /// <summary>
-        /// Delete an instance of a class <see cref="IResponseHandler"/> from handlers list.
-        /// </summary>
-        /// <param name="handler">Class instance <see cref="IResponseHandler"/>.</param>
-	    public void RemoveResponseEventHandler(IResponseHandler handler)
+	    internal void RemoveResponseEventHandler(IResponseHandler handler)
 		{
 			int hash = handler.Hash;
 			if (hash != 0)
