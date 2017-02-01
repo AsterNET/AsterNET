@@ -1947,7 +1947,7 @@ namespace AsterNET.Manager
 		#endregion
 
 		#region SendAction(action, responseHandler)
-		public int SendAction(ManagerAction action, ResponseHandler responseHandler)
+		public int SendAction(ManagerAction action, IResponseHandler responseHandler)
 		{
 			if (action == null)
 				throw new ArgumentException("Unable to send action: action is null.");
@@ -2045,7 +2045,11 @@ namespace AsterNET.Manager
 						responseHandlers.Remove(hash);
 		}
 
-		internal void RemoveResponseEventHandler(IResponseHandler handler)
+        /// <summary>
+        /// Delete an instance of a class <see cref="IResponseHandler"/> from handlers list.
+        /// </summary>
+        /// <param name="handler">Class instance <see cref="IResponseHandler"/>.</param>
+	    public void RemoveResponseEventHandler(IResponseHandler handler)
 		{
 			int hash = handler.Hash;
 			if (hash != 0)
