@@ -16,10 +16,8 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="Asterisk.NET\bin\Release\net45\AsterNET.dll" target="lib\net45\AsterNET.dll" />
-        <file src="Asterisk.NET\bin\Release\net45\AsterNET.pdb" target="lib\net45\AsterNET.pdb" />
-        <file src="changelog.txt" target="changelog.txt" />
-        <file src="LICENSE.txt" target="LICENSE.txt" />
-        <file src="README.md" target="README.md" />
+        <file src="Asterisk.NET\bin\Release\AsterNET.dll" target="lib\net40\AsterNET.dll" />
+        <file src="Asterisk.NET\bin\Release\AsterNET.pdb" target="lib\net40\AsterNET.pdb" />
+		<file src="Asterisk.NET\bin\Release\AsterNET.XML" target="lib\net40\AsterNET.XML" />
     </files>
 </package>
