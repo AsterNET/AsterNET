@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>AsterNET</id>
+        <version>1.2.0</version>
+        <authors>Ben Merrills</authors>
+        <owners>Ben Merrills</owners>
+        <licenseUrl>https://github.com/AsterNET/AsterNET/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/AsterNET/AsterNET</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>AsterNET an Asterisk FastAGI and AMI framework for .NET</description>
+        <releaseNotes>Please see: https://github.com/AsterNET/AsterNET/commits/master</releaseNotes>
+        <copyright>Copyright 2017</copyright>
+        <tags>Asterisk AsterNET Asterisk.NET C# VB.NET DotNET</tags>
+        <dependencies>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Asterisk.NET\bin\Release\net45\AsterNET.dll" target="lib\net45\AsterNET.dll" />
+        <file src="Asterisk.NET\bin\Release\net45\AsterNET.pdb" target="lib\net45\AsterNET.pdb" />
+        <file src="changelog.txt" target="changelog.txt" />
+        <file src="LICENSE.txt" target="LICENSE.txt" />
+        <file src="README.md" target="README.md" />
+    </files>
+</package>
