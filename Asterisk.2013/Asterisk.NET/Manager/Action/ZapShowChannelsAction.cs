@@ -8,8 +8,8 @@ namespace AsterNET.Manager.Action
     ///     For each zap channel a ZapShowChannelsEvent is generated. After all zap
     ///     channels have been listed a ZapShowChannelsCompleteEvent is generated.
     /// </summary>
-    /// <seealso cref="Manager.event.ZapShowChannelsEvent" />
-    /// <seealso cref="Manager.event.ZapShowChannelsCompleteEvent" />
+    /// <seealso cref="Manager.Event.ZapShowChannelsEvent" />
+    /// <seealso cref="Manager.Event.ZapShowChannelsCompleteEvent" />
     public class ZapShowChannelsAction : ManagerActionEvent
     {
         /// <summary>

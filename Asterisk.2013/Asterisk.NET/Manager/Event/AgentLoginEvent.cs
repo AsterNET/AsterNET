@@ -4,7 +4,7 @@ namespace AsterNET.Manager.Event
     ///     An AgentLoginEvent is triggered when an agent is successfully logged in using AgentLogin.<br />
     ///     It is implemented in channels/chan_agent.c
     /// </summary>
-    /// <seealso cref="Manager.event.AgentLogoffEvent" />
+    /// <seealso cref="Manager.Event.AgentLogoffEvent" />
     public class AgentLoginEvent : ManagerEvent
     {
         public AgentLoginEvent(ManagerConnection source)

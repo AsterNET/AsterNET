@@ -112,12 +112,13 @@ namespace AsterNET.Manager.Event
 			get { return this.status; }
 			set { this.status = value; }
 		}
-		/// <summary>
-		/// Is this queue member paused (not accepting calls)?<br/>
-		/// Available since Asterisk 1.2.<br/>
-		/// true if this member has been paused,
-		/// false if not
-		public bool Paused
+        /// <summary>
+        /// Is this queue member paused (not accepting calls)?<br/>
+        /// Available since Asterisk 1.2.<br/>
+        /// true if this member has been paused,
+        /// false if not
+        /// </summary>
+        public bool Paused
 		{
 			get { return this.paused; }
 			set { this.paused = value; }

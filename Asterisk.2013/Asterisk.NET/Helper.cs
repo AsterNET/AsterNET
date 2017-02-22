@@ -171,6 +171,7 @@ namespace AsterNET
         ///     Obtains an array containing all the elements of the collection.
         /// </summary>
         /// <param name="objects">The array into which the elements of the collection will be stored.</param>
+        /// <param name="c"></param>
         /// <returns>The array containing all the elements of the collection.</returns>
         internal static object[] ToArray(ICollection c, object[] objects)
         {
@@ -242,6 +243,7 @@ namespace AsterNET
         /// </summary>
         /// <param name="dictionary"></param>
         /// <param name="delim"></param>
+        /// <param name="delimKeyValue"></param>
         /// <returns></returns>
         internal static string JoinVariables(IDictionary dictionary, char[] delim, string delimKeyValue)
         {
@@ -743,6 +745,7 @@ namespace AsterNET
         ///     Builds the event based on the given map of attributes and the registered event classes.
         /// </summary>
         /// <param name="source">source attribute for the event</param>
+        /// <param name="list"></param>
         /// <param name="attributes">map containing event attributes</param>
         /// <returns>a concrete instance of ManagerEvent or null if no event class was registered for the event type.</returns>
         internal static ManagerEvent BuildEvent(IDictionary<int, ConstructorInfo> list, ManagerConnection source,

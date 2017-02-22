@@ -35,7 +35,7 @@ namespace AsterNET.Manager.Event
 	/// The UserEvent is implemented in apps/app_userevent.c.<br/>
 	/// Note that you must register your UserEvent with the ManagerConnection you are using in order to be recognized.
 	/// </summary>
-	/// <seealso cref="Manager.ManagerConnection.RegisterUserEventClass(Type userEventClass)"/>
+	/// <seealso cref="Manager.ManagerConnection.RegisterUserEventClass"/>
 	public class UserEvent : ManagerEvent
 	{
 		private string userEventName;

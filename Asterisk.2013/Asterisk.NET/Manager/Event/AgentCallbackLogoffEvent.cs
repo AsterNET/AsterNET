@@ -5,7 +5,7 @@ namespace AsterNET.Manager.Event
     ///     AgentCallbackLogin is logged of.<br />
     ///     It is implemented in channels/chan_agent.c
     /// </summary>
-    /// <seealso cref="Manager.event.AgentCallbackLoginEvent" />
+    /// <seealso cref="Manager.Event.AgentCallbackLoginEvent" />
     public class AgentCallbackLogoffEvent : ManagerEvent
     {
         #region Agent

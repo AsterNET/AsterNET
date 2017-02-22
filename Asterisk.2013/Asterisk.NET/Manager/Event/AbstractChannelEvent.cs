@@ -50,7 +50,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerIdNum = value; }
 		}
 		/// <summary>
-		/// Get/Set the Caller*ID Name of the channel if set or &lg;unknown&gt; if none has been set.
+		/// Get/Set the Caller*ID Name of the channel if set or &lt;unknown&gt; if none has been set.
 		/// </summary>
 		public string CallerIdName
 		{
@@ -68,7 +68,7 @@ namespace AsterNET.Manager.Event
 		/// <li>Ringing</li>
 		/// <li>Up</li>
 		/// <li>Busy</li>
-		/// <ul>
+		/// </ul>
 		/// </summary>
 		public string State
 		{

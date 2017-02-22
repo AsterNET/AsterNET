@@ -90,7 +90,7 @@ namespace AsterNET.Manager
 
 		#region mrReaderCallbback(IAsyncResult ar) 
 
-		//// <summary>
+		/// <summary>
 		/// Async Read callback
 		/// </summary>
 		/// <param name="ar">IAsyncResult</param>
@@ -184,7 +184,7 @@ namespace AsterNET.Manager
 
 		#region Run()
 
-		//// <summary>
+		/// <summary>
 		/// Reads line by line from the asterisk server, sets the protocol identifier as soon as it is
 		/// received and dispatches the received events and responses via the associated dispatcher.
 		/// </summary>

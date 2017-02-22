@@ -54,6 +54,7 @@ namespace AsterNET.Manager.Action
 
         /// <summary>
         ///     Get/Set name of the channel to redirect.
+        /// </summary>
         public string Channel { get; set; }
 
         /// <summary>
