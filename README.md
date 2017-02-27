@@ -15,7 +15,7 @@ You can now get AsterNET via nuget by doing
 or by visiting: https://www.nuget.org/packages/AsterNET/
 
 ## Documentation
-http://asternet.github.io/AsterNET/html
+[http://asternet.github.io/AsterNET](http://asternet.github.io/AsterNET/html/79b6241e-05a3-441c-b6a1-51f2b5b7f265.htm)
 
 ## History
 AsterNET is a fork of Asterisk.NET. Now we've reached release status and AsterNET version 1.0.0 we feel this is a good separation point from the original project.
