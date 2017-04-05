@@ -28,7 +28,7 @@ namespace AsterNET.WinForm
 
 			btnConnect.Enabled = false;
 			manager = new ManagerConnection(address, port, user, password);
-			manager.UnhandledEvent += new ManagerEventHandler(manager_Events);
+			manager.UnhandledEvent += manager_Events;
 			try
 			{
 				// Uncomment next 2 line comments to Disable timeout (debug mode)

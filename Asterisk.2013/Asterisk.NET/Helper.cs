@@ -872,14 +872,15 @@ namespace AsterNET
 
         #endregion
 
-        #region RegisterEventHandler(Dictionary<int, int> list, int index, Type eventType) 
+        #region RegisterEventHandler(Dictionary<int, Action<ManagerEvent>> list, Type eventType, Action<ManagerEvent> action)
 
-        internal static void RegisterEventHandler(Dictionary<int, int> list, int index, Type eventType)
+        internal static void RegisterEventHandler(Dictionary<int, Action<ManagerEvent>> list, Type eventType, Action<ManagerEvent> action)
         {
-            int eventHash = eventType.Name.GetHashCode();
+            var eventTypeName = eventType.Name;
+            int eventHash = eventTypeName.GetHashCode();
             if (list.ContainsKey(eventHash))
-                throw new ArgumentException("Event class already registered : " + eventType.Name);
-            list.Add(eventHash, index);
+                throw new ArgumentException("Event class already registered : " + eventTypeName);
+            list.Add(eventHash, action);
         }
 
         #endregion
