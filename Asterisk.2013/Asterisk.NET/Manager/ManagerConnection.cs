@@ -10,6 +10,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading.Tasks;
 using AsterNET.IO;
 using AsterNET.Util;
 
@@ -1946,6 +1947,40 @@ namespace AsterNET.Manager
 		}
 		#endregion
 
+		#region SendActionAsync
+
+		/// <summary>
+		/// Asynchronously send Action async with default timeout.
+		/// </summary>
+		public Task<ManagerResponse> SendActionAsync(ManagerAction action)
+		{
+			return SendActionAsync(action, null);
+		}
+
+		/// <summary>
+		/// Asynchronously send Action async.
+		/// </summary>
+		/// <param name="action">action to send</param>
+		/// <param name="cancellationToken">cancellation Token</param>
+		public Task<ManagerResponse> SendActionAsync(ManagerAction action, CancellationTokenSource cancellationToken)
+		{
+			var handler = new TaskResponseHandler(action);
+			var source = handler.TaskCompletionSource;
+
+			SendAction(action, handler);
+
+			if (cancellationToken != null)
+				cancellationToken.Token.Register(() => { source.TrySetCanceled(); });
+
+			return source.Task.ContinueWith(x =>
+			{
+				RemoveResponseHandler(handler);
+				return x.Result;
+			});
+		}
+
+		#endregion			
+			
 		#region SendAction(action, responseHandler)
 		public int SendAction(ManagerAction action, IResponseHandler responseHandler)
 		{
