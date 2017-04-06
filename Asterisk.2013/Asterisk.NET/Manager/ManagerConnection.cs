@@ -58,7 +58,6 @@ namespace AsterNET.Manager
         private int reconnectCount;
 
         private Dictionary<int, ConstructorInfo> registeredEventClasses;
-        //private Dictionary<int, int> registeredEventHandlers;
         private Dictionary<int, Action<ManagerEvent>> registeredEventHandlers;
         private event EventHandler<ManagerEvent> internalEvent;
         private bool fireAllEvents = false;
@@ -639,7 +638,9 @@ namespace AsterNET.Manager
             }
 
             if (fireAllEvents)
+            {
                 fireEvent(UnhandledEvent, e);
+                }
         }
         #endregion
 
@@ -1183,7 +1184,7 @@ namespace AsterNET.Manager
                 enableEvents = true;
                 reconnected = false;
                 disconnect(true);
-                fireEvent(new DisconnectEvent(this));
+                fireInternalEvent(new DisconnectEvent(this));
             }
         }
         #endregion
@@ -1766,7 +1767,7 @@ namespace AsterNET.Manager
                     ConnectEvent ce = new ConnectEvent(this);
                     ce.Reconnect = true;
                     ce.ProtocolIdentifier = protocolIdentifier;
-                    fireEvent(ce);
+                    fireInternalEvent(ce);
                 }
                 else if (keepAliveAfterAuthenticationFailure)
                     reconnect(true);
@@ -1864,36 +1865,44 @@ namespace AsterNET.Manager
             if (reconnected && e is DisconnectEvent)
             {
                 ((DisconnectEvent)e).Reconnect = true;
-                fireEvent(e);
+                fireInternalEvent(e);
                 reconnect(false);
             }
             else if (!reconnected && reconnectEnable && (e is DisconnectEvent || e is ReloadEvent || e is ShutdownEvent))
             {
                 ((ConnectionStateEvent)e).Reconnect = true;
-                fireEvent(e);
+                fireInternalEvent(e);
                 reconnect(true);
             }
             else
-                fireEvent(e);
+                fireInternalEvent(e);
         }
 
         private void eventComplete(IAsyncResult result)
         {
         }
 
-        private void fireEvent(ManagerEvent e)
+        private void fireInternalEvent(ManagerEvent e)
         {
             if (enableEvents && internalEvent != null)
+            {
                 if (UseASyncEvents)
                     internalEvent.BeginInvoke(this, e, new AsyncCallback(eventComplete), null);
                 else
                     internalEvent.Invoke(this, e);
+            }
         }
 
-        private void fireEvent<T>(EventHandler<T> astEvent, ManagerEvent arg) where T : ManagerEvent
+        /// <summary>
+        /// This method is called when send event to client if subscribed
+        /// </summary>
+        /// <typeparam name="T">EventHandler argument</typeparam>
+        /// <param name="asterEvent">Event delegate</param>
+        /// <param name="arg">ManagerEvent or inherited class. Argument of eventHandler.</param>
+        private void fireEvent<T>(EventHandler<T> asterEvent, ManagerEvent arg) where T : ManagerEvent
         {
-            if (astEvent != null)
-                astEvent(this, (T)arg);
+            if (asterEvent != null)
+                asterEvent(this, (T)arg);
         }
         #endregion
     }
