@@ -101,6 +101,7 @@ namespace AsterNET.Manager
     public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
     public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
     public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
+	public delegate void MusicOnHoldEventHandler(object sender, MusicOnHoldEvent e);
 
 
 
@@ -517,6 +518,11 @@ namespace AsterNET.Manager
         /// Available since Asterisk 12
         /// </summary>
         public event QueueMemberPauseEventHandler QueueMemberPause;
+	    
+        /// <summary>
+        /// Raised when started or stoped music on hold by channel.
+        /// </summary>
+        public event MusicOnHoldEventHandler MusicOnHold;
 
         #endregion
 
@@ -632,6 +638,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 95, typeof(QueueCallerJoinEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 97, typeof(QueueMemberPauseEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 99, typeof(MusicOnHoldEvent));
 
             #endregion
 
@@ -1279,6 +1286,10 @@ namespace AsterNET.Manager
                         {
                             QueueMemberPause(this, (QueueMemberPauseEvent)e);
                         }
+                        break;
+                    case 99:
+                        if (MusicOnHold!=null)
+                            MusicOnHold(this, (MusicOnHoldEvent)e);
                         break;
                     default:
 						if (UnhandledEvent != null)
