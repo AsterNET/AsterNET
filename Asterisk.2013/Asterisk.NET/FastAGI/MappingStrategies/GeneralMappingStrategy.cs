@@ -47,6 +47,7 @@ namespace AsterNET.FastAGI.MappingStrategies
         /// </summary>
         public string ScriptAssmebly { get; set; }
 
+        [XmlIgnoreAttribute]
         public Assembly PreLoadedAssembly { get; set; }
 
         public static List<ScriptMapping> LoadMappings(string pathToXml)
