@@ -325,7 +325,7 @@
     <Compile Include="Manager\Event\QueueEvent.cs" />
     <Compile Include="Manager\Event\ChallengeResponseFailedEvent.cs" />
     <Compile Include="Manager\Event\InvalidAccountIDEvent.cs" />
-    <Compile Include="Manager\Event\DeviceStateChangedEvent.cs" />
+    <Compile Include="Manager\Event\DeviceStateChangeEvent.cs" />
     <Compile Include="Manager\Event\ChallengeSentEvent.cs" />
     <Compile Include="Manager\Event\SuccessfulAuthEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberAddedEvent.cs" />
