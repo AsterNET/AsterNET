@@ -323,6 +323,11 @@
     <Compile Include="Manager\Event\PeerStatusEvent.cs" />
     <Compile Include="Manager\Event\QueueEntryEvent.cs" />
     <Compile Include="Manager\Event\QueueEvent.cs" />
+    <Compile Include="Manager\Event\ChallengeResponseFailedEvent.cs" />
+    <Compile Include="Manager\Event\InvalidAccountIDEvent.cs" />
+    <Compile Include="Manager\Event\DeviceStateChangedEvent.cs" />
+    <Compile Include="Manager\Event\ChallengeSentEvent.cs" />
+    <Compile Include="Manager\Event\SuccessfulAuthEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberAddedEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberPausedEvent.cs" />
