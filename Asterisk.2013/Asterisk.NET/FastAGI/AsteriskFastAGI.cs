@@ -240,20 +240,6 @@ namespace AsterNET.FastAGI
 #endif
                 throw ex;
             }
-            finally
-            {
-                if (serverSocket != null)
-                {
-                    serverSocket.Close();
-                    serverSocket = null;
-                }
-
-                pool.Shutdown();
-#if LOGGER
-                logger.Info("AGIServer shut down.");
-#endif
-            }
-
 #if LOGGER
             logger.Info("Listening on " + address + ":" + port + ".");
 #endif
