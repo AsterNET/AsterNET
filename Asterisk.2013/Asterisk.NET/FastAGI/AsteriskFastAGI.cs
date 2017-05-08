@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -233,13 +234,29 @@ namespace AsterNET.FastAGI
                 var ipAddress = IPAddress.Parse(address);
                 serverSocket = new ServerSocket(port, ipAddress, SocketEncoding);
             }
-            catch (IOException ex)
+            catch (Exception ex)
             {
 #if LOGGER
-                logger.Error("Unable start AGI Server: cannot to bind to " + address + ":" + port + ".", ex);
+                if (ex is IOException)
+                {
+                    logger.Error("Unable start AGI Server: cannot to bind to " + address + ":" + port + ".", ex);
+                }
 #endif
+
+                if (serverSocket != null)
+                {
+                    serverSocket.Close();
+                    serverSocket = null;
+                }
+
+                pool.Shutdown();
+#if LOGGER
+                logger.Info("AGIServer shut down.");
+#endif
+
                 throw ex;
             }
+
 #if LOGGER
             logger.Info("Listening on " + address + ":" + port + ".");
 #endif
