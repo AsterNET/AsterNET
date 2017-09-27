@@ -251,7 +251,7 @@ namespace AsterNET.FastAGI
 
                 pool.Shutdown();
 #if LOGGER
-                logger.Info("AGIServer shut down.");
+                logger.Info("AGI Server shut down.");
 #endif
 
                 throw ex;
@@ -304,7 +304,7 @@ namespace AsterNET.FastAGI
                 serverSocket = null;
                 pool.Shutdown();
 #if LOGGER
-                logger.Info("AGIServer shut down.");
+                logger.Info("AGI Server shut down.");
 #endif
             }
         }
