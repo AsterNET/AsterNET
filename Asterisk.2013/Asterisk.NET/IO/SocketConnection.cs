@@ -11,7 +11,7 @@ namespace AsterNET.IO
 		private TcpClient tcpClient;
 		private NetworkStream networkStream;
 		private StreamReader reader;
-		private StreamWriter writer;
+		private BinaryWriter writer;
 		private Encoding encoding;
 		private bool initial;
 
@@ -29,8 +29,7 @@ namespace AsterNET.IO
 			this.tcpClient = new TcpClient(host, port);
 			this.networkStream = this.tcpClient.GetStream();
 			this.reader = new StreamReader(this.networkStream, encoding);
-			this.writer = new StreamWriter(this.networkStream, encoding);
-			this.writer.AutoFlush = true;
+			this.writer = new BinaryWriter(this.networkStream, encoding);
 		}
 		#endregion
 
@@ -47,8 +46,7 @@ namespace AsterNET.IO
 			this.tcpClient = tcpClient;
 			this.networkStream = this.tcpClient.GetStream();
 			this.reader = new StreamReader(this.networkStream, encoding);
-			this.writer = new StreamWriter(this.networkStream, encoding);
-			this.writer.AutoFlush = true;
+			this.writer = new BinaryWriter(this.networkStream, encoding);
 		}
 		#endregion
 
@@ -156,7 +154,8 @@ namespace AsterNET.IO
 		/// <summary>connection has already been closed.</summary>
 		public void Write(string s)
 		{
-			writer.Write(s);
+			writer.Write(encoding.GetBytes(s));
+            writer.Flush();
 		}
 		#endregion
 
