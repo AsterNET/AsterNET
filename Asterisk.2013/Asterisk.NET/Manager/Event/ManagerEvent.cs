@@ -20,7 +20,7 @@ namespace AsterNET.Manager.Event
         /// Store all unknown (without setter) keys from manager event.<br/>
         /// Use in default Parse method <see cref="ManagerEvent.Parse(string, string)"/>
         /// </summary>
-        public Dictionary<string, string> Attributes { get; set; }
+        public Dictionary<string, string> Attributes { get; } = new Dictionary<string, string>();
 
         /// <summary>
         /// Get/Set the name of the channel.
@@ -99,11 +99,6 @@ namespace AsterNET.Manager.Event
         /// <returns>true - value parsed, false - can't parse value</returns>
         public virtual bool Parse(string key, string value)
         {
-            if (Attributes == null)
-            {
-                Attributes = new Dictionary<string, string>();
-            }
-
             if (Attributes.ContainsKey(key))
             {
                 Attributes[key] += string.Concat(Common.LINE_SEPARATOR, value); // Key already presents, add with delimiter

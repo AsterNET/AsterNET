@@ -1930,11 +1930,12 @@ namespace AsterNET.Manager
 		/// Send action ans with timeout (milliseconds)
 		/// </summary>
 		/// <param name="action">action to send</param>
-		/// <param name="timeout">timeout in milliseconds</param>
+		/// <param name="timeOut">timeout in milliseconds</param>
 		/// <returns></returns>
 		public Response.ManagerResponse SendAction(ManagerAction action, int timeOut)
 		{
-			AutoResetEvent autoEvent = new AutoResetEvent(false);
+            ManagerResponse response = new ManagerResponse();            
+            AutoResetEvent autoEvent = new AutoResetEvent(false);
 			ResponseHandler handler = new ResponseHandler(action, autoEvent);
 
 			int hash = SendAction(action, handler);
@@ -1942,9 +1943,12 @@ namespace AsterNET.Manager
 
 			RemoveResponseHandler(handler);
 
-			if (result)
-				return handler.Response;
-			throw new TimeoutException("Timeout waiting for response to " + action.Action);
+            if (result)
+                response = handler.Response;
+            else
+                response.Response = "TimeOut: " + timeOut;
+            return response;
+			//throw new TimeoutException("Timeout waiting for response to " + action.Action);
 		}
 		#endregion
 

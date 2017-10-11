@@ -13,7 +13,7 @@ namespace AsterNET.Manager.Response
     public class ManagerResponse : IParseSupport
     {
         private string actionId;
-        protected Dictionary<string, string> attributes;
+        protected Dictionary<string, string> attributes = new Dictionary<string, string>();
         private DateTime dateReceived;
         private string message;
         private string privilege;

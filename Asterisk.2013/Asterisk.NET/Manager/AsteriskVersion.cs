@@ -10,6 +10,8 @@ namespace AsterNET.Manager
         ASTERISK_10 = 100,
         ASTERISK_11 = 110,
         ASTERISK_12 = 120,
-        ASTERISK_13 = 130
+        ASTERISK_13 = 130,
+        ASTERISK_14 = 140,
+        ASTERISK_15 = 150
     }
 }
