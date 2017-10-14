@@ -6,9 +6,17 @@ namespace AsterNET.Manager.Event
 	/// </summary>
 	public class DisconnectEvent : ConnectionStateEvent
 	{
-		public DisconnectEvent(ManagerConnection source)
+        public DisconnectEvent(ManagerConnection source)
+            : this(source, "no reason")
+        {
+        }
+
+        public DisconnectEvent(ManagerConnection source, string reason)
 			: base(source)
 		{
+            Reason = reason;
 		}
-	}
+
+        public string Reason { get; }
+    }
 }

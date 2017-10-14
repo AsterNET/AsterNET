@@ -20,7 +20,7 @@ namespace AsterNET.Manager.Event
         /// Store all unknown (without setter) keys from manager event.<br/>
         /// Use in default Parse method <see cref="ManagerEvent.Parse(string, string)"/>
         /// </summary>
-        public Dictionary<string, string> Attributes { get; } = new Dictionary<string, string>();
+        public IDictionary<string, string> Attributes { get; } = new DDictionary<string, string>();
 
         /// <summary>
         /// Get/Set the name of the channel.
@@ -116,7 +116,7 @@ namespace AsterNET.Manager.Event
         /// </summary>
         /// <param name="attributes">dictionary</param>
         /// <returns>updated dictionary</returns>
-        public virtual Dictionary<string, string> ParseSpecial(Dictionary<string, string> attributes)
+        public virtual IDictionary<string, string> ParseSpecial(IDictionary<string, string> attributes)
         {
             return attributes;
         }

@@ -520,7 +520,7 @@ namespace AsterNET
 
         #region SetAttributes(object evt, IDictionary attributes) 
 
-        internal static void SetAttributes(IParseSupport o, Dictionary<string, string> attributes)
+        internal static void SetAttributes(IParseSupport o, IDictionary<string, string> attributes)
         {
             Type dataType;
             object val;
@@ -640,7 +640,7 @@ namespace AsterNET
 
         #region AddKeyValue(IDictionary list, string line) 
 
-        internal static void AddKeyValue(IDictionary list, string line)
+        internal static void AddKeyValue(IDictionary<string, string> list, string line)
         {
             int delimiterIndex = line.IndexOf(":");
             if (delimiterIndex > 0 && line.Length > delimiterIndex + 1)
@@ -711,7 +711,7 @@ namespace AsterNET
         /// </summary>
         /// <param name="attributes">the attributes and their values. The keys of this map must be all lower case.</param>
         /// <returns>the response with the given attributes.</returns>
-        internal static ManagerResponse BuildResponse(Dictionary<string, string> attributes)
+        internal static ManagerResponse BuildResponse(IDictionary<string, string> attributes)
         {
             ManagerResponse response;
 
@@ -749,7 +749,7 @@ namespace AsterNET
         /// <param name="attributes">map containing event attributes</param>
         /// <returns>a concrete instance of ManagerEvent or null if no event class was registered for the event type.</returns>
         internal static ManagerEvent BuildEvent(IDictionary<int, ConstructorInfo> list, ManagerConnection source,
-            Dictionary<string, string> attributes)
+            IDictionary<string, string> attributes)
         {
             ManagerEvent e;
             string eventType;
@@ -788,7 +788,7 @@ namespace AsterNET
                     logger.Error("Unable to create new instance of " + eventType, ex);
                     return null;
 #else
-					throw ex;
+				    throw ex;
 #endif
                 }
             }

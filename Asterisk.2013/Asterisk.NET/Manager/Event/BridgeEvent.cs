@@ -60,12 +60,12 @@ namespace AsterNET.Manager.Event
 		/// </summary>
 		/// <param name="attributes">dictionary</param>
 		/// <returns>updated dictionary</returns>
-		public override Dictionary<string, string> ParseSpecial(Dictionary<string, string> attributes)
+		public override IDictionary<string, string> ParseSpecial(IDictionary<string, string> attributes)
 		{
 			if (attributes == null)
 				return null;
 
-				Dictionary<string,string> updated = new Dictionary<string,string>(attributes.Count);
+				DDictionary<string,string> updated = new DDictionary<string,string>();
 				foreach(KeyValuePair<string, string> pair in attributes)
 				{
 					string value = pair.Value.ToLower(Helper.CultureInfo);

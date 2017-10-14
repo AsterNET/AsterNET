@@ -13,7 +13,7 @@ namespace AsterNET.Manager.Response
     public class ManagerResponse : IParseSupport
     {
         private string actionId;
-        protected Dictionary<string, string> attributes = new Dictionary<string, string>();
+        protected IDictionary<string, string> attributes = new DDictionary<string, string>();
         private DateTime dateReceived;
         private string message;
         private string privilege;
@@ -28,7 +28,7 @@ namespace AsterNET.Manager.Response
             this.dateReceived = DateTime.Now;
         }
 
-        public ManagerResponse(Dictionary<string, string> attributes)
+        public ManagerResponse(IDictionary<string, string> attributes)
             : this()
         {
             Helper.SetAttributes(this, attributes);
@@ -42,7 +42,7 @@ namespace AsterNET.Manager.Response
         ///     Store all unknown (without setter) keys from manager event.<br />
         ///     Use in default Parse method <see cref="Parse" />.
         /// </summary>
-        public Dictionary<string, string> Attributes
+        public IDictionary<string, string> Attributes
         {
             get { return attributes; }
         }
@@ -184,11 +184,13 @@ namespace AsterNET.Manager.Response
         /// <param name="key">the key to lookup.</param>
         /// <returns>
         ///     the value of the attribute stored under this key or
-        ///     null if there is no such attribute.
+        ///     string.empty if there is no such attribute.
         /// </returns>
         public string GetAttribute(string key)
         {
-            return (string) attributes[key.ToLower(Helper.CultureInfo)];
+            string resultado = string.Empty;
+            attributes.TryGetValue(key.ToLower(Helper.CultureInfo), out resultado);
+            return resultado;
         }
 
         #endregion
@@ -223,7 +225,7 @@ namespace AsterNET.Manager.Response
         /// </summary>
         /// <param name="attributes">dictionary</param>
         /// <returns>updated dictionary</returns>
-        public virtual Dictionary<string, string> ParseSpecial(Dictionary<string, string> attributes)
+        public virtual IDictionary<string, string> ParseSpecial(IDictionary<string, string> attributes)
         {
             return attributes;
         }

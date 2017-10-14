@@ -100,8 +100,7 @@ namespace AsterNET.Manager
     public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
     public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
     public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
-
-
+    public delegate void ErrorEventHandler(object sender, Event.ErrorEvent e);
 
     #endregion
 
@@ -445,10 +444,15 @@ namespace AsterNET.Manager
 		/// </summary>
 		public event ConnectionStateEventHandler ConnectionState;
 
-		/// <summary>
-		/// When a variable is set
+        /// <summary>
+		/// A Error is triggered after any Exception is trigger in internal system.
 		/// </summary>
-		public event VarSetEventHandler VarSet;
+		public event ErrorEventHandler Error;
+
+        /// <summary>
+        /// When a variable is set
+        /// </summary>
+        public event VarSetEventHandler VarSet;
 
 		/// <summary>
 		/// AgiExec is execute
@@ -633,6 +637,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 95, typeof(QueueCallerJoinEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 97, typeof(QueueMemberPauseEvent));
+
+            Helper.RegisterEventHandler(registeredEventHandlers, 98, typeof(ErrorEvent));
 
             #endregion
 
@@ -1281,6 +1287,12 @@ namespace AsterNET.Manager
                             QueueMemberPause(this, (QueueMemberPauseEvent)e);
                         }
                         break;
+                    case 98:
+                        if (Error != null)
+                        {
+                            Error(this, (ErrorEvent)e);
+                        }
+                        break;
                     default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);
@@ -1496,14 +1508,17 @@ namespace AsterNET.Manager
 				{
 					Thread.Sleep(4 * sleepTime);	// 200 milliseconds delay
 				}
-				catch
-				{ }
+				catch(Exception ex)
+				{
+                    DispatchEvent(new ErrorEvent(this, "unknow error on MC: " + ex.Message));
+                }
 
 				if (string.IsNullOrEmpty(protocolIdentifier) && timeout > 0 && Helper.GetMillisecondsFrom(start) > timeout)
 				{
 					disconnect(true);
-					throw new TimeoutException("Timeout waiting for protocol identifier");
-				}
+                    DispatchEvent(new ErrorEvent(this, "error: Timeout waiting for protocol identifier"));
+                    //throw new TimeoutException("Timeout waiting for protocol identifier");
+                }
 			} while (string.IsNullOrEmpty(protocolIdentifier));
 
 			ChallengeAction challengeAction = new ChallengeAction();
@@ -1544,7 +1559,7 @@ namespace AsterNET.Manager
 #if LOGGER
 				logger.Info("Successfully logged in");
 #endif
-				asteriskVersion = determineVersion();
+				asteriskVersion = GetDetermineVersion();
 #if LOGGER
 				logger.Info("Determined Asterisk version: " + asteriskVersion);
 #endif
@@ -1559,22 +1574,23 @@ namespace AsterNET.Manager
 				throw new ManagerException("Unknown response during login to Asterisk - " + response.GetType().Name + " with message " + response.Message);
 
 		}
-		#endregion
 
-		#region determineVersion()
-		protected internal AsteriskVersion determineVersion()
-		{
-			Response.ManagerResponse response;
-			response = SendAction(new Action.CommandAction("core show version"), defaultResponseTimeout * 2);
-			if (response is Response.CommandResponse)
-			{
-				foreach (string line in ((Response.CommandResponse)response).Result)
-				{
-					foreach (Match m in Common.ASTERISK_VERSION.Matches(line))
-					{
-						if (m.Groups.Count >= 2)
-						{
-							version = m.Groups[1].Value;
+        internal protected AsteriskVersion GetDetermineVersion()
+        {
+            ManagerResponse response;
+            response = SendAction(new Action.CommandAction("core show version"), defaultResponseTimeout * 2);
+            if (response.IsSuccess())
+            {
+                string line = response.GetAttribute("output");
+                if (!string.IsNullOrWhiteSpace(line))
+                {
+                    MatchCollection mcol;
+                    mcol = Common.ASTERISK_VERSION.Matches(line);
+                    foreach (Match m in mcol)
+                    {
+                        if (m.Groups.Count >= 2)
+                        {
+                            version = m.Groups[1].Value;
                             if (version.StartsWith("1.4."))
                             {
                                 VAR_DELIMITER = new char[] { '|' };
@@ -1610,32 +1626,42 @@ namespace AsterNET.Manager
                                 VAR_DELIMITER = new char[] { ',' };
                                 return Manager.AsteriskVersion.ASTERISK_13;
                             }
+                            else if (version.StartsWith("14."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_14;
+                            }
+                            else if (version.StartsWith("15."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_15;
+                            }
                             else
                                 throw new ManagerException("Unknown Asterisk version " + version);
-						}
-					}
-				}
-			}
+                        }
+                    }
+                }
+            }
 
-			Response.ManagerResponse showVersionFilesResponse = SendAction(new Action.CommandAction("show version files"), defaultResponseTimeout * 2);
-			if (showVersionFilesResponse is Response.CommandResponse)
-			{
-				IList showVersionFilesResult = ((Response.CommandResponse)showVersionFilesResponse).Result;
-				if (showVersionFilesResult != null && showVersionFilesResult.Count > 0)
-				{
-					string line1;
-					line1 = (string)showVersionFilesResult[0];
-					if (line1 != null && line1.StartsWith("File"))
-						return AsteriskVersion.ASTERISK_1_2;
-				}
-			}
-			return AsteriskVersion.ASTERISK_1_0;
-		}
+            Response.ManagerResponse showVersionFilesResponse = SendAction(new Action.CommandAction("show version files"), defaultResponseTimeout * 2);
+            if (showVersionFilesResponse is Response.CommandResponse)
+            {
+                IList showVersionFilesResult = ((Response.CommandResponse)showVersionFilesResponse).Result;
+                if (showVersionFilesResult != null && showVersionFilesResult.Count > 0)
+                {
+                    string line1;
+                    line1 = (string)showVersionFilesResult[0];
+                    if (line1 != null && line1.StartsWith("File"))
+                        return AsteriskVersion.ASTERISK_1_2;
+                }
+            }
+            return AsteriskVersion.ASTERISK_1_0;
+        }
 
-		#endregion
+        #endregion
 
-		#region connect()
-		protected internal bool connect()
+        #region connect()
+        protected internal bool connect()
 		{
 			bool result = false;
 			bool startReader = false;
@@ -1832,7 +1858,7 @@ namespace AsterNET.Manager
 				enableEvents = true;
 				reconnected = false;
 				disconnect(true);
-				fireEvent(new DisconnectEvent(this));
+				fireEvent(new DisconnectEvent(this, "reconnect not enabled"));
 			}
 		}
 		#endregion
@@ -2272,7 +2298,7 @@ namespace AsterNET.Manager
 		/// </summary>
 		/// <param name="response">the response received by the reader</param>
 		/// <seealso cref="ManagerReader" />
-		internal void DispatchResponse(Dictionary<string, string> buffer)
+		internal void DispatchResponse(IDictionary<string, string> buffer)
 		{
 #if LOGGER
 			logger.Debug("Dispatch response packet : {0}", Helper.JoinVariables(buffer, ", ", ": "));
@@ -2288,7 +2314,7 @@ namespace AsterNET.Manager
 			DispatchResponse(null, response);
 		}
 
-		internal void DispatchResponse(Dictionary<string, string> buffer, ManagerResponse response)
+		internal void DispatchResponse(IDictionary<string, string> buffer, ManagerResponse response)
 		{
 			string responseActionId = string.Empty;
 			string actionId = string.Empty;
@@ -2437,7 +2463,7 @@ namespace AsterNET.Manager
 		/// </summary>
 		/// <param name="e">the event received by the reader</param>
 		/// <seealso cref="ManagerReader"/>
-		internal void DispatchEvent(Dictionary<string, string> buffer)
+		internal void DispatchEvent(IDictionary<string, string> buffer)
 		{
 			ManagerEvent e = Helper.BuildEvent(registeredEventClasses, this, buffer);
 			DispatchEvent(e);

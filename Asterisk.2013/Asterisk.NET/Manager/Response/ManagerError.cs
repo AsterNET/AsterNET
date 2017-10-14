@@ -14,7 +14,7 @@ namespace AsterNET.Manager.Response
         {
         }
 
-        public ManagerError(Dictionary<string, string> attributes)
+        public ManagerError(IDictionary<string, string> attributes)
             : base(attributes)
         {
         }

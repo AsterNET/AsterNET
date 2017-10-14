@@ -4,8 +4,8 @@ namespace AsterNET
 {
     internal interface IParseSupport
     {
-        Dictionary<string, string> Attributes { get; }
+        IDictionary<string, string> Attributes { get; }
         bool Parse(string key, string value);
-        Dictionary<string, string> ParseSpecial(Dictionary<string, string> attributes);
+        IDictionary<string, string> ParseSpecial(IDictionary<string, string> attributes);
     }
 }

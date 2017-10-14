@@ -24,7 +24,18 @@ namespace AsterNET.Manager
 
 		private bool die;
 		private bool is_logoff;
-		private bool disconnect;
+
+        private bool disconnect;
+        private string lastDisconnectReason;
+        private void setDisconnected(string reason)
+        {
+            if (!disconnect)
+            {
+                disconnect = true;
+                lastDisconnectReason = reason;
+            }
+        }
+
 		private byte[] lineBytes;
 		private string lineBuffer;
 		private readonly Queue<string> lineQueue;
@@ -32,7 +43,7 @@ namespace AsterNET.Manager
 		private bool processingCommandResult;
 		private bool wait4identiier;
 		private DateTime lastPacketTime;
-		private readonly Dictionary<string, string> packet;
+		private readonly DDictionary<string, string> packet;
 		private readonly List<string> commandList;
 
 		#region ManagerReader(dispatcher, asteriskServer) 
@@ -46,7 +57,7 @@ namespace AsterNET.Manager
 			mrConnector = connection;
 			die = false;
 			lineQueue = new Queue<string>();
-			packet = new Dictionary<string, string>();
+			packet = new DDictionary<string, string>();
 			commandList = new List<string>();
 		}
 
@@ -102,19 +113,18 @@ namespace AsterNET.Manager
 				return;
 
 			SocketConnection mrSocket = mrReader.mrSocket;
+            //mrSocket.TcpClient.ReceiveTimeout = 4000;
 			if (mrSocket == null || mrSocket.TcpClient == null)
 			{
-				// No socket - it's DISCONNECT !!!
-				disconnect = true;
+				setDisconnected("No socket");
 				return;
 			}
 
 			NetworkStream nstream = mrSocket.NetworkStream;
 			if (nstream == null)
 			{
-				// No network stream - it's DISCONNECT !!!
-				disconnect = true;
-				return;
+                setDisconnected("No network stream");
+                return;
 			}
 
 			try
@@ -122,10 +132,9 @@ namespace AsterNET.Manager
 				int count = nstream.EndRead(ar);
 				if (count == 0)
 				{
-					// No received data - it's may be DISCONNECT !!!
 					if (!is_logoff)
-						disconnect = true;
-					return;
+                        setDisconnected("no received data");
+                    return;
 				}
 				string line = mrSocket.Encoding.GetString(mrReader.lineBytes, 0, count);
 				mrReader.lineBuffer += line;
@@ -149,12 +158,11 @@ namespace AsterNET.Manager
 			{
 				mrReader.logger.Error("Read data error", ex.Message);
 #else
-			catch
+			catch(Exception ex)
 			{
 #endif
-				// Any catch - disconncatch !
-				disconnect = true;
-				if (mrReader.mrSocket != null)
+                setDisconnected("Any catch - " + ex.Message);
+                if (mrReader.mrSocket != null)
 					mrReader.mrSocket.Close();
 				mrReader.mrSocket = null;
 			}
@@ -204,24 +212,24 @@ namespace AsterNET.Manager
 				{
 					while (!die)
 					{
-						#region check line from *
-
+                        #region check line from *
 						if (!is_logoff)
 						{
-							if (mrSocket != null && mrSocket.Initial)
-							{
-								Reinitialize();
-							}
-							else if (disconnect)
-							{
-								disconnect = false;
-								mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
-							}
+                            if (mrSocket != null && mrSocket.Initial)
+                            {
+                                Reinitialize();
+                            }
+                            else if (disconnect)
+                            {
+                                disconnect = false;
+                                mrConnector.DispatchEvent(new DisconnectEvent(mrConnector, "disconnect order: " + lastDisconnectReason));
+                            }
 						}
+
 						if (lineQueue.Count == 0)
 						{
-							if (lastPacketTime.AddMilliseconds(mrConnector.PingInterval) < DateTime.Now
-								&& mrConnector.PingInterval > 0
+							if (mrConnector.PingInterval > 0 
+                                && lastPacketTime.AddMilliseconds(mrConnector.PingInterval) < DateTime.Now
 								&& mrSocket != null
 								&& !wait4identiier
 								&& !is_logoff
@@ -233,7 +241,7 @@ namespace AsterNET.Manager
 									{
 										// If one PingInterval from Ping without Pong then send Disconnect event
 										mrConnector.RemoveResponseHandler(pingHandler);
-										mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
+										mrConnector.DispatchEvent(new DisconnectEvent(mrConnector, "no ping response"));
 									}
 									pingHandler.Free();
 									pingHandler = null;
@@ -246,9 +254,9 @@ namespace AsterNET.Manager
 										pingHandler = new ResponseHandler(new PingAction(), null);
 										mrConnector.SendAction(pingHandler.Action, pingHandler);
 									}
-									catch
+									catch(Exception ex)
 									{
-										disconnect = true;
+                                        setDisconnected("ping error: " + ex.Message);
 										mrSocket = null;
 									}
 								}
@@ -259,77 +267,78 @@ namespace AsterNET.Manager
 							continue;
 						}
 
-						#endregion
+                        #endregion
 
-						lastPacketTime = DateTime.Now;
-						lock (((ICollection) lineQueue).SyncRoot)
-							line = lineQueue.Dequeue().Trim();
+                        
+                        lastPacketTime = DateTime.Now;
+                        lock (((ICollection)lineQueue).SyncRoot)
+                            line = lineQueue.Dequeue().Trim();
+
 #if LOGGER
 						logger.Debug(line);
 #endif
 
-						#region processing Response: Follows
+                        #region processing Response: Follows
 
-						if (processingCommandResult)
-						{
-							string lineLower = line.ToLower(Helper.CultureInfo);
-							if (lineLower == "--end command--")
-							{
-								var commandResponse = new CommandResponse();
-								Helper.SetAttributes(commandResponse, packet);
-								commandList.Add(line);
-								commandResponse.Result = commandList;
-								processingCommandResult = false;
-								packet.Clear();
-								mrConnector.DispatchResponse(commandResponse);
-							}
-							else if (lineLower.StartsWith("privilege: ")
-								|| lineLower.StartsWith("actionid: ")
-								|| lineLower.StartsWith("timestamp: ")
-								|| lineLower.StartsWith("server: ")
-								)
-								Helper.AddKeyValue(packet, line);
-							else
-								commandList.Add(line);
-							continue;
-						}
+                        if (processingCommandResult)
+                        {
+                            string lineLower = line.ToLower(Helper.CultureInfo);
+                            if (lineLower == "--end command--")
+                            {
+                                var commandResponse = new CommandResponse();
+                                Helper.SetAttributes(commandResponse, packet);
+                                commandList.Add(line);
+                                commandResponse.Result = commandList;
+                                processingCommandResult = false;
+                                packet.Clear();
+                                mrConnector.DispatchResponse(commandResponse);
+                            }
+                            else if (lineLower.StartsWith("privilege: ")
+                                || lineLower.StartsWith("actionid: ")
+                                || lineLower.StartsWith("timestamp: ")
+                                || lineLower.StartsWith("server: ")
+                                )
+                                Helper.AddKeyValue(packet, line);
+                            else
+                                commandList.Add(line);
+                            continue;
+                        }
 
-						#endregion
+                        #endregion
 
-						#region collect key: value and ProtocolIdentifier
+                        #region collect key: value and ProtocolIdentifier
+                        
+                        if (!string.IsNullOrEmpty(line))
+                        {
+                            if (wait4identiier && line.StartsWith("Asterisk Call Manager"))
+                            {
+                                wait4identiier = false;
+                                var connectEvent = new ConnectEvent(mrConnector);
+                                connectEvent.ProtocolIdentifier = line;
+                                mrConnector.DispatchEvent(connectEvent);
+                                continue;
+                            }
+                            if (line.Trim().ToLower(Helper.CultureInfo) == "response: follows")
+                            {
+                                // Switch to wait "--END COMMAND--" mode
+                                processingCommandResult = true;
+                                packet.Clear();
+                                commandList.Clear();
+                                Helper.AddKeyValue(packet, line);
+                                continue;
+                            }
+                            Helper.AddKeyValue(packet, line);
+                            continue;
+                        }
 
-						if (!string.IsNullOrEmpty(line))
-						{
-							if (wait4identiier && line.StartsWith("Asterisk Call Manager"))
-							{
-								wait4identiier = false;
-								var connectEvent = new ConnectEvent(mrConnector);
-								connectEvent.ProtocolIdentifier = line;
-								mrConnector.DispatchEvent(connectEvent);
-								continue;
-							}
-							if (line.Trim().ToLower(Helper.CultureInfo) == "response: follows")
-							{
-								// Switch to wait "--END COMMAND--" mode
-								processingCommandResult = true;
-								packet.Clear();
-								commandList.Clear();
-								Helper.AddKeyValue(packet, line);
-								continue;
-							}
-							Helper.AddKeyValue(packet, line);
-							continue;
-						}
+                        #endregion
 
-						#endregion
+                        #region process events and responses
 
-						#region process events and responses
-
-						if (packet.ContainsKey("event"))
-							mrConnector.DispatchEvent(packet);
-
-						else if (packet.ContainsKey("response"))
-							mrConnector.DispatchResponse(packet);
+                        if (packet.ContainsKey("event"))                       
+                                mrConnector.DispatchEvent(packet);   
+                        else if (packet.ContainsKey("response"))                       
+                                mrConnector.DispatchResponse(packet);
 
 						#endregion
 
@@ -344,18 +353,19 @@ namespace AsterNET.Manager
 				{
 					logger.Info("Exception : {0}", ex.Message);
 #else
-				catch
+				catch(Exception ex)
 				{
 #endif
-				}
+                    mrConnector.DispatchEvent(new ErrorEvent(mrConnector, "unknow error on Run: " + ex.Message));
+                }
 
-				if (die)
+                if (die)
 					break;
 
 #if LOGGER
 				logger.Info("No die, any error - send disconnect.");
 #endif
-				mrConnector.DispatchEvent(new DisconnectEvent(mrConnector));
+				mrConnector.DispatchEvent(new DisconnectEvent(mrConnector, "unknow error"));
 			}
 		}
 

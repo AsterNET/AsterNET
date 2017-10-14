@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="DDictionary.cs" />
     <Compile Include="FastAGI\AGIChannel.cs" />
     <Compile Include="FastAGI\AGIConnectionHandler.cs" />
     <Compile Include="FastAGI\Exceptions\AGIException.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Manager\AsteriskVersion.cs" />
     <Compile Include="Manager\Event\AbstractAgentVariables.cs" />
     <Compile Include="Manager\Event\AbstractConfbridgeEvent.cs" />
+    <Compile Include="Manager\Event\ErrorEvent.cs" />
     <Compile Include="Manager\Event\BlindTransferEvent.cs" />
     <Compile Include="Manager\Event\BridgeActivityEvent.cs" />
     <Compile Include="Manager\Event\BridgeCreateEvent.cs" />
