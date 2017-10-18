@@ -1,3 +1,5 @@
+using System;
+
 namespace AsterNET.Manager.Event
 {
     /// <summary>
@@ -6,16 +8,16 @@ namespace AsterNET.Manager.Event
     public class ErrorEvent : ManagerEvent
     {
         public ErrorEvent(ManagerConnection source)
-            : this(source, string.Empty)
+            : this(source, new Exception())
         {
         }
 
-        public ErrorEvent(ManagerConnection source, string reason)
+        public ErrorEvent(ManagerConnection source, Exception ex)
 			: base(source)
 		{
-            Exception = reason;
+            Exception = ex;
         }
 
-        public string Exception { get; set; }
+        public Exception Exception { get; set; }
     }
 }

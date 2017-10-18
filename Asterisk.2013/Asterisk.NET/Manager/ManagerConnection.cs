@@ -109,6 +109,8 @@ namespace AsterNET.Manager
     /// </summary>
     public class ManagerConnection
 	{
+        private Thread KeepAliveWorker;
+
 		#region Variables
 
 #if LOGGER
@@ -122,7 +124,7 @@ namespace AsterNET.Manager
 
 		private SocketConnection mrSocket;
 		private Thread mrReaderThread;
-		private ManagerReader mrReader;
+        private ManagerReader mrReader;
 
 		private int defaultResponseTimeout = 2000;
 		private int defaultEventTimeout = 5000;
@@ -171,13 +173,52 @@ namespace AsterNET.Manager
         /// control logic in your application will need to handle synchronization.
         /// </summary>
 	    public bool UseASyncEvents = false;
+        public ManagerConnectionStatus ConnectionStatus { get; internal set; }
+        public void EnsureConnectionState(ManagerConnectionStatus state, Exception ex)
+        {
+            ConnectionStatus = state;
+            if (ex != null)
+                fireEvent(new ErrorEvent(this, ex));
+        }
 
-		#region Events
+        private TcpClient TCPClient;
 
-		/// <summary>
-		/// An UnhandledEvent is triggered on unknown event.
-		/// </summary>
-		public event ManagerEventHandler UnhandledEvent;
+        public string lastDisconnectReason;
+        public bool disconnected;
+        public void setDisconnected(string reason)
+        {
+            if (!disconnected)
+            {                
+                disconnected = true;
+                lastDisconnectReason = reason;
+                fireEvent(new DisconnectEvent(this, "disconnect order: " + lastDisconnectReason));
+            }
+        }
+
+        public bool Ready {
+            get
+            {
+                if (this.mrSocket != null)
+                    if (this.mrSocket.NetworkStream != null)
+                        if (this.IsSocketConnected)
+                            return true;
+                        else setDisconnected("Not Connected");
+                    else setDisconnected("Network Stream");
+                else setDisconnected("Socket / TCP Client");
+                return false;
+            }
+        }
+
+        public int LinesRead { get { if(mrReader != null) return mrReader.Contador["Leitura"]; return 0; } }
+        public int Espera { get { if (mrReader != null) return mrReader.Contador["Espera"]; return 0; } }
+        public ManagerReader Reader { get { return mrReader; } }
+
+        #region Events
+
+        /// <summary>
+        /// An UnhandledEvent is triggered on unknown event.
+        /// </summary>
+        public event ManagerEventHandler UnhandledEvent;
 		/// <summary>
 		/// An AgentCallbackLogin is triggered when an agent is successfully logged in.
 		/// </summary>
@@ -529,7 +570,13 @@ namespace AsterNET.Manager
         /// <summary> Creates a new instance.</summary>
         public ManagerConnection()
 		{
-			callerThread = Thread.CurrentThread;
+            mrReader = new ManagerReader(this);
+            
+            mrReaderThread = new Thread(mrReader.Run) { IsBackground = true };
+            KeepAliveWorker = new Thread(KeepAliveWork) { IsBackground = true, Name = "ManagerConnection-" + DateTime.Now.Second };
+            //KeepAliveWorker.Start();
+
+            callerThread = Thread.CurrentThread;
 
 			socketEncoding = Encoding.ASCII;
 
@@ -644,17 +691,77 @@ namespace AsterNET.Manager
 
             this.internalEvent += new ManagerEventHandler(internalEventHandler);
 		}
-		#endregion
+        #endregion
 
-		#region Constructor - ManagerConnection(hostname, port, username, password)
-		/// <summary>
-		/// Creates a new instance with the given connection parameters.
-		/// </summary>
-		/// <param name="hostname">the hosname of the Asterisk server to connect to.</param>
-		/// <param name="port">the port where Asterisk listens for incoming Manager API connections, usually 5038.</param>
-		/// <param name="username">the username to use for login</param>
-		/// <param name="password">the password to use for login</param>
-		public ManagerConnection(string hostname, int port, string username, string password)
+        private ResponseHandler pingHandler;
+        public DateTime lastPacketTime;
+        private void KeepAliveWork()
+        {
+            while (true)
+            {
+                try
+                {
+                    if (mrReader.lineQueue.Count == 0)
+                    {
+                        if (PingInterval > 0
+                            && lastPacketTime.AddMilliseconds(PingInterval) < DateTime.Now
+                            && Ready
+                            )
+                        {
+                            PingActionTest();
+                            lastPacketTime = DateTime.Now;
+                        }
+                    }                    
+                }
+                catch (Exception ex) { fireEvent(new ErrorEvent(this, ex)); }
+                Thread.Sleep(PingInterval);
+            }
+        }
+
+        public bool PingActionTest()
+        {
+            bool result = false;
+            if (pingHandler != null)
+            {
+                if (pingHandler.Response == null)
+                {
+                    // If one PingInterval from Ping without Pong then send Disconnect event
+                    RemoveResponseHandler(pingHandler);
+                    fireEvent(new ErrorEvent(this, new Exception("no ping response")));
+                    //DispatchEvent(new DisconnectEvent(this, "no ping response"));
+                }
+                pingHandler.Free();
+                pingHandler = null;
+            }
+            else
+            {
+                // Send PING to *
+                try
+                {
+                    fireEvent(new ErrorEvent(this, new Exception("pingando")));
+                    pingHandler = new ResponseHandler(new PingAction(), null);
+                    SendAction(pingHandler.Action, pingHandler);
+                    result = true;
+                }
+                catch (Exception ex)
+                {
+                    fireEvent(new ErrorEvent(this, ex));
+                    //setDisconnected("ping error: " + ex.Message);
+                    //mrSocket = null;
+                }
+            }
+            return result;
+        }
+
+        #region Constructor - ManagerConnection(hostname, port, username, password)
+                    /// <summary>
+                    /// Creates a new instance with the given connection parameters.
+                    /// </summary>
+                    /// <param name="hostname">the hosname of the Asterisk server to connect to.</param>
+                    /// <param name="port">the port where Asterisk listens for incoming Manager API connections, usually 5038.</param>
+                    /// <param name="username">the username to use for login</param>
+                    /// <param name="password">the password to use for login</param>
+                    public ManagerConnection(string hostname, int port, string username, string password)
 			: this()
 		{
 			this.hostname = hostname;
@@ -1494,7 +1601,7 @@ namespace AsterNET.Manager
 #endif
 				throw new AuthenticationFailedException("Unable login during reconnect state.");
 			}
-
+            
 			reconnectEnable = false;
 			DateTime start = DateTime.Now;
 			do
@@ -1510,17 +1617,17 @@ namespace AsterNET.Manager
 				}
 				catch(Exception ex)
 				{
-                    DispatchEvent(new ErrorEvent(this, "unknow error on MC: " + ex.Message));
+                    fireEvent(new ErrorEvent(this, ex));
                 }
 
 				if (string.IsNullOrEmpty(protocolIdentifier) && timeout > 0 && Helper.GetMillisecondsFrom(start) > timeout)
 				{
 					disconnect(true);
-                    DispatchEvent(new ErrorEvent(this, "error: Timeout waiting for protocol identifier"));
-                    //throw new TimeoutException("Timeout waiting for protocol identifier");
+                    fireEvent(new ErrorEvent(this, new TimeoutException("Timeout waiting for protocol identifier")));
                 }
 			} while (string.IsNullOrEmpty(protocolIdentifier));
-
+            
+            EnsureConnectionState(ManagerConnectionStatus.AUTHENTICATING, null);
 			ChallengeAction challengeAction = new ChallengeAction();
 			Response.ManagerResponse response = SendAction(challengeAction, defaultResponseTimeout * 2);
 			if (response is ChallengeResponse)
@@ -1549,9 +1656,11 @@ namespace AsterNET.Manager
 				Response.ManagerResponse loginResponse = SendAction(loginAction);
 				if (loginResponse is Response.ManagerError)
 				{
-					disconnect(true);
+                    EnsureConnectionState(ManagerConnectionStatus.UNAUTHENTICATED, new Exception(loginResponse.Message));
+                    disconnect(true);
 					throw new AuthenticationFailedException(loginResponse.Message);
-				}
+                }
+                else { EnsureConnectionState(ManagerConnectionStatus.AUTHENTICATED, null); }
 
 				// successfully logged in so assure that we keep trying to reconnect when disconnected
 				reconnectEnable = keepAlive;
@@ -1570,8 +1679,10 @@ namespace AsterNET.Manager
 			}
 			else if (response is ManagerError)
 				throw new ManagerException("Unable login to Asterisk - " + response.Message);
+            else if (response is ManagerResponse)            
+                throw new ManagerException("Unable login to Asterisk - " + response.Response + " ;; " + response.Message + " ;; " + response.Attributes.Count);            
 			else
-				throw new ManagerException("Unknown response during login to Asterisk - " + response.GetType().Name + " with message " + response.Message);
+				throw new ManagerException("Unknown response during login to Asterisk("+ (response != null) + ") - " + response.GetType().Name + " with message " + response.Message);
 
 		}
 
@@ -1661,62 +1772,81 @@ namespace AsterNET.Manager
         #endregion
 
         #region connect()
+
+        public event EventHandler<SocketStatusChangedEventArgs> SocketStatusChanged;
+        public bool IsSocketConnected = false;
+        public void EnsureSocketConnection(bool status, Exception ex)
+        {            
+            if (IsSocketConnected != status)
+            {
+                IsSocketConnected = status;
+                if (status)
+                {
+                        mrReader.Socket = mrSocket;
+                        EnsureConnectionState(ManagerConnectionStatus.SOCKETCONNECTED, ex);
+                }
+                else {
+                    DispatchEvent(new DisconnectEvent(this, "socket network failed"));
+                    EnsureConnectionState(ManagerConnectionStatus.SOCKETDISCONNECTED, ex);
+                }
+
+                SocketStatusChangedEventArgs args = new SocketStatusChangedEventArgs(status);
+                SocketStatusChanged?.Invoke(this, args);
+            }
+        }
+
+        private bool ConnectSocket()
+        {
+            bool result = false;
+            
+            TCPClient = new TcpClient(hostname, port);
+            TCPClient.LingerState = new LingerOption(true, 10); // The socket will linger for 10 seconds after Socket.Close is called.
+            TCPClient.NoDelay = true; // Disable the Nagle Algorithm for this tcp socket.
+            TCPClient.ReceiveBufferSize = 8192; // Set the receive buffer size to 8k
+            TCPClient.SendBufferSize = 8192; // Set the send buffer size to 8k.
+            TCPClient.ReceiveTimeout = 1000; // Set the timeout for synchronous receive methods to 1 second (1000 milliseconds.)    
+            TCPClient.SendTimeout = 1000; // Set the timeout for synchronous send methods to 1 second (1000 milliseconds.)	
+            //TCPClient.Client.Ttl = 10;            
+
+            EnsureConnectionState(ManagerConnectionStatus.SOCKETCONNECTING, null);
+            try
+            {
+                lock (lockSocket)                
+                    mrSocket = new SocketConnection(TCPClient, socketEncoding);
+                
+                result = mrSocket.IsConnected;
+                if (result)
+                {
+                    EnsureSocketConnection(result, null);
+                }
+                else
+                {
+                    EnsureSocketConnection(result, new Exception("Problem on Connecting"));
+                }
+            }
+            catch (Exception ex)
+            {
+                result = false;
+                EnsureSocketConnection(result, ex);
+            }
+            return result;
+        }
+
         protected internal bool connect()
 		{
 			bool result = false;
-			bool startReader = false;
 
-			lock (lockSocket)
-			{
-				if (mrSocket == null)
-				{
-#if LOGGER
-					logger.Info("Connecting to {0}:{1}", hostname, port);
-#endif
-					try
-					{
-						mrSocket = new SocketConnection(hostname, port, socketEncoding);
-						result = mrSocket.IsConnected;
-					}
-#if LOGGER
-					catch (Exception ex)
-					{
-						logger.Info("Connect - Exception  : {0}", ex.Message);
-#else
-					catch
-					{
-#endif
-						result = false;
-					}
-                    if (result)
-                    {
-                        if (mrReader == null)
-                        {
-                            mrReader = new ManagerReader(this);
-                            mrReaderThread = new Thread(mrReader.Run) { IsBackground = true, Name = "ManagerReader-" + DateTime.Now.Second };
-                            mrReader.Socket = mrSocket;
-                            startReader = true;
-                        }
-                        else
-                        {
-                            mrReader.Socket = mrSocket;
-                        }
+            if (!IsSocketConnected)            
+                result = ConnectSocket();            
 
-                        mrReader.Reinitialize();
-                    }
-                    else
-                    {
-                        mrSocket = null;
-                    }
-				}
-			}
-
-            if (startReader)
+            ThreadState state = mrReaderThread.ThreadState;
+            if (result && state.HasFlag(ThreadState.Unstarted))
             {
+                mrReaderThread.Name = "ManagerReader-" + DateTime.Now.Second;
                 mrReaderThread.Start();
             }
 
-			return IsConnected();
+            return result;
 		}
 		#endregion
 
@@ -1732,22 +1862,11 @@ namespace AsterNET.Manager
 					reconnected = false;
 					enableEvents = true;
 				}
-
-				if (mrReader != null)
-				{
-					if (withDie)
-					{
-						mrReader.Die = true;
-						mrReader = null;
-					}
-					else
-						mrReader.Socket = null;
-				}
-
+                
 				if (this.mrSocket != null)
 				{
-					mrSocket.Close();
-					mrSocket = null;
+					//mrSocket.Close();
+					//mrSocket = null;
 				}
 
 				responseEventHandlers.Clear();
@@ -1787,7 +1906,7 @@ namespace AsterNET.Manager
 				disconnect(false);
 
 				int retryCount = 0;
-				while (reconnectEnable && !mrReader.Die)
+				while (reconnectEnable)
 				{
 					if (retryCount >= reconnectRetryMax)
 						reconnectEnable = false;
@@ -1858,7 +1977,7 @@ namespace AsterNET.Manager
 				enableEvents = true;
 				reconnected = false;
 				disconnect(true);
-				fireEvent(new DisconnectEvent(this, "reconnect not enabled"));
+                fireEvent(new ErrorEvent(this, new Exception("reconnect not enabled")));
 			}
 		}
 		#endregion
@@ -1897,21 +2016,21 @@ namespace AsterNET.Manager
 		{
 			login(timeout);
 		}
-		#endregion
+        
+        #endregion
 
-		#region IsConnected()
-		/// <summary> Returns true if there is a socket connection to the
-		/// asterisk server, false otherwise.
-		/// 
-		/// </summary>
-		/// <returns> true if there is a socket connection to the
-		/// asterisk server, false otherwise.
-		/// </returns>
-		public bool IsConnected()
+        #region IsConnected()
+        /// <summary> Returns true if there is a socket connection to the
+        /// asterisk server, false otherwise.
+        /// 
+        /// </summary>
+        /// <returns> true if there is a socket connection to the
+        /// asterisk server, false otherwise.
+        /// </returns>
+        public bool IsConnected()
 		{
-			bool result = false;
-			lock (lockSocket)
-				result = mrSocket != null && mrSocket.IsConnected;
+			bool result = false;			
+			result = mrSocket != null && IsSocketConnected;
 			return result;
 		}
 		#endregion
@@ -2560,7 +2679,7 @@ namespace AsterNET.Manager
 		{
 		}
 
-		private void fireEvent(ManagerEvent e)
+		public void fireEvent(ManagerEvent e)
 		{
 			if (enableEvents && internalEvent != null)
                 if(UseASyncEvents)

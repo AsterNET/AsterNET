@@ -92,9 +92,9 @@ namespace AsterNET.FastAGI
                 }
                 else
                 {
-                    // var error = "A connection was made with no requests";
 #if LOGGER
-                        logger.Error(error);
+                    var error = "A connection was made with no requests";
+                    logger.Error(error);
 #endif
                 }
             }

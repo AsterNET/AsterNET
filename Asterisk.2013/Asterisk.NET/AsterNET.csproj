@@ -271,6 +271,7 @@
     <Compile Include="Manager\Event\MasqueradeEvent.cs" />
     <Compile Include="Manager\Exceptions\AuthenticationFailedException.cs" />
     <Compile Include="Manager\IActionVariable.cs" />
+    <Compile Include="Manager\ManagerConnectionStatus.cs" />
     <Compile Include="Manager\Response\GetConfigResponse.cs" />
     <Compile Include="Manager\Response\OriginateResponse.cs" />
     <Compile Include="Manager\ManagerConnection.cs" />
@@ -360,6 +361,7 @@
     <Compile Include="Manager\Response\ManagerError.cs" />
     <Compile Include="Manager\Response\ManagerResponse.cs" />
     <Compile Include="Manager\Exceptions\TimeoutException.cs" />
+    <Compile Include="Manager\SocketStatusChangedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Util\MD5Support.cs" />
