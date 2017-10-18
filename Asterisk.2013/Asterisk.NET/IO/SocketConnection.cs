@@ -154,8 +154,8 @@ namespace AsterNET.IO
 		/// <summary>connection has already been closed.</summary>
 		public void Write(string s)
 		{
-            writer.Write(encoding.GetBytes(s));
-            writer.Flush();
+			writer.Write(encoding.GetBytes(s));
+			writer.Flush();
 		}
 		#endregion
 
