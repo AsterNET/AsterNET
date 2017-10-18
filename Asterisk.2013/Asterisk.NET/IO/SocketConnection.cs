@@ -155,7 +155,7 @@ namespace AsterNET.IO
 		public void Write(string s)
 		{
 			writer.Write(encoding.GetBytes(s));
-            writer.Flush();
+		    writer.Flush();
 		}
 		#endregion
 
