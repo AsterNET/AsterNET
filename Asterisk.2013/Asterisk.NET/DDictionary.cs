@@ -8,14 +8,13 @@ namespace AsterNET
 {
     public class DDictionary<TKey, TValue> : IDictionary<TKey, TValue>
     {
-        private readonly IDictionary<TKey, TValue> dictionary;
-        private readonly TValue defaultValue;
+        //private readonly object lockThread = new object();
+        private readonly IDictionary<TKey, TValue> dictionary = new Dictionary<TKey, TValue>();
+        private readonly TValue defaultValue = default(TValue);
 
-        public DDictionary()
-        {
-            this.dictionary = new Dictionary<TKey, TValue>();
-            this.defaultValue = default(TValue);
-        }
+        #region CONTRUTORES
+
+        public DDictionary() { }
 
         public DDictionary(IDictionary<TKey, TValue> dictionary, TValue defaultValue)
         {
@@ -23,11 +22,8 @@ namespace AsterNET
             this.defaultValue = defaultValue;
         }
 
-        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
-        {
-            return dictionary.GetEnumerator();
-        }
-
+        #endregion
+        
         #region MODIFICADORES
 
         public void Add(KeyValuePair<TKey, TValue> item)
@@ -59,6 +55,18 @@ namespace AsterNET
             lock(dictionary) dictionary.Clear();
         }
 
+        public TValue this[TKey key]
+        {
+            get
+            {
+                if (!dictionary.TryGetValue(key, out TValue value))
+                    value = defaultValue;
+                return value;
+            }
+
+            set { lock (dictionary) dictionary[key] = value; }
+        }
+
         #endregion
 
         public bool Contains(KeyValuePair<TKey, TValue> item)
@@ -85,47 +93,39 @@ namespace AsterNET
         {
             return dictionary.ContainsKey(key);
         }
-                
+
         public bool TryGetValue(TKey key, out TValue value)
         {
-            if (!dictionary.TryGetValue(key, out value))
-            {
-                value = defaultValue;
-            }
+            bool resultado = !dictionary.TryGetValue(key, out value);
+            if(!resultado) value = defaultValue;
+            return resultado;            
+        }
 
-            return true;
+        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+        {
+            return dictionary.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
             return dictionary.GetEnumerator();
-        }
-
-        public TValue this[TKey key]
-        {
-            get
-            {
-                if (dictionary.ContainsKey(key))
-                    return dictionary[key];
-                else
-                    return defaultValue;
-            }
-
-            set { dictionary[key] = value; }
-        }
+        }        
 
         public ICollection<TKey> Keys
         {
-            get { return dictionary.Keys; }
+            get {
+                var keys = new List<TKey>();
+                lock (dictionary) foreach(TKey key in dictionary.Keys) keys.Add(key);
+                return keys;
+            }
         }
 
         public ICollection<TValue> Values
         {
             get
             {
-                var values = new List<TValue>(dictionary.Values) {
-                    defaultValue
-                };
+                var values = new List<TValue>();
+                lock (dictionary) foreach (TValue value in dictionary.Values) values.Add(value);              
                 return values;
             }
         }

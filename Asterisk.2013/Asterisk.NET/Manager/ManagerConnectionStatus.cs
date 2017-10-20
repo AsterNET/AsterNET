@@ -15,13 +15,15 @@ namespace AsterNET.Manager
         AUTHENTICATED = 6,
         CONNECTING = 7,
         CONNECTED = 8,
+        READING = 9,
         READY = 10,
         IDLE = 0,
         BROKEN = -1,
         SOCKETDISCONNECTED = -2,
-        DISCONNECTED,
-        SOCKETPROBLEM = -3,
-        STREAMPROBLEM = -4,
-        UNAUTHENTICATED = -5
+        DISCONNECTING = -3,
+        DISCONNECTED = -4,
+        SOCKETPROBLEM = -5,
+        STREAMPROBLEM = -6,
+        UNAUTHENTICATED = -7
     }
 }

@@ -188,9 +188,9 @@ namespace AsterNET.Manager.Response
         /// </returns>
         public string GetAttribute(string key)
         {
-            string resultado = string.Empty;
-            attributes.TryGetValue(key.ToLower(Helper.CultureInfo), out resultado);
-            return resultado;
+            if (attributes.ContainsKey(key))            
+                return attributes[key].ToLower(Helper.CultureInfo);
+            else return string.Empty;
         }
 
         #endregion

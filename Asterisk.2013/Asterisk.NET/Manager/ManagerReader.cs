@@ -7,6 +7,7 @@ using AsterNET.IO;
 using AsterNET.Manager.Action;
 using AsterNET.Manager.Event;
 using AsterNET.Manager.Response;
+using System.Threading.Tasks;
 
 namespace AsterNET.Manager
 {
@@ -15,12 +16,10 @@ namespace AsterNET.Manager
 	/// </summary>
 	public class ManagerReader
 	{
-        private Thread ReaderWork;
-        private Thread MountWork;
-
-#if LOGGER
-		private readonly Logger logger = Logger.Instance();
-#endif
+        private Thread ReaderThread;
+        private Thread MountThread;
+        private Task ReaderTask;
+        private Task MountTask;
 
         private readonly ManagerConnection mrConnector;
 		private SocketConnection mrSocket;
@@ -33,10 +32,8 @@ namespace AsterNET.Manager
         public long TotalReceivedBytes;
 
 		public readonly Queue<string> lineQueue = new Queue<string>();
-        
 		
-		private bool wait4identiier;
-		
+		private bool wait4identiier;		
 		
 		private readonly List<string> commandList = new List<string>();
 
@@ -50,8 +47,6 @@ namespace AsterNET.Manager
 		{   
             mrConnector = connection;
             mrConnector.SocketStatusChanged += MrConnector_SocketStatusChanged;
-            ReaderWork = new Thread(ReadTask) { IsBackground = false };
-            MountWork = new Thread(MountTask) { IsBackground = false };
         }
 
         private void MrConnector_SocketStatusChanged(object sender, SocketStatusChangedEventArgs e)
@@ -159,29 +154,85 @@ namespace AsterNET.Manager
         }        
         */
         #endregion
+
         #region INCOMING
 
-        private void ReadTask()
+        string lineBuffer = string.Empty;
+        public void BeginReading()
+        {
+            if (!mrConnector.forcedStop)
+            {
+                if (mrSocket.IsConnected)
+                {
+                    mrConnector.EnsureSocketConnection(true, null);
+                    mrConnector.EnsureConnectionState(ManagerConnectionStatus.READING, null);
+                    
+                    string lineBuffer = string.Empty;
+                    byte[] buffer = new byte[mrSocket.TcpClient.ReceiveBufferSize];
+
+                    mrSocket.NetworkStream.BeginRead(
+                        buffer, 0, buffer.Length,
+                        new AsyncCallback(EndReading),
+                        buffer);
+                }
+            }
+        }
+
+        public void EndReading(IAsyncResult ar)
+        {
+            int numberOfBytesRead = mrSocket.NetworkStream.EndRead(ar);
+            if (numberOfBytesRead != 0)
+            {
+                ReadProccess(numberOfBytesRead, ((byte[])ar.AsyncState), lineBuffer);
+            }            
+            BeginReading();
+            if (lineQueue.Count > 0) BeginMounting();
+        }
+
+        private void ReadProccess(int count, byte[] buffer, string lineBuffer)
+        {
+            mrConnector.EnsureConnectionState(ManagerConnectionStatus.READY, null);
+            try
+            {
+                TotalReceivedBytes += count;
+                mrConnector.lastPacketTime = DateTime.Now;
+                string line = mrSocket.Encoding.GetString(buffer, 0, count);
+                lineBuffer += line;
+                int idx;
+                // \n - because not all dev in Digium use \r\n
+                // .Trim() kill \r
+                lock (((ICollection)lineQueue).SyncRoot)
+                    while (!string.IsNullOrEmpty(lineBuffer) && (idx = lineBuffer.IndexOf("\n")) >= 0)
+                    {
+                        line = idx > 0 ? lineBuffer.Substring(0, idx).Trim() : string.Empty;
+                        lineBuffer = (idx + 1 < lineBuffer.Length
+                            ? lineBuffer.Substring(idx + 1)
+                            : string.Empty);
+                        lineQueue.Enqueue(line);
+                    }
+
+                Contador["Leitura"]++;
+            }
+            catch (Exception ex) { mrConnector.fireEvent(new ErrorEvent(mrConnector, ex)); }
+        }
+
+        private void ReaderWork()
         {
             byte[] lineBytes = new byte[mrSocket.TcpClient.ReceiveBufferSize];
             string lineBuffer = string.Empty;
-
             while (true)
             {
-                bool wait = true;
-
-                if (die) { mrConnector.setDisconnected("Die"); }
-                else
+                if (!mrConnector.forcedStop)
                 {
                     if (mrSocket.IsConnected)
                     {
+                        mrConnector.EnsureConnectionState(ManagerConnectionStatus.READING, null);
                         mrConnector.EnsureSocketConnection(true, null);
                         int count = 0;
                         Exception exRead = null;
                         try
                         {
                             count = mrSocket.NetworkStream.Read(lineBytes, 0, lineBytes.Length);
-                            mrConnector.EnsureConnectionState(ManagerConnectionStatus.READY, null);
                         }
                         catch (Exception ex)
                         {
@@ -192,137 +243,134 @@ namespace AsterNET.Manager
                         if (count == 0 && exRead == null) { mrConnector.setDisconnected("Broken"); }
                         else
                         {
-                            try
-                            {
-                                TotalReceivedBytes += count;
-                                mrConnector.lastPacketTime = DateTime.Now;
-                                Contador["Espera"] = 0;
-                                string line = mrSocket.Encoding.GetString(lineBytes, 0, count);
-                                lineBuffer += line;
-                                int idx;
-                                // \n - because not all dev in Digium use \r\n
-                                // .Trim() kill \r
-                                lock (((ICollection)lineQueue).SyncRoot)
-                                    while (!string.IsNullOrEmpty(lineBuffer) && (idx = lineBuffer.IndexOf("\n")) >= 0)
-                                    {
-                                        line = idx > 0 ? lineBuffer.Substring(0, idx).Trim() : string.Empty;
-                                        lineBuffer = (idx + 1 < lineBuffer.Length
-                                            ? lineBuffer.Substring(idx + 1)
-                                            : string.Empty);
-                                        lineQueue.Enqueue(line);
-                                    }
-
-                                wait = false;
-                                Contador["Leitura"]++;
-                            }
-                            catch (Exception ex)
-                            {
-                                mrConnector.fireEvent(new ErrorEvent(mrConnector, ex));
-                            }
+                            ReadProccess(count, lineBytes, lineBuffer);
                         }
                     }
                     else { mrConnector.EnsureSocketConnection(false, new Exception("fail on check connected")); }
                 }
-
-                if (wait) { Contador["Espera"]++; Thread.SpinWait(500); }
             }
         }
 
+        #endregion
+        #region MOUNTING
+
+        bool mounting = false;
         bool processingCommandResult = false;
-        private void MountTask()
+        DDictionary<string, string> packet = new DDictionary<string, string>();
+        private void BeginMounting()
         {            
-            DDictionary<string, string> packet = new DDictionary<string, string>();
-            bool wait = false;
-            while (true)
-            {
+            if (!mrConnector.forcedStop)
+            {                
                 try
                 {
-                    if (lineQueue.Count == 0)
-                    {
-                        wait = true;
-                    }
-                    else
-                    {
-                        string line;
-                        
-                        lock (((ICollection)lineQueue).SyncRoot)
-                            line = lineQueue.Dequeue().Trim();
-
-                        #region processing Response: Follows
-
-                        if (processingCommandResult)
-                        {
-                            string lineLower = line.ToLower(Helper.CultureInfo);
-                            if (lineLower == "--end command--")
-                            {
-                                var commandResponse = new CommandResponse();
-                                Helper.SetAttributes(commandResponse, packet);
-                                commandList.Add(line);
-                                commandResponse.Result = commandList;
-                                processingCommandResult = false;
-                                packet.Clear();
-                                mrConnector.DispatchResponse(commandResponse);
-                            }
-                            else if (lineLower.StartsWith("privilege: ")
-                                || lineLower.StartsWith("actionid: ")
-                                || lineLower.StartsWith("timestamp: ")
-                                || lineLower.StartsWith("server: ")
-                                )
-                                Helper.AddKeyValue(packet, line);
-                            else
-                                commandList.Add(line);
-
-                            continue;
-                        }
-
-                        #endregion
-
-                        #region collect key: value and ProtocolIdentifier
-
-                        if (!string.IsNullOrEmpty(line))
-                        {
-                            if (wait4identiier && line.StartsWith("Asterisk Call Manager"))
-                            {
-                                wait4identiier = false;
-                                var connectEvent = new ConnectEvent(mrConnector);
-                                connectEvent.ProtocolIdentifier = line;
-                                mrConnector.DispatchEvent(connectEvent);
-                                continue;
-                            }
-                            if (line.Trim().ToLower(Helper.CultureInfo) == "response: follows")
-                            {
-                                // Switch to wait "--END COMMAND--" mode
-                                processingCommandResult = true;
-                                packet.Clear();
-                                commandList.Clear();
-                                Helper.AddKeyValue(packet, line);
-                                continue;
-                            }
-                            Helper.AddKeyValue(packet, line);
-                            continue;
-                        }
-
-                        #endregion
-
-                        #region process events and responses
-
-                        if (packet.ContainsKey("event"))
-                            mrConnector.DispatchEvent(packet);
-                        else if (packet.ContainsKey("response"))
-                            mrConnector.DispatchResponse(packet);
-
-                        #endregion
-
-                        packet.Clear();
+                    while (lineQueue.Count > 0 && !mounting)
+                    {                        
+                        mounting = true;
+                        MountProccess(packet, processingCommandResult);
+                        mounting = false;
                     }
                 }
                 catch (Exception ex)
                 {
                     mrConnector.fireEvent(new ErrorEvent(mrConnector, ex));
-                    wait = true;
                 }
-                if (wait) { Thread.SpinWait(500); }
             }
+        }
+                
+        private void MountWork()
+        {            
+            while (true)
+            {
+                if (!mrConnector.forcedStop)
+                {
+                    try
+                    {
+                        if (lineQueue.Count > 0)
+                        {
+                            MountProccess(packet, processingCommandResult);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        mrConnector.fireEvent(new ErrorEvent(mrConnector, ex));
+                    }
+                }
+            }
+        }
+
+        
+        private void MountProccess(IDictionary<string, string> packet, bool processingCommandResult)
+        {
+            string line;
+            lock (((ICollection)lineQueue).SyncRoot)
+                line = lineQueue.Dequeue().Trim();
+
+            #region processing Response: Follows
+
+            if (processingCommandResult)
+            {
+                string lineLower = line.ToLower(Helper.CultureInfo);
+                if (lineLower == "--end command--")
+                {
+                    var commandResponse = new CommandResponse();
+                    Helper.SetAttributes(commandResponse, packet);
+                    commandList.Add(line);
+                    commandResponse.Result = commandList;
+                    processingCommandResult = false;
+                    lock (packet) packet.Clear();
+                    mrConnector.DispatchResponse(commandResponse);
+                }
+                else if (lineLower.StartsWith("privilege: ")
+                    || lineLower.StartsWith("actionid: ")
+                    || lineLower.StartsWith("timestamp: ")
+                    || lineLower.StartsWith("server: ")
+                    )
+                    Helper.AddKeyValue(packet, line);
+                else
+                    commandList.Add(line);
+
+                return;
+            }
+
+            #endregion
+
+            #region collect key: value and ProtocolIdentifier
+
+            if (!string.IsNullOrEmpty(line))
+            {
+                if (wait4identiier && line.StartsWith("Asterisk Call Manager"))
+                {
+                    wait4identiier = false;
+                    var connectEvent = new ConnectEvent(mrConnector);
+                    connectEvent.ProtocolIdentifier = line;
+                    mrConnector.DispatchEvent(connectEvent);
+                    return;
+                }
+                if (line.Trim().ToLower(Helper.CultureInfo) == "response: follows")
+                {
+                    // Switch to wait "--END COMMAND--" mode
+                    processingCommandResult = true;
+                    lock (packet) packet.Clear();
+                    commandList.Clear();
+                    Helper.AddKeyValue(packet, line);
+                    return;
+                }
+                Helper.AddKeyValue(packet, line);
+                return;
+            }
+
+            #endregion
+
+            #region process events and responses
+
+            if (packet.ContainsKey("event"))
+                mrConnector.DispatchEvent(packet);
+            else if (packet.ContainsKey("response"))
+                mrConnector.DispatchResponse(packet);
+
+            #endregion
+
+            lock(packet) packet.Clear();
         }
 
         #endregion
@@ -331,7 +379,6 @@ namespace AsterNET.Manager
         internal void Reinitialize()
 		{
             mrSocket.Initial = false;
-            mrConnector.disconnected = false;
             lineQueue.Clear();
 			commandList.Clear();			
 		    mrConnector.lastPacketTime = DateTime.Now;
@@ -339,64 +386,60 @@ namespace AsterNET.Manager
             processingCommandResult = false;            
         }
 
-		#endregion
+        #endregion
 
-		#region Run()
+        #region Run() / Stop()
 
-		/// <summary>
-		/// Reads line by line from the asterisk server, sets the protocol identifier as soon as it is
-		/// received and dispatches the received events and responses via the associated dispatcher.
-		/// </summary>
-		/// <seealso cref="ManagerConnection.DispatchEvent(ManagerEvent)" />
-		/// <seealso cref="ManagerConnection.DispatchResponse(Response.ManagerResponse)" />
-		/// <seealso cref="ManagerConnection.setProtocolIdentifier(String)" />
-		internal void Run()
-		{
-            if (mrSocket == null)
-            {
-                mrConnector.DispatchEvent(new ErrorEvent(mrConnector, new Exception("unable to run: socket is null")));
-                return;
-            }
-
-            if (ReaderWork.ThreadState != (ThreadState.Running | ThreadState.WaitSleepJoin))
-            {
-                ReaderWork.Name = "ManagerReader Enqueue-" + DateTime.Now.Second;
-                ReaderWork.Start();
-            }
-
-            if (MountWork.ThreadState != (ThreadState.Running | ThreadState.WaitSleepJoin))
-            {
-                MountWork.Name = "ManagerReader Mount-" + DateTime.Now.Second;
-                MountWork.Start();
-            }
+        internal void Stop()
+        {
+            if (ReaderThread != null && ReaderThread.IsAlive)            
+                ReaderThread.Abort();
             
-			while (true)
-			{
-				try
-				{
-					while (!die)
-					{
-						if (!is_logoff)
-						{
-                            if (mrSocket == null)                            
-                                mrConnector.setDisconnected("socket is null");
-                            
-                            if (mrConnector.disconnected)                            
-                                mrConnector.setDisconnected("sei lá");                            
-						}                    
-                    }
-					break;
-				}
-				catch(Exception ex)
-				{
-                    mrConnector.fireEvent(new ErrorEvent(mrConnector, ex));
+            if (MountThread != null && MountThread.IsAlive)
+                MountThread.Abort();            
+        }
+
+        /// <summary>
+        /// Reads line by line from the asterisk server, sets the protocol identifier as soon as it is
+        /// received and dispatches the received events and responses via the associated dispatcher.
+        /// </summary>
+        /// <seealso cref="ManagerConnection.DispatchEvent(ManagerEvent)" />
+        /// <seealso cref="ManagerConnection.DispatchResponse(Response.ManagerResponse)" />
+        /// <seealso cref="ManagerConnection.setProtocolIdentifier(String)" />
+        internal void Run()
+		{
+            
+            if (true)
+            {
+                BeginReading();
+                //if (ReaderTask == null || ReaderTask.Status != TaskStatus.Running)
+                //{
+                //    ReaderTask = new Task(ReaderWork);
+                //    ReaderTask.Start();
+                //}
+
+                //if (MountTask == null || MountTask.Status != TaskStatus.Running)
+                //{
+                //    MountTask = new Task(MountWork);
+                //    MountTask.Start();
+                //}
+            }
+            else
+            {
+                if (ReaderThread == null || ReaderThread.IsAlive)
+                {
+                    ReaderThread = new Thread(ReaderWork) { IsBackground = true };
+                    ReaderThread.Name = "ManagerReader Enqueue-" + DateTime.Now.Second;
+                    ReaderThread.Start();
                 }
 
-                if (die)
-					break;
-
-				mrConnector.DispatchEvent(new DisconnectEvent(mrConnector, "unknow error"));
-			}
+                if (MountThread == null || !MountThread.IsAlive)
+                {
+                    MountThread = new Thread(MountWork) { IsBackground = true };
+                    MountThread.Name = "ManagerReader Mount-" + DateTime.Now.Second;
+                    MountThread.Start();
+                }
+            }      
 		}
 
 		#endregion

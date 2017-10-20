@@ -121,6 +121,7 @@ namespace AsterNET.Manager
 		private int port;
 		private string username;
 		private string password;
+        internal bool forcedStop = false; // used on LOGIN AND LOGOFF to manage the connections attemps
 
 		private SocketConnection mrSocket;
 		private Thread mrReaderThread;
@@ -173,10 +174,16 @@ namespace AsterNET.Manager
         /// control logic in your application will need to handle synchronization.
         /// </summary>
 	    public bool UseASyncEvents = false;
+
+        public event EventHandler<ManagerConnectionStatusChangedEventArgs> ManagerConnectionStatusChanged;
         public ManagerConnectionStatus ConnectionStatus { get; internal set; }
         public void EnsureConnectionState(ManagerConnectionStatus state, Exception ex)
         {
-            ConnectionStatus = state;
+            if (ConnectionStatus != state)
+            {
+                ConnectionStatus = state;
+                ManagerConnectionStatusChanged?.Invoke(this, new ManagerConnectionStatusChangedEventArgs(state, ex));
+            }
             if (ex != null)
                 fireEvent(new ErrorEvent(this, ex));
         }
@@ -184,14 +191,13 @@ namespace AsterNET.Manager
         private TcpClient TCPClient;
 
         public string lastDisconnectReason;
-        public bool disconnected;
         public void setDisconnected(string reason)
         {
-            if (!disconnected)
-            {                
-                disconnected = true;
+            if (IsSocketConnected)
+            {
                 lastDisconnectReason = reason;
-                fireEvent(new DisconnectEvent(this, "disconnect order: " + lastDisconnectReason));
+                if (!mrSocket.IsConnected)                
+                    EnsureSocketConnection(false, new Exception(reason));                
             }
         }
 
@@ -570,9 +576,7 @@ namespace AsterNET.Manager
         /// <summary> Creates a new instance.</summary>
         public ManagerConnection()
 		{
-            mrReader = new ManagerReader(this);
-            
-            mrReaderThread = new Thread(mrReader.Run) { IsBackground = true };
+            mrReader = new ManagerReader(this);            
             KeepAliveWorker = new Thread(KeepAliveWork) { IsBackground = true, Name = "ManagerConnection-" + DateTime.Now.Second };
             //KeepAliveWorker.Start();
 
@@ -1593,7 +1597,8 @@ namespace AsterNET.Manager
 		/// </throws>
 		private void login(int timeout)
 		{
-			enableEvents = false;
+            forcedStop = false; // used on login and logoff
+            enableEvents = false;
 			if (reconnected)
 			{
 #if LOGGER
@@ -1627,13 +1632,13 @@ namespace AsterNET.Manager
                 }
 			} while (string.IsNullOrEmpty(protocolIdentifier));
             
-            EnsureConnectionState(ManagerConnectionStatus.AUTHENTICATING, null);
+            EnsureConnectionState(ManagerConnectionStatus.CHALENGING, null);
 			ChallengeAction challengeAction = new ChallengeAction();
 			Response.ManagerResponse response = SendAction(challengeAction, defaultResponseTimeout * 2);
 			if (response is ChallengeResponse)
 			{
 				ChallengeResponse challengeResponse = (ChallengeResponse)response;
-				string key, challenge = challengeResponse.Challenge;
+				string key = string.Empty, challenge = challengeResponse.Challenge;
 				try
 				{
 					Util.MD5Support md = Util.MD5Support.GetInstance();
@@ -1642,45 +1647,50 @@ namespace AsterNET.Manager
 					if (password != null)
 						md.Update(UTF8Encoding.UTF8.GetBytes(password));
 					key = Helper.ToHexString(md.DigestData);
-				}
+                    EnsureConnectionState(ManagerConnectionStatus.CHALENGED, null);
+                }
 				catch (Exception ex)
 				{
-					disconnect(true);
-#if LOGGER
-					logger.Error("Unable to create login key using MD5 Message Digest.", ex);
-#endif
-					throw new AuthenticationFailedException("Unable to create login key using MD5 Message Digest.", ex);
+					fireEvent(new ErrorEvent(this, new AuthenticationFailedException("Unable to create login key using MD5 Message Digest.", ex)));
 				}
 
-				Action.LoginAction loginAction = new Action.LoginAction(username, "MD5", key);
-				Response.ManagerResponse loginResponse = SendAction(loginAction);
-				if (loginResponse is Response.ManagerError)
-				{
-                    EnsureConnectionState(ManagerConnectionStatus.UNAUTHENTICATED, new Exception(loginResponse.Message));
-                    disconnect(true);
-					throw new AuthenticationFailedException(loginResponse.Message);
-                }
-                else { EnsureConnectionState(ManagerConnectionStatus.AUTHENTICATED, null); }
+                if (!string.IsNullOrWhiteSpace(key))
+                {
+                    EnsureConnectionState(ManagerConnectionStatus.AUTHENTICATING, null);
+                    Action.LoginAction loginAction = new Action.LoginAction(username, "MD5", key);
+                    Response.ManagerResponse loginResponse = SendAction(loginAction);
+                    if (loginResponse is Response.ManagerError)
+                    {
+                        EnsureConnectionState(ManagerConnectionStatus.UNAUTHENTICATED, new Exception(loginResponse.Message));
+                        disconnect(true);
+                        throw new AuthenticationFailedException(loginResponse.Message);
+                    }
+                    else { EnsureConnectionState(ManagerConnectionStatus.AUTHENTICATED, null); }
 
-				// successfully logged in so assure that we keep trying to reconnect when disconnected
-				reconnectEnable = keepAlive;
+                    // successfully logged in so assure that we keep trying to reconnect when disconnected
+                    reconnectEnable = keepAlive;
 
 #if LOGGER
 				logger.Info("Successfully logged in");
 #endif
-				asteriskVersion = GetDetermineVersion();
+                    asteriskVersion = GetDetermineVersion();
 #if LOGGER
 				logger.Info("Determined Asterisk version: " + asteriskVersion);
 #endif
-				enableEvents = true;
-				ConnectEvent ce = new ConnectEvent(this);
-				ce.ProtocolIdentifier = this.protocolIdentifier;
-				DispatchEvent(ce);
+                    enableEvents = true;
+                    ConnectEvent ce = new ConnectEvent(this);
+                    ce.ProtocolIdentifier = this.protocolIdentifier;
+                    DispatchEvent(ce);
+                }
+                else
+                {
+                    fireEvent(new ErrorEvent(this, new AuthenticationFailedException("ChallengeAction sucessfully but no key was generated")));
+                }
 			}
 			else if (response is ManagerError)
 				throw new ManagerException("Unable login to Asterisk - " + response.Message);
             else if (response is ManagerResponse)            
-                throw new ManagerException("Unable login to Asterisk - " + response.Response + " ;; " + response.Message + " ;; " + response.Attributes.Count);            
+                throw new ManagerException("Unable login to Asterisk - " + response.Response);            
 			else
 				throw new ManagerException("Unknown response during login to Asterisk("+ (response != null) + ") - " + response.GetType().Name + " with message " + response.Message);
 
@@ -1837,14 +1847,16 @@ namespace AsterNET.Manager
 			bool result = false;
 
             if (!IsSocketConnected)            
-                result = ConnectSocket();            
+                result = ConnectSocket();
 
-            ThreadState state = mrReaderThread.ThreadState;
-            if (result && state.HasFlag(ThreadState.Unstarted))
-            {
-                mrReaderThread.Name = "ManagerReader-" + DateTime.Now.Second;
-                mrReaderThread.Start();
-            }
+            if (result) mrReader.Run();
+            
+            //if (result && (mrReaderThread == null || !mrReaderThread.IsAlive))
+            //{
+            //    mrReaderThread = new Thread(mrReader.Run) { IsBackground = true };
+            //    mrReaderThread.Name = "ManagerReader-" + DateTime.Now.Second;
+            //    mrReaderThread.Start();
+            //}
 
             return result;
 		}
@@ -1866,7 +1878,6 @@ namespace AsterNET.Manager
 				if (this.mrSocket != null)
 				{
 					//mrSocket.Close();
-					//mrSocket = null;
 				}
 
 				responseEventHandlers.Clear();
@@ -2041,21 +2052,32 @@ namespace AsterNET.Manager
 		/// </summary>
 		public void Logoff()
 		{
-			lock (lockSocket)
+            forcedStop = true; // used on login and logoff
+            EnsureConnectionState(ManagerConnectionStatus.DISCONNECTING, null);
+            lock (lockSocket)
 			{
 				// stop reconnecting when we got disconnected
 				reconnectEnable = false;
-				if (mrReader != null && mrSocket != null)
-					try
-					{
-						mrReader.IsLogoff = true;
-						SendAction(new Action.LogoffAction());
-					}
-					catch
-					{ }
+                if (mrReader != null && mrSocket != null)
+                {
+                    try
+                    {
+                        mrReader.IsLogoff = true;
+                        SendAction(new Action.LogoffAction());
+                    }
+                    catch
+                    { }
+                    if(mrReaderThread != null && mrReaderThread.IsAlive)
+                        mrReaderThread.Abort();
+                    mrReader.Stop();
+                    mrSocket.Close();
+                }
 			}
 			disconnect(true);
-		}
+            setDisconnected("logoff");
+            if(!IsSocketConnected)
+                EnsureConnectionState(ManagerConnectionStatus.DISCONNECTED, null);
+        }
 		#endregion
 
 		#region SendAction(action)
