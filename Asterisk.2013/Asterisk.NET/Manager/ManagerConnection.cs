@@ -63,12 +63,12 @@ namespace AsterNET.Manager
 	public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
 	public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
 	public delegate void QueueCallerAbandonEventHandler(object sender, Event.QueueCallerAbandonEvent e);
-	public delegate void QueueMemberAddedEventHandler(object sender, Event.QueueMemberAddedEvent e)
+	public delegate void QueueMemberAddedEventHandler(object sender, Event.QueueMemberAddedEvent e);
 	public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
 	public delegate void QueueMemberPausedEventHandler(object sender, Event.QueueMemberPausedEvent e);
 	public delegate void QueueMemberRemovedEventHandler(object sender, Event.QueueMemberRemovedEvent e);
 	public delegate void QueueMemberStatusEventHandler(object sender, Event.QueueMemberStatusEvent e);
-	public delegate void QueueEntryEventHandler(object sender, Event.QueueEntryEvent e);;
+	public delegate void QueueEntryEventHandler(object sender, Event.QueueEntryEvent e);
 	public delegate void QueueMemberEventHandler(object sender, Event.QueueMemberEvent e);
 	public delegate void QueueParamsEventHandler(object sender, Event.QueueParamsEvent e);
 	public delegate void QueueStatusCompleteEventHandler(object sender, Event.QueueStatusCompleteEvent e);
