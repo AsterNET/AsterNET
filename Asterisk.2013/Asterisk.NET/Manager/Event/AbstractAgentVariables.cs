@@ -18,26 +18,26 @@ namespace AsterNET.Manager.Event
 		/// Get/Set the variables to set on the queue call in native asterisk format.<br/>
 		/// Example: "VAR1=abc|VAR2=def".
 		/// </summary>
-        [Obsolete("Don't use this anymore - the delimiter is not server context aware", true)]
-        public string Variable
-        {
-            get { return null; /* return Helper.JoinVariables(variables, Common.GET_VAR_DELIMITER(this.Server), "="); */ }
-            set { /* variables = Helper.ParseVariables(variables, value, Common.GET_VAR_DELIMITER(this.Server)); */ }
-        }
+		[Obsolete("Use GetVariables and SetVariables instead.", true)]
+		public string Variable
+		{
+			get { return null; /* return Helper.JoinVariables(variables, Common.GET_VAR_DELIMITER(this.Server), "="); */ }
+			set { /* variables = Helper.ParseVariables(variables, value, Common.GET_VAR_DELIMITER(this.Server)); */ }
+		}
 		#endregion
 
 		#region GetVariables()
 		/// <summary>
 		/// Get the variables dictionary to set on the originated call.
 		/// </summary>
-        public Dictionary<string, string> GetVariables()
+		public Dictionary<string, string> GetVariables()
 		{
 			return variables;
 		}
 		#endregion
 
-        #region SetVariables(Dictionary<string, string> vars)
-        /// <summary>
+		#region SetVariables(Dictionary<string, string> vars)
+		/// <summary>
 		/// Set the variables dictionary to set on the originated call.
 		/// </summary>
 		public void SetVariables(Dictionary<string, string> vars)
