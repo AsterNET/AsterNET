@@ -159,7 +159,7 @@ namespace AsterNET.Manager.Action
         ///     Example: "VAR1=abc|VAR2=def" sets the channel variables VAR1 to "abc" and VAR2 to "def".
         /// </summary>
         
-        [Obsolete("Don't use this anymore - the delimiter is not server context aware", true)]
+        [Obsolete("Use GetVariables and SetVariables instead.", true)]
         public string Variable
         {
             get { return null; /* return Helper.JoinVariables(variables, Common.GET_VAR_DELIMITER(this.Server), "="); */ }
