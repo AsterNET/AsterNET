@@ -357,6 +357,7 @@
     <Compile Include="Manager\Response\MailboxStatusResponse.cs" />
     <Compile Include="Manager\Response\ManagerError.cs" />
     <Compile Include="Manager\Response\ManagerResponse.cs" />
+    <Compile Include="Manager\ResponseHandlers\TaskResponseHandler.cs" />
     <Compile Include="Manager\Exceptions\TimeoutException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logger.cs" />

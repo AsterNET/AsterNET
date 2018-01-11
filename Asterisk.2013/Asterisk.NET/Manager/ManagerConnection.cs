@@ -10,6 +10,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading.Tasks;
 using AsterNET.IO;
 using AsterNET.Util;
 
@@ -100,6 +101,7 @@ namespace AsterNET.Manager
     public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
     public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
     public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
+	public delegate void MusicOnHoldEventHandler(object sender, MusicOnHoldEvent e);
 
 
 
@@ -518,6 +520,11 @@ namespace AsterNET.Manager
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public event QueueMemberPauseEventHandler QueueMemberPause;
+	    
+        /// <summary>
+        /// Raised when started or stoped music on hold by channel.
+        /// </summary>
+        public event MusicOnHoldEventHandler MusicOnHold;
 
         #endregion
 
@@ -633,6 +640,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 95, typeof(QueueCallerJoinEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 97, typeof(QueueMemberPauseEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 99, typeof(MusicOnHoldEvent));
 
             #endregion
 
@@ -1280,6 +1288,10 @@ namespace AsterNET.Manager
                         {
                             QueueMemberPause(this, (QueueMemberPauseEvent)e);
                         }
+                        break;
+                    case 99:
+                        if (MusicOnHold!=null)
+                            MusicOnHold(this, (MusicOnHoldEvent)e);
                         break;
                     default:
 						if (UnhandledEvent != null)
@@ -1948,8 +1960,42 @@ namespace AsterNET.Manager
 		}
 		#endregion
 
+		#region SendActionAsync
+
+		/// <summary>
+		/// Asynchronously send Action async with default timeout.
+		/// </summary>
+		public Task<ManagerResponse> SendActionAsync(ManagerAction action)
+		{
+			return SendActionAsync(action, null);
+		}
+
+		/// <summary>
+		/// Asynchronously send Action async.
+		/// </summary>
+		/// <param name="action">action to send</param>
+		/// <param name="cancellationToken">cancellation Token</param>
+		public Task<ManagerResponse> SendActionAsync(ManagerAction action, CancellationTokenSource cancellationToken)
+		{
+			var handler = new TaskResponseHandler(action);
+			var source = handler.TaskCompletionSource;
+
+			SendAction(action, handler);
+
+			if (cancellationToken != null)
+				cancellationToken.Token.Register(() => { source.TrySetCanceled(); });
+
+			return source.Task.ContinueWith(x =>
+			{
+				RemoveResponseHandler(handler);
+				return x.Result;
+			});
+		}
+
+		#endregion			
+			
 		#region SendAction(action, responseHandler)
-		public int SendAction(ManagerAction action, ResponseHandler responseHandler)
+		public int SendAction(ManagerAction action, IResponseHandler responseHandler)
 		{
 			if (action == null)
 				throw new ArgumentException("Unable to send action: action is null.");
@@ -2038,7 +2084,11 @@ namespace AsterNET.Manager
 				responseEventHandlers[handler.Hash] = handler;
 		}
 
-		internal void RemoveResponseHandler(IResponseHandler handler)
+        /// <summary>
+        /// Delete an instance of a class <see cref="IResponseHandler"/> from handlers list.
+        /// </summary>
+        /// <param name="handler">Class instance <see cref="IResponseHandler"/>.</param>
+		public void RemoveResponseHandler(IResponseHandler handler)
 		{
 			int hash = handler.Hash;
 			if (hash != 0)
@@ -2047,7 +2097,7 @@ namespace AsterNET.Manager
 						responseHandlers.Remove(hash);
 		}
 
-		internal void RemoveResponseEventHandler(IResponseHandler handler)
+	    internal void RemoveResponseEventHandler(IResponseHandler handler)
 		{
 			int hash = handler.Hash;
 			if (hash != 0)
