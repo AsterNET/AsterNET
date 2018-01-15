@@ -577,7 +577,7 @@ namespace AsterNET.Manager
         /// <param name="port">the port where Asterisk listens for incoming Manager API connections, usually 5038.</param>
         /// <param name="username">the username to use for login</param>
         /// <param name="password">the password to use for login</param>
-        /// <param name="socketEncoding">text encoding to asterisk input/output stream</param>
+        /// <param name="encoding">text encoding to asterisk input/output stream</param>
         public ManagerConnection(string hostname, int port, string username, string password, Encoding encoding)
             : this()
         {
@@ -635,6 +635,7 @@ namespace AsterNET.Manager
             else
             {
                 fireEvent(UnhandledEvent, e);
+                return;
             }
 
             if (fireAllEvents)
