@@ -631,11 +631,11 @@ namespace AsterNET.Manager
             {
                 var currentEvent = registeredEventHandlers[eventHash];
                 currentEvent(e);
+                return;
             }
             else
             {
                 fireEvent(UnhandledEvent, e);
-                return;
             }
 
             if (fireAllEvents)
