@@ -640,7 +640,7 @@ namespace AsterNET.Manager
             if (fireAllEvents)
             {
                 fireEvent(UnhandledEvent, e);
-                }
+            }
         }
         #endregion
 
