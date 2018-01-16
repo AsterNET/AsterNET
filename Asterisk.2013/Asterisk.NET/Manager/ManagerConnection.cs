@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Threading;
 using System.Collections;
 using AsterNET.Manager.Action;
@@ -7,11 +6,9 @@ using AsterNET.Manager.Event;
 using AsterNET.Manager.Response;
 using System.Text.RegularExpressions;
 using System.Text;
-using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Reflection;
 using AsterNET.IO;
-using AsterNET.Util;
 
 namespace AsterNET.Manager
 {
@@ -58,7 +55,7 @@ namespace AsterNET.Manager
         private int reconnectCount;
 
         private Dictionary<int, ConstructorInfo> registeredEventClasses;
-        private Dictionary<int, Action<ManagerEvent>> registeredEventHandlers;
+        private Dictionary<int, Func<ManagerEvent, bool>> registeredEventHandlers;
         private event EventHandler<ManagerEvent> internalEvent;
         private bool fireAllEvents = false;
         private Thread callerThread;
@@ -446,7 +443,7 @@ namespace AsterNET.Manager
 
             Helper.RegisterBuiltinEventClasses(registeredEventClasses);
 
-            registeredEventHandlers = new Dictionary<int, Action<ManagerEvent>>();
+            registeredEventHandlers = new Dictionary<int, Func<ManagerEvent, bool>>();
 
             #region Event mapping table
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentCallbackLoginEvent), arg => fireEvent(AgentCallbackLogin, arg));
@@ -630,12 +627,10 @@ namespace AsterNET.Manager
             if (registeredEventHandlers.ContainsKey(eventHash))
             {
                 var currentEvent = registeredEventHandlers[eventHash];
-                currentEvent(e);
-                return;
-            }
-            else
-            {
-                fireEvent(UnhandledEvent, e);
+                if (currentEvent(e))
+                {
+                    return;
+                }
             }
 
             if (fireAllEvents)
@@ -1900,10 +1895,15 @@ namespace AsterNET.Manager
         /// <typeparam name="T">EventHandler argument</typeparam>
         /// <param name="asterEvent">Event delegate</param>
         /// <param name="arg">ManagerEvent or inherited class. Argument of eventHandler.</param>
-        private void fireEvent<T>(EventHandler<T> asterEvent, ManagerEvent arg) where T : ManagerEvent
+        private bool fireEvent<T>(EventHandler<T> asterEvent, ManagerEvent arg) where T : ManagerEvent
         {
             if (asterEvent != null)
+            {
                 asterEvent(this, (T)arg);
+                return true;
+            }
+
+            return false;
         }
         #endregion
     }

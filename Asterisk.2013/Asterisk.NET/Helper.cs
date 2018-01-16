@@ -874,7 +874,7 @@ namespace AsterNET
 
         #region RegisterEventHandler(Dictionary<int, Action<ManagerEvent>> list, Type eventType, Action<ManagerEvent> action)
 
-        internal static void RegisterEventHandler(Dictionary<int, Action<ManagerEvent>> list, Type eventType, Action<ManagerEvent> action)
+        internal static void RegisterEventHandler(Dictionary<int, Func<ManagerEvent, bool>> list, Type eventType, Func<ManagerEvent, bool> action)
         {
             var eventTypeName = eventType.Name;
             int eventHash = eventTypeName.GetHashCode();
