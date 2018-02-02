@@ -100,8 +100,7 @@ namespace AsterNET.Manager
     public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
     public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
     public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
-
-
+    public delegate void QueueSummaryEventHandler(object sender, Event.QueueSummaryEvent e);
 
     #endregion
 
@@ -519,6 +518,10 @@ namespace AsterNET.Manager
         /// </summary>
         public event QueueMemberPauseEventHandler QueueMemberPause;
 
+        /// <summary>
+        /// Raised when call queue summary
+        /// </summary>
+	    public event QueueSummaryEventHandler QueueSummary;
         #endregion
 
         #region Constructor - ManagerConnection()
@@ -634,6 +637,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 97, typeof(QueueMemberPauseEvent));
 
+            Helper.RegisterEventHandler(registeredEventHandlers, 98, typeof(QueueSummaryEvent));
             #endregion
 
             this.internalEvent += new ManagerEventHandler(internalEventHandler);
@@ -1281,6 +1285,12 @@ namespace AsterNET.Manager
                             QueueMemberPause(this, (QueueMemberPauseEvent)e);
                         }
                         break;
+                    case 98:
+                        if (QueueSummary != null)
+                        {
+                            QueueSummary(this, (QueueSummaryEvent)e);
+                        }
+				        break;
                     default:
 						if (UnhandledEvent != null)
 							UnhandledEvent(this, e);
