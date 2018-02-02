@@ -47,6 +47,7 @@ namespace AsterNET.Manager
 	public delegate void MeetMeJoinEventHandler(object sender, Event.MeetmeJoinEvent e);
 	public delegate void MeetMeLeaveEventHandler(object sender, Event.MeetmeLeaveEvent e);
 	public delegate void MeetMeTalkingEventHandler(object sender, Event.MeetmeTalkingEvent e);
+
 	public delegate void MessageWaitingEventHandler(object sender, Event.MessageWaitingEvent e);
 	public delegate void NewCallerIdEventHandler(object sender, Event.NewCallerIdEvent e);
 	public delegate void NewChannelEventHandler(object sender, Event.NewChannelEvent e);
@@ -100,7 +101,11 @@ namespace AsterNET.Manager
     public delegate void QueueCallerJoinEventHandler(object sender, Event.QueueCallerJoinEvent e);
     public delegate void QueueCallerLeaveEventHandler(object sender, Event.QueueCallerLeaveEvent e);
     public delegate void QueueMemberPauseEventHandler(object sender, Event.QueueMemberPauseEvent e);
-
+    public delegate void ChallengeResponseFailedEventHandler(object sender, Event.ChallengeResponseFailedEvent e);
+    public delegate void InvalidAccountIDEventHandler(object sender, Event.InvalidAccountIDEvent e);
+    public delegate void DeviceStateChangedEventHandler(object sender, Event.DeviceStateChangeEvent e);
+    public delegate void ChallengeSentEventHandler(object sender, Event.ChallengeSentEvent e);
+    public delegate void SuccessfulAuthEventHandler(object sender, Event.SuccessfulAuthEvent e);
 
 
     #endregion
@@ -518,6 +523,31 @@ namespace AsterNET.Manager
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public event QueueMemberPauseEventHandler QueueMemberPause;
+		
+	/// <summary>
+	/// A ChallengeResponseFailed is triggered when a request's attempt to authenticate has been challenged, and the request failed the authentication challenge.
+	/// </summary>
+	public event ChallengeResponseFailedEventHandler ChallengeResponseFailed;
+
+        /// <summary>
+	/// A InvalidAccountID is triggered when a request fails an authentication check due to an invalid account ID.
+	/// </summary>
+	public event InvalidAccountIDEventHandler InvalidAccountID;
+
+        /// <summary>
+	/// A DeviceStateChanged is triggered when a device state changes.
+	/// </summary>
+	public event DeviceStateChangedEventHandler DeviceStateChanged;
+
+        /// <summary>
+	/// A ChallengeSent is triggered when an Asterisk service sends an authentication challenge to a request..
+	/// </summary>
+	public event ChallengeSentEventHandler ChallengeSent;
+
+        /// <summary>
+	/// A SuccessfulAuth is triggered when a request successfully authenticates with a service.
+	/// </summary>
+	public event SuccessfulAuthEventHandler SuccessfulAuth;
 
         #endregion
 
@@ -633,6 +663,12 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, 95, typeof(QueueCallerJoinEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 96, typeof(QueueCallerLeaveEvent));
             Helper.RegisterEventHandler(registeredEventHandlers, 97, typeof(QueueMemberPauseEvent));
+			
+	    Helper.RegisterEventHandler(registeredEventHandlers, 98, typeof(ChallengeResponseFailedEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 99, typeof(InvalidAccountIDEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 100, typeof(DeviceStateChangeEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 101, typeof(ChallengeSentEvent));
+            Helper.RegisterEventHandler(registeredEventHandlers, 102, typeof(SuccessfulAuthEvent));
 
             #endregion
 
@@ -1279,6 +1315,41 @@ namespace AsterNET.Manager
                         if (QueueMemberPause != null)
                         {
                             QueueMemberPause(this, (QueueMemberPauseEvent)e);
+                        }
+                        break;
+		    case 98:
+                        if (ChallengeResponseFailed != null)
+                        {
+                            ChallengeResponseFailed(this, (ChallengeResponseFailedEvent)e);
+                            return;
+                        }
+                        break;
+                    case 99:
+                        if (InvalidAccountID != null)
+                        {
+                            InvalidAccountID(this, (InvalidAccountIDEvent)e);
+                            return;
+                        }
+                        break;
+                    case 100:
+                        if (DeviceStateChanged != null)
+                        {
+                            DeviceStateChanged(this, (DeviceStateChangeEvent)e);
+                            return;
+                        }
+                        break;
+                    case 101:
+                        if (ChallengeSent != null)
+                        {
+                            ChallengeSent(this, (ChallengeSentEvent)e);
+                            return;
+                        }
+                        break;
+                    case 102:
+                        if (SuccessfulAuth != null)
+                        {
+                            SuccessfulAuth(this, (SuccessfulAuthEvent)e);
+                            return;
                         }
                         break;
                     default:
