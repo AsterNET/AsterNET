@@ -39,18 +39,102 @@ namespace AsterNET.Manager.Event
         public string Status { get; set; }
 
         /// <summary>
-        ///     Get/Set the name of channel this agent logged in from or "n/a" if the agent is not logged in.
+        ///     Get/Set the name of channel this agent logged in from or "n/a" if the agent is not logged in.<br />
+        ///     Removed on Asterisk 12 app_agent_pool.so module. Use Channel instead.
         /// </summary>
         public string LoggedInChan { get; set; }
 
         /// <summary>
-        ///     Get/Set the time (in seconds since 01/01/1970) when the agent logged in or 0 if the user is not logged.
+        ///     Get/Set the numerical Caller*ID of the channel this agent is talking toor "n/a" if this agent is talking to nobody.<br />
+        ///     Removed on Asterisk 12 app_agent_pool.so module. Use TalkingToChan instead.
+        /// </summary>
+        public string TalkingTo { get; set; }
+
+        /// <summary>
+        ///     Get/Set BRIDGEPEER value on agent channel.<br />
+        ///     Present if Status value is AGENT_ONCALL.
+        /// </summary>
+        public string TalkingToChan { get; set; }
+
+        /// <summary>
+        ///     Get/Set Epoche time when the agent started talking with the caller.<br />
+        ///     Present if Status value is AGENT_ONCALL.
+        /// </summary>
+        public string CallStarted { get; set; }
+
+        /// <summary>
+        ///     Get/Set the time (in seconds since 01/01/1970).<br />
+        ///     Present if Status value is AGENT_IDLE or AGENT_ONCALL.
         /// </summary>
         public long LoggedInTime { get; set; }
 
         /// <summary>
-        ///     Get/Set the numerical Caller*ID of the channel this agent is talking toor "n/a" if this agent is talking to nobody.
+        ///     Get/Set a numeric code for the channel's current state, related to ChannelStateDesc.
         /// </summary>
-        public string TalkingTo { get; set; }
+        public int ChannelState { get; set; }
+
+        /// <summary>
+        ///     Get/Set a description for the channel's current state.<br />
+        ///     This is one of
+        ///     <dl>
+        ///         <dt>Down</dt>
+        ///         <dt>Rsrvd</dt>
+        ///         <dt>OffHook</dt>
+        ///         <dt>Dialing</dt>
+        ///         <dt>Ring</dt>
+        ///         <dt>Ringing</dt>
+        ///         <dt>Up</dt>
+        ///         <dt>Busy</dt>
+        ///         <dt>Dialing Offhook</dt>
+        ///         <dt>Pre-ring</dt>
+        ///         <dt>Unknown</dt>
+        ///     </dl>
+        /// </summary>
+        public string ChannelStateDesc { get; set; }
+
+        /// <summary>
+        ///     Get/Set the callerID number.
+        /// </summary>
+        public string CallerIDNum { get; set; }
+
+        /// <summary>
+        ///     Get/Set the callerID name.
+        /// </summary>
+        public string CallerIDName { get; set; }
+
+        /// <summary>
+        ///     Get/Set the connected line number.
+        /// </summary>
+        public string ConnectedLineNum { get; set; }
+
+        /// <summary>
+        ///     Get/Set the connected line name.
+        /// </summary>
+        public string ConnectedLineName { get; set; }
+
+        /// <summary>
+        ///     Get/Set the account codee.
+        /// </summary>
+        public string AccountCode { get; set; }
+
+        /// <summary>
+        ///     Get/Set the context.
+        /// </summary>
+        public string Context { get; set; }
+
+        /// <summary>
+        ///     Get/Set the extension.
+        /// </summary>
+        public string Exten { get; set; }
+
+        /// <summary>
+        ///     Get/Set the agent priority.
+        /// </summary>
+        public int Priority { get; set; }
+
+        /// <summary>
+        ///     Get/Set the uniqueid of the oldest channel associated with this channel.
+        /// </summary>
+        public int Linkedid { get; set; }
     }
 }
