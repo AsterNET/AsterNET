@@ -17,6 +17,7 @@ namespace AsterNET.Manager.Event
 
         /// <summary>
         ///     Get/Set bridged channel.
+        ///     Removed from Asterisk 12
         /// </summary>
         public string BridgedChannel { get; set; }
 
