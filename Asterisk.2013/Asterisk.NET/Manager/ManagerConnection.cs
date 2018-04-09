@@ -215,6 +215,8 @@ namespace AsterNET.Manager
             }
         }
 
+        public DateTime dtFirstConnection;
+        public DateTime dtReconnection;
         public int LinesRead { get { if(mrReader != null) return mrReader.Contador["Leitura"]; return 0; } }
         public int Espera { get { if (mrReader != null) return mrReader.Contador["Espera"]; return 0; } }
         public ManagerReader Reader { get { return mrReader; } }
@@ -695,6 +697,7 @@ namespace AsterNET.Manager
 
             this.internalEvent += new ManagerEventHandler(internalEventHandler);
 		}
+
         #endregion
 
         private ResponseHandler pingHandler;
@@ -1827,6 +1830,8 @@ namespace AsterNET.Manager
                 result = mrSocket.IsConnected;
                 if (result)
                 {
+                    if (dtFirstConnection == DateTime.MinValue) dtFirstConnection = DateTime.Now;
+                    else { dtReconnection = DateTime.Now; }
                     EnsureSocketConnection(result, null);
                 }
                 else
@@ -2441,9 +2446,6 @@ namespace AsterNET.Manager
 		/// <seealso cref="ManagerReader" />
 		internal void DispatchResponse(IDictionary<string, string> buffer)
 		{
-#if LOGGER
-			logger.Debug("Dispatch response packet : {0}", Helper.JoinVariables(buffer, ", ", ": "));
-#endif
 			DispatchResponse(buffer, null);
 		}
 
