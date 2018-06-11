@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80ADC18F-2BFC-4B79-B264-5244E4F2FEED}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,13 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET", "Asterisk.NET\AsterNET.csproj", "{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsterNET", "Asterisk.NET\AsterNET.csproj", "{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.WinForm", "Asterisk.NET.WinForm\AsterNET.WinForm.csproj", "{03687626-613A-4E41-8F60-7C7839D6DD5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.Test", "Asterisk.NET.Test\Asterisk.NET.Test\AsterNET.Test.csproj", "{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation", "Documentation\Documentation.shfbproj", "{186124F7-82FA-4562-8B87-33D53A84E8BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.Core", "AsterNET.Core\AsterNET.Core.csproj", "{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,8 +31,8 @@ Global
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
-		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.Build.0 = Travis|Any CPU
+		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.Build.0 = Release|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,8 +50,17 @@ Global
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Travis|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Travis|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0613413-00BE-4165-93DF-A2BB15B9AF45}
 	EndGlobalSection
 EndGlobal
