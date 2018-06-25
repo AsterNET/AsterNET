@@ -10,6 +10,7 @@
     <Authors></Authors>
     <Company></Company>
     <Version>1.2.0</Version>
+    <Configurations>Debug;Release;Travis</Configurations>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='net40'">

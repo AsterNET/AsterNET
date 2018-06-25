@@ -18,8 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.Test", "Asterisk.N
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation", "Documentation\Documentation.shfbproj", "{186124F7-82FA-4562-8B87-33D53A84E8BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.Core", "AsterNET.Core\AsterNET.Core.csproj", "{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,8 +29,8 @@ Global
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.ActiveCfg = Release|Any CPU
-		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.Build.0 = Release|Any CPU
+		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}.Travis|Any CPU.Build.0 = Travis|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03687626-613A-4E41-8F60-7C7839D6DD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,12 +48,6 @@ Global
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
-		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Travis|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE83E29A-391E-4AC7-BDA5-41E9298CC2BF}.Travis|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
