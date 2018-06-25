@@ -12,7 +12,7 @@ namespace AsterNET.Manager.Event
 		public bool Reconnect
 		{
 			get { return this.reconnect; }
-			set { this.reconnect = true; }
+			set { this.reconnect = value; }
 		}
 
 		public ConnectionStateEvent(ManagerConnection source)
