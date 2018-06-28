@@ -1,0 +1,103 @@
+﻿ Action           Privilege        Synopsis
+  ------           ---------        --------
+  [ ] WaitEvent        <none>           Wait for an event to occur
+
+  --Queue Actions
+  [ ] QueueReset       <none>           Reset queue statistics
+  [ ] QueueReload      <none>           Reload a queue, queues, or any sub-section of a queue o
+  [ ] QueueRule        <none>           Queue Rules
+  [ ] QueuePenalty     agent,all        Set the penalty for a queue member
+  [ ] QueueLog         agent,all        Adds custom entry in queue_log
+  [x] QueuePause       agent,all        Makes a queue member temporarily unavailable
+  [x] QueueRemove      agent,all        Remove interface from queue.
+  [x] QueueAdd         agent,all        Add interface to queue.
+  [ ] QueueSummary     <none>           Queue Summary
+  [x] QueueStatus      <none>           Queue Status
+  [ ] Queues           <none>           Queues
+
+  -- Agent Actions
+  [x] AgentLogoff      agent,all        Sets an agent as no longer logged in
+  [x] Agents           agent,all        Lists agents and their status
+
+  -- SKINNY Actions
+  [ ] SKINNYshowline   system,reportin  Show SKINNY line (text format)
+  [ ] SKINNYlines      system,reportin  List SKINNY lines (text format)
+  [ ] SKINNYshowdevic  system,reportin  Show SKINNY device (text format)
+  [ ] SKINNYdevices    system,reportin  List SKINNY devices (text format)
+
+  -- Voicemail Actions
+  [ ] VoicemailUsersL  call,reporting,  List All Voicemail User Information
+  [x] MailboxCount     call,reporting,  Check Mailbox Message Count
+  [x] MailboxStatus    call,reporting,  Check Mailbox
+
+  -- SIP Actions
+  [ ] SIPnotify        system,all       Send a SIP notify
+  [ ] SIPshowregistry  system,reportin  Show SIP registrations (text format)
+  [ ] SIPqualifypeer   system,reportin  Show SIP peer (text format)
+  [x] SIPshowpeer      system,reportin  Show SIP peer (text format)
+  [x] SIPpeers         system,reportin  List SIP peers (text format)
+
+  -- IAX Actions
+  [ ] IAXregistry      system,reportin  Show IAX registrations
+  [ ] IAXnetstats      system,reportin  Show IAX Netstats
+  [ ] IAXpeerlist      system,reportin  List IAX Peers
+  [ ] IAXpeers         system,reportin  List IAX Peers
+
+  -- Call Actions
+  [ ] PlayDTMF         call,all         Play DTMF signal on a specific channel.
+  [ ] Bridge           call,all         Bridge two channels already in the PBX
+  [ ] Park             call,all         Park a channel
+  [x] ParkedCalls      <none>           List parked calls
+  [x] Getvar           call,reporting,  Gets a Channel Variable
+  [x] Setvar           call,all         Set Channel Variable
+  [x] Originate        originate,all    Originate Call
+  [ ] Atxfer           call,all         Attended transfer
+  [ ] Redirect         call,all         Redirect (transfer) a call
+  [x] Hangup           system,call,all  Hangup Channel
+  [ ] SendText         call,all         Send text message to channel
+
+  -- Monitor Actions
+  [ ] UnpauseMonitor   call,all         Unpause monitoring of a channel
+  [ ] PauseMonitor     call,all         Pause monitoring of a channel
+  [x] ChangeMonitor    call,all         Change monitoring filename of a channel
+  [x] StopMonitor      call,all         Stop monitoring a channel
+  [x] Monitor          call,all         Monitor a channel
+  
+  -- AGI Actions
+  [ ] AGI              agi,all          Add an AGI command to execute by Async AGI
+
+  -- AstDB Actions
+  [x] DBDelTree        system,all       Delete DB Tree
+  [x] DBDel            system,all       Delete DB Entry
+  [x] DBPut            system,all       Put DB Entry
+  [x] DBGet            system,reportin  Get DB Entry
+
+  -- System Actions  
+  [ ] ShowDialPlan     config,reportin  List dialplan
+  [ ] ModuleCheck      system,all       Check if module is loaded
+  [ ] ModuleLoad       system,all       Module management
+  [ ] CoreShowChannel  system,reportin  List currently active channels
+  [ ] Reload           system,config,a  Send a reload event
+  [ ] CoreStatus       system,reportin  Show PBX core status variables
+  [ ] CoreSettings     system,reportin  Show PBX core settings (version etc)
+  [x] UpdateConfig     config,all       Update basic configuration
+  [ ] CreateConfig     config,all       Creates an empty file in the configuration directory
+  [ ] GetConfigJSON    system,config,a  Retrieve configuration (JSON format)
+  [x] GetConfig        system,config,a  Retrieve configuration
+  [ ] ListCategories   config,all       List categories in configuration file
+  [ ] ListCommands     <none>           List available manager commands
+  [x] Command          command,all      Execute Asterisk CLI Command
+
+  [x] AbsoluteTimeout  system,call,all  Set Absolute Timeout
+  [x] ExtensionState   call,reporting,  Check Extension Status
+  [x] Status           system,call,rep  Lists channel status
+
+  -- Custom Event Actions
+  [ ] UserEvent        user,all         Send an arbitrary event
+  
+  -- Manager Actions
+  [x] Ping             <none>           Keepalive command
+  [x] Challenge        <none>           Generate Challenge for MD5 Auth
+  [x] Login            <none>           Login Manager
+  [x] Logoff           <none>           Logoff Manager
+  [x] Events           <none>           Control Event Flow
