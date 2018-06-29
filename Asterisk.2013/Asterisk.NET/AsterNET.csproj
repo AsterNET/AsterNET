@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
-    <Compile Include="DDictionary.cs" />
     <Compile Include="FastAGI\AGIChannel.cs" />
     <Compile Include="FastAGI\AGIConnectionHandler.cs" />
     <Compile Include="FastAGI\Exceptions\AGIException.cs" />
@@ -391,6 +390,12 @@
     <Folder Include="Manager\Documentation\Asterisk-1.8.x\" />
     <Folder Include="Manager\Documentation\Asterisk-10\" />
     <Folder Include="Manager\Documentation\Asterisk-11\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DDictionary\DDictionary.csproj">
+      <Project>{954a2c9c-27ac-4eb4-be08-3d7dde7d6d3e}</Project>
+      <Name>DDictionary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
