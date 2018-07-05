@@ -872,7 +872,7 @@ namespace AsterNET
 
         #endregion
 
-        #region RegisterEventHandler(Dictionary<int, Action<ManagerEvent>> list, Type eventType, Action<ManagerEvent> action)
+        #region RegisterEventHandler(Dictionary<int, int> list, int index, Type eventType) 
 
         internal static void RegisterEventHandler(Dictionary<int, Func<ManagerEvent, bool>> list, Type eventType, Func<ManagerEvent, bool> action)
         {

@@ -196,7 +196,7 @@ namespace AsterNET.Manager
         /// A MeetMeLeave is triggered if a channel leaves a meet me conference.<br/>
         /// </summary>
         public event EventHandler<MeetmeLeaveEvent> MeetMeLeave;
-        // public event MeetMeStopTalkingEventHandler MeetMeStopTalking;
+        // public event EventHandler<MeetMeStopTalkingEvent> MeetMeStopTalking;
         /// <summary>
         /// A MeetMeTalkingEvent is triggered when a user starts talking in a meet me conference.<br/>
         /// To enable talker detection you must pass the option 'T' to the MeetMe application.
@@ -222,15 +222,15 @@ namespace AsterNET.Manager
         /// A NewState is triggered when the state of a channel has changed.<br/>
         /// </summary>
         public event EventHandler<NewStateEvent> NewState;
-        // public event OriginateEventHandler Originate;
+        // public event EventHandler<OriginateEvent> Originate;
         /// <summary>
         /// An OriginateFailure is triggered when the execution of an OriginateAction failed.
         /// </summary>
-        // public event OriginateFailureEventHandler OriginateFailure;
+        // public event EventHandler<OriginateFailureEvent> OriginateFailure;
         /// <summary>
         /// An OriginateSuccess is triggered when the execution of an OriginateAction succeeded.
         /// </summary>
-        // public event OriginateSuccessEventHandler OriginateSuccess;
+        // public event EventHandler<OriginateSuccessEvent> OriginateSuccess;
         /// <summary>
         /// An OriginateResponse is triggered when the execution of an Originate.
         /// </summary>
@@ -426,6 +426,36 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<QueueMemberPauseEvent> QueueMemberPause;
 
+        /// <summary>
+        /// A ChallengeResponseFailed is triggered when a request's attempt to authenticate has been challenged, and the request failed the authentication challenge.
+        /// </summary>
+        public event EventHandler<ChallengeResponseFailedEvent> ChallengeResponseFailed;
+
+        /// <summary>
+        /// A InvalidAccountID is triggered when a request fails an authentication check due to an invalid account ID.
+        /// </summary>
+        public event EventHandler<InvalidAccountIDEvent> InvalidAccountID;
+
+        /// <summary>
+        /// A DeviceStateChanged is triggered when a device state changes.
+        /// </summary>
+        public event EventHandler<DeviceStateChangeEvent> DeviceStateChanged;
+
+        /// <summary>
+        /// A ChallengeSent is triggered when an Asterisk service sends an authentication challenge to a request..
+        /// </summary>
+        public event EventHandler<ChallengeSentEvent> ChallengeSent;
+
+        /// <summary>
+        /// A SuccessfulAuth is triggered when a request successfully authenticates with a service.
+        /// </summary>
+        public event EventHandler<SuccessfulAuthEvent> SuccessfulAuth;
+
+        /// <summary>
+        /// Raised when call queue summary
+        /// </summary>
+        public event EventHandler<QueueSummaryEvent> QueueSummary;
+
         #endregion
 
         #region Constructor - ManagerConnection()
@@ -462,7 +492,6 @@ namespace AsterNET.Manager
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DBGetResponseEvent), arg => fireEvent(DBGetResponse, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DialEvent), arg => fireEvent(Dial, arg));
-
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DNDStateEvent), arg => fireEvent(DNDState, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ExtensionStatusEvent), arg => fireEvent(ExtensionStatus, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(HangupEvent), arg => fireEvent(Hangup, arg));
@@ -484,8 +513,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ParkedCallEvent), arg => fireEvent(ParkedCall, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ParkedCallGiveUpEvent), arg => fireEvent(ParkedCallGiveUp, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ParkedCallsCompleteEvent), arg => fireEvent(ParkedCallsComplete, arg));
-            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ParkedCallTimeOutEvent), arg => fireEvent(ParkedCallsComplete, arg));
-            Helper.RegisterEventHandler(registeredEventHandlers, typeof(PeerEntryEvent), arg => fireEvent(ParkedCallTimeOut, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ParkedCallTimeOutEvent), arg => fireEvent(ParkedCallTimeOut, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(PeerEntryEvent), arg => fireEvent(PeerEntry, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(PeerlistCompleteEvent), arg => fireEvent(PeerlistComplete, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(PeerStatusEvent), arg => fireEvent(PeerStatus, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueEntryEvent), arg => fireEvent(QueueEntry, arg));
@@ -540,11 +569,16 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerJoinEvent), arg => fireEvent(QueueCallerJoin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerLeaveEvent), arg => fireEvent(QueueCallerLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberPauseEvent), arg => fireEvent(QueueMemberPause, arg));
-
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeResponseFailedEvent), arg => fireEvent(ChallengeResponseFailed, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(InvalidAccountIDEvent), arg => fireEvent(InvalidAccountID, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(DeviceStateChangeEvent), arg => fireEvent(DeviceStateChanged, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeSentEvent), arg => fireEvent(ChallengeSent, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(SuccessfulAuthEvent), arg => fireEvent(SuccessfulAuth, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueSummaryEvent), arg => fireEvent(QueueSummary, arg));
+            
             #endregion
 
             this.internalEvent += new EventHandler<ManagerEvent>(internalEventHandler);
-
         }
         #endregion
 
@@ -574,7 +608,7 @@ namespace AsterNET.Manager
         /// <param name="port">the port where Asterisk listens for incoming Manager API connections, usually 5038.</param>
         /// <param name="username">the username to use for login</param>
         /// <param name="password">the password to use for login</param>
-        /// <param name="encoding">text encoding to asterisk input/output stream</param>
+        /// <param name="socketEncoding">text encoding to asterisk input/output stream</param>
         public ManagerConnection(string hostname, int port, string username, string password, Encoding encoding)
             : this()
         {
@@ -1180,7 +1214,7 @@ namespace AsterNET.Manager
                 enableEvents = true;
                 reconnected = false;
                 disconnect(true);
-                fireInternalEvent(new DisconnectEvent(this));
+                fireEvent(new DisconnectEvent(this));
             }
         }
         #endregion
@@ -1763,7 +1797,7 @@ namespace AsterNET.Manager
                     ConnectEvent ce = new ConnectEvent(this);
                     ce.Reconnect = true;
                     ce.ProtocolIdentifier = protocolIdentifier;
-                    fireInternalEvent(ce);
+                    fireEvent(ce);
                 }
                 else if (keepAliveAfterAuthenticationFailure)
                     reconnect(true);
@@ -1861,32 +1895,30 @@ namespace AsterNET.Manager
             if (reconnected && e is DisconnectEvent)
             {
                 ((DisconnectEvent)e).Reconnect = true;
-                fireInternalEvent(e);
+                fireEvent(e);
                 reconnect(false);
             }
             else if (!reconnected && reconnectEnable && (e is DisconnectEvent || e is ReloadEvent || e is ShutdownEvent))
             {
                 ((ConnectionStateEvent)e).Reconnect = true;
-                fireInternalEvent(e);
+                fireEvent(e);
                 reconnect(true);
             }
             else
-                fireInternalEvent(e);
+                fireEvent(e);
         }
 
         private void eventComplete(IAsyncResult result)
         {
         }
 
-        private void fireInternalEvent(ManagerEvent e)
+        private void fireEvent(ManagerEvent e)
         {
             if (enableEvents && internalEvent != null)
-            {
                 if (UseASyncEvents)
                     internalEvent.BeginInvoke(this, e, new AsyncCallback(eventComplete), null);
                 else
                     internalEvent.Invoke(this, e);
-            }
         }
 
         /// <summary>

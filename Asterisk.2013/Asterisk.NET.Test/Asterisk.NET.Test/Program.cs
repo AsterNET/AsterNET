@@ -288,8 +288,8 @@ Ctrl-C to exit");
 
 			Console.WriteLine("Redirect Call from " + ORIGINATE_CHANNEL + " to " + ORIGINATE_EXTRA_CHANNEL + " or press ESC.");
 			// Wait for Dial Event from ORIGINATE_CHANNEL
-			EventHandler<DialEvent> de = dam_Dial;
-			manager.Dial += new EventHandler<DialEvent>(de);
+			EventHandler<DialEvent> de = new EventHandler<DialEvent>(dam_Dial);
+			manager.Dial += de;
 			while (transferChannel == null)
 			{
 				System.Threading.Thread.Sleep(100);
@@ -324,7 +324,7 @@ Ctrl-C to exit");
 			Console.WriteLine("Monitor call. Please call " + ORIGINATE_CHANNEL + " and answer or press ESC.");
 			// Wait for Link event
 			EventHandler<LinkEvent> le = new EventHandler<LinkEvent>(dam_Link);
-			manager.Link += new EventHandler<LinkEvent>(le);
+			manager.Link += le;
 			while (monitorChannel == null)
 			{
 				System.Threading.Thread.Sleep(100);
