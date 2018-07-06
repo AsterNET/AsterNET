@@ -44,10 +44,12 @@
         /// <summary>
         ///     Add - Add a filter
         /// </summary>
-        /// <param name="filter"></param>
-        public FilterAction(string filter)
+        /// <param name="filter">Add a filter</param>
+        /// <param name="operation">Filters can be whitelist or blacklist</param>
+        public FilterAction(string filter, string operation = "Add")
         {
             Filter = filter;
+            Operation = operation;
         }
 
         #endregion
