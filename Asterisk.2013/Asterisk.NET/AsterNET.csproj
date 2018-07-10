@@ -167,6 +167,7 @@
     <Compile Include="Manager\Action\DBPutAction.cs" />
     <Compile Include="Manager\Action\EventsAction.cs" />
     <Compile Include="Manager\Action\ExtensionStateAction.cs" />
+    <Compile Include="Manager\Action\FilterAction.cs" />
     <Compile Include="Manager\Action\GetConfigAction.cs" />
     <Compile Include="Manager\Action\GetVarAction.cs" />
     <Compile Include="Manager\Action\HangupAction.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Manager\Action\QueueResetAction.cs" />
     <Compile Include="Manager\Action\QueueRuleAction.cs" />
     <Compile Include="Manager\Action\QueueStatusAction.cs" />
+    <Compile Include="Manager\Action\QueueSummaryAction.cs" />
     <Compile Include="Manager\Action\RedirectAction.cs" />
     <Compile Include="Manager\Action\SetCDRUserFieldAction.cs" />
     <Compile Include="Manager\Action\SetVarAction.cs" />
@@ -256,6 +258,7 @@
     <Compile Include="Manager\Event\QueueMemberPauseEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberPenaltyEvent.cs" />
     <Compile Include="Manager\Event\QueueMemberRinginuseEvent.cs" />
+    <Compile Include="Manager\Event\QueueSummaryEvent.cs" />
     <Compile Include="Manager\Event\RTPReceiverStatEvent.cs" />
     <Compile Include="Manager\Event\RTCPSentEvent.cs" />
     <Compile Include="Manager\Event\RTCPReceivedEvent.cs" />
