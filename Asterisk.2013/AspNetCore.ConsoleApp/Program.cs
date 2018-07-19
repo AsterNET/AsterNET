@@ -1,4 +1,4 @@
-﻿using AspNetCore.AsterNET.Manager;
+﻿using AsterNET.Manager;
 using System;
 
 namespace AspNetCore.ConsoleApp
