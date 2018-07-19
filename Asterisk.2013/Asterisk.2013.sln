@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80ADC18F-2BFC-4B79-B264-5244E4F2FEED}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.Test", "Asterisk.NET.Test\Asterisk.NET.Test\AsterNET.Test.csproj", "{B82B8EBF-8180-401D-8D3A-4BF7CFDB7A08}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation", "Documentation\Documentation.shfbproj", "{186124F7-82FA-4562-8B87-33D53A84E8BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.AsterNET", "AspNetCore.AsterNET\AspNetCore.AsterNET.csproj", "{F709AE64-1E87-40ED-AACB-69A85F84D74D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.ConsoleApp", "AspNetCore.ConsoleApp\AspNetCore.ConsoleApp.csproj", "{FEC87E4D-9978-478F-AAB5-DEA21A8DA322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,8 +52,23 @@ Global
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{F709AE64-1E87-40ED-AACB-69A85F84D74D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F709AE64-1E87-40ED-AACB-69A85F84D74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F709AE64-1E87-40ED-AACB-69A85F84D74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F709AE64-1E87-40ED-AACB-69A85F84D74D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F709AE64-1E87-40ED-AACB-69A85F84D74D}.Travis|Any CPU.ActiveCfg = Debug|Any CPU
+		{F709AE64-1E87-40ED-AACB-69A85F84D74D}.Travis|Any CPU.Build.0 = Debug|Any CPU
+		{FEC87E4D-9978-478F-AAB5-DEA21A8DA322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC87E4D-9978-478F-AAB5-DEA21A8DA322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC87E4D-9978-478F-AAB5-DEA21A8DA322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC87E4D-9978-478F-AAB5-DEA21A8DA322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC87E4D-9978-478F-AAB5-DEA21A8DA322}.Travis|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC87E4D-9978-478F-AAB5-DEA21A8DA322}.Travis|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2146FEF4-2F4D-4633-B4A1-52E9F82D7C04}
 	EndGlobalSection
 EndGlobal
