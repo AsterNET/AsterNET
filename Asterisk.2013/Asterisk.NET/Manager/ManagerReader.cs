@@ -133,9 +133,9 @@ namespace AsterNET.Manager
 				// \n - because not all dev in Digium use \r\n
 				// .Trim() kill \r
 				lock (((ICollection) lineQueue).SyncRoot)
-					while (!string.IsNullOrEmpty(mrReader.lineBuffer) && (idx = mrReader.lineBuffer.IndexOf('\n')) >= 0)
-					{
-						line = idx > 0 ? mrReader.lineBuffer.Substring(0, idx).Trim() : string.Empty;
+                    while (!string.IsNullOrEmpty(mrReader.lineBuffer) && (((idx = mrReader.lineBuffer.IndexOf('\n')) >= 0) || ((idx = mrReader.lineBuffer.IndexOf("\n")) >= 0)))
+                    {
+                        line = idx > 0 ? mrReader.lineBuffer.Substring(0, idx).Trim() : string.Empty;
 						mrReader.lineBuffer = (idx + 1 < mrReader.lineBuffer.Length
 							? mrReader.lineBuffer.Substring(idx + 1)
 							: string.Empty);
