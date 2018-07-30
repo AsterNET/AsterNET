@@ -96,7 +96,7 @@ namespace AsterNET.Manager.Action
         public bool Paused { get; set; }
 
         /// <summary>
-        ///     Get/Set an alternate interface to be used to determine the state of the member.
+        ///     Get/Set an alternate interface to be used to determine the state of the member.<br />
         ///     Available since Asterisk 12.
         /// </summary>
         public string StateInterface { get; set; }
