@@ -1,3 +1,5 @@
 language: csharp
 solution: ./Asterisk.2013/Asterisk.2013.sln
-script: xbuild /p:Configuration=Travis ./Asterisk.2013/Asterisk.2013.sln
+dotnet: 2.0.0
+mono: none
+script: dotnet build ./Asterisk.2013/Asterisk.NET/AsterNET.csproj -c Travis -f netstandard2.0
