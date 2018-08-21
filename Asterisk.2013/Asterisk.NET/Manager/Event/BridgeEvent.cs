@@ -22,7 +22,7 @@ namespace AsterNET.Manager.Event
 
 		public enum BridgeTypes
 		{
-			Unknnown,
+			Unknown,
 			/// <summary> A channel.c bridge </summary>
 			BRIDGE_TYPE_CORE,
 			/// <summary> An RTP peer-2-peer bridge (NAT support only). </summary>
