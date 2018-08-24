@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.Test", "Asterisk.N
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation", "Documentation\Documentation.shfbproj", "{186124F7-82FA-4562-8B87-33D53A84E8BA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.AsterNET", "AspNetCore.AsterNET\AspNetCore.AsterNET.csproj", "{47640C6B-7F9E-43CD-8FF2-663CF2F8B033}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.ConsoleApp", "AspNetCore.ConsoleApp\AspNetCore.ConsoleApp.csproj", "{7E816CCA-3766-4D08-8275-148E9D05FBC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,18 @@ Global
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{186124F7-82FA-4562-8B87-33D53A84E8BA}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{47640C6B-7F9E-43CD-8FF2-663CF2F8B033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47640C6B-7F9E-43CD-8FF2-663CF2F8B033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47640C6B-7F9E-43CD-8FF2-663CF2F8B033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47640C6B-7F9E-43CD-8FF2-663CF2F8B033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47640C6B-7F9E-43CD-8FF2-663CF2F8B033}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{47640C6B-7F9E-43CD-8FF2-663CF2F8B033}.Travis|Any CPU.Build.0 = Travis|Any CPU
+		{7E816CCA-3766-4D08-8275-148E9D05FBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E816CCA-3766-4D08-8275-148E9D05FBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E816CCA-3766-4D08-8275-148E9D05FBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E816CCA-3766-4D08-8275-148E9D05FBC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E816CCA-3766-4D08-8275-148E9D05FBC4}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{7E816CCA-3766-4D08-8275-148E9D05FBC4}.Travis|Any CPU.Build.0 = Travis|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
