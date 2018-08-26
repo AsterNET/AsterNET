@@ -15,14 +15,14 @@ namespace AsterNET.Manager.Action
     public class AgentCallbackLoginAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty AgentCallbackLoginAction.
+        ///     Creates a new empty <see cref="AgentCallbackLoginAction"/>.
         /// </summary>
         public AgentCallbackLoginAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new AgentCallbackLoginAction, that logs in the given agent at
+        ///     Creates a new <see cref="AgentCallbackLoginAction"/>, that logs in the given agent at
         ///     the given callback extension.
         /// </summary>
         /// <param name="agent">the name of the agent to log in</param>
@@ -34,7 +34,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new AgentCallbackLoginAction, that logs in the given agent at
+        ///     Creates a new <see cref="AgentCallbackLoginAction"/>, that logs in the given agent at
         ///     the given callback extension in the given context.
         /// </summary>
         /// <param name="agent">the name of the agent to log in</param>

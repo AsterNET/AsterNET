@@ -29,6 +29,11 @@ namespace AsterNET.Manager.Action
 
         #region ActionCompleteEventClass 
 
+        /// <summary>
+        /// Returns the event type that indicates that Asterisk is finished sending response events for this action.
+        /// </summary>
+        /// <returns></returns>
+        /// <seealso cref="T:AsterNET.Manager.Event.ResponseEvent" />
         public override Type ActionCompleteEventClass()
         {
             return typeof (AgentsCompleteEvent);

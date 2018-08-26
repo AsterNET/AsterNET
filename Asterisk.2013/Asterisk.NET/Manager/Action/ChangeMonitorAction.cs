@@ -44,7 +44,7 @@ namespace AsterNET.Manager.Action
         #region ChangeMonitorAction()
 
         /// <summary>
-        ///     Creates a new empty ChangeMonitorAction.
+        ///     Creates a new empty <see cref="ChangeMonitorAction"/>.
         /// </summary>
         public ChangeMonitorAction()
         {
@@ -55,7 +55,7 @@ namespace AsterNET.Manager.Action
         #region ChangeMonitorAction(string channel, string file)
 
         /// <summary>
-        ///     Creates a new ChangeMonitorAction that causes monitoring data for the
+        ///     Creates a new <see cref="ChangeMonitorAction"/> that causes monitoring data for the
         ///     given channel to be written to the given file(s).
         /// </summary>
         /// <param name="channel">the name of the channel that is monitored</param>

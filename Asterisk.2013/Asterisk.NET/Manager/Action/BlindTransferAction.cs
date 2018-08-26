@@ -5,19 +5,22 @@ using System.Text;
 
 namespace AsterNET.Manager.Action
 {
+    /// <summary>
+    ///     Redirect all channels currently bridged to the specified channel to the specified destination.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_BlindTransfer">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_BlindTransfer</see>
+    /// </summary>
     class BlindTransferAction : ManagerAction
     {
         /// <summary>
-        ///     Blind transfer channel(s) to the given destination
-        ///     
-        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_BlindTransfer">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_BlindTransfer</see>
+        ///     Creates a new empty <see cref="BlindTransferAction"/>.
         /// </summary>
         public BlindTransferAction()
         {
         }
 
         /// <summary>
-        ///     Bridge two channels already in the PBX.
+        ///     Creates a new <see cref="BlindTransferAction"/>.
         /// </summary>
         /// <param name="channel"></param>
         /// <param name="context"></param>
@@ -29,15 +32,27 @@ namespace AsterNET.Manager.Action
             Exten = extension;
         }
 
+        /// <summary>
+        ///     Get the name of this action, i.e. "BlindTransfer".
+        /// </summary>
         public override string Action
         {
-            get { return "Bridge"; }
+            get { return "BlindTransfer"; }
         }
 
+        /// <summary>
+        /// Gets or sets the channel.
+        /// </summary>
         public string Channel { get; set; }
 
+        /// <summary>
+        /// Gets or sets the context.
+        /// </summary>
         public string Context { get; set; }
 
+        /// <summary>
+        /// Gets or sets the exten.
+        /// </summary>
         public string Exten { get; set; }
     }
 }

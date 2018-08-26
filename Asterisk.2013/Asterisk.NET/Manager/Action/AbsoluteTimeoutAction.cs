@@ -16,7 +16,7 @@ namespace AsterNET.Manager.Action
         #region AbsoluteTimeoutAction()
 
         /// <summary>
-        ///     Creates a new empty AbsoluteTimeoutAction.
+        ///     Creates a new empty <see cref="AbsoluteTimeoutAction"/>.
         /// </summary>
         public AbsoluteTimeoutAction()
         {
@@ -27,7 +27,7 @@ namespace AsterNET.Manager.Action
         #region AbsoluteTimeoutAction(channel, timeout)
 
         /// <summary>
-        ///     Creates a new AbsoluteTimeoutAction with the given channel and timeout.
+        ///     Creates a new <see cref="AbsoluteTimeoutAction"/> with the given channel and timeout.
         /// </summary>
         /// <param name="channel">the name of the channel</param>
         /// <param name="timeout">the timeout in seconds or 0 to cancel the AbsoluteTimeout</param>

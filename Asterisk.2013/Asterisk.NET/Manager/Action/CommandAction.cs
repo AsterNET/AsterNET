@@ -11,14 +11,14 @@ namespace AsterNET.Manager.Action
         protected internal string command;
 
         /// <summary>
-        ///     Creates a new CommandAction.
+        ///     Creates a new empty <see cref="CommandAction"/>.
         /// </summary>
         public CommandAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new CommandAction with the given command.
+        ///     Creates a new <see cref="CommandAction"/> with the given command.
         /// </summary>
         /// <param name="command">the CLI command to execute.</param>
         public CommandAction(string command)

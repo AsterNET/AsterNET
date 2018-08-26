@@ -9,15 +9,24 @@
     public class AgiAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty AgiAction.
+        ///     Creates a new empty <see cref="AgiAction"/>.
         /// </summary>
+        /// <param name="channel">The channel.</param>
+        /// <param name="command">The command.</param>
         public AgiAction(string channel, string command)
         {
             Channel = channel;
             Command = command;
         }
 
+        /// <summary>
+        /// Gets or sets the channel.
+        /// </summary>
         public string Channel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the command.
+        /// </summary>
         public string Command { get; set; }
 
         /// <summary>

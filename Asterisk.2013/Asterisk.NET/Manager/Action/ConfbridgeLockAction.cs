@@ -8,14 +8,14 @@
     public class ConfbridgeLockAction : ManagerAction
     {
         /// <summary>
-        ///     Locks a specified conference.
+        ///     Creates a new empty <see cref="ConfbridgeLockAction"/>.
         /// </summary>
         public ConfbridgeLockAction()
         {
         }
 
         /// <summary>
-        ///     Locks a specified conference.
+        ///     Creates a new <see cref="ConfbridgeLockAction"/>.
         /// </summary>
         /// <param name="conference"></param>
         public ConfbridgeLockAction(string conference)
@@ -23,8 +23,14 @@
             Conference = conference;
         }
 
+        /// <summary>
+        ///     Gets or sets the conference.
+        /// </summary>
         public string Conference { get; set; }
 
+        /// <summary>
+        ///     Get the name of this action, i.e. "ConfbridgeLock".
+        /// </summary>
         public override string Action
         {
             get { return "ConfbridgeLock"; }

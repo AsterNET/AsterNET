@@ -11,6 +11,9 @@ namespace AsterNET.Manager.Action
     /// </summary>
     public class ConfbridgeListRoomsAction : ManagerActionEvent
     {
+        /// <summary>
+        ///     Get the name of this action, i.e. "ConfbridgeListRooms".
+        /// </summary>
         public override string Action
         {
             get { return "ConfbridgeListRooms"; }

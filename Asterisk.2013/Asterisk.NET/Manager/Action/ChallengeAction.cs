@@ -12,7 +12,7 @@ namespace AsterNET.Manager.Action
     public class ChallengeAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty ChallengeAction with MD5 algorithm
+        ///     Creates a new empty <see cref="ChallengeAction"/> with MD5 algorithm
         /// </summary>
         public ChallengeAction()
         {
@@ -20,7 +20,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new ChallengeAction that requests a new login challenge for use
+        ///     Creates a new <see cref="ChallengeAction"/> that requests a new login challenge for use
         ///     with the given digest algorithm.
         /// </summary>
         /// <param name="authType">the digest alogrithm to use.</param>
