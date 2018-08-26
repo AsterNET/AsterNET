@@ -8,6 +8,8 @@ namespace AsterNET.Manager.Action
     ///     When the timeout is reached the call is returned to the T extension so that
     ///     you can playback an explanatory note to the calling party (the called party will not hear that).<br />
     ///     This action corresponds the the AbsoluteTimeout command used in the dialplan.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AbsoluteTimeout">Asterisk Documentation</see>
     /// </summary>
     public class AbsoluteTimeoutAction : ManagerAction
     {

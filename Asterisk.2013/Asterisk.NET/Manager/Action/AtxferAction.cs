@@ -4,6 +4,8 @@
     {
         /// <summary>
         ///     Attended transfer.
+        ///     
+        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Atxfer">Asterisk Documentation</see>
         /// </summary>
         public AtxferAction()
         {

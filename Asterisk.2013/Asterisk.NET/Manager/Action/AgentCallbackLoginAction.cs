@@ -8,6 +8,9 @@ namespace AsterNET.Manager.Action
     ///     Asterisk's dialplan, you don't need to know the agent's password when logging
     ///     in an agent.<br />
     ///     Available since Asterisk 1.2
+    ///     
+    ///     Deprecated in Asterisk 1.4
+    ///     Removed in Asterisk 1.6
     /// </summary>
     public class AgentCallbackLoginAction : ManagerAction
     {

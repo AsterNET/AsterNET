@@ -2,6 +2,8 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The AgentLogoffAction sets an agent as no longer logged in.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AgentLogoff">Asterisk Documentation</see>
     /// </summary>
     public class AgentLogoffAction : ManagerAction
     {

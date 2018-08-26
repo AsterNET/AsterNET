@@ -8,6 +8,8 @@ namespace AsterNET.Manager.Action
     ///     For each agent an AgentsEvent is generated.
     ///     After the state of all agents has been reported an AgentsCompleteEvent is generated.<br />
     ///     Available since Asterisk 1.2
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Agents">Asterisk Documentation</see>
     /// </summary>
     /// <seealso cref="AsterNET.Manager.Event.AgentsEvent" />
     /// <seealso cref="AsterNET.Manager.Event.AgentsCompleteEvent" />

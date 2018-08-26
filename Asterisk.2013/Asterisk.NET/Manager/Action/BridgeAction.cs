@@ -4,6 +4,8 @@
     {
         /// <summary>
         ///     Bridge two channels already in the PBX.
+        ///     
+        ///     See <see target="_blank"  href="">Asterisk Documentation</see>
         /// </summary>
         public BridgeAction()
         {
