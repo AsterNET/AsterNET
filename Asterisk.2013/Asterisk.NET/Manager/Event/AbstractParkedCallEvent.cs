@@ -5,6 +5,10 @@ namespace AsterNET.Manager.Event
     /// </summary>
     public abstract class AbstractParkedCallEvent : ManagerEvent
     {
+        /// <summary>
+        ///     Creates a new empty <see cref="AbstractParkedCallEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
         public AbstractParkedCallEvent(ManagerConnection source)
             : base(source)
         {
