@@ -1,16 +1,18 @@
 ﻿namespace AsterNET.Manager.Action
 {
     /// <summary>
-    /// Dynamically add filters for the current manager session
-    /// The filters added are only used for the current session. Once the connection is closed the filters are removed.
-    /// This comand requires the system permission because this command can be used to create filters that may bypass filters defined in manager.conf
+    ///     Dynamically add filters for the current manager session
+    ///     The filters added are only used for the current session. Once the connection is closed the filters are removed.
+    ///     This command requires the system permission because this command can be used to create filters that may bypass filters defined in manager.conf
+    /// 
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Filter">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Filter</see>
     /// </summary>
     public class FilterAction : ManagerAction
     {
         #region Action
 
         /// <summary>
-        /// Get the name of this action, i.e. "Filter".
+        ///     Get the name of this action, i.e. "Filter".
         /// </summary>
         public override string Action
         {
@@ -22,7 +24,7 @@
         #region Operation
 
         /// <summary>
-        /// Add - Add a filter
+        ///     Add - Add a filter
         /// </summary>
         public string Operation { get; set; }
 
@@ -31,9 +33,9 @@
         #region Filter
 
         /// <summary>
-        /// Filters can be whitelist or blacklist
-        /// Example whitelist filter: "Event: Newchannel"
-        /// Example blacklist filter: "!Channel: DAHDI.*"
+        ///     Filters can be whitelist or blacklist
+        ///     Example whitelist filter: "Event: Newchannel"
+        ///     Example blacklist filter: "!Channel: DAHDI.*"
         /// </summary>
         public string Filter { get; set; }
 
