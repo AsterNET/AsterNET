@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>186124f7-82fa-4562-8b87-33d53a84e8ba</ProjectGuid>
-    <SHFBSchemaVersion>2017.9.26.0</SHFBSchemaVersion>
+    <SHFBSchemaVersion>1.9.9.0</SHFBSchemaVersion>
     <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
     <AssemblyName>Documentation</AssemblyName>
     <RootNamespace>Documentation</RootNamespace>
@@ -49,17 +49,16 @@
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="(global)" isDocumented="False" xmlns="" />
-      <NamespaceSummaryItem name="AsterNET" isDocumented="True" xmlns="">AsterNet</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.FastAGI" isDocumented="True" xmlns="">AsterNet FastAGI</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.FastAGI.Command" isDocumented="True" xmlns="">AsterNet FastAGI Command</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.FastAGI.MappingStrategies" isDocumented="True" xmlns="">AsterNet FastAGI Mapping Strategies</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.IO" isDocumented="True" xmlns="">AsterNet IO</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.Manager" isDocumented="True" xmlns="">AsterNet Manager</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.Manager.Action" isDocumented="True" xmlns="">AsterNet Manager Action</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.Manager.Event" isDocumented="True" xmlns="">AsterNet Manager Event</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.Manager.Response" isDocumented="True" xmlns="">AsterNet Manager Response</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="AsterNET.Util" isDocumented="True" xmlns="">AsterNet Util</NamespaceSummaryItem>
-    </NamespaceSummaries>
+<NamespaceSummaryItem name="AsterNET" isDocumented="True" xmlns="">AsterNet</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.FastAGI" isDocumented="True" xmlns="">AsterNet FastAGI</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.FastAGI.Command" isDocumented="True" xmlns="">AsterNet FastAGI Command</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.FastAGI.MappingStrategies" isDocumented="True" xmlns="">AsterNet FastAGI Mapping Strategies</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.IO" isDocumented="True" xmlns="">AsterNet IO</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.Manager" isDocumented="True" xmlns="">AsterNet Manager</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.Manager.Action" isDocumented="True" xmlns="">AsterNet Manager Action</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.Manager.Event" isDocumented="True" xmlns="">AsterNet Manager Event</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.Manager.Response" isDocumented="True" xmlns="">AsterNet Manager Response</NamespaceSummaryItem>
+<NamespaceSummaryItem name="AsterNET.Util" isDocumented="True" xmlns="">AsterNet Util</NamespaceSummaryItem></NamespaceSummaries>
     <ProjectSummary>
 AsterNET is an open source .NET framework for Asterisk AMI and FastAGI. AsterNET allows you to talk to Asterisk AMI from any .NET application and create FastAGI applications in any .NET language. http://www.xdev.net/projects/asternet/ </ProjectSummary>
   </PropertyGroup>

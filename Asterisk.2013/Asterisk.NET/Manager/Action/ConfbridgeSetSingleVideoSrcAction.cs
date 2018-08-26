@@ -4,6 +4,8 @@
     {
         /// <summary>
         ///     Stops recording a specified conference.
+        ///     
+        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeSetSingleVideoSrc">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeSetSingleVideoSrc</see>
         /// </summary>
         public ConfbridgeSetSingleVideoSrcAction()
         {

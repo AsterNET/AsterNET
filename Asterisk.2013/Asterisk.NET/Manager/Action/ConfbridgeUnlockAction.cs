@@ -4,6 +4,8 @@
     {
         /// <summary>
         ///     Unlocks a specified conference.
+        ///     
+        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeStopRecord">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeStopRecord</see>
         /// </summary>
         public ConfbridgeUnlockAction()
         {

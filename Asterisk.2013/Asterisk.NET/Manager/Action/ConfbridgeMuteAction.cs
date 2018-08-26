@@ -4,6 +4,8 @@
     {
         /// <summary>
         ///     Mutes a specified user in a specified conference.
+        ///     
+        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeMute">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeMute</see>
         /// </summary>
         public ConfbridgeMuteAction()
         {

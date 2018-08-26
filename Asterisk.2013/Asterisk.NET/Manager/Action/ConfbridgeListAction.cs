@@ -12,6 +12,8 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     Lists all users in a particular ConfBridge conference. ConfbridgeList will follow as separate events,
     ///     followed by a final event called ConfbridgeListComplete
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeList">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeList</see>
     /// </summary>
     public class ConfbridgeListAction : ManagerActionEvent
     {

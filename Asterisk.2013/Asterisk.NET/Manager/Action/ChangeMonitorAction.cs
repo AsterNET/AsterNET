@@ -4,6 +4,8 @@ namespace AsterNET.Manager.Action
     ///     The ChangeMonitorAction changes the monitoring filename of a channel.
     ///     It has no effect if the channel is not monitored.<br />
     ///     It is implemented in res/res_monitor.c
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ChangeMonitor">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ChangeMonitor</see>
     /// </summary>
     public class ChangeMonitorAction : ManagerAction
     {

@@ -5,7 +5,7 @@
         /// <summary>
         ///     Bridge two channels already in the PBX.
         ///     
-        ///     See <see target="_blank"  href="">Asterisk Documentation</see>
+        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Bridge">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Bridge</see>
         /// </summary>
         public BridgeAction()
         {

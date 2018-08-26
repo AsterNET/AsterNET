@@ -4,6 +4,8 @@
     {
         /// <summary>
         ///     Stops recording a specified conference.
+        ///     
+        ///     See <see target="_blank"  href="LINK">LINK</see>
         /// </summary>
         public ConfbridgeStopRecordAction()
         {

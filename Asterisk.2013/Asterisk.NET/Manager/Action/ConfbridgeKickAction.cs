@@ -4,6 +4,8 @@
     {
         /// <summary>
         ///     Removes a specified user from a specified conference.
+        ///     
+        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeKick">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeKick</see>
         /// </summary>
         public ConfbridgeKickAction()
         {

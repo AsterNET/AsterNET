@@ -4,6 +4,8 @@ namespace AsterNET.Manager.Action
     ///     The ChallengeAction requests a challenge from the server to use when logging
     ///     in using challenge/response. Sending this action to the asterisk server
     ///     results in a ChallengeResponse being received from the server.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Challenge">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Challenge</see>
     /// </summary>
     /// <seealso cref="Manager.Action.LoginAction" />
     /// <seealso cref="Manager.Response.ChallengeResponse" />

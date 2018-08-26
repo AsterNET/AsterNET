@@ -5,7 +5,7 @@
         /// <summary>
         ///     Generate an Advice of Charge message on a channel.
         ///     
-        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AOCMessage">Asterisk Documentation</see>
+        ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AOCMessage">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AOCMessage</see>
         /// </summary>
         public AOCMessageAction()
         {
