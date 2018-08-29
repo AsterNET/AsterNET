@@ -425,6 +425,10 @@ namespace AsterNET.Manager
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public event EventHandler<QueueMemberPauseEvent> QueueMemberPause;
+        /// <summary>
+        /// Raised when started or stopped music on hold by channel.
+        /// </summary>
+        public event EventHandler<MusicOnHoldEvent> MusicOnHold;
 
         /// <summary>
         /// A ChallengeResponseFailed is triggered when a request's attempt to authenticate has been challenged, and the request failed the authentication challenge.
@@ -569,6 +573,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerJoinEvent), arg => fireEvent(QueueCallerJoin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerLeaveEvent), arg => fireEvent(QueueCallerLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberPauseEvent), arg => fireEvent(QueueMemberPause, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldEvent), arg => fireEvent(MusicOnHold, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeResponseFailedEvent), arg => fireEvent(ChallengeResponseFailed, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(InvalidAccountIDEvent), arg => fireEvent(InvalidAccountID, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DeviceStateChangeEvent), arg => fireEvent(DeviceStateChanged, arg));
@@ -1314,13 +1319,13 @@ namespace AsterNET.Manager
         /// <param name="action">action to send</param>
         /// <param name="timeout">timeout in milliseconds</param>
         /// <returns></returns>
-        public Response.ManagerResponse SendAction(ManagerAction action, int timeOut)
+        public Response.ManagerResponse SendAction(ManagerAction action, int timeout)
         {
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             ResponseHandler handler = new ResponseHandler(action, autoEvent);
 
             int hash = SendAction(action, handler);
-            bool result = autoEvent.WaitOne(timeOut <= 0 ? -1 : timeOut, true);
+            bool result = autoEvent.WaitOne(timeout <= 0 ? -1 : timeout, true);
 
             RemoveResponseHandler(handler);
 
@@ -1331,6 +1336,12 @@ namespace AsterNET.Manager
         #endregion
 
         #region SendAction(action, responseHandler)
+        /// <summary>
+        /// Send action ans with timeout (milliseconds)
+        /// </summary>
+        /// <param name="action">action to send</param>
+        /// <param name="responseHandler">Response Handler</param>
+        /// <returns></returns>
         public int SendAction(ManagerAction action, ResponseHandler responseHandler)
         {
             if (action == null)
