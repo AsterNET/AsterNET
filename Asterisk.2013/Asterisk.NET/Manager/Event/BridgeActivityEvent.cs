@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace AsterNET.Manager.Event
 {
 	/// <summary>
+    ///     
 	/// </summary>
 	public abstract class BridgeActivityEvent : ManagerEvent
 	{
@@ -80,7 +81,11 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string Priority { get; set; }
 
-		#region Constructors
+        #region Constructors        
+        /// <summary>
+        ///     Creates a new <see cref="BridgeActivityEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
         protected BridgeActivityEvent(ManagerConnection source)
             : base(source)
 		{

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AsterNET.Manager.Event
 {
+    /// <summary>
+    ///     Abstract base class providing common properties for Conference Bridge Events.
+    /// </summary>
+    /// <seealso cref="AsterNET.Manager.Event.ManagerEvent" />
     public class AbstractConfbridgeEvent : ManagerEvent
     {
         /// <summary>
@@ -13,10 +17,17 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string Conference { get; set; }
 
+        /// <summary>
+        ///     Creates a new empty <see cref="AbstractConfbridgeEvent"/>.
+        /// </summary>
         public AbstractConfbridgeEvent()
         : base()
         { }
 
+        /// <summary>
+        ///     Creates a new <see cref="AbstractConfbridgeEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
         public AbstractConfbridgeEvent(ManagerConnection source)
 			: base(source)
 		{

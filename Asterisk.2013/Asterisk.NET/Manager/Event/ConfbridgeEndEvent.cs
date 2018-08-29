@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace AsterNET.Manager.Event
 {
+    /// <summary>
+    ///     Raised when a conference ends.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeEnd">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeEnd</see>
+    /// </summary>
     public class ConfbridgeEndEvent : AbstractConfbridgeEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="ConfbridgeEndEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
         public ConfbridgeEndEvent(ManagerConnection source)
 			: base(source)
 		{

@@ -3,24 +3,30 @@ using System.Collections.Generic;
 
 namespace AsterNET.Manager.Event
 {
-	/// <summary>
-	/// A BridgeEvent is triggered when a link between two voice
-	/// channels is established ("Link") or discontinued ("Unlink").
-	/// As of Asterisk 1.6 the Bridge event is reported directly by Asterisk.
-	/// Asterisk versions up to 1.4 report individual events: LinkEvent and UnlinkEvent.
-	/// For maximum compatibily do not use the Link and Unlink events in your code.
-	/// Just use the Bridge event and check for isLink() and isUnlink().
-	/// </summary>
-	public class BridgeEvent : ManagerEvent
+    /// <summary>
+    ///     A BridgeEvent is triggered when a link between two voice
+    ///     channels is established ("Link") or discontinued ("Unlink").
+    ///     As of Asterisk 1.6 the Bridge event is reported directly by Asterisk.
+    ///     Asterisk versions up to 1.4 report individual events: LinkEvent and UnlinkEvent.
+    ///     For maximum compatibly do not use the Link and Unlink events in your code.
+    ///     Just use the Bridge event and check for isLink() and isUnlink().
+    /// </summary>
+    public class BridgeEvent : ManagerEvent
 	{
-		public enum BridgeStates
+        /// <summary>
+        ///     
+        /// </summary>
+        public enum BridgeStates
 		{
 			Unknown,
 			BRIDGE_STATE_LINK,
 			BRIDGE_STATE_UNLINK
 		}
 
-		public enum BridgeTypes
+        /// <summary>
+        ///     
+        /// </summary>
+        public enum BridgeTypes
 		{
 			Unknown,
 			/// <summary> A channel.c bridge </summary>
@@ -47,8 +53,12 @@ namespace AsterNET.Manager.Event
 		private string callerId1;
 		private string callerId2;
 
-		#region Constructors
-		public BridgeEvent(ManagerConnection source)
+        #region Constructors        
+        /// <summary>
+        ///     Creates a new <see cref="BridgeEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
+        public BridgeEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

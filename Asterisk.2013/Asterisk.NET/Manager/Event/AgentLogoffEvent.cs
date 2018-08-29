@@ -3,10 +3,16 @@ namespace AsterNET.Manager.Event
     /// <summary>
     ///     An AgentCallbackLogoffEvent is triggered when an agent that previously logged in using AgentLogin is logged of.
     ///     It is implemented in channels/chan_agent.c
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentLogoff">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentLogoff</see>
     /// </summary>
     /// <seealso cref="Manager.Event.AgentLoginEvent" />
     public class AgentLogoffEvent : ManagerEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="AgentLogoffEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
         public AgentLogoffEvent(ManagerConnection source)
             : base(source)
         {
@@ -17,6 +23,9 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string Agent { get; set; }
 
+        /// <summary>
+        ///     Gets or sets the login time.
+        /// </summary>
         public string LoginTime { get; set; }
     }
 }
