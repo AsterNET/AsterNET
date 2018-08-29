@@ -21,8 +21,6 @@ namespace AsterNET.Manager.Action
     ///     Var-XXXXXX: Variable to work on<br />
     ///     Value-XXXXXX: Value to work on<br />
     ///     Match-XXXXXX: Extra match required to match line
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_UpdateConfig">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_UpdateConfig</see>
     /// </summary>
     public class UpdateConfigAction : ManagerActionResponse
     {
@@ -37,7 +35,7 @@ namespace AsterNET.Manager.Action
         private int actionCounter;
 
         /// <summary>
-        ///     Creates a new <see cref="UpdateConfigAction"/>.
+        ///     Creates a new UpdateConfigAction.
         /// </summary>
         public UpdateConfigAction()
         {
@@ -46,7 +44,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="UpdateConfigAction"/>.
+        ///     Creates a new UpdateConfigAction.
         /// </summary>
         public UpdateConfigAction(string srcFilename, string dstFilename, string reload)
             : this()
@@ -57,7 +55,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="UpdateConfigAction"/>.
+        ///     Creates a new UpdateConfigAction.
         /// </summary>
         public UpdateConfigAction(string srcFilename, string dstFilename, bool reload)
             : this()
@@ -68,7 +66,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="UpdateConfigAction"/>.
+        ///     Creates a new UpdateConfigAction.
         /// </summary>
         public UpdateConfigAction(string srcFilename, string dstFilename)
             : this()

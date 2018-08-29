@@ -6,14 +6,14 @@ namespace AsterNET.Manager.Action
     public class ZapHangupAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="ZapHangupAction"/>.
+        ///     Creates a new empty ZapHangupAction.
         /// </summary>
         public ZapHangupAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="ZapHangupAction"/> that hangs up the given zap channel (the number of the zap channel to hang up).
+        ///     Creates a new ZapHangupAction that hangs up the given zap channel (the number of the zap channel to hang up).
         /// </summary>
         public ZapHangupAction(int zapChannel)
         {

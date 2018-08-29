@@ -9,14 +9,14 @@ namespace AsterNET.Manager.Action
     public class SetCDRUserFieldAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="SetCDRUserFieldAction"/>.
+        ///     Creates a new empty SetCDRUserFieldAction.
         /// </summary>
         public SetCDRUserFieldAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="SetCDRUserFieldAction"/> that sets the user field of the call detail record for the given channel to the
+        ///     Creates a new SetCDRUserFieldAction that sets the user field of the call detail record for the given channel to the
         ///     given value.
         /// </summary>
         /// <param name="channel">the name of the channel</param>
@@ -28,7 +28,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="SetCDRUserFieldAction"/> that sets the user field of the call detail record for the given channel to the
+        ///     Creates a new SetCDRUserFieldAction that sets the user field of the call detail record for the given channel to the
         ///     given value.
         /// </summary>
         /// <param name="channel">the name of the channel</param>

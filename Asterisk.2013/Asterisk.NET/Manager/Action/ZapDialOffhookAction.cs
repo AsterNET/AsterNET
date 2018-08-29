@@ -5,13 +5,13 @@ namespace AsterNET.Manager.Action
     /// </summary>
     public class ZapDialOffhookAction : ManagerAction
     {
-        /// <summary> Creates a new empty <see cref="ZapDialOffhookAction"/>.</summary>
+        /// <summary> Creates a new empty ZapDialOffhookAction.</summary>
         public ZapDialOffhookAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="ZapDialOffhookAction"/> that dials the given number on the given zap channel.
+        ///     Creates a new ZapDialOffhookAction that dials the given number on the given zap channel.
         /// </summary>
         public ZapDialOffhookAction(int zapChannel, string number)
         {

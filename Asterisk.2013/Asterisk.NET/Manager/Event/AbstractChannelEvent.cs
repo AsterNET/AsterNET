@@ -1,9 +1,9 @@
 namespace AsterNET.Manager.Event
 {
-    /// <summary>
-    ///     Abstract base class providing common properties for <see cref="HangupEvent"/>, <see cref="NewChannelEvent"/> and <see cref="NewStateEvent"/>.
-    /// </summary>
-    public abstract class AbstractChannelEvent : ManagerEvent
+	/// <summary>
+	/// Abstract base class providing common properties for HangupEvent, NewChannelEvent and NewStateEvent.
+	/// </summary>
+	public abstract class AbstractChannelEvent : ManagerEvent
 	{
 		private string channelState;
 		private string channelStateDesc;
@@ -16,7 +16,7 @@ namespace AsterNET.Manager.Event
 	    private string connectedLineName;
 
 		/// <summary>
-		///     Get/Set Channel State
+		/// Get/Set Channel State
 		/// </summary>
 		public string ChannelState
 		{
@@ -25,7 +25,7 @@ namespace AsterNET.Manager.Event
 		}
 
 		/// <summary>
-		///     Get/Set Channel State Description
+		/// Get/Set Channel State Description
 		/// </summary>
 		public string ChannelStateDesc
 		{
@@ -34,7 +34,7 @@ namespace AsterNET.Manager.Event
 		}
 
 		/// <summary>
-		///     Get/Set the Caller*ID of the channel if set or &lt;unknown&gt; if none has been set.
+		/// Get/Set the Caller*ID of the channel if set or &lt;unknown&gt; if none has been set.
 		/// </summary>
 		public string CallerId
 		{
@@ -42,7 +42,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerId = value; }
 		}
 		/// <summary>
-		///     Get/Set the Caller*ID of the channel if set or &lt;unknown&gt; if none has been set.
+		/// Get/Set the Caller*ID of the channel if set or &lt;unknown&gt; if none has been set.
 		/// </summary>
 		public string CallerIdNum
 		{
@@ -50,7 +50,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerIdNum = value; }
 		}
 		/// <summary>
-		///     Get/Set the Caller*ID Name of the channel if set or &lt;unknown&gt; if none has been set.
+		/// Get/Set the Caller*ID Name of the channel if set or &lt;unknown&gt; if none has been set.
 		/// </summary>
 		public string CallerIdName
 		{
@@ -58,17 +58,17 @@ namespace AsterNET.Manager.Event
 			set { this.callerIdName = value; }
 		}
 		/// <summary>
-		///     Get/Set the (new) state of the channel.<br/>
-		///     The following states are used:<br/>
-		///     <ul>
-		///         <li>Down</li>
-		///         <li>OffHook</li>
-		///         <li>Dialing</li>
-		///         <li>Ring</li>
-		///         <li>Ringing</li>
-		///         <li>Up</li>
-		///         <li>Busy</li>
-		///     </ul>
+		/// Get/Set the (new) state of the channel.<br/>
+		/// The following states are used:<br/>
+		/// <ul>
+		/// <li>Down</li>
+		/// <li>OffHook</li>
+		/// <li>Dialing</li>
+		/// <li>Ring</li>
+		/// <li>Ringing</li>
+		/// <li>Up</li>
+		/// <li>Busy</li>
+		/// </ul>
 		/// </summary>
 		public string State
 		{
@@ -77,7 +77,7 @@ namespace AsterNET.Manager.Event
 		}
 
 		/// <summary>
-		///     Get/Set channel AccountCode
+		/// Get/Set channel AccountCode
 		/// </summary>
 		public string AccountCode
 		{
@@ -85,29 +85,19 @@ namespace AsterNET.Manager.Event
 			set { this.accountCode = value; }
 		}
 
-        /// <summary>
-        ///     Gets or sets the number of the connected line.
-        /// </summary>
-        public string Connectedlinenum
+	    public string Connectedlinenum
 	    {
 	        get { return connectedLineNum; }
             set { connectedLineNum = value; }
 	    }
 
-        /// <summary>
-        ///     Gets or sets the name of the connected line.
-        /// </summary>
-        public string ConnectedLineName
+	    public string ConnectedLineName
 	    {
 	        get { return connectedLineName; }
 	        set { connectedLineName = value; }
 	    }
 
-        /// <summary>
-        ///     Creates a new empty <see cref="AbstractChannelEvent"/> using the given <see cref="ManagerConnection"/>.
-        /// </summary>
-        /// <param name="source"></param>
-        public AbstractChannelEvent(ManagerConnection source)
+	    public AbstractChannelEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

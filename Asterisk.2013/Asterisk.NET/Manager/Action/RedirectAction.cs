@@ -2,20 +2,18 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     Redirects a given channel (and an optional additional channel) to a new extension.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Redirect">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Redirect</see>
     /// </summary>
     public class RedirectAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="RedirectAction"/>.
+        ///     Creates a new empty RedirectAction.
         /// </summary>
         public RedirectAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="RedirectAction"/> that redirects the given channel to the given context, extension, priority triple.
+        ///     Creates a new RedirectAction that redirects the given channel to the given context, extension, priority triple.
         /// </summary>
         /// <param name="channel">the name of the channel to redirect</param>
         /// <param name="context">the destination context</param>
@@ -30,7 +28,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="RedirectAction"/> that redirects the given channels to the given context, extension, priority triple.
+        ///     Creates a new RedirectAction that redirects the given channels to the given context, extension, priority triple.
         /// </summary>
         /// <param name="channel">the name of the first channel to redirect</param>
         /// <param name="extraChannel">the name of the second channel to redirect</param>

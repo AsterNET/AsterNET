@@ -8,21 +8,18 @@ namespace AsterNET.Manager.Action
     ///     Asterisk's dialplan, you don't need to know the agent's password when logging
     ///     in an agent.<br />
     ///     Available since Asterisk 1.2
-    ///     
-    ///     Deprecated in Asterisk 1.4
-    ///     Removed in Asterisk 1.6
     /// </summary>
     public class AgentCallbackLoginAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="AgentCallbackLoginAction"/>.
+        ///     Creates a new empty AgentCallbackLoginAction.
         /// </summary>
         public AgentCallbackLoginAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="AgentCallbackLoginAction"/>, that logs in the given agent at
+        ///     Creates a new AgentCallbackLoginAction, that logs in the given agent at
         ///     the given callback extension.
         /// </summary>
         /// <param name="agent">the name of the agent to log in</param>
@@ -34,7 +31,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="AgentCallbackLoginAction"/>, that logs in the given agent at
+        ///     Creates a new AgentCallbackLoginAction, that logs in the given agent at
         ///     the given callback extension in the given context.
         /// </summary>
         /// <param name="agent">the name of the agent to log in</param>

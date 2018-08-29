@@ -7,22 +7,20 @@ namespace AsterNET.Manager.Action
     ///     An unsuccessful login results in an ManagerError being received from the
     ///     server with a message set to "Authentication failed" and the socket being
     ///     closed by Asterisk.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Login">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Login</see>
     /// </summary>
     /// <seealso cref="Manager.Action.ChallengeAction" />
     /// <seealso cref="Manager.Response.ManagerError" />
     public class LoginAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="LoginAction"/>.
+        ///     Creates a new empty LoginAction.
         /// </summary>
         public LoginAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="LoginAction"/> that performs a cleartext login.<br />
+        ///     Creates a new LoginAction that performs a cleartext login.<br />
         ///     You should not use cleartext login if you are concerned about security and login with a password hash instead.
         /// </summary>
         /// <param name="username">the username as configured in Asterisk's manager.conf</param>
@@ -35,7 +33,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="LoginAction"/> that performs a login via challenge/response.
+        ///     Creates a new LoginAction that performs a login via challenge/response.
         /// </summary>
         /// <param name="username">the username as configured in Asterisk's manager.conf</param>
         /// <param name="authType">
@@ -51,7 +49,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="LoginAction"/> that performs a login via challenge/response.
+        ///     Creates a new LoginAction that performs a login via challenge/response.
         /// </summary>
         /// <param name="username">the username as configured in Asterisk's manager.conf</param>
         /// <param name="authType">
@@ -81,7 +79,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Get/Set the username as configured in asterisk's manager.conf.
+        ///     Get/Set the username as configured in asterik's manager.conf.
         /// </summary>
         public string Username { get; set; }
 
@@ -93,7 +91,7 @@ namespace AsterNET.Manager.Action
         public string Secret { get; set; }
 
         /// <summary>
-        ///     Get/Set the digest algorithm when using challenge/response.<br />
+        ///     Get/Set the digest alogrithm when using challenge/response.<br />
         ///     The digest algorithm is used to create the key based on the challenge and
         ///     the user's password.<br />
         ///     Currently Asterisk supports only "MD5".

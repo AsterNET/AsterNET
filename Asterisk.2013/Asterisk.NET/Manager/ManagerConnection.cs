@@ -9,7 +9,6 @@ using System.Text;
 using System.Collections.Generic;
 using System.Reflection;
 using AsterNET.IO;
-using System.Threading.Tasks;
 
 namespace AsterNET.Manager
 {
@@ -120,11 +119,6 @@ namespace AsterNET.Manager
         /// An AgentCallbackLogoffEvent is triggered when an agent that previously logged in using AgentLogin is logged of.
         /// </summary>
         public event EventHandler<AgentLogoffEvent> AgentLogoff;
-        /// <summary>
-        /// An AgentRingNoAnswer is triggered when an agent was rang and did not answer.<br/>
-        /// To enable AgentRingNoAnswer you have to set eventwhencalled = yes in queues.conf.<br/>
-        /// </summary>
-        public event EventHandler<AgentRingNoAnswerEvent> AgentRingNoAnswer;
         /// <summary>
         /// An AgentsCompleteEvent is triggered after the state of all agents has been reported in response to an AgentsAction.
         /// </summary>
@@ -431,11 +425,6 @@ namespace AsterNET.Manager
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public event EventHandler<QueueMemberPauseEvent> QueueMemberPause;
-        
-        /// <summary>
-        /// Raised when started or stopped music on hold by channel.
-        /// </summary>
-        public event EventHandler<MusicOnHoldEvent> MusicOnHold;
 
         /// <summary>
         /// A ChallengeResponseFailed is triggered when a request's attempt to authenticate has been challenged, and the request failed the authentication challenge.
@@ -495,7 +484,6 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentDumpEvent), arg => fireEvent(AgentDump, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentLoginEvent), arg => fireEvent(AgentLogin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentLogoffEvent), arg => fireEvent(AgentLogoff, arg));
-            Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentRingNoAnswerEvent), arg => fireEvent(AgentRingNoAnswer, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentsCompleteEvent), arg => fireEvent(AgentsComplete, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentsEvent), arg => fireEvent(Agents, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AlarmClearEvent), arg => fireEvent(AlarmClear, arg));
@@ -581,7 +569,6 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerJoinEvent), arg => fireEvent(QueueCallerJoin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerLeaveEvent), arg => fireEvent(QueueCallerLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberPauseEvent), arg => fireEvent(QueueMemberPause, arg));
-            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldEvent), arg => fireEvent(MusicOnHold, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeResponseFailedEvent), arg => fireEvent(ChallengeResponseFailed, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(InvalidAccountIDEvent), arg => fireEvent(InvalidAccountID, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DeviceStateChangeEvent), arg => fireEvent(DeviceStateChanged, arg));
@@ -1327,13 +1314,13 @@ namespace AsterNET.Manager
         /// <param name="action">action to send</param>
         /// <param name="timeout">timeout in milliseconds</param>
         /// <returns></returns>
-        public Response.ManagerResponse SendAction(ManagerAction action, int timeout)
+        public Response.ManagerResponse SendAction(ManagerAction action, int timeOut)
         {
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             ResponseHandler handler = new ResponseHandler(action, autoEvent);
 
             int hash = SendAction(action, handler);
-            bool result = autoEvent.WaitOne(timeout <= 0 ? -1 : timeout, true);
+            bool result = autoEvent.WaitOne(timeOut <= 0 ? -1 : timeOut, true);
 
             RemoveResponseHandler(handler);
 
@@ -1344,13 +1331,7 @@ namespace AsterNET.Manager
         #endregion
 
         #region SendAction(action, responseHandler)
-        /// <summary>
-        /// Send action ans with timeout (milliseconds)
-        /// </summary>
-        /// <param name="action">action to send</param>
-        /// <param name="responseHandler">Response Handler</param>
-        /// <returns></returns>
-        public int SendAction(ManagerAction action, IResponseHandler responseHandler)
+        public int SendAction(ManagerAction action, ResponseHandler responseHandler)
         {
             if (action == null)
                 throw new ArgumentException("Unable to send action: action is null.");
@@ -1372,43 +1353,6 @@ namespace AsterNET.Manager
             return responseHandler != null ? responseHandler.Hash : 0;
         }
         #endregion
-
-
-
-        #region SendActionAsync(action)
-        /// <summary>
-        /// Asynchronously send Action async with default timeout.
-        /// </summary>
-        /// <param name="action">action to send</param>
-        public Task<ManagerResponse> SendActionAsync(ManagerAction action)
-		{
-			return SendActionAsync(action, null);
-		}
-        #endregion
-
-        #region SendActionAsync(action, timeout)
-        /// <summary>
-        /// Asynchronously send Action async.
-        /// </summary>
-        /// <param name="action">action to send</param>
-        /// <param name="cancellationToken">cancellation Token</param>
-        public Task<ManagerResponse> SendActionAsync(ManagerAction action, CancellationTokenSource cancellationToken)
-		{
-			var handler = new TaskResponseHandler(action);
-			var source = handler.TaskCompletionSource;
-
-			SendAction(action, handler);
-
-			if (cancellationToken != null)
-				cancellationToken.Token.Register(() => { source.TrySetCanceled(); });
-
-			return source.Task.ContinueWith(x =>
-			{
-				RemoveResponseHandler(handler);
-				return x.Result;
-			});
-		}
-		#endregion
 
         #region SendEventGeneratingAction(action)
         public ResponseEvents SendEventGeneratingAction(ManagerActionEvent action)
@@ -1476,11 +1420,7 @@ namespace AsterNET.Manager
                 responseEventHandlers[handler.Hash] = handler;
         }
 
-        /// <summary>
-        /// Delete an instance of a class <see cref="IResponseHandler"/> from handlers list.
-        /// </summary>
-        /// <param name="handler">Class instance <see cref="IResponseHandler"/>.</param>
-		public void RemoveResponseHandler(IResponseHandler handler)
+        internal void RemoveResponseHandler(IResponseHandler handler)
         {
             int hash = handler.Hash;
             if (hash != 0)
@@ -1497,8 +1437,6 @@ namespace AsterNET.Manager
                     if (responseEventHandlers.ContainsKey(hash))
                         responseEventHandlers.Remove(hash);
         }
-
-
 
         private IResponseHandler GetRemoveResponseHandler(int hash)
         {

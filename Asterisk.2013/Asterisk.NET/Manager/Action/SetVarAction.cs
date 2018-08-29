@@ -2,8 +2,6 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The SetVar action sets the value of a channel variable for a given channel.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Setvar">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Setvar</see>
     /// </summary>
     public class SetVarAction : ManagerAction
     {
@@ -17,14 +15,14 @@ namespace AsterNET.Manager.Action
         public string varValue;
 
         /// <summary>
-        ///     Creates a new empty <see cref="SetVarAction"/>.
+        ///     Creates a new empty SetVarAction.
         /// </summary>
         public SetVarAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="SetVarAction"/> that sets the given global variable to a new value.
+        ///     Creates a new SetVarAction that sets the given global variable to a new value.
         /// </summary>
         /// <param name="variable">the name of the global variable to set</param>
         /// <param name="value">the new value</param>
@@ -35,7 +33,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="SetVarAction"/> that sets the given channel variable of the
+        ///     Creates a new SetVarAction that sets the given channel variable of the
         ///     given channel to a new value.
         /// </summary>
         /// <param name="channel">the name of the channel to set the variable on</param>

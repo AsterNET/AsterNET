@@ -3,8 +3,6 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     This class implements the ManagerAction interface
     ///     and can serve as base class for your concrete Action implementations.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+AMI+Actions">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+AMI+Actions</see>
     /// </summary>
     public abstract class ManagerAction
     {
@@ -19,9 +17,6 @@ namespace AsterNET.Manager.Action
 
         #region ActionId 
 
-        /// <summary>
-        /// Gets or sets the action id.
-        /// </summary>
         public string ActionId
         {
             get { return this.actionId; }
@@ -63,9 +58,6 @@ namespace AsterNET.Manager.Action
 
         #endregion
 
-        /// <summary>
-        /// Returns a string that represents this <see cref="ManagerAction" />.
-        /// </summary>
         public override string ToString()
         {
             return Helper.ToString(this);

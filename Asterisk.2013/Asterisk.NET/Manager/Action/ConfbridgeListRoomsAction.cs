@@ -6,14 +6,9 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     Lists data about all active conferences. ConfbridgeListRooms will follow as separate events,
     ///     followed by a final event called ConfbridgeListRoomsComplete.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeListRooms">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ConfbridgeListRooms</see>
     /// </summary>
     public class ConfbridgeListRoomsAction : ManagerActionEvent
     {
-        /// <summary>
-        ///     Get the name of this action, i.e. "ConfbridgeListRooms".
-        /// </summary>
         public override string Action
         {
             get { return "ConfbridgeListRooms"; }

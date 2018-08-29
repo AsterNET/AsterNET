@@ -7,8 +7,6 @@ namespace AsterNET.Manager.Action
     ///     The StatusAction requests the state of all active channels.<br />
     ///     For each active channel a StatusEvent is generated. After the state of all
     ///     channels has been reported a StatusCompleteEvent is generated.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Status">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Status</see>
     /// </summary>
     /// <seealso cref="Manager.Event.StatusEvent" />
     /// <seealso cref="Manager.Event.StatusCompleteEvent" />

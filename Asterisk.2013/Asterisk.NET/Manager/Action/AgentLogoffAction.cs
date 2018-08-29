@@ -2,8 +2,6 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The AgentLogoffAction sets an agent as no longer logged in.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AgentLogoff">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AgentLogoff</see>
     /// </summary>
     public class AgentLogoffAction : ManagerAction
     {
@@ -51,13 +49,13 @@ namespace AsterNET.Manager.Action
 
         #region Constructors - AgentLogoffAction() 
 
-        /// <summary> Creates a new empty <see cref="AgentLogoffAction"/>.</summary>
+        /// <summary> Creates a new empty AgentLogoffAction.</summary>
         public AgentLogoffAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="AgentLogoffAction"/> that logs off the given agent
+        ///     Creates a new AgentLogoffAction that logs off the given agent
         /// </summary>
         /// <param name="agent">the name of the agent to log off.</param>
         public AgentLogoffAction(string agent)
@@ -70,7 +68,7 @@ namespace AsterNET.Manager.Action
         #region Constructors - AgentLogoffAction(string agent, bool soft) 
 
         /// <summary>
-        ///     Creates a new <see cref="AgentLogoffAction"/> that logs off the given agent
+        ///     Creates a new AgentLogoffAction that logs off the given agent
         /// </summary>
         /// <param name="agent">the name of the agent to log off.</param>
         /// <param name="soft">true if exisiting calls should not be hung up on logout.</param>

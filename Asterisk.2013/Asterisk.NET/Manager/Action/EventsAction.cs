@@ -2,20 +2,18 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     With the EventsAction you can specify what kind of events should be sent to this manager connection.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Events">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Events</see>
     /// </summary>
     public class EventsAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty  <see cref="EventsAction"/>.
+        ///     Creates a new empty EventsAction.
         /// </summary>
         public EventsAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="EventsAction"/> that applies the given event mask to the current manager connection.
+        ///     Creates a new EventsAction that applies the given event mask to the current manager connection.
         /// </summary>
         /// <param name="eventMask">
         ///     the event mask.<br />

@@ -3,21 +3,19 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     The MailboxStatusAction checks if a mailbox contains waiting messages.<br />
     ///     The MailboxStatusAction returns a MailboxStatusResponse.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_MailboxStatus">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_MailboxStatus</see>
     /// </summary>
     /// <seealso cref="Manager.Response.MailboxStatusResponse" />
     public class MailboxStatusAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="MailboxStatusAction"/>.
+        ///     Creates a new empty MailboxStatusAction.
         /// </summary>
         public MailboxStatusAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="MailboxStatusAction"/> that checks for waiting messages in the given mailbox.
+        ///     Creates a new MailboxStatusAction that checks for waiting messages in the given mailbox.
         /// </summary>
         /// <param name="mailbox">
         ///     the name of the mailbox to check.<br />

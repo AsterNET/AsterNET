@@ -3,13 +3,11 @@
     /// <summary>
     ///     The ParkAction allows to send a Channel to a Parking lot.<br />
     ///     A successful login is the precondition for sending for that
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Park">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Park</see>
     /// </summary>
     public class ParkAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new <see cref="ParkAction"/>.
+        ///     Creates a new ParkAction.
         /// </summary>
         /// <param name="channel"></param>
         /// <param name="channel2"></param>
@@ -22,11 +20,11 @@
         }
 
         /// <summary>
-        ///     Creates a new <see cref="ParkAction"/>.
+        ///     Creates a new ParkAction.<br />
         /// </summary>
         /// <param name="channel">Set the Channel which should be parked</param>
         /// <param name="channel2">Set the Channel where the Call will end up after the timeout is reached.</param>
-        /// <param name="timeout">Timeout in milliseconds, after timeout is reached call will come back to channel2</param>
+        /// <param name="timeout">Timeout in msec, after timeout is reached call will come back to channel2</param>
         /// <param name="parkinglot">Set the Parking lot.</param>
         public ParkAction(string channel, string channel2, string timeout, string parkinglot)
         {
@@ -55,7 +53,7 @@
         public string Channel2 { get; set; }
 
         /// <summary>
-        ///     Timeout in milliseconds, after timeout is reached call will come back to channel2
+        ///     Timeout in msec, after timeout is reached call will come back to channel2
         /// </summary>
         public string Timeout { get; set; }
 

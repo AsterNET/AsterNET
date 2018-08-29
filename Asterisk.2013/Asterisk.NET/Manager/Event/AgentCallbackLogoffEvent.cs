@@ -18,18 +18,12 @@ namespace AsterNET.Manager.Event
 
         #region LoginChan
 
-        /// <summary>
-        /// Gets or sets the login channel.
-        /// </summary>
         public string LoginChan { get; set; }
 
         #endregion
 
         #region LoginTime
 
-        /// <summary>
-        /// Gets or sets the login time.
-        /// </summary>
         public string LoginTime { get; set; }
 
         #endregion
@@ -46,10 +40,6 @@ namespace AsterNET.Manager.Event
 
         #endregion
 
-        /// <summary>
-        ///     Creates a new <see cref="AgentCallbackLogoffEvent"/> using the given <see cref="ManagerConnection"/>.
-        /// </summary>
-        /// <param name="source">ManagerConnection passed through in the event.</param>
         public AgentCallbackLogoffEvent(ManagerConnection source)
             : base(source)
         {

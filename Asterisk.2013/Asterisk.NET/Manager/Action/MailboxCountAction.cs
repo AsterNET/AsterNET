@@ -3,21 +3,19 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     The MailboxCountAction queries the number of unread and read messages in a mailbox.<br />
     ///     The MailboxCountAction returns a MailboxStatusResponse.
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_MailboxCount">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_MailboxCount</see>
     /// </summary>
     /// <seealso cref="Manager.Response.MailboxCountResponse" />
     public class MailboxCountAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="MailboxCountAction"/>.
+        ///     Creates a new empty MailboxCountAction.
         /// </summary>
         public MailboxCountAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="MailboxCountAction"/> that queries the number of unread and
+        ///     Creates a new MailboxCountAction that queries the number of unread and
         ///     read messages in the given mailbox.
         /// </summary>
         /// <param name="mailbox">

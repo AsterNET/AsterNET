@@ -3,16 +3,10 @@ namespace AsterNET.Manager.Event
     /// <summary>
     ///     An AgentsEvent is triggered for each agent in response to an AgentsAction.<br />
     ///     Available since Asterisk 1.2
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Agents">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Agents</see>
     /// </summary>
     /// <seealso cref="Manager.Action.AgentsAction" />
     public class AgentsEvent : ResponseEvent
     {
-        /// <summary>
-        ///     Creates a new <see cref="AgentsEvent"/> using the given <see cref="ManagerConnection"/>.
-        /// </summary>
-        /// <param name="source"></param>
         public AgentsEvent(ManagerConnection source)
             : base(source)
         {

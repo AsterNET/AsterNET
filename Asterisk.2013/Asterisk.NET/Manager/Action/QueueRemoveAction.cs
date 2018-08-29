@@ -3,20 +3,18 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     The QueueRemoveAction removes a member from a queue.<br />
     ///     It is implemented in apps/app_queue.c
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_QueueRemove">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_QueueRemove</see>
     /// </summary>
     public class QueueRemoveAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="QueueRemoveAction"/>.
+        ///     Creates a new empty QueueRemoveAction.
         /// </summary>
         public QueueRemoveAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="QueueRemoveAction"/> that removes the member on the given interface from the given queue.
+        ///     Creates a new QueueRemoveAction that removes the member on the given interface from the given queue.
         /// </summary>
         /// <param name="queue">the name of the queue the member will be removed from</param>
         /// <param name="iface">the interface of the member to remove</param>

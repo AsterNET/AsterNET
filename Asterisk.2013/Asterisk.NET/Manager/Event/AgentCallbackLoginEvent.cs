@@ -7,10 +7,6 @@ namespace AsterNET.Manager.Event
     /// <seealso cref="Manager.Event.AgentCallbackLogoffEvent" />
     public class AgentCallbackLoginEvent : ManagerEvent
     {
-        /// <summary>
-        ///     Creates a new <see cref="AsterNET.Manager.Event.AgentCallbackLoginEvent"/> using the given <see cref="ManagerConnection"/>.
-        /// </summary>
-        /// <param name="source"></param>
         public AgentCallbackLoginEvent(ManagerConnection source)
             : base(source)
         {
@@ -21,9 +17,6 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string Agent { get; set; }
 
-        /// <summary>
-        ///     Get/Set the channel to login.
-        /// </summary>
         public string LoginChan { get; set; }
     }
 }

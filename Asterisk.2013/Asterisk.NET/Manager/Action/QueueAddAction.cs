@@ -3,20 +3,18 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     The QueueAddAction adds a new member to a queue.<br />
     ///     It is implemented in apps/app_queue.c
-    ///     
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_QueueAdd">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_QueueAdd</see>
     /// </summary>
     public class QueueAddAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty <see cref="QueueAddAction"/>.
+        ///     Creates a new empty QueueAddAction.
         /// </summary>
         public QueueAddAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new <see cref="QueueAddAction"/> that adds a new member on the given interface to the given queue.
+        ///     Creates a new QueueAddAction that adds a new member on the given interface to the given queue.
         /// </summary>
         /// <param name="queue">the name of the queue the new member will be added to</param>
         /// <param name="iface">Sets the interface to add. To add a specific channel just use the channel name, e.g. "SIP/1234".</param>
@@ -27,7 +25,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="QueueAddAction"/> that adds a new member on the given interface to the given queue.
+        ///     Creates a new QueueAddAction that adds a new member on the given interface to the given queue.
         /// </summary>
         /// <param name="queue">the name of the queue the new member will be added to</param>
         /// <param name="iface">Sets the interface to add. To add a specific channel just use the channel name, e.g. "SIP/1234".</param>
@@ -40,7 +38,7 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        ///     Creates a new <see cref="QueueAddAction"/> that adds a new member on the given
+        ///     Creates a new QueueAddAction that adds a new member on the given
         ///     interface to the given queue with the given penalty.
         /// </summary>
         /// <param name="queue">the name of the queue the new member will be added to</param>
