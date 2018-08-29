@@ -6,14 +6,14 @@ namespace AsterNET.Manager.Action
     public class ZapDNDOffAction : ManagerAction
     {
         /// <summary>
-        ///     Creates a new empty ZapDNDOffAction.
+        ///     Creates a new empty <see cref="ZapDNDOffAction"/>.
         /// </summary>
         public ZapDNDOffAction()
         {
         }
 
         /// <summary>
-        ///     Creates a new ZapDNDOffAction that disables "Do Not Disturb" status for the given zap channel.
+        ///     Creates a new <see cref="ZapDNDOffAction"/> that disables "Do Not Disturb" status for the given zap channel.
         /// </summary>
         public ZapDNDOffAction(int zapChannel)
         {

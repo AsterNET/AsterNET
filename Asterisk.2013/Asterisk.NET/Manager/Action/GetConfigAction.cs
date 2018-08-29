@@ -4,18 +4,20 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The GetConfigAction sends a GetConfig command to the asterisk server.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_GetConfig">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_GetConfig</see>
     /// </summary>
     public class GetConfigAction : ManagerActionResponse
     {
         /// <summary>
-        ///     Creates a new GetConfigAction.
+        ///     Creates a new empty <see cref="GetConfigAction"/>.
         /// </summary>
         public GetConfigAction()
         {
         }
 
         /// <summary>
-        ///     Get the name of this action.
+        ///     Creates a new <see cref="GetConfigAction"/> using the given filename.
         /// </summary>
         /// <param name="filename">the configuration filename.</param>
         public GetConfigAction(string filename)
