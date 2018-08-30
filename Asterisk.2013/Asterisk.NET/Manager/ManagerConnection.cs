@@ -120,8 +120,8 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<AgentLogoffEvent> AgentLogoff;
         /// <summary>
-        /// An AgentRingNoAnswer is triggered when an agent was rang and did not answer.<br/>
-        /// To enable AgentRingNoAnswer you have to set eventwhencalled = yes in queues.conf.<br/>
+        /// An AgentRingNoAnswer is triggered when an agent was rang and did not answer.
+        /// To enable AgentRingNoAnswer you have to set eventwhencalled = yes in queues.conf.
         /// </summary>
         public event EventHandler<AgentRingNoAnswerEvent> AgentRingNoAnswer;
         /// <summary>
