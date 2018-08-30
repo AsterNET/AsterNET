@@ -33,7 +33,7 @@
 		}
 
 		/// <summary>
-		/// Get or set state
+		///     Get or set state
 		/// </summary>
 		public MusicOnHoldStates State { get; set; }
 	}
