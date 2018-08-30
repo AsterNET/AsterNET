@@ -6,8 +6,7 @@ using System.Text;
 namespace AsterNET.Manager.Action
 {
     /// <summary>
-    ///     Redirect all channels currently bridged to the specified channel to the specified destination.
-    ///     
+    ///     Redirect all channels currently bridged to the specified channel to the specified destination.<br />
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_BlindTransfer">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_BlindTransfer</see>
     /// </summary>
     class BlindTransferAction : ManagerAction
@@ -41,17 +40,17 @@ namespace AsterNET.Manager.Action
         }
 
         /// <summary>
-        /// Gets or sets the channel.
+        ///     Gets or sets the channel.
         /// </summary>
         public string Channel { get; set; }
 
         /// <summary>
-        /// Gets or sets the context.
+        ///     Gets or sets the context.
         /// </summary>
         public string Context { get; set; }
 
         /// <summary>
-        /// Gets or sets the exten.
+        ///     Gets or sets the extension.
         /// </summary>
         public string Exten { get; set; }
     }
