@@ -12,6 +12,7 @@ namespace AsterNET.Manager.Event
     ///     
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions">https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions</see>
     /// </summary>
+    /// /// <seealso cref="ConfbridgeListEvent" />
     public class ConfbridgeListCompleteEvent : ResponseEvent
     {
         /// <summary>
