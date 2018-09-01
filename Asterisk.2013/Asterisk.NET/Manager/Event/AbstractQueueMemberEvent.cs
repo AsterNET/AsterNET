@@ -73,8 +73,7 @@ namespace AsterNET.Manager.Event
 
         /// <summary>
         ///     When queue member is paused (not accepting calls).<br/>
-        ///     Evaluates <see langword="true"/> if this member has been paused,
-        ///     <see langword="false"/> if not.<br />
+        ///     Evaluates <see langword="true"/> if this member has been paused, <see langword="false"/> if not.<br />
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public bool Paused { get; set; }
@@ -100,15 +99,13 @@ namespace AsterNET.Manager.Event
         public int Status { get; set; }
 
         /// <summary>
-        ///     Evaluates <see langword="true"/> if Ringinuse,
-        ///     <see langword="false"/> if not.<br />
+        ///     Evaluates <see langword="true"/> if Ringinuse, <see langword="false"/> if not.<br />
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public bool Ringinuse { get; set; }
 
         /// <summary>
-        ///     Evaluates <see langword="true"/> if member is in call,
-        ///     <see langword="false"/> after LastCall time is updated.<br />
+        ///     Evaluates <see langword="true"/> if member is in call, <see langword="false"/> after LastCall time is updated.<br />
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+13+Documentation" target="_blank" alt="Asterisk 13 wiki docs">Asterisk 13</see>.
         /// </summary>
         public bool InCall { get; set; }

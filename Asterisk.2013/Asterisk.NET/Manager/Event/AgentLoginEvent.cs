@@ -2,8 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     An AgentLoginEvent is triggered when an agent is successfully logged in using AgentLogin.<br />
-    ///     It is implemented in channels/chan_agent.c
-    ///     
+    ///     It is implemented in channels/chan_agent.c<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentLogin">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentLogin</see>
     /// </summary>
     /// <seealso cref="Manager.Event.AgentLogoffEvent" />
@@ -23,6 +22,9 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string Agent { get; set; }
 
+        /// <summary>
+        ///     Get/Set the name of the login channel
+        /// </summary>
         public string LoginChan { get; set; }
     }
 }
