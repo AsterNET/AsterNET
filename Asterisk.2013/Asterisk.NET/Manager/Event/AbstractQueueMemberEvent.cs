@@ -6,9 +6,9 @@ namespace AsterNET.Manager.Event
     public abstract class AbstractQueueMemberEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new empty <see cref="AbstractQueueMemberEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AbstractQueueMemberEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AbstractQueueMemberEvent(ManagerConnection source)
             : base(source)
         {

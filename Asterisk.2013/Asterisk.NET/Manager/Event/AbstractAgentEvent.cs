@@ -6,9 +6,9 @@ namespace AsterNET.Manager.Event
     public abstract class AbstractAgentEvent : AbstractAgentVariables
     {
         /// <summary>
-        ///     Creates a new empty <see cref="AbstractAgentEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AbstractAgentEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AbstractAgentEvent(ManagerConnection source)
             : base(source)
         {

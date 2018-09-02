@@ -13,9 +13,9 @@ namespace AsterNET.Manager.Event
 		private Dictionary<string, string> variables;
 
         /// <summary>
-        ///     Creates a new empty <see cref="AbstractAgentVariables"/>.
+        ///     Creates a new <see cref="AbstractAgentVariables"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AbstractAgentVariables(ManagerConnection source)
 			: base(source)
 		{ }

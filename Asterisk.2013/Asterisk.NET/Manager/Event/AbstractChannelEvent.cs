@@ -104,9 +104,9 @@ namespace AsterNET.Manager.Event
 	    }
 
         /// <summary>
-        ///     Creates a new empty <see cref="AbstractChannelEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AbstractChannelEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AbstractChannelEvent(ManagerConnection source)
 			: base(source)
 		{

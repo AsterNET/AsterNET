@@ -6,9 +6,9 @@ namespace AsterNET.Manager.Event
     public abstract class AbstractMeetmeEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new empty <see cref="AbstractMeetmeEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new empty <see cref="AbstractMeetmeEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AbstractMeetmeEvent(ManagerConnection source)
             : base(source)
         {
