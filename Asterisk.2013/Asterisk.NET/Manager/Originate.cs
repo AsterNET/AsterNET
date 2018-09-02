@@ -2,6 +2,11 @@ using System.Collections.Generic;
 
 namespace AsterNET.Manager
 {
+    /// <summary>
+    ///     Originates an outbound call and connects it to a specified extension or application.<br/>
+    ///     It will block until the outgoing call fails or gets answered.<br/>
+    ///     At that point, it will exit with the status variable set and dialplan processing will continue.
+    /// </summary>
     public class Originate
     {
         private string account;
@@ -18,9 +23,8 @@ namespace AsterNET.Manager
         #region Account
 
         /// <summary>
-        ///     Get/Set the account code to use for the originated call.
-        ///     The account code is included in the call detail record generated for this
-        ///     call and will be used for billing.
+        ///     Get/Set the account code to use for the originated call.<br/>
+        ///     The account code is included in the call detail record generated for this call and will be used for billing.
         /// </summary>
         public string Account
         {
@@ -60,7 +64,7 @@ namespace AsterNET.Manager
         #region Context
 
         /// <summary>
-        ///     Get/Set the name of the context of the extension to connect to.
+        ///     Get/Set the name of the context of the extension to connect to.<br/>
         ///     If you set the context you also have to set the exten and priority properties.
         /// </summary>
         public string Context
@@ -74,7 +78,7 @@ namespace AsterNET.Manager
         #region Exten
 
         /// <summary>
-        ///     Get/Set the extension to connect to.
+        ///     Get/Set the extension to connect to.<br/>
         ///     If you set the extension you also have to set the context and priority properties.
         /// </summary>
         public string Exten
@@ -88,8 +92,8 @@ namespace AsterNET.Manager
         #region Priority 
 
         /// <summary>
-        ///     Get/Set the priority of the extension to connect to. If you set the priority
-        ///     you also have to set the context and exten properties.
+        ///     Get/Set the priority of the extension to connect to.<br/>
+        ///     If you set the priority you also have to set the context and exten properties.
         /// </summary>
         public int Priority
         {
@@ -129,8 +133,7 @@ namespace AsterNET.Manager
 
         /// <summary>
         ///     Get/Set the timeout for the origination (in seconds) for the origination.<br />
-        ///     The channel must be answered within this time, otherwise the origination
-        ///     is considered to have failed and an OriginateFailureEvent is generated.<br />
+        ///     The channel must be answered within this time, otherwise the origination is considered to have failed and an OriginateFailureEvent is generated.<br />
         ///     If not set, a default value of 30 seconds.
         /// </summary>
         public long Timeout
