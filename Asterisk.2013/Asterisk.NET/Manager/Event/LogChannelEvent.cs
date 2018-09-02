@@ -2,13 +2,18 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A LogChannelEvent is triggered when logging is turned on or off.<br />
-    ///     It is implemented in logger.c<br />
+    ///     It is implemented in logger.c<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+ManagerEvent_LogChannel">https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+ManagerEvent_LogChannel</see>
     /// </summary>
     public class LogChannelEvent : ManagerEvent
     {
         private string reason;
         private int reasonCode;
 
+        /// <summary>
+        ///     Creates a new <see cref="LogChannelEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
         public LogChannelEvent(ManagerConnection source)
             : base(source)
         {

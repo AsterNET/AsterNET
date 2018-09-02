@@ -2,8 +2,8 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     Raised when AsyncAGI completes an AGI command.<br/>
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AsyncAGIExec">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AsyncAGIExec</see>
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart</see>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AsyncAGIExec">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AsyncAGIExec</see><br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart</see><br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecEnd">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecEnd</see>
     /// </summary>
     public class AsyncAGIEvent : ManagerEvent
