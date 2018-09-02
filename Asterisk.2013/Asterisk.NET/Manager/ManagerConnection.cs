@@ -150,6 +150,14 @@ namespace AsterNET.Manager
         public event EventHandler<DialEvent> Dial;
         public event EventHandler<DTMFEvent> DTMF;
         /// <summary>
+        /// An DTMFBeginEvent is triggered when a DTMF digit has started on a channel.
+        /// </summary>
+        public event EventHandler<DTMFBeginEvent> DTMFBegin;
+        /// <summary>
+        /// An DTMFEndEvent is triggered when a DTMF digit has ended on a channel.
+        /// </summary>
+        public event EventHandler<DTMFEndEvent> DTMFEnd;
+        /// <summary>
         /// A DNDStateEvent is triggered by the Zap channel driver when a channel enters or leaves DND (do not disturb) state.
         /// </summary>
         public event EventHandler<DNDStateEvent> DNDState;
@@ -546,6 +554,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(BridgeEvent), arg => fireEvent(Bridge, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(TransferEvent), arg => fireEvent(Transfer, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DTMFEvent), arg => fireEvent(DTMF, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(DTMFBeginEvent), arg => fireEvent(DTMFBegin, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(DTMFEndEvent), arg => fireEvent(DTMFEnd, arg));
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(VarSetEvent), arg => fireEvent(VarSet, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AGIExecEvent), arg => fireEvent(AGIExec, arg));
