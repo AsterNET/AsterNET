@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised when a conference ends.
-    ///     
+    ///     Raised when a conference ends.<br />
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeEnd">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeEnd</see>
     /// </summary>
     public class ConfbridgeEndEvent : AbstractConfbridgeEvent

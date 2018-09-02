@@ -2,8 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     An AlarmEvent is triggered when a Zap channel enters or changes alarm state.<br />
-    ///     It is implemented in channels/chan_zap.c
-    ///     
+    ///     It is implemented in channels/chan_zap.c<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Alarm">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Alarm</see>
     /// </summary>
     public class AlarmEvent : ManagerEvent

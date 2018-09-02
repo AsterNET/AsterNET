@@ -1,8 +1,7 @@
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised when AsyncAGI completes an AGI command.
-    ///     
+    ///     Raised when AsyncAGI completes an AGI command.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AsyncAGIExec">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AsyncAGIExec</see>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart</see>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecEnd">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecEnd</see>
@@ -10,12 +9,12 @@ namespace AsterNET.Manager.Event
     public class AsyncAGIEvent : ManagerEvent
     {
         /// <summary>
-        ///     Get/Set the Result
+        ///     Get/Set the Result<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string Result { get; set; }
         /// <summary>
-        ///     Get/Set the command ID
+        ///     Get/Set the command ID<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string CommandId { get; set; }
@@ -25,7 +24,7 @@ namespace AsterNET.Manager.Event
         public string SubEvent { get; set; }
 
         /// <summary>
-        /// Gets or sets the env.
+        ///     Gets or sets the env.
         /// </summary>
         public string Env { get; set; }
 

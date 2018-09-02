@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised when a channel leaves a Confbridge conference.
-    ///     
+    ///     Raised when a channel leaves a Confbridge conference.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeLeave">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeLeave</see>
     /// </summary>
     public class ConfbridgeLeaveEvent : AbstractConfbridgeEvent

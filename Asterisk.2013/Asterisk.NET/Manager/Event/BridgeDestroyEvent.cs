@@ -6,8 +6,7 @@ using System.Text;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised when a bridge is destroyed.
-    ///     
+    ///     Raised when a bridge is destroyed.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_BridgeDestroy">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_BridgeDestroy</see>
     /// </summary>
     public class BridgeDestroyEvent : BridgeStateEvent

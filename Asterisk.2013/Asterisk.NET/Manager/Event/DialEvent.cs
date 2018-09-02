@@ -1,9 +1,9 @@
 namespace AsterNET.Manager.Event
 {
 	/// <summary>
-	/// A dial event is triggered whenever a phone attempts to dial someone.<br/>
-	/// This event is implemented in apps/app_dial.c.<br/>
-	/// Available since Asterisk 1.2.
+	///     A dial event is triggered whenever a phone attempts to dial someone.<br/>
+	///     This event is implemented in apps/app_dial.c.<br/>
+	///     Available since Asterisk 1.2.
 	/// </summary>
 	public class DialEvent : ManagerEvent
 	{
@@ -19,31 +19,41 @@ namespace AsterNET.Manager.Event
 		private string src;
 
 
-		/// <summary>
-		/// Creates a new DialEvent.
-		/// </summary>
-		public DialEvent(ManagerConnection source)
+        /// <summary>
+        ///     Creates a new <see cref="DialEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        public DialEvent(ManagerConnection source)
 			: base(source)
 		{
 		}
 
-		public string DialString
+        /// <summary>
+        ///     Gets or sets the dial string.
+        /// </summary>
+        public string DialString
 		{
 			get { return this.dialString; }
 			set { this.dialString = value; }
 		}
-		public string SubEvent
+
+        /// <summary>
+        ///     Gets or sets the sub event.
+        /// </summary>
+        public string SubEvent
 		{
 			get { return this.subEvent; }
 			set { this.subEvent = value; }
 		}
-		public string DialStatus
+        /// <summary>
+        ///     Gets or sets the dial status.
+        /// </summary>
+        public string DialStatus
 		{
 			get { return this.dialStatus; }
 			set { this.dialStatus = value; }
 		}
 		/// <summary>
-		/// Returns the name of the source channel.
+		///     Returns the name of the source channel.
 		/// </summary>
 		public string Src
 		{
@@ -51,7 +61,7 @@ namespace AsterNET.Manager.Event
 			set { this.src = value; }
 		}
 		/// <summary>
-		/// Get/Set the name of the destination channel.
+		///     Get/Set the name of the destination channel.
 		/// </summary>
 		public string Destination
 		{
@@ -59,7 +69,7 @@ namespace AsterNET.Manager.Event
 			set { this.destination = value; }
 		}
 		/// <summary>
-		/// Get/Set the Caller*ID.
+		///     Get/Set the Caller*ID.
 		/// </summary>
 		public string CallerId
 		{
@@ -67,7 +77,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerId = value; }
 		}
 		/// <summary>
-		/// Get/Set the Caller*ID Name.
+		///     Get/Set the Caller*ID Name.
 		/// </summary>
 		public string CallerIdName
 		{
@@ -75,7 +85,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerIdName = value; }
 		}
 		/// <summary>
-		/// Get/Set the Caller*ID Number.
+		///     Get/Set the Caller*ID Number.
 		/// </summary>
 		public string CallerIdNum
 		{
@@ -83,7 +93,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerIdNum = value; }
 		}
 		/// <summary>
-		/// Get/Set the unique ID of the source channel.
+		///     Get/Set the unique ID of the source channel.
 		/// </summary>
 		public string SrcUniqueId
 		{
@@ -91,7 +101,7 @@ namespace AsterNET.Manager.Event
 			set { this.srcUniqueId = value; }
 		}
 		/// <summary>
-		/// Get/Set the unique ID of the distination channel.
+		///     Get/Set the unique ID of the destination channel.
 		/// </summary>
 		public string DestUniqueId
 		{

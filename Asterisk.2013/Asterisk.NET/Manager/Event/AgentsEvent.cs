@@ -2,8 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     An AgentsEvent is triggered for each agent in response to an AgentsAction.<br />
-    ///     Available since Asterisk 1.2
-    ///     
+    ///     Available since Asterisk 1.2<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Agents">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Agents</see>
     /// </summary>
     /// <seealso cref="Manager.Action.AgentsAction" />
@@ -55,7 +54,7 @@ namespace AsterNET.Manager.Event
         public long LoggedInTime { get; set; }
 
         /// <summary>
-        ///     Get/Set the numerical Caller*ID of the channel this agent is talking toor "n/a" if this agent is talking to nobody.
+        ///     Get/Set the numerical Caller*ID of the channel this agent is talking to or "n/a" if this agent is talking to nobody.
         /// </summary>
         public string TalkingTo { get; set; }
     }

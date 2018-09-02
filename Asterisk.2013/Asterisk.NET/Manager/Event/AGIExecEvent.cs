@@ -2,8 +2,7 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     AgiExecEvents are triggered when an AGI command is executed.<br />
-    ///     For each command two events are triggered: one before execution ("Start") and one after execution ("End").
-    ///     
+    ///     For each command two events are triggered: one before execution ("Start") and one after execution ("End").<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecStart</see>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecEnd">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AGIExecEnd</see>
     /// </summary>
@@ -17,12 +16,12 @@ namespace AsterNET.Manager.Event
         {
         }
         /// <summary>
-        ///     Get/Set the command ID
+        ///     Get/Set the command ID<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public long CommandId { get; set; }
         /// <summary>
-        ///     Get/Set the command
+        ///     Get/Set the command<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string Command { get; set; }
@@ -31,12 +30,12 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string SubEvent { get; set; }
         /// <summary>
-        ///     Get/Set the result
+        ///     Get/Set the result<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string Result { get; set; }
         /// <summary>
-        ///     Get/Set the result number
+        ///     Get/Set the result number<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public int ResultCode { get; set; }

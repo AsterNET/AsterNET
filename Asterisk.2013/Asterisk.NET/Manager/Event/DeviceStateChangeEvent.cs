@@ -7,11 +7,18 @@
     /// </summary>
     public class DeviceStateChangeEvent : ManagerEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="DeviceStateChangeEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// </summary>
+        /// <param name="source"></param>
         public DeviceStateChangeEvent(ManagerConnection source)
             : base(source)
         {
         }
 
+        /// <summary>
+        ///     Gets or sets the status.
+        /// </summary>
         public string Status { get; set; }
     }
 }

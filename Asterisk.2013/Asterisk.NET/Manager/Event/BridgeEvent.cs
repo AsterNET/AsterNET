@@ -4,11 +4,10 @@ using System.Collections.Generic;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     A BridgeEvent is triggered when a link between two voice
-    ///     channels is established ("Link") or discontinued ("Unlink").
-    ///     As of Asterisk 1.6 the Bridge event is reported directly by Asterisk.
-    ///     Asterisk versions up to 1.4 report individual events: LinkEvent and UnlinkEvent.
-    ///     For maximum compatibly do not use the Link and Unlink events in your code.
+    ///     A BridgeEvent is triggered when a link between two voice channels is established ("Link") or discontinued ("Unlink").<br/>
+    ///     As of Asterisk 1.6 the Bridge event is reported directly by Asterisk.<br/>
+    ///     Asterisk versions up to 1.4 report individual events: LinkEvent and UnlinkEvent.<br/>
+    ///     For maximum compatibly do not use the Link and Unlink events in your code.<br/>
     ///     Just use the Bridge event and check for isLink() and isUnlink().
     /// </summary>
     public class BridgeEvent : ManagerEvent

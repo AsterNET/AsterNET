@@ -5,19 +5,20 @@ using System.Text;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised when an attended transfer is complete.
-    ///     
-    ///     The headers in this event attempt to describe all the major details of the attended transfer.The two transferer channels and the two bridges are determined based on their chronological establishment.So consider that Alice calls Bob, and then Alice transfers the call to Voicemail. The transferer and bridge headers would be arranged as follows:
-    ///     OrigTransfererChannel: Alice's channel in the bridge with Bob.
-    ///     OrigBridgeUniqueid: The bridge between Alice and Bob.
-    ///     SecondTransfererChannel: Alice's channel that called Voicemail.
-    ///     SecondBridgeUniqueid: Not present, since a call to Voicemail has no bridge.
-    ///     Now consider if the order were reversed; instead of having Alice call Bob and transfer him to Voicemail, Alice instead calls her Voicemail and transfers that to Bob. The transferer and bridge headers would be arranged as follows:
-    ///     OrigTransfererChannel: Alice's channel that called Voicemail.
-    ///     OrigBridgeUniqueid: Not present, since a call to Voicemail has no bridge.
-    ///     SecondTransfererChannel: Alice's channel in the bridge with Bob.
-    ///     SecondBridgeUniqueid: The bridge between Alice and Bob.
-    ///     
+    ///     Raised when an attended transfer is complete.<br/>
+    ///     <br/>
+    ///     The headers in this event attempt to describe all the major details of the attended transfer.The two transferrer channels and the two bridges are determined based on their chronological establishment.So consider that Alice calls Bob, and then Alice transfers the call to Voicemail. The transferrer and bridge headers would be arranged as follows:<br/>
+    ///     OrigTransfererChannel: Alice's channel in the bridge with Bob.<br/>
+    ///     OrigBridgeUniqueid: The bridge between Alice and Bob.<br/>
+    ///     SecondTransfererChannel: Alice's channel that called Voicemail.<br/>
+    ///     SecondBridgeUniqueid: Not present, since a call to Voicemail has no bridge.<br/>
+    ///     <br/>
+    ///     Now consider if the order were reversed; instead of having Alice call Bob and transfer him to Voicemail, Alice instead calls her Voicemail and transfers that to Bob. The transferrer and bridge headers would be arranged as follows:<br/>
+    ///     OrigTransfererChannel: Alice's channel that called Voicemail.<br/>
+    ///     OrigBridgeUniqueid: Not present, since a call to Voicemail has no bridge.<br/>
+    ///     SecondTransfererChannel: Alice's channel in the bridge with Bob.<br/>
+    ///     SecondBridgeUniqueid: The bridge between Alice and Bob.<br/>
+    ///     <br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AttendedTransfer">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AttendedTransfer</see>
     /// </summary>
     public class AttendedTransferEvent : ManagerEvent
@@ -55,7 +56,7 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string OrigTransfererConnectedLineName { get; set; }
         /// <summary>
-        /// Gets or sets the original transferrer language.
+        ///     Gets or sets the original transferrer language.
         /// </summary>
         public string OrigTransfererLanguage { get; set; }
         /// <summary>
@@ -83,7 +84,7 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string OrigBridgeType { get; set; }
         /// <summary>
-        ///     Get/Set the identifier of the remote fax station.
+        ///     Get/Set the identifier of the remote fax station.<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string OrigBridgetechnology { get; set; }
@@ -129,7 +130,7 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string SecondTransfererConnectedLineName { get; set; }
         /// <summary>
-        /// Gets or sets the second transferrer language.
+        ///     Gets or sets the second transferrer language.
         /// </summary>
         public string SecondTransfererLanguage { get; set; }
         /// <summary>

@@ -25,17 +25,17 @@ namespace AsterNET.Manager.Event
         public string ReloadReason { get; set; }
 
         /// <summary>
-        /// Gets or sets the user count.
+        ///     Gets or sets the user count.
         /// </summary>
         public int UserCount { get; set; }
 
         /// <summary>
-        /// Gets or sets the peer count.
+        ///     Gets or sets the peer count.
         /// </summary>
         public int PeerCount { get; set; }
 
         /// <summary>
-        /// Gets or sets the registry count.
+        ///     Gets or sets the registry count.
         /// </summary>
         public int RegistryCount { get; set; }
     }
