@@ -12,9 +12,9 @@ namespace AsterNET.Manager.Event
     public class BridgeEnterEvent : BridgeActivityEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="BridgeEnterEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="BridgeEnterEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public BridgeEnterEvent(ManagerConnection source) : base(source)
         {
         }

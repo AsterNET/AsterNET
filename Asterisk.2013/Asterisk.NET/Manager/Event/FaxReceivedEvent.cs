@@ -9,9 +9,9 @@ namespace AsterNET.Manager.Event
     public class FaxReceivedEvent : AbstractAgentEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="FaxReceivedEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="FaxReceivedEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public FaxReceivedEvent(ManagerConnection source)
             : base(source)
         {

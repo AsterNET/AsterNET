@@ -9,9 +9,9 @@ namespace AsterNET.Manager.Event
     public class LinkEvent : BridgeEvent
 	{
         /// <summary>
-        ///     Creates a new <see cref="LinkEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="LinkEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public LinkEvent(ManagerConnection source)
 			: base(source)
 		{

@@ -23,9 +23,9 @@ namespace AsterNET.Manager.Event
         public string CallerIDname { get; set; }
 
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeLeaveEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeLeaveEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConfbridgeLeaveEvent(ManagerConnection source)
 			: base(source)
 		{

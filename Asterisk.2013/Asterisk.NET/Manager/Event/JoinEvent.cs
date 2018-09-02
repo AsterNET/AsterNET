@@ -8,9 +8,9 @@ namespace AsterNET.Manager.Event
     public class JoinEvent : QueueEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="JoinEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="JoinEvent"/>.
         /// </summary>
-        /// <param name="source">The source.</param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public JoinEvent(ManagerConnection source)
             : base(source)
         {

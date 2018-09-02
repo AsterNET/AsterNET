@@ -13,9 +13,9 @@ namespace AsterNET.Manager.Event
     public class ConfbridgeListRoomsCompleteEvent : ResponseEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeListRoomsCompleteEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeListRoomsCompleteEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConfbridgeListRoomsCompleteEvent(ManagerConnection source)
 			: base(source)
 		{

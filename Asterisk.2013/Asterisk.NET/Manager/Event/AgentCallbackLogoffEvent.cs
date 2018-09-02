@@ -46,9 +46,9 @@ namespace AsterNET.Manager.Event
         #endregion
 
         /// <summary>
-        ///     Creates a new <see cref="AgentCallbackLogoffEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AgentCallbackLogoffEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentCallbackLogoffEvent(ManagerConnection source)
             : base(source)
         {

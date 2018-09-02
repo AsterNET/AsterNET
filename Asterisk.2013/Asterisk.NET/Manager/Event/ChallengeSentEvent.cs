@@ -8,9 +8,9 @@
     public class ChallengeSentEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="ChallengeSentEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ChallengeSentEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ChallengeSentEvent(ManagerConnection source) : base(source)
         {
         }

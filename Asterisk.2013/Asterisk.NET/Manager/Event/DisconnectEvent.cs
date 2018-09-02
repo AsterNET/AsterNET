@@ -7,9 +7,9 @@ namespace AsterNET.Manager.Event
 	public class DisconnectEvent : ConnectionStateEvent
 	{
         /// <summary>
-        ///     Creates a new <see cref="DisconnectEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="DisconnectEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public DisconnectEvent(ManagerConnection source)
 			: base(source)
 		{

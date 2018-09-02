@@ -12,9 +12,9 @@ namespace AsterNET.Manager.Event
     public class BridgeLeaveEvent : BridgeActivityEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="BridgeLeaveEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="BridgeLeaveEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public BridgeLeaveEvent(ManagerConnection source) : base(source)
         {
         }

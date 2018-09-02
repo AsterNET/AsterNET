@@ -1,10 +1,11 @@
 namespace AsterNET.Manager.Event
 {
-	/// <summary>
-	/// A NewExtenEvent is triggered when a channel is connected to a new extension.<br/>
-	/// It is implemented in pbx.c
-	/// </summary>
-	public class NewExtenEvent : ManagerEvent
+    /// <summary>
+    ///     A NewExtenEvent is triggered when a channel is connected to a new extension.<br/>
+    ///     It is implemented in pbx.c<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_NewExten">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_NewExten</see>
+    /// </summary>
+    public class NewExtenEvent : ManagerEvent
 	{
 		private string context;
 		private string extension;
@@ -13,14 +14,17 @@ namespace AsterNET.Manager.Event
 		private string appData;
 		private string appdEvent;
 
-		public string AppdEvent
+        /// <summary>
+        ///     Gets or sets the appd event.
+        /// </summary>
+        public string AppdEvent
 		{
 			get { return this.appdEvent; }
 			set { this.appdEvent = value; }
 		}
 
 		/// <summary>
-		/// Get/Set the name of the application that is executed.
+		///     Get/Set the name of the application that is executed.
 		/// </summary>
 		public string Application
 		{
@@ -28,7 +32,7 @@ namespace AsterNET.Manager.Event
 			set { this.application = value; }
 		}
 		/// <summary>
-		/// Get/Set the parameters passed to the application that is executed. The parameters are separated by a '|' character.
+		///     Get/Set the parameters passed to the application that is executed. The parameters are separated by a '|' character.
 		/// </summary>
 		public string AppData
 		{
@@ -36,7 +40,7 @@ namespace AsterNET.Manager.Event
 			set { this.appData = value; }
 		}
 		/// <summary>
-		/// Get/Set the name of the context of the connected extension.
+		///     Get/Set the name of the context of the connected extension.
 		/// </summary>
 		public string Context
 		{
@@ -44,7 +48,7 @@ namespace AsterNET.Manager.Event
 			set { this.context = value; }
 		}
 		/// <summary>
-		/// Get/Set the extension.
+		///     Get/Set the extension.
 		/// </summary>
 		public string Extension
 		{
@@ -52,15 +56,19 @@ namespace AsterNET.Manager.Event
 			set { this.extension = value; }
 		}
 		/// <summary>
-		/// Get/Set the priority.
+		///     Get/Set the priority.
 		/// </summary>
 		public int Priority
 		{
 			get { return this.priority; }
 			set { this.priority = value; }
 		}
-	
-		public NewExtenEvent(ManagerConnection source)
+
+        /// <summary>
+        ///     Creates a new <see cref="NewExtenEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection" /></param>
+        public NewExtenEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

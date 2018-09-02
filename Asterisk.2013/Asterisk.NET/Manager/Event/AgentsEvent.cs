@@ -9,16 +9,16 @@ namespace AsterNET.Manager.Event
     public class AgentsEvent : ResponseEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="AgentsEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AgentsEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentsEvent(ManagerConnection source)
             : base(source)
         {
         }
 
         /// <summary>
-        ///     Get/Set the agentid.
+        ///     Get/Set the agent id.
         /// </summary>
         public string Agent { get; set; }
 

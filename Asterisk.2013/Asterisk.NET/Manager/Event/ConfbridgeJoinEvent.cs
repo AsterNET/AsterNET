@@ -23,9 +23,9 @@ namespace AsterNET.Manager.Event
         public string CallerIDname { get; set; }
 
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeJoinEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeJoinEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConfbridgeJoinEvent(ManagerConnection source)
 			: base(source)
 		{

@@ -16,9 +16,9 @@ namespace AsterNET.Manager.Event
 		}
 
         /// <summary>
-        ///     Creates a new <see cref="ConnectionStateEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConnectionStateEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConnectionStateEvent(ManagerConnection source)
 			: base(source)
 		{ }

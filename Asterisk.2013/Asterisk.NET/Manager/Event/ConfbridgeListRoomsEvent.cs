@@ -28,9 +28,9 @@ namespace AsterNET.Manager.Event
         public string Locked { get; set; }
 
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeListRoomsEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeListRoomsEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConfbridgeListRoomsEvent(ManagerConnection source)
 			: base(source)
 		{

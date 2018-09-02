@@ -67,7 +67,7 @@ namespace AsterNET.Manager.Event
 
         #region Constructors 
         /// <summary>
-        ///     Creates a new ManagerEvent. Source already set.
+        ///     Creates a new <see cref="ManagerEvent"/>. Source already set.
         /// </summary>
         public ManagerEvent()
         {
@@ -75,9 +75,9 @@ namespace AsterNET.Manager.Event
         }
 
         /// <summary>
-        ///     Creates a new ManagerEvent
+        ///     Creates a new <see cref="ManagerEvent"/>
         /// </summary>
-        /// <param name="source">ManagerConnection passed through in the event.</param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
 		public ManagerEvent(ManagerConnection source)
             : this()
         {

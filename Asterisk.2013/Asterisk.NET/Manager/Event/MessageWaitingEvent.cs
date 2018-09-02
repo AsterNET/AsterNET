@@ -8,9 +8,9 @@ namespace AsterNET.Manager.Event
     public class MessageWaitingEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="MessageWaitingEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="MessageWaitingEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public MessageWaitingEvent(ManagerConnection source)
             : base(source)
         {

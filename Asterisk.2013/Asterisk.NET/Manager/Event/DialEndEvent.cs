@@ -7,8 +7,9 @@ namespace AsterNET.Manager.Event
 	public class DialEndEvent : DialEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="DialEndEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="DialEndEvent" />.
         /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public DialEndEvent(ManagerConnection source)
 			: base(source)
 		{

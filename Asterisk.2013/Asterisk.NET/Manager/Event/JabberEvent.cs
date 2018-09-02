@@ -18,9 +18,9 @@ namespace AsterNET.Manager.Event
         #region Constructor - JabberEvent(ManagerConnection source)
 
         /// <summary>
-        ///     Creates a new <see cref="JabberEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="JabberEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public JabberEvent(ManagerConnection source)
             : base(source)
         {

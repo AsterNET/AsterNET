@@ -9,9 +9,9 @@ namespace AsterNET.Manager.Event
     public class CdrEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="CdrEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="CdrEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public CdrEvent(ManagerConnection source)
             : base(source)
         {

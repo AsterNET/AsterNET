@@ -9,8 +9,9 @@ namespace AsterNET.Manager.Event
     public class AGIExecEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="AGIExecEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AGIExecEvent" />.
         /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AGIExecEvent(ManagerConnection source)
             : base(source)
         {

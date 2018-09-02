@@ -8,9 +8,9 @@ namespace AsterNET.Manager.Event
     public class MeetmeJoinEvent : AbstractMeetmeEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="MeetmeJoinEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="MeetmeJoinEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public MeetmeJoinEvent(ManagerConnection source)
             : base(source)
         {

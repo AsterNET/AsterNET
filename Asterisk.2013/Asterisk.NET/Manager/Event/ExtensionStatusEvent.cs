@@ -46,9 +46,9 @@ namespace AsterNET.Manager.Event
 		}
 
         /// <summary>
-        ///     Creates a new <see cref="ExtensionStatusEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ExtensionStatusEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ExtensionStatusEvent(ManagerConnection source)
 			: base(source)
 		{

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AsterNET.Manager.Event
+﻿namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     Raised when a request violates an ACL check.<br/>
@@ -12,15 +7,15 @@ namespace AsterNET.Manager.Event
     public class FailedACLEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new empty <see cref="FailedACLEvent"/>.
+        ///     Creates a new empty <see cref="FailedACLEvent" />.
         /// </summary>
         public FailedACLEvent()
             : base() { }
 
         /// <summary>
-        ///     Creates a new <see cref="FailedACLEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="FailedACLEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public FailedACLEvent(ManagerConnection source)
             : base(source) { }
 

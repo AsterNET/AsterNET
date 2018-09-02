@@ -8,9 +8,9 @@ namespace AsterNET.Manager.Event
     public class AgentDumpEvent : AbstractAgentEvent
 	{
         /// <summary>
-        ///     Creates a new <see cref="AgentDumpEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AgentDumpEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentDumpEvent(ManagerConnection source)
 			: base(source)
 		{

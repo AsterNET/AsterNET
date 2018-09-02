@@ -8,9 +8,9 @@
     public class InvalidAccountIDEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="InvalidAccountIDEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="InvalidAccountIDEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public InvalidAccountIDEvent(ManagerConnection source)
             : base(source)
         {

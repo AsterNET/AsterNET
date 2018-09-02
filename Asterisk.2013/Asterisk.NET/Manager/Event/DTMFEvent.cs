@@ -7,8 +7,9 @@ namespace AsterNET.Manager.Event
     public class DTMFEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="DTMFEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="DTMFEvent" />.
         /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public DTMFEvent(ManagerConnection source)
             : base(source)
         {

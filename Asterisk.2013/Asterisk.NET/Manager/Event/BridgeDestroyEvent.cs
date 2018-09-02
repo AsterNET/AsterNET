@@ -12,9 +12,9 @@ namespace AsterNET.Manager.Event
     public class BridgeDestroyEvent : BridgeStateEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="BridgeDestroyEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="BridgeDestroyEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public BridgeDestroyEvent(ManagerConnection source) : base(source)
         {
         }

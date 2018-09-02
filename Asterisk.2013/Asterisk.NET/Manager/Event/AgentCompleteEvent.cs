@@ -7,9 +7,9 @@ namespace AsterNET.Manager.Event
     public class AgentCompleteEvent : AbstractAgentEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="AgentCompleteEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AgentCompleteEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentCompleteEvent(ManagerConnection source)
             : base(source)
         {

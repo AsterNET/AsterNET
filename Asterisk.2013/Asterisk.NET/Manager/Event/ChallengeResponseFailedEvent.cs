@@ -7,9 +7,9 @@ namespace AsterNET.Manager.Event
     public class ChallengeResponseFailedEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="ChallengeResponseFailedEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ChallengeResponseFailedEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ChallengeResponseFailedEvent(ManagerConnection source) : base(source)
         {
         }

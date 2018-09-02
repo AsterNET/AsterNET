@@ -1,14 +1,16 @@
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     
+    ///     A JitterBufStatsEvent is triggered at the end of IAX2 calls and reports jitter statistics.<br/>
+    ///     It is implemented in <code>channels/chan_iax2.c</code>.<br/>
+    ///     Available since Asterisk 1.6.
     /// </summary>
     public class JitterBufStatsEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="JitterBufStatsEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="JitterBufStatsEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public JitterBufStatsEvent(ManagerConnection source)
             : base(source)
         {

@@ -83,9 +83,9 @@ namespace AsterNET.Manager.Event
 
         #region Constructors        
         /// <summary>
-        ///     Creates a new <see cref="BridgeActivityEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="BridgeActivityEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         protected BridgeActivityEvent(ManagerConnection source)
             : base(source)
 		{

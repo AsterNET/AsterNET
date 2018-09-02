@@ -13,9 +13,9 @@ namespace AsterNET.Manager.Event
     public class ConfbridgeStartEvent : AbstractConfbridgeEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeStartEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeStartEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConfbridgeStartEvent(ManagerConnection source)
 			: base(source)
 		{

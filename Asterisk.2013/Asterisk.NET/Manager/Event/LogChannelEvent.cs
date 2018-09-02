@@ -11,9 +11,9 @@ namespace AsterNET.Manager.Event
         private int reasonCode;
 
         /// <summary>
-        ///     Creates a new <see cref="LogChannelEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="LogChannelEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public LogChannelEvent(ManagerConnection source)
             : base(source)
         {

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AsterNET.Manager.Event
 {
     /// <summary>
@@ -309,9 +305,9 @@ namespace AsterNET.Manager.Event
 
         #region Constructor - AttendedTransferEvent(ManagerConnection source)        
         /// <summary>
-        ///     Creates a new <see cref="AttendedTransferEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AttendedTransferEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AttendedTransferEvent(ManagerConnection source)
 			: base(source)
 		{

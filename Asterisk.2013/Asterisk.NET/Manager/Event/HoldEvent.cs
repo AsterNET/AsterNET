@@ -10,9 +10,9 @@ namespace AsterNET.Manager.Event
     public class HoldEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="HoldEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="HoldEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public HoldEvent(ManagerConnection source)
             : base(source)
         {

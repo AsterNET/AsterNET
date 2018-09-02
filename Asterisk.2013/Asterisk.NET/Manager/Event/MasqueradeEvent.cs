@@ -30,9 +30,9 @@ namespace AsterNET.Manager.Event
         #region Constructor - MasqueradeEvent(ManagerConnection source)
 
         /// <summary>
-        ///     Creates a new <see cref="MasqueradeEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="MasqueradeEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public MasqueradeEvent(ManagerConnection source)
             : base(source)
         {

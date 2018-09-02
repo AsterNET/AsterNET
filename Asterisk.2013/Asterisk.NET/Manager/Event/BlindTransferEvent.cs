@@ -222,9 +222,9 @@ namespace AsterNET.Manager.Event
 
         #region Constructor - BlindTransferEvent(ManagerConnection source)        
         /// <summary>
-        ///     Creates a new <see cref="BlindTransferEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="BlindTransferEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public BlindTransferEvent(ManagerConnection source) : base(source)
 		{
 		}

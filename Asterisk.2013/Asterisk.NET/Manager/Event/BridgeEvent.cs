@@ -54,9 +54,9 @@ namespace AsterNET.Manager.Event
 
         #region Constructors        
         /// <summary>
-        ///     Creates a new <see cref="BridgeEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="BridgeEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public BridgeEvent(ManagerConnection source)
 			: base(source)
 		{
@@ -65,7 +65,7 @@ namespace AsterNET.Manager.Event
 
 		#region ParseSpecial(Dictionary<string, string> attributes)
 		/// <summary>
-		/// Unknown properties parser
+		///     Unknown properties parser
 		/// </summary>
 		/// <param name="attributes">dictionary</param>
 		/// <returns>updated dictionary</returns>

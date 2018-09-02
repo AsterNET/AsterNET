@@ -8,9 +8,9 @@ namespace AsterNET.Manager.Event
     public class AlarmClearEvent : ManagerEvent
 	{
         /// <summary>
-        ///     Creates a new <see cref="AlarmClearEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AlarmClearEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AlarmClearEvent(ManagerConnection source)
 			: base(source)
 		{

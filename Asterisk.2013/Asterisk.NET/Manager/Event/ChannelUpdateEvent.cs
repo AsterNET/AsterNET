@@ -1,13 +1,16 @@
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    /// 
+    ///     A ChannelUpdateEvent provides additional channel type specific information like the SIP call id or IAX2 call numbers about a channel.<br/>
+    ///     Available since Asterisk 1.6.<br/>
+    ///     It is implemented in <code>channels/chan_sip.c</code>, <code>channels/chan_iax2.c</code> and <code>channels/chan_gtalk.c</code>
     /// </summary>
     public class ChannelUpdateEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="ChannelUpdateEvent"/> using the given <see cref="ManagerConnection"/>.
+        /// Creates a new <see cref="ChannelUpdateEvent" />.
         /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ChannelUpdateEvent(ManagerConnection source)
             : base(source)
         {

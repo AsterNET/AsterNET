@@ -9,9 +9,9 @@ namespace AsterNET.Manager.Event
     public class AgentLoginEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="AgentLoginEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AgentLoginEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentLoginEvent(ManagerConnection source)
             : base(source)
         {

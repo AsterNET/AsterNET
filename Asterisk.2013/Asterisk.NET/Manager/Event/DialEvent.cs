@@ -20,8 +20,9 @@ namespace AsterNET.Manager.Event
 
 
         /// <summary>
-        ///     Creates a new <see cref="DialEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="DialEvent" />.
         /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public DialEvent(ManagerConnection source)
 			: base(source)
 		{

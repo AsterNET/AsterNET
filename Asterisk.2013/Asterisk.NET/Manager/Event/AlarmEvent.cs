@@ -8,9 +8,9 @@ namespace AsterNET.Manager.Event
     public class AlarmEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="AlarmEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AlarmEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AlarmEvent(ManagerConnection source)
             : base(source)
         {
@@ -18,7 +18,7 @@ namespace AsterNET.Manager.Event
 
         /// <summary>
         ///     Get/Set the kind of alarm that happened.<br />
-        ///     This may be one of
+        ///     This may be one of:
         ///     <ul>
         ///         <li>Red Alarm</li>
         ///         <li>Yellow Alarm</li>

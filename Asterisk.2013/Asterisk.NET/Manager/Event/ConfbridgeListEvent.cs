@@ -34,9 +34,9 @@ namespace AsterNET.Manager.Event
         public string MarkedUser { get; set; }
 
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeListEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeListEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConfbridgeListEvent(ManagerConnection source)
 			: base(source)
 		{

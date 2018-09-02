@@ -31,9 +31,9 @@ namespace AsterNET.Manager.Event
         #region Constructor - AsyncAGIEvent(ManagerConnection source)
 
         /// <summary>
-        ///     Creates a new <see cref="AsyncAGIEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="AsyncAGIEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AsyncAGIEvent(ManagerConnection source)
             : base(source)
         {

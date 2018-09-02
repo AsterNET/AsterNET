@@ -28,9 +28,9 @@ namespace AsterNET.Manager.Event
 		}
 
         /// <summary>
-        ///     Creates a new <see cref="HangupEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="HangupEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public HangupEvent(ManagerConnection source)
 			: base(source)
 		{

@@ -9,8 +9,9 @@ namespace AsterNET.Manager.Event
     public class DNDStateEvent : ManagerEvent
     {
         /// <summary>
-        ///     Creates a new <see cref="DNDStateEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="DNDStateEvent" />.
         /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public DNDStateEvent(ManagerConnection source)
             : base(source)
         {
