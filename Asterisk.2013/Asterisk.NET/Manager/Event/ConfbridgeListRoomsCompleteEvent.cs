@@ -10,6 +10,8 @@ namespace AsterNET.Manager.Event
     ///     Raised after all <see cref="ConfbridgeListRoomsEvent"/> are complete.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeListRooms">https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeListRooms</see>
     /// </summary>
+    /// <seealso cref="Manager.Action.ConfbridgeListRoomsAction"/>
+    /// <seealso cref="Manager.Event.ConfbridgeListRoomsEvent"/>
     public class ConfbridgeListRoomsCompleteEvent : ResponseEvent
     {
         /// <summary>

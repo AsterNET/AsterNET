@@ -1,10 +1,12 @@
 namespace AsterNET.Manager.Event
 {
-	/// <summary>
-	/// A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains information about a peer.<br/>
-	/// It is implemented in channels/chan_sip.c
-	/// </summary>
-	public class PeerEntryEvent : ResponseEvent
+    /// <summary>
+    ///     A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains information about a peer.<br/>
+    ///     It is implemented in channels/chan_sip.c
+    /// </summary>
+    /// <seealso cref="Manager.Action.SIPPeersAction"/>
+    /// <seealso cref="Manager.Action.SIPShowPeerAction"/>
+    public class PeerEntryEvent : ResponseEvent
 	{
 		private string channelType;
 		private string objectName;
@@ -20,21 +22,23 @@ namespace AsterNET.Manager.Event
 		private bool realtimedevice;
 
 		/// <summary>
-		/// For SIP peers this is "SIP".
+		///     For SIP peers this is "SIP".
 		/// </summary>
 		public string ChannelType
 		{
 			get { return this.channelType; }
 			set { this.channelType = value; }
 		}
-
-		public string ObjectName
+        /// <summary>
+        ///     Gets or sets the name of the object.
+        /// </summary>
+        public string ObjectName
 		{
 			get { return this.objectName; }
 			set { this.objectName = value; }
 		}
 		/// <summary>
-		/// For SIP peers this is either "peer" or "user".
+		///     For SIP peers this is either "peer" or "user".
 		/// </summary>
 		public string ChanObjectType
 		{
@@ -42,58 +46,76 @@ namespace AsterNET.Manager.Event
 			set { this.chanObjectType = value; }
 		}
 		/// <summary>
-		/// Get/Set the IP address of the peer.
+		///     Get/Set the IP address of the peer.
 		/// </summary>
 		public string IpAddress
 		{
 			get { return this.ipAddress; }
 			set { this.ipAddress = value; }
 		}
-		public int IpPort
+        /// <summary>
+        ///     Gets or sets the ip port.
+        /// </summary>
+        public int IpPort
 		{
 			get { return this.ipPort; }
 			set { this.ipPort = value; }
 		}
-		public bool Dynamic
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="PeerEntryEvent"/> is dynamic.
+        /// </summary>
+        public bool Dynamic
 		{
 			get { return this.dynamic; }
 			set { this.dynamic = value; }
 		}
-		public bool NatSupport
+        /// <summary>
+        /// Gets or sets a value indicating whether [nat support].
+        /// </summary>
+        public bool NatSupport
 		{
 			get { return this.natSupport; }
 			set { this.natSupport = value; }
 		}
-		public bool VideoSupport
+        /// <summary>
+        /// Gets or sets a value indicating whether [video support].
+        /// </summary>
+        public bool VideoSupport
 		{
 			get { return this.videoSupport; }
 			set { this.videoSupport = value; }
 		}
-		public bool TextSupport
+        /// <summary>
+        /// Gets or sets a value indicating whether [text support].
+        /// </summary>
+        public bool TextSupport
 		{
 			get { return this.textSupport; }
 			set { this.textSupport = value; }
 		}
-		public bool Acl
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="PeerEntryEvent"/> is acl.
+        /// </summary>
+        public bool Acl
 		{
 			get { return this.acl; }
 			set { this.acl = value; }
 		}
 		/// <summary>
-		/// Get/Set the status of this peer.<br/>
-		/// For SIP peers this is one of:
-		/// <dl>
-		/// <dt>"UNREACHABLE"</dt>
-		/// <dd></dd>
-		/// <dt>"LAGGED (%d ms)"</dt>
-		/// <dd></dd>
-		/// <dt>"OK (%d ms)"</dt>
-		/// <dd></dd>
-		/// <dt>"UNKNOWN"</dt>
-		/// <dd></dd>
-		/// <dt>"Unmonitored"</dt>
-		/// <dd></dd>
-		/// </dl>
+		///     Get/Set the status of this peer.<br/>
+		///     For SIP peers this is one of:
+		///     <dl>
+		///         <dt>"UNREACHABLE"</dt>
+		///         <dd></dd>
+		///         <dt>"LAGGED (%d ms)"</dt>
+		///         <dd></dd>
+		///         <dt>"OK (%d ms)"</dt>
+		///         <dd></dd>
+		///         <dt>"UNKNOWN"</dt>
+		///         <dd></dd>
+		///         <dt>"Unmonitored"</dt>
+		///         <dd></dd>
+		///     </dl>
 		/// </summary>
 		public string Status
 		{
@@ -101,16 +123,20 @@ namespace AsterNET.Manager.Event
 			set { this.status = value; }
 		}
 
-		public bool RealtimeDevice
+        /// <summary>
+        ///     Gets or sets a value indicating whether [realtime device].
+        /// </summary>
+        public bool RealtimeDevice
 		{
 			get { return this.realtimedevice; }
 			set { this.realtimedevice = value; }
 		}
 
-		/// <summary>
-		/// Creates a new instance.
-		/// </summary>
-		public PeerEntryEvent(ManagerConnection source)
+        /// <summary>
+        ///     Creates a new <see cref="PeerEntryEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
+        public PeerEntryEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

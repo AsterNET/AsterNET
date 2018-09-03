@@ -10,6 +10,8 @@ namespace AsterNET.Manager.Event
     ///     Raised after all <see cref="ConfbridgeListEvent"/> are complete.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeList">https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeList</see>
     /// </summary>
+    /// <seealso cref="Manager.Action.ConfbridgeListAction"/>
+    /// <seealso cref="Manager.Event.ConfbridgeListEvent"/>
     public class ConfbridgeListCompleteEvent : ResponseEvent
     {
         /// <summary>
