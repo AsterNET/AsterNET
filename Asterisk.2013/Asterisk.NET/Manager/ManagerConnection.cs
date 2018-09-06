@@ -425,6 +425,7 @@ namespace AsterNET.Manager
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public event EventHandler<QueueMemberPauseEvent> QueueMemberPause;
+
         /// <summary>
         /// Raised when started or stopped music on hold by channel.
         /// </summary>
@@ -1319,13 +1320,13 @@ namespace AsterNET.Manager
         /// <param name="action">action to send</param>
         /// <param name="timeout">timeout in milliseconds</param>
         /// <returns></returns>
-        public Response.ManagerResponse SendAction(ManagerAction action, int timeout)
+        public Response.ManagerResponse SendAction(ManagerAction action, int timeOut)
         {
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             ResponseHandler handler = new ResponseHandler(action, autoEvent);
 
             int hash = SendAction(action, handler);
-            bool result = autoEvent.WaitOne(timeout <= 0 ? -1 : timeout, true);
+            bool result = autoEvent.WaitOne(timeOut <= 0 ? -1 : timeOut, true);
 
             RemoveResponseHandler(handler);
 
@@ -1336,12 +1337,6 @@ namespace AsterNET.Manager
         #endregion
 
         #region SendAction(action, responseHandler)
-        /// <summary>
-        /// Send action ans with timeout (milliseconds)
-        /// </summary>
-        /// <param name="action">action to send</param>
-        /// <param name="responseHandler">Response Handler</param>
-        /// <returns></returns>
         public int SendAction(ManagerAction action, ResponseHandler responseHandler)
         {
             if (action == null)
