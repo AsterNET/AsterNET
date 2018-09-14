@@ -435,6 +435,24 @@ namespace AsterNET.Manager
         public event EventHandler<QueueMemberPauseEvent> QueueMemberPause;
 
         /// <summary>
+        ///    Raised when music on hold has started/stopped on a channel.<br />
+        ///    <b>Available since : </b> Asterisk 1.6.
+        /// </summary>
+        public event EventHandler<MusicOnHoldEvent> MusicOnHold;
+
+        /// <summary>
+        ///    Raised when music on hold has started on a channel.<br />
+        ///    <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
+        /// </summary>
+        public event EventHandler<MusicOnHoldStartEvent> MusicOnHoldStart;
+
+        /// <summary>
+        ///    Raised when music on hold has stopped on a channel.<br />
+        ///    <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
+        /// </summary>
+        public event EventHandler<MusicOnHoldStopEvent> MusicOnHoldStop;
+
+        /// <summary>
         /// A ChallengeResponseFailed is triggered when a request's attempt to authenticate has been challenged, and the request failed the authentication challenge.
         /// </summary>
         public event EventHandler<ChallengeResponseFailedEvent> ChallengeResponseFailed;
@@ -579,6 +597,9 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerJoinEvent), arg => fireEvent(QueueCallerJoin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerLeaveEvent), arg => fireEvent(QueueCallerLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberPauseEvent), arg => fireEvent(QueueMemberPause, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldEvent), arg => fireEvent(MusicOnHold, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldStartEvent), arg => fireEvent(MusicOnHoldStart, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldStopEvent), arg => fireEvent(MusicOnHoldStop, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeResponseFailedEvent), arg => fireEvent(ChallengeResponseFailed, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(InvalidAccountIDEvent), arg => fireEvent(InvalidAccountID, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DeviceStateChangeEvent), arg => fireEvent(DeviceStateChanged, arg));
