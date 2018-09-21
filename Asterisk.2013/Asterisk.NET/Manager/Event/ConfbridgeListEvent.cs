@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised as part of the ConfbridgeList action response list.
-    ///     
+    ///     Raised as part of the ConfbridgeList action response list.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeList">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeList</see>
     /// </summary>
     public class ConfbridgeListEvent : AbstractConfbridgeEvent
@@ -120,7 +119,7 @@ namespace AsterNET.Manager.Event
         public string Linkedid { get; set; }
 
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeListEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeListEvent"/>.
         /// </summary>
         /// <param name="source"></param>
         public ConfbridgeListEvent(ManagerConnection source)

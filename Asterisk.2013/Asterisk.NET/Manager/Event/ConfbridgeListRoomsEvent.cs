@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised as part of the ConfbridgeListRooms action response list.
-    ///     
+    ///     Raised as part of the ConfbridgeListRooms action response list.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeList">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeList</see>
     /// </summary>
     public class ConfbridgeListRoomsEvent : AbstractConfbridgeEvent
@@ -29,9 +28,9 @@ namespace AsterNET.Manager.Event
         public string Locked { get; set; }
 
         /// <summary>
-        ///     Creates a new <see cref="ConfbridgeListRoomsEvent"/> using the given <see cref="ManagerConnection"/>.
+        ///     Creates a new <see cref="ConfbridgeListRoomsEvent"/>.
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public ConfbridgeListRoomsEvent(ManagerConnection source)
 			: base(source)
 		{
