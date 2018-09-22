@@ -121,6 +121,11 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<AgentLogoffEvent> AgentLogoff;
         /// <summary>
+        /// An AgentRingNoAnswer is triggered when an agent was rang and did not answer.<br/>
+        /// To enable AgentRingNoAnswer you have to set eventwhencalled = yes in queues.conf.
+        /// </summary>
+        public event EventHandler<AgentRingNoAnswerEvent> AgentRingNoAnswer;
+        /// <summary>
         /// An AgentsCompleteEvent is triggered after the state of all agents has been reported in response to an AgentsAction.
         /// </summary>
         public event EventHandler<AgentsCompleteEvent> AgentsComplete;
@@ -511,6 +516,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentDumpEvent), arg => fireEvent(AgentDump, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentLoginEvent), arg => fireEvent(AgentLogin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentLogoffEvent), arg => fireEvent(AgentLogoff, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentRingNoAnswerEvent), arg => fireEvent(AgentRingNoAnswer, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentsCompleteEvent), arg => fireEvent(AgentsComplete, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentsEvent), arg => fireEvent(Agents, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AlarmClearEvent), arg => fireEvent(AlarmClear, arg));
