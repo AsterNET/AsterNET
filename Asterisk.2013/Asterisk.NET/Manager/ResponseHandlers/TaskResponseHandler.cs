@@ -10,7 +10,7 @@ namespace AsterNET.Manager.Response
     {
         public TaskResponseHandler(ManagerAction action)
         {
-            TaskCompletionSource = new TaskCompletionSource<ManagerResponse>();
+            TaskCompletionSource = new TaskCompletionSource<ManagerResponse>(TaskCreationOptions.RunContinuationsAsynchronously);
             Action = action;
         }
 
