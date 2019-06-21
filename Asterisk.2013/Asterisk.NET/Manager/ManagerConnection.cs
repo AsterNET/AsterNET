@@ -488,6 +488,14 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<QueueSummaryEvent> QueueSummary;
 
+        public event EventHandler<EndpointDetailEvent> EndpointDetail;
+        public event EventHandler<AorDetailEvent> AorDetail;
+        public event EventHandler<AuthDetailEvent> AuthDetail;
+        public event EventHandler<TransportDetailEvent> TransportDetail;
+        public event EventHandler<IdentifyDetailEvent> IdentifyDetail;
+        public event EventHandler<ContactStatusDetailEvent> ContactStatusDetail;
+        public event EventHandler<EndpointDetailCompleteEvent> EndpointDetailComplete;
+
         #endregion
 
         #region Constructor - ManagerConnection()
@@ -613,7 +621,15 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeSentEvent), arg => fireEvent(ChallengeSent, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(SuccessfulAuthEvent), arg => fireEvent(SuccessfulAuth, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueSummaryEvent), arg => fireEvent(QueueSummary, arg));
-            
+
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(EndpointDetailEvent), arg => fireEvent(EndpointDetail, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(AorDetailEvent), arg => fireEvent(AorDetail, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(AuthDetailEvent), arg => fireEvent(AuthDetail, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(TransportDetailEvent), arg => fireEvent(TransportDetail, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(IdentifyDetailEvent), arg => fireEvent(IdentifyDetail, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ContactStatusDetailEvent), arg => fireEvent(ContactStatusDetail, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(EndpointDetailCompleteEvent), arg => fireEvent(EndpointDetailComplete, arg));
+
             #endregion
 
             this.internalEvent += new EventHandler<ManagerEvent>(internalEventHandler);
