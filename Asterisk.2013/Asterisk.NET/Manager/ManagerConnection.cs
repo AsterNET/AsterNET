@@ -362,9 +362,14 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<ZapShowChannelsEvent> ZapShowChannels;
         /// <summary>
-        /// A ConnectionState is triggered after Connect/Disconnect/Reload/Shutdown events.
+        /// A ConnectionState is triggered after Connect/Disconnect/Shutdown events.
         /// </summary>
         public event EventHandler<ConnectionStateEvent> ConnectionState;
+
+        /// <summary>
+        /// A Reload is triggered after Reload events.
+        /// </summary>
+        public event EventHandler<ReloadEvent> Reload;
 
         /// <summary>
         /// When a variable is set
@@ -573,7 +578,7 @@ namespace AsterNET.Manager
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConnectEvent), arg => fireEvent(ConnectionState, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DisconnectEvent), arg => fireEvent(ConnectionState, arg));
-            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ReloadEvent), arg => fireEvent(ConnectionState, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ReloadEvent), arg => fireEvent(Reload, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ShutdownEvent), arg => fireEvent(ConnectionState, arg));
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(BridgeEvent), arg => fireEvent(Bridge, arg));
@@ -1981,7 +1986,7 @@ namespace AsterNET.Manager
                 fireEvent(e);
                 reconnect(false);
             }
-            else if (!reconnected && reconnectEnable && (e is DisconnectEvent || e is ReloadEvent || e is ShutdownEvent))
+            else if (!reconnected && reconnectEnable && (e is DisconnectEvent || e is ShutdownEvent))
             {
                 ((ConnectionStateEvent)e).Reconnect = true;
                 fireEvent(e);
