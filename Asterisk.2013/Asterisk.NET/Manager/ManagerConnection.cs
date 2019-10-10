@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace AsterNET.Manager
 {
     /// <summary>
-    /// Default implemention of the ManagerConnection interface.
+    /// Default implementation of the ManagerConnection interface.
     /// </summary>
     public class ManagerConnection
     {
