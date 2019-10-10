@@ -268,17 +268,20 @@ namespace AsterNET.FastAGI
 		{
 			this.Channel.SendCommand(new Command.SetPriorityCommand(label));
 		}
-		#endregion
+        #endregion
 
-		#region StreamFile(string file)
-		/// <summary>
-		/// Plays the given file.
-		/// </summary>
-		/// <param name="file">name of the file to play.</param>
-		protected internal void StreamFile(string file)
+        #region StreamFile(string file)
+        /// <summary>
+        /// Plays the given file.
+        /// </summary>
+        /// <param name="file">name of the file to play.</param>
+        /// <returns>failure: -1; failure on open: 0; success: 0; digit pressed: (digit) > 0.</returns>
+		protected internal int StreamFile(string file)
 		{
-			this.Channel.SendCommand(new Command.StreamFileCommand(file));
-		}
+            AGIChannel channel = this.Channel;
+            AGIReply lastReply = channel.SendCommand(new Command.StreamFileCommand(file));
+            return lastReply.ResultCode;
+        }
 		#endregion
 
 		#region StreamFile(string file, string escapeDigits)
