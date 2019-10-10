@@ -12,8 +12,6 @@ namespace AsterNET.FastAGI
         private readonly bool _SCHANGUP_CAUSES_EXCEPTION;
         private readonly AGIReader agiReader;
         private readonly AGIWriter agiWriter;
-        private AGIReply agiReply;
-
 
         public AGIChannel(SocketConnection socket, bool SC511_CAUSES_EXCEPTION, bool SCHANGUP_CAUSES_EXCEPTION)
         {
@@ -34,18 +32,10 @@ namespace AsterNET.FastAGI
             _SCHANGUP_CAUSES_EXCEPTION = SCHANGUP_CAUSES_EXCEPTION;
         }
 
-        /// <summary>
-        ///     Get last AGI Reply.
-        /// </summary>
-        public AGIReply LastReply
-        {
-            get { return agiReply; }
-        }
-
         public AGIReply SendCommand(AGICommand command)
         {
             agiWriter.SendCommand(command);
-            agiReply = agiReader.ReadReply();
+            AGIReply agiReply = agiReader.ReadReply();
             int status = agiReply.GetStatus();
             if (status == (int) AGIReplyStatuses.SC_INVALID_OR_UNKNOWN_COMMAND)
                 throw new InvalidOrUnknownCommandException(command.BuildCommand());
