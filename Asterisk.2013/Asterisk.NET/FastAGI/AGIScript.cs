@@ -278,8 +278,8 @@ namespace AsterNET.FastAGI
 		protected internal int StreamFile(string file)
 		{
             AGIChannel channel = this.Channel;
-            channel.SendCommand(new Command.StreamFileCommand(file));
-            return channel.LastReply.ResultCode;
+            AGIReply reply = channel.SendCommand(new Command.StreamFileCommand(file));
+            return reply.ResultCode;
         }
 
 		#endregion
@@ -294,8 +294,8 @@ namespace AsterNET.FastAGI
 		protected internal char StreamFile(string file, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
-			channel.SendCommand(new Command.StreamFileCommand(file, escapeDigits));
-			return channel.LastReply.ResultCodeAsChar;
+            AGIReply reply = channel.SendCommand(new Command.StreamFileCommand(file, escapeDigits));
+			return reply.ResultCodeAsChar;
 		}
 		#endregion
 
