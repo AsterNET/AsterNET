@@ -21,7 +21,8 @@ namespace AsterNET.Manager.Event
         public long HoldTime { get; set; }
 
         /// <summary>
-        ///     Get/Set bridged channel.
+        ///     Get/Set bridged channel. <br />
+        ///     Removed from Asterisk 12
         /// </summary>
         public string BridgedChannel { get; set; }
 

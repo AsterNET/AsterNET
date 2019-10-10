@@ -15,10 +15,10 @@ namespace AsterNET.Manager
         private ManagerResponse response;
 
         /// <summary>
-        ///     Creates a new instance.
+        ///     Creates a new <see cref="ResponseHandler"/>.
         /// </summary>
-        /// <param name="result">the result to store the response in</param>
-        /// <param name="thread">the thread to interrupt when the response has been received</param>
+        /// <param name="action"><see cref="ManagerAction"/></param>
+        /// <param name="autoEvent"><see cref="AutoResetEvent"/></param>
         public ResponseHandler(ManagerAction action, AutoResetEvent autoEvent)
         {
             response = null;
@@ -26,22 +26,34 @@ namespace AsterNET.Manager
             this.autoEvent = autoEvent;
         }
 
+        /// <summary>
+        ///     Gets the response.
+        /// </summary>
         public ManagerResponse Response
         {
             get { return this.response; }
         }
 
+        /// <summary>
+        ///     Gets the action.
+        /// </summary>
         public ManagerAction Action
         {
             get { return this.action; }
         }
 
+        /// <summary>
+        ///     Gets or sets the hash.
+        /// </summary>
         public int Hash
         {
             get { return hash; }
             set { hash = value; }
         }
 
+        /// <summary>
+        ///     Frees this instance.
+        /// </summary>
         public void Free()
         {
             autoEvent = null;
@@ -49,6 +61,10 @@ namespace AsterNET.Manager
             response = null;
         }
 
+        /// <summary>
+        ///     This method is called when a response is received.
+        /// </summary>
+        /// <param name="response">the response received</param>
         public virtual void HandleResponse(ManagerResponse response)
         {
             this.response = response;

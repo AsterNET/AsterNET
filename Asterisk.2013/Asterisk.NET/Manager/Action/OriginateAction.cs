@@ -67,6 +67,15 @@ namespace AsterNET.Manager.Action
 
         #endregion
 
+        #region ChannelId
+
+        /// <summary>
+        ///     Get/Set originated channel id
+        /// </summary>
+        public string ChannelId { get; set; }
+
+        #endregion
+
         #region Context 
 
         /// <summary>

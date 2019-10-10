@@ -114,7 +114,8 @@ namespace AsterNET.Manager.Action
         /// <param name="variable">Variable to work on</param>
         /// <param name="value">Value to work on</param>
         /// <param name="match">Extra match required to match line</param>
-        public void AddCommand(string action, string category, string variable, string value, string match)
+        /// <param name="options">Extra match required to match line</param>
+        public void AddCommand(string action, string category, string variable, string value, string match, string options)
         {
             var i = actionCounter++;
             var index = i.ToString().PadLeft(6, '0');
@@ -133,31 +134,39 @@ namespace AsterNET.Manager.Action
 
             if (!string.IsNullOrEmpty(match))
                 actions.Add("Match-" + index, match);
+
+            if (!string.IsNullOrEmpty(options))
+                Actions.Add("Options-" + index, options);
+        }
+
+        public void AddCommand(string action, string category, string variable, string value, string match)
+        {
+            AddCommand(action, category, variable, value, match, null);
         }
 
         public void AddCommand(string action, string category, string variable, string value)
         {
-            AddCommand(action, category, variable, value, null);
+            AddCommand(action, category, variable, value, null, null);
         }
 
         public void AddCommand(string action, string category, string variable)
         {
-            AddCommand(action, category, variable, null, null);
+            AddCommand(action, category, variable, null, null, null);
         }
 
         public void AddCommand(string action, string category)
         {
-            AddCommand(action, category, null, null, null);
+            AddCommand(action, category, null, null, null, null);
         }
 
         public void AddCommand(string action)
         {
-            AddCommand(action, null, null, null, null);
+            AddCommand(action, null, null, null, null, null);
         }
 
         public void AddCommand()
         {
-            AddCommand(null, null, null, null, null);
+            AddCommand(null, null, null, null, null, null);
         }
 
         #endregion
