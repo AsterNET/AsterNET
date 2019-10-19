@@ -12,29 +12,37 @@ namespace AsterNET.Manager
     {
         private readonly List<ResponseEvent> events;
 
-        /// <summary> Creates a new instance.</summary>
+        /// <summary>
+        ///     Creates a new <see cref="ResponseEvents"/>.
+        /// </summary>
         public ResponseEvents()
         {
             events = new List<ResponseEvent>();
             Complete = false;
         }
 
+        /// <summary>
+        ///     Gets or sets the response.
+        /// </summary>
         public ManagerResponse Response { get; set; }
 
+        /// <summary>
+        ///     Gets the list of events.
+        /// </summary>
         public List<ResponseEvent> Events
         {
             get { return events; }
         }
 
         /// <summary>
-        ///     Indicats if all events have been received.
+        ///     Indicates if all events have been received.
         /// </summary>
         public bool Complete { get; set; }
 
         /// <summary>
         ///     Adds a ResponseEvent that has been received.
         /// </summary>
-        /// <param name="e">the ResponseEvent that has been received.</param>
+        /// <param name="e"><see cref="ResponseEvent"/></param>
         public void AddEvent(ResponseEvent e)
         {
             lock (((IList) events).SyncRoot)

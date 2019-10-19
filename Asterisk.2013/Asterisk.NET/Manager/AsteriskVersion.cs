@@ -1,5 +1,8 @@
 namespace AsterNET.Manager
 {
+    /// <summary>
+    ///     Asterisk Version
+    /// </summary>
     public enum AsteriskVersion
     {
         ASTERISK_1_0 = 10,
