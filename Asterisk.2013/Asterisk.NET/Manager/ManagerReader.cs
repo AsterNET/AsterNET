@@ -24,6 +24,7 @@ namespace AsterNET.Manager
 
 		private bool die;
 		private bool is_logoff;
+		private bool is_login;
 		private bool disconnect;
 		private byte[] lineBytes;
 		private string lineBuffer;
@@ -84,6 +85,16 @@ namespace AsterNET.Manager
 		internal bool IsLogoff
 		{
 			set { is_logoff = value; }
+		}
+
+		#endregion
+
+		#region IsLogin 
+
+		internal bool IsLogin
+
+		{
+			set { is_login = value; }
 		}
 
 		#endregion
@@ -175,6 +186,7 @@ namespace AsterNET.Manager
 			lineBytes = new byte[mrSocket.TcpClient.ReceiveBufferSize];
 			lastPacketTime = DateTime.Now;
 			wait4identiier = true;
+			is_login = false;
 			processingCommandResult = false;
 			mrSocket.NetworkStream.BeginRead(lineBytes, 0, lineBytes.Length, mrReaderCallbback, this);
 			lastPacketTime = DateTime.Now;
@@ -223,7 +235,7 @@ namespace AsterNET.Manager
 							if (lastPacketTime.AddMilliseconds(mrConnector.PingInterval) < DateTime.Now
 								&& mrConnector.PingInterval > 0
 								&& mrSocket != null
-								&& !wait4identiier
+								&& is_login
 								&& !is_logoff
 								)
 							{
