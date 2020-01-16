@@ -18,6 +18,7 @@ namespace AsterNET.Manager.Event
 		private bool paused;
 		private string name;
         private bool incall;
+		private string pausedReason;
 
         /// <summary>
         /// Get/Set the name of the queue member.
@@ -135,6 +136,14 @@ namespace AsterNET.Manager.Event
             get { return this.incall; }
             set { this.incall = value; }
         }
+		/// <summary>
+		/// Paused reason if the queue member is paused
+		/// </summary>
+		public string PausedReason
+		{
+			get { return this.pausedReason; }
+			set { this.pausedReason = value; }
+		}
 
         public QueueMemberEvent(ManagerConnection source)
 			: base(source)
