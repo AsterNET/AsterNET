@@ -177,6 +177,10 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<HangupEvent> Hangup;
         /// <summary>
+        /// A HangupRequestEvent is raised when a channel is hang up.<br/>
+        /// </summary>
+        public event EventHandler<HangupRequestEvent> HangupRequest;
+        /// <summary>
         /// A HoldedCall is triggered when a channel is put on hold.<br/>
         /// </summary>
         public event EventHandler<HoldedCallEvent> HoldedCall;
@@ -534,6 +538,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DNDStateEvent), arg => fireEvent(DNDState, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ExtensionStatusEvent), arg => fireEvent(ExtensionStatus, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(HangupEvent), arg => fireEvent(Hangup, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(HangupRequestEvent), arg => fireEvent(HangupRequest, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(HoldedCallEvent), arg => fireEvent(HoldedCall, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(HoldEvent), arg => fireEvent(Hold, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(JoinEvent), arg => fireEvent(Join, arg));
