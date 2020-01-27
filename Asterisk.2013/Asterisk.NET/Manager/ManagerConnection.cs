@@ -408,6 +408,16 @@ namespace AsterNET.Manager
         public event EventHandler<ConfbridgeTalkingEvent> ConfbridgeTalking;
 
         /// <summary>
+        /// This event is sent when a Confbridge participant mutes.
+        /// </summary>
+        public event EventHandler<ConfbridgeMuteEvent> ConfbridgeMute;
+
+        /// <summary>
+        /// This event is sent when a Confbridge participant unmutes.
+        /// </summary>
+        public event EventHandler<ConfbridgeUnmuteEvent> ConfbridgeUnmute;
+
+        /// <summary>
         /// 
         /// </summary>
         public event EventHandler<FailedACLEvent> FailedACL;
@@ -596,6 +606,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeLeaveEvent), arg => fireEvent(ConfbridgeLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeEndEvent), arg => fireEvent(ConfbridgeEnd, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeTalkingEvent), arg => fireEvent(ConfbridgeTalking, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeMuteEvent), arg => fireEvent(ConfbridgeMute, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeUnmuteEvent), arg => fireEvent(ConfbridgeUnmute, arg));
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(FailedACLEvent), arg => fireEvent(FailedACL, arg));
 
