@@ -860,6 +860,13 @@ namespace AsterNET.Manager
         /// <summary>
         /// Socket Encoding - default ASCII
         /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
         public Encoding SocketEncoding
         {
             get { return socketEncoding; }
@@ -869,6 +876,13 @@ namespace AsterNET.Manager
         /// <summary>
         /// Socket Receive Buffer Size
         /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
         public int SocketReceiveBufferSize { get; set;}
 
         #endregion
