@@ -56,11 +56,13 @@ namespace AsterNET.Manager.Action
         /// <param name="iface">the interface of the member to make unavailable</param>
         /// <param name="queue">the queue the member is made unvailable on</param>
         /// <param name="paused">true to make the member unavailbale, false to make the member available</param>
-        public QueuePauseAction(string iface, string queue, bool paused)
+        /// <param name="reason">the reason for paused when the member is made unavailable</param>
+        public QueuePauseAction(string iface, string queue, bool paused, string reason = null)
         {
             this.Interface = iface;
             this.Queue = queue;
             this.Paused = paused;
+            this.Reason = reason;
         }
 
         /// <summary>

@@ -408,6 +408,16 @@ namespace AsterNET.Manager
         public event EventHandler<ConfbridgeTalkingEvent> ConfbridgeTalking;
 
         /// <summary>
+        /// This event is sent when a Confbridge participant mutes.
+        /// </summary>
+        public event EventHandler<ConfbridgeMuteEvent> ConfbridgeMute;
+
+        /// <summary>
+        /// This event is sent when a Confbridge participant unmutes.
+        /// </summary>
+        public event EventHandler<ConfbridgeUnmuteEvent> ConfbridgeUnmute;
+
+        /// <summary>
         /// 
         /// </summary>
         public event EventHandler<FailedACLEvent> FailedACL;
@@ -596,6 +606,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeLeaveEvent), arg => fireEvent(ConfbridgeLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeEndEvent), arg => fireEvent(ConfbridgeEnd, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeTalkingEvent), arg => fireEvent(ConfbridgeTalking, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeMuteEvent), arg => fireEvent(ConfbridgeMute, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeUnmuteEvent), arg => fireEvent(ConfbridgeUnmute, arg));
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(FailedACLEvent), arg => fireEvent(FailedACL, arg));
 
@@ -653,14 +665,14 @@ namespace AsterNET.Manager
         /// <param name="username">the username to use for login</param>
         /// <param name="password">the password to use for login</param>
         /// <param name="socketEncoding">text encoding to asterisk input/output stream</param>
-        public ManagerConnection(string hostname, int port, string username, string password, Encoding encoding)
+        public ManagerConnection(string hostname, int port, string username, string password, Encoding socketEncoding)
             : this()
         {
             this.hostname = hostname;
             this.port = port;
             this.username = username;
             this.password = password;
-            this.socketEncoding = encoding;
+            this.socketEncoding = socketEncoding;
         }
         #endregion
 
@@ -855,15 +867,36 @@ namespace AsterNET.Manager
         }
         #endregion
 
-        #region SocketEncoding
+        #region Socket Settings
+
         /// <summary>
         /// Socket Encoding - default ASCII
         /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
         public Encoding SocketEncoding
         {
             get { return socketEncoding; }
             set { socketEncoding = value; }
         }
+
+        /// <summary>
+        /// Socket Receive Buffer Size
+        /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
+        public int SocketReceiveBufferSize { get; set;}
+
         #endregion
 
         #region Version
@@ -1075,7 +1108,10 @@ namespace AsterNET.Manager
 #endif
                     try
                     {
-                        mrSocket = new SocketConnection(hostname, port, socketEncoding);
+                        if (SocketReceiveBufferSize>0)
+                            mrSocket = new SocketConnection(hostname, port, SocketReceiveBufferSize, socketEncoding);
+                        else
+                            mrSocket = new SocketConnection(hostname, port, socketEncoding);
                         result = mrSocket.IsConnected;
                     }
 #if LOGGER
@@ -1083,8 +1119,8 @@ namespace AsterNET.Manager
                     {
                         logger.Info("Connect - Exception  : {0}", ex.Message);
 #else
-					catch
-					{
+                    catch
+                    {
 #endif
                         result = false;
                     }
