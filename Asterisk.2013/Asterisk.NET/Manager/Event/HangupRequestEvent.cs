@@ -19,10 +19,5 @@
 		/// Get/Set the cause of the hangup.
 		/// </summary>
 		public int Cause { get; set; }
-
-		/// <summary>
-		/// Get/Set the textual representation of the hangup cause.
-		/// </summary>
-		public string CauseTxt { get; set; }
 	}
 }
