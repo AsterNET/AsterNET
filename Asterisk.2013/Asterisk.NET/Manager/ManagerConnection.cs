@@ -9,11 +9,12 @@ using System.Text;
 using System.Collections.Generic;
 using System.Reflection;
 using AsterNET.IO;
+using System.Threading.Tasks;
 
 namespace AsterNET.Manager
 {
     /// <summary>
-    /// Default implemention of the ManagerConnection interface.
+    /// Default implementation of the ManagerConnection interface.
     /// </summary>
     public class ManagerConnection
     {
@@ -45,6 +46,7 @@ namespace AsterNET.Manager
         private int pingInterval = 10000;
 
         private object lockSocket = new object();
+        private object lockSocketWrite = new object();
         private object lockHandlers = new object();
 
         private bool enableEvents = true;
@@ -120,6 +122,11 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<AgentLogoffEvent> AgentLogoff;
         /// <summary>
+        /// An AgentRingNoAnswer is triggered when an agent was rang and did not answer.<br/>
+        /// To enable AgentRingNoAnswer you have to set eventwhencalled = yes in queues.conf.
+        /// </summary>
+        public event EventHandler<AgentRingNoAnswerEvent> AgentRingNoAnswer;
+        /// <summary>
         /// An AgentsCompleteEvent is triggered after the state of all agents has been reported in response to an AgentsAction.
         /// </summary>
         public event EventHandler<AgentsCompleteEvent> AgentsComplete;
@@ -149,6 +156,14 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<DialEvent> Dial;
         public event EventHandler<DTMFEvent> DTMF;
+        /// <summary>
+        /// An DTMFBeginEvent is triggered when a DTMF digit has started on a channel.
+        /// </summary>
+        public event EventHandler<DTMFBeginEvent> DTMFBegin;
+        /// <summary>
+        /// An DTMFEndEvent is triggered when a DTMF digit has ended on a channel.
+        /// </summary>
+        public event EventHandler<DTMFEndEvent> DTMFEnd;
         /// <summary>
         /// A DNDStateEvent is triggered by the Zap channel driver when a channel enters or leaves DND (do not disturb) state.
         /// </summary>
@@ -348,9 +363,14 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<ZapShowChannelsEvent> ZapShowChannels;
         /// <summary>
-        /// A ConnectionState is triggered after Connect/Disconnect/Reload/Shutdown events.
+        /// A ConnectionState is triggered after Connect/Disconnect/Shutdown events.
         /// </summary>
         public event EventHandler<ConnectionStateEvent> ConnectionState;
+
+        /// <summary>
+        /// A Reload is triggered after Reload events.
+        /// </summary>
+        public event EventHandler<ReloadEvent> Reload;
 
         /// <summary>
         /// When a variable is set
@@ -386,6 +406,16 @@ namespace AsterNET.Manager
         /// This event is sent when the conference detects that a user has either begin or stopped talking.
         /// </summary>
         public event EventHandler<ConfbridgeTalkingEvent> ConfbridgeTalking;
+
+        /// <summary>
+        /// This event is sent when a Confbridge participant mutes.
+        /// </summary>
+        public event EventHandler<ConfbridgeMuteEvent> ConfbridgeMute;
+
+        /// <summary>
+        /// This event is sent when a Confbridge participant unmutes.
+        /// </summary>
+        public event EventHandler<ConfbridgeUnmuteEvent> ConfbridgeUnmute;
 
         /// <summary>
         /// 
@@ -425,6 +455,24 @@ namespace AsterNET.Manager
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public event EventHandler<QueueMemberPauseEvent> QueueMemberPause;
+
+        /// <summary>
+        ///    Raised when music on hold has started/stopped on a channel.<br />
+        ///    <b>Available since : </b> Asterisk 1.6.
+        /// </summary>
+        public event EventHandler<MusicOnHoldEvent> MusicOnHold;
+
+        /// <summary>
+        ///    Raised when music on hold has started on a channel.<br />
+        ///    <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
+        /// </summary>
+        public event EventHandler<MusicOnHoldStartEvent> MusicOnHoldStart;
+
+        /// <summary>
+        ///    Raised when music on hold has stopped on a channel.<br />
+        ///    <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
+        /// </summary>
+        public event EventHandler<MusicOnHoldStopEvent> MusicOnHoldStop;
 
         /// <summary>
         /// A ChallengeResponseFailed is triggered when a request's attempt to authenticate has been challenged, and the request failed the authentication challenge.
@@ -484,6 +532,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentDumpEvent), arg => fireEvent(AgentDump, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentLoginEvent), arg => fireEvent(AgentLogin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentLogoffEvent), arg => fireEvent(AgentLogoff, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentRingNoAnswerEvent), arg => fireEvent(AgentRingNoAnswer, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentsCompleteEvent), arg => fireEvent(AgentsComplete, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AgentsEvent), arg => fireEvent(Agents, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AlarmClearEvent), arg => fireEvent(AlarmClear, arg));
@@ -540,12 +589,14 @@ namespace AsterNET.Manager
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConnectEvent), arg => fireEvent(ConnectionState, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DisconnectEvent), arg => fireEvent(ConnectionState, arg));
-            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ReloadEvent), arg => fireEvent(ConnectionState, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ReloadEvent), arg => fireEvent(Reload, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ShutdownEvent), arg => fireEvent(ConnectionState, arg));
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(BridgeEvent), arg => fireEvent(Bridge, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(TransferEvent), arg => fireEvent(Transfer, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DTMFEvent), arg => fireEvent(DTMF, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(DTMFBeginEvent), arg => fireEvent(DTMFBegin, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(DTMFEndEvent), arg => fireEvent(DTMFEnd, arg));
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(VarSetEvent), arg => fireEvent(VarSet, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AGIExecEvent), arg => fireEvent(AGIExec, arg));
@@ -555,6 +606,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeLeaveEvent), arg => fireEvent(ConfbridgeLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeEndEvent), arg => fireEvent(ConfbridgeEnd, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeTalkingEvent), arg => fireEvent(ConfbridgeTalking, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeMuteEvent), arg => fireEvent(ConfbridgeMute, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ConfbridgeUnmuteEvent), arg => fireEvent(ConfbridgeUnmute, arg));
 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(FailedACLEvent), arg => fireEvent(FailedACL, arg));
 
@@ -569,6 +622,9 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerJoinEvent), arg => fireEvent(QueueCallerJoin, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueCallerLeaveEvent), arg => fireEvent(QueueCallerLeave, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberPauseEvent), arg => fireEvent(QueueMemberPause, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldEvent), arg => fireEvent(MusicOnHold, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldStartEvent), arg => fireEvent(MusicOnHoldStart, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(MusicOnHoldStopEvent), arg => fireEvent(MusicOnHoldStop, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeResponseFailedEvent), arg => fireEvent(ChallengeResponseFailed, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(InvalidAccountIDEvent), arg => fireEvent(InvalidAccountID, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DeviceStateChangeEvent), arg => fireEvent(DeviceStateChanged, arg));
@@ -609,14 +665,14 @@ namespace AsterNET.Manager
         /// <param name="username">the username to use for login</param>
         /// <param name="password">the password to use for login</param>
         /// <param name="socketEncoding">text encoding to asterisk input/output stream</param>
-        public ManagerConnection(string hostname, int port, string username, string password, Encoding encoding)
+        public ManagerConnection(string hostname, int port, string username, string password, Encoding socketEncoding)
             : this()
         {
             this.hostname = hostname;
             this.port = port;
             this.username = username;
             this.password = password;
-            this.socketEncoding = encoding;
+            this.socketEncoding = socketEncoding;
         }
         #endregion
 
@@ -811,15 +867,36 @@ namespace AsterNET.Manager
         }
         #endregion
 
-        #region SocketEncoding
+        #region Socket Settings
+
         /// <summary>
         /// Socket Encoding - default ASCII
         /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
         public Encoding SocketEncoding
         {
             get { return socketEncoding; }
             set { socketEncoding = value; }
         }
+
+        /// <summary>
+        /// Socket Receive Buffer Size
+        /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
+        public int SocketReceiveBufferSize { get; set;}
+
         #endregion
 
         #region Version
@@ -1031,7 +1108,10 @@ namespace AsterNET.Manager
 #endif
                     try
                     {
-                        mrSocket = new SocketConnection(hostname, port, socketEncoding);
+                        if (SocketReceiveBufferSize>0)
+                            mrSocket = new SocketConnection(hostname, port, SocketReceiveBufferSize, socketEncoding);
+                        else
+                            mrSocket = new SocketConnection(hostname, port, socketEncoding);
                         result = mrSocket.IsConnected;
                     }
 #if LOGGER
@@ -1039,8 +1119,8 @@ namespace AsterNET.Manager
                     {
                         logger.Info("Connect - Exception  : {0}", ex.Message);
 #else
-					catch
-					{
+                    catch
+                    {
 #endif
                         result = false;
                     }
@@ -1314,13 +1394,13 @@ namespace AsterNET.Manager
         /// <param name="action">action to send</param>
         /// <param name="timeout">timeout in milliseconds</param>
         /// <returns></returns>
-        public Response.ManagerResponse SendAction(ManagerAction action, int timeOut)
+        public Response.ManagerResponse SendAction(ManagerAction action, int timeout)
         {
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             ResponseHandler handler = new ResponseHandler(action, autoEvent);
 
             int hash = SendAction(action, handler);
-            bool result = autoEvent.WaitOne(timeOut <= 0 ? -1 : timeOut, true);
+            bool result = autoEvent.WaitOne(timeout <= 0 ? -1 : timeout, true);
 
             RemoveResponseHandler(handler);
 
@@ -1331,7 +1411,13 @@ namespace AsterNET.Manager
         #endregion
 
         #region SendAction(action, responseHandler)
-        public int SendAction(ManagerAction action, ResponseHandler responseHandler)
+        /// <summary>
+        /// Send action ans with timeout (milliseconds)
+        /// </summary>
+        /// <param name="action">action to send</param>
+        /// <param name="responseHandler">Response Handler</param>
+        /// <returns></returns>
+        public int SendAction(ManagerAction action, IResponseHandler responseHandler)
         {
             if (action == null)
                 throw new ArgumentException("Unable to send action: action is null.");
@@ -1354,6 +1440,42 @@ namespace AsterNET.Manager
         }
         #endregion
 
+
+
+        #region SendActionAsync(action)
+        /// <summary>
+        /// Asynchronously send Action async with default timeout.
+        /// </summary>
+        /// <param name="action">action to send</param>
+        public Task<ManagerResponse> SendActionAsync(ManagerAction action)
+        {
+          return SendActionAsync(action, null);
+        }
+        #endregion
+
+        #region SendActionAsync(action, timeout)
+        /// <summary>
+        /// Asynchronously send Action async.
+        /// </summary>
+        /// <param name="action">action to send</param>
+        /// <param name="cancellationToken">cancellation Token</param>
+        public Task<ManagerResponse> SendActionAsync(ManagerAction action, CancellationTokenSource cancellationToken)
+        {
+          var handler = new TaskResponseHandler(action);
+          var source = handler.TaskCompletionSource;
+
+          SendAction(action, handler);
+
+          if (cancellationToken != null)
+            cancellationToken.Token.Register(() => { source.TrySetCanceled(); });
+
+          return source.Task.ContinueWith(x =>
+          {
+            RemoveResponseHandler(handler);
+            return x.Result;
+          });
+        }
+        #endregion
         #region SendEventGeneratingAction(action)
         public ResponseEvents SendEventGeneratingAction(ManagerActionEvent action)
         {
@@ -1420,7 +1542,11 @@ namespace AsterNET.Manager
                 responseEventHandlers[handler.Hash] = handler;
         }
 
-        internal void RemoveResponseHandler(IResponseHandler handler)
+        /// <summary>
+        /// Delete an instance of a class <see cref="IResponseHandler"/> from handlers list.
+        /// </summary>
+        /// <param name="handler">Class instance <see cref="IResponseHandler"/>.</param>
+		public void RemoveResponseHandler(IResponseHandler handler)
         {
             int hash = handler.Hash;
             if (hash != 0)
@@ -1437,7 +1563,6 @@ namespace AsterNET.Manager
                     if (responseEventHandlers.ContainsKey(hash))
                         responseEventHandlers.Remove(hash);
         }
-
         private IResponseHandler GetRemoveResponseHandler(int hash)
         {
             IResponseHandler handler = null;
@@ -1506,7 +1631,10 @@ namespace AsterNET.Manager
 
         private void sendToAsterisk(string buffer)
         {
-            mrSocket.Write(buffer);
+            lock (lockSocketWrite)
+            {
+                mrSocket.Write(buffer);
+            }
         }
 
         #endregion
@@ -1898,7 +2026,7 @@ namespace AsterNET.Manager
                 fireEvent(e);
                 reconnect(false);
             }
-            else if (!reconnected && reconnectEnable && (e is DisconnectEvent || e is ReloadEvent || e is ShutdownEvent))
+            else if (!reconnected && reconnectEnable && (e is DisconnectEvent || e is ShutdownEvent))
             {
                 ((ConnectionStateEvent)e).Reconnect = true;
                 fireEvent(e);
