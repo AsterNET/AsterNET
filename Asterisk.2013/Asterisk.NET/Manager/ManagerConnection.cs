@@ -658,14 +658,14 @@ namespace AsterNET.Manager
         /// <param name="username">the username to use for login</param>
         /// <param name="password">the password to use for login</param>
         /// <param name="socketEncoding">text encoding to asterisk input/output stream</param>
-        public ManagerConnection(string hostname, int port, string username, string password, Encoding encoding)
+        public ManagerConnection(string hostname, int port, string username, string password, Encoding socketEncoding)
             : this()
         {
             this.hostname = hostname;
             this.port = port;
             this.username = username;
             this.password = password;
-            this.socketEncoding = encoding;
+            this.socketEncoding = socketEncoding;
         }
         #endregion
 
@@ -860,15 +860,36 @@ namespace AsterNET.Manager
         }
         #endregion
 
-        #region SocketEncoding
+        #region Socket Settings
+
         /// <summary>
         /// Socket Encoding - default ASCII
         /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
         public Encoding SocketEncoding
         {
             get { return socketEncoding; }
             set { socketEncoding = value; }
         }
+
+        /// <summary>
+        /// Socket Receive Buffer Size
+        /// </summary>
+        /// <remarks>
+        /// Attention!
+        /// <para>
+        /// The value of this property must be set before establishing a connection with the Asterisk.
+        /// Changing the property doesn't do anything while you are already connected.
+        /// </para>
+        /// </remarks>
+        public int SocketReceiveBufferSize { get; set;}
+
         #endregion
 
         #region Version
@@ -1080,7 +1101,10 @@ namespace AsterNET.Manager
 #endif
                     try
                     {
-                        mrSocket = new SocketConnection(hostname, port, socketEncoding);
+                        if (SocketReceiveBufferSize>0)
+                            mrSocket = new SocketConnection(hostname, port, SocketReceiveBufferSize, socketEncoding);
+                        else
+                            mrSocket = new SocketConnection(hostname, port, socketEncoding);
                         result = mrSocket.IsConnected;
                     }
 #if LOGGER
@@ -1088,8 +1112,8 @@ namespace AsterNET.Manager
                     {
                         logger.Info("Connect - Exception  : {0}", ex.Message);
 #else
-					catch
-					{
+                    catch
+                    {
 #endif
                         result = false;
                     }
