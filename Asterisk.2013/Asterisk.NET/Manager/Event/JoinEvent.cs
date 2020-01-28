@@ -15,7 +15,7 @@ namespace AsterNET.Manager.Event
         ///     Get/Set the Caller*ID number of the channel that joined the queue if set.
         ///     If the channel has no caller id set "unknown" is returned.
         /// </summary>
-        public string CallerId { get; set; }
+        public string CallerIdNum { get; set; }
 
         /// <summary>
         ///     Get/Set the Caller*ID name of the channel that joined the queue if set.
