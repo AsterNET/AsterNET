@@ -8,13 +8,15 @@ namespace AsterNET.Manager.Action
     ///     When the timeout is reached the call is returned to the T extension so that
     ///     you can playback an explanatory note to the calling party (the called party will not hear that).<br />
     ///     This action corresponds the the AbsoluteTimeout command used in the dialplan.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AbsoluteTimeout">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_AbsoluteTimeout</see>
     /// </summary>
     public class AbsoluteTimeoutAction : ManagerAction
     {
         #region AbsoluteTimeoutAction()
 
         /// <summary>
-        ///     Creates a new empty AbsoluteTimeoutAction.
+        ///     Creates a new empty <see cref="AbsoluteTimeoutAction"/>.
         /// </summary>
         public AbsoluteTimeoutAction()
         {
@@ -25,7 +27,7 @@ namespace AsterNET.Manager.Action
         #region AbsoluteTimeoutAction(channel, timeout)
 
         /// <summary>
-        ///     Creates a new AbsoluteTimeoutAction with the given channel and timeout.
+        ///     Creates a new <see cref="AbsoluteTimeoutAction"/> with the given channel and timeout.
         /// </summary>
         /// <param name="channel">the name of the channel</param>
         /// <param name="timeout">the timeout in seconds or 0 to cancel the AbsoluteTimeout</param>

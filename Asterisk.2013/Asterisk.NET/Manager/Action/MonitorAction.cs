@@ -3,6 +3,8 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     The MonitorAction starts monitoring (recording) a channel.<br />
     ///     It is implemented in res/res_monitor.c
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Monitor">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Monitor</see>
     /// </summary>
     public class MonitorAction : ManagerAction
     {
@@ -60,7 +62,7 @@ namespace AsterNET.Manager.Action
         #region MonitorAction()
 
         /// <summary>
-        ///     Creates a new empty MonitorAction.
+        ///     Creates a new empty <see cref="MonitorAction"/>.
         /// </summary>
         public MonitorAction()
         {
@@ -71,7 +73,7 @@ namespace AsterNET.Manager.Action
         #region MonitorAction(string channel, string file)
 
         /// <summary>
-        ///     Creates a new MonitorAction that starts monitoring the given channel and
+        ///     Creates a new <see cref="MonitorAction"/> that starts monitoring the given channel and
         ///     writes voice data to the given file(s).
         /// </summary>
         /// <param name="channel">the name of the channel to monitor</param>
@@ -87,7 +89,7 @@ namespace AsterNET.Manager.Action
         #region MonitorAction(string channel, string file)
 
         /// <summary>
-        ///     Creates a new MonitorAction that starts monitoring the given channel and
+        ///     Creates a new <see cref="MonitorAction"/> that starts monitoring the given channel and
         ///     writes voice data to the given file(s).
         /// </summary>
         /// <param name="channel">the name of the channel to monitor</param>
@@ -105,7 +107,7 @@ namespace AsterNET.Manager.Action
         #region MonitorAction(string channel, string file, string format, int mix)
 
         /// <summary>
-        ///     Creates a new MonitorAction that starts monitoring the given channel and
+        ///     Creates a new <see cref="MonitorAction"/> that starts monitoring the given channel and
         ///     writes voice data to the given file(s).
         /// </summary>
         /// <param name="channel">the name of the channel to monitor</param>

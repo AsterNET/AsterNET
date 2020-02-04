@@ -1,16 +1,21 @@
 ﻿namespace AsterNET.Manager.Action
 {
+    /// <summary>
+    ///     Set the penalty for a queue member.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_QueuePenalty">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_QueuePenalty</see>
+    /// </summary>
     public class QueuePenaltyAction : ManagerAction
     {
         /// <summary>
-        ///     Set the penalty for a queue member.
+        ///     Creates a new empty <see cref="QueuePenaltyAction"/>.
         /// </summary>
         public QueuePenaltyAction()
         {
         }
 
         /// <summary>
-        ///     Set the penalty for a queue member.
+        ///     Creates a new <see cref="QueuePenaltyAction"/>.
         /// </summary>
         /// <param name="interface">The interface (tech/name) of the member whose penalty to change.</param>
         /// <param name="penalty">The new penalty (number) for the member. Must be nonnegative.</param>
@@ -21,7 +26,7 @@
         }
 
         /// <summary>
-        ///     Set the penalty for a queue member.
+        ///     Creates a new <see cref="QueuePenaltyAction"/>.
         /// </summary>
         /// <param name="interface">The interface (tech/name) of the member whose penalty to change.</param>
         /// <param name="penalty">The new penalty (number) for the member. Must be nonnegative.</param>
@@ -33,6 +38,9 @@
             Queue = queue;
         }
 
+        /// <summary>
+        ///     Get the name of this action, i.e. "QueuePenalty".
+        /// </summary>
         public override string Action
         {
             get { return "QueuePenalty"; }

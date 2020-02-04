@@ -3,6 +3,8 @@ namespace AsterNET.Manager.Action
     /// <summary>
     ///     The StopMonitorAction ends monitoring (recording) a channel.<br />
     ///     It is implemented in res/res_monitor.c
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_StopMonitor">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_StopMonitor</see>
     /// </summary>
     public class StopMonitorAction : ManagerAction
     {
@@ -31,7 +33,7 @@ namespace AsterNET.Manager.Action
         #region StopMonitorAction()
 
         /// <summary>
-        ///     Creates a new empty StopMonitorAction.
+        ///     Creates a new empty <see cref="StopMonitorAction"/>.
         /// </summary>
         public StopMonitorAction()
         {
@@ -42,7 +44,7 @@ namespace AsterNET.Manager.Action
         #region StopMonitorAction(string channel)
 
         /// <summary>
-        ///     Creates a new StopMonitorAction that ends monitoring of the given channel.
+        ///     Creates a new <see cref="StopMonitorAction"/> that ends monitoring of the given channel.
         /// </summary>
         public StopMonitorAction(string channel)
         {

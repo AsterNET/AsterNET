@@ -19,6 +19,8 @@ namespace AsterNET.Manager.Action
     ///     If you set async to true Asterisk reports an OriginateSuccess-
     ///     and OriginateFailureEvents. The action id of these events equals the action
     ///     id of this OriginateAction.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Originate">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_Originate</see>
     /// </summary>
     /// <seealso cref="AsterNET.Manager.Event.OriginateSuccessEvent" />
     /// <seealso cref="AsterNET.Manager.Event.OriginateFailureEvent" />

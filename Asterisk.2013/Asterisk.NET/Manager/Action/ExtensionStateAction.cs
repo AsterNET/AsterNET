@@ -2,6 +2,8 @@ namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The ExtensionStateAction queries the state of an extension in a given context.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ExtensionState">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ExtensionState</see>
     /// </summary>
     public class ExtensionStateAction : ManagerAction
     {

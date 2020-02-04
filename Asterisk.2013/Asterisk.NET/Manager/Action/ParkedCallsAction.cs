@@ -7,6 +7,8 @@ namespace AsterNET.Manager.Action
     ///     The ParkedCallsAction requests a list of all currently parked calls.<br />
     ///     For each active channel a ParkedCallEvent is generated. After all parked
     ///     calls have been reported a ParkedCallsCompleteEvent is generated.
+    ///     
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ParkedCalls">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerAction_ParkedCalls</see>
     /// </summary>
     /// <seealso cref="AsterNET.Manager.Event.ParkedCallEvent" />
     /// <seealso cref="AsterNET.Manager.Event.ParkedCallsCompleteEvent" />
