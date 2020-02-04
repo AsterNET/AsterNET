@@ -508,6 +508,16 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<QueueSummaryEvent> QueueSummary;
 
+        /// <summary>
+        ///    Raised when one channel begins spying on another channel.
+        /// </summary>
+        public event EventHandler<ChanSpyStartEvent> ChanSpyStart;
+
+        /// <summary>
+        ///    Raised when one channel begins spying on another channel.
+        /// </summary>
+        public event EventHandler<ChanSpyStopEvent> ChanSpyStop;
+
         #endregion
 
         #region Constructor - ManagerConnection()
@@ -636,7 +646,9 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeSentEvent), arg => fireEvent(ChallengeSent, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(SuccessfulAuthEvent), arg => fireEvent(SuccessfulAuth, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueSummaryEvent), arg => fireEvent(QueueSummary, arg));
-            
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChanSpyStartEvent), arg => fireEvent(ChanSpyStart, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChanSpyStopEvent), arg => fireEvent(ChanSpyStop, arg));
+
             #endregion
 
             this.internalEvent += new EventHandler<ManagerEvent>(internalEventHandler);
