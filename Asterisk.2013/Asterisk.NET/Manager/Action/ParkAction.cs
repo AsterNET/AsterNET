@@ -1,4 +1,4 @@
-﻿namespace AsterNET.Manager.Action
+namespace AsterNET.Manager.Action
 {
     /// <summary>
     ///     The ParkAction allows to send a Channel to a Parking lot.<br />
@@ -9,44 +9,33 @@
         /// <summary>
         ///     Creates a new ParkAction.
         /// </summary>
-        /// <param name="channel"></param>
-        /// <param name="channel2"></param>
-        /// <param name="timeout"></param>
-        public ParkAction(string channel, string channel2, string timeout)
+        /// <param name="callerChannel">Set the Channel which should be parked</param>
+        /// <param name="calleeChannel">Set the Channel where the Call will end up after the timeout is reached.</param>
+        /// <param name="timeout">Timeout in milliseconds, after timeout is reached call will come back to channel2</param>
+        /// <param name="announceChannel">If specified, then this channel will receive an announcement when Channel is parked if AnnounceChannel is in a state where it can receive announcements (AnnounceChannel must be bridged). AnnounceChannel has no bearing on the actual state of the parked call.</param>
+        public ParkAction(string callerChannel, string calleeChannel, string announceChannel, string timeout)
         {
-            this.Channel = channel;
-            this.TimeoutChannel = channel2;
-            this.Timeout = timeout;
+            Channel = callerChannel;
+            TimeoutChannel = calleeChannel;
+            AnnounceChannel = announceChannel;
+            Timeout = timeout;
         }
 
         /// <summary>
-        ///     Creates a new ParkAction with Announcement.<br />
-        /// </summary>
-        /// <param name="channel">Set the Channel which should be parked</param>
-        /// <param name="TimeoutChannel">Channel name to use when constructing the dial string that will be dialed if the parked channel times out. If TimeoutChannel is in a two party bridge with Channel, then TimeoutChannel will receive an announcement and be treated as having parked Channel in the same manner as the Park Call DTMF feature.</param>
-        /// <param name="AnnounceChannel"> If specified, then this channel will receive an announcement when Channel is parked if AnnounceChannel is in a state where it can receive announcements (AnnounceChannel must be bridged). AnnounceChannel has no bearing on the actual state of the parked call.</param>
-        /// <param name="timeout">Timeout in msec, after timeout is reached call will come back to channel2</param>
-        public ParkAction(string channel, string TimeoutChannel, string AnnounceChannel, string timeout)
-        {
-            this.Channel = channel;
-            this.TimeoutChannel = TimeoutChannel;
-            this.AnnounceChannel = AnnounceChannel;
-            this.Timeout = timeout;
-        }
-        
-                /// <summary>
         ///     Creates a new ParkAction.<br />
         /// </summary>
-        /// <param name="channel">Set the Channel which should be parked</param>
-        /// <param name="channel2">Set the Channel where the Call will end up after the timeout is reached.</param>
-        /// <param name="timeout">Timeout in msec, after timeout is reached call will come back to channel2</param>
+        /// <param name="callerChannel">Set the Channel which should be parked</param>
+        /// <param name="calleeChannel">Set the Channel where the Call will end up after the timeout is reached.</param>
+        /// <param name="timeout">Timeout in milliseconds, after timeout is reached call will come back to channel2</param>
+        /// <param name="announceChannel">If specified, then this channel will receive an announcement when Channel is parked if AnnounceChannel is in a state where it can receive announcements (AnnounceChannel must be bridged). AnnounceChannel has no bearing on the actual state of the parked call.</param>
         /// <param name="parkinglot">Set the Parking lot.</param>
-        public ParkAction(string channel, string channel2, string timeout, string parkinglot)
+        public ParkAction(string callerChannel, string calleeChannel, string announceChannel, string timeout, string parkinglot)
         {
-            this.Channel = channel;
-            this.TimeoutChannel = channel2;
-            this.Timeout = timeout;
-            this.Parkinglot = parkinglot;
+            Channel = callerChannel;
+            TimeoutChannel = calleeChannel;
+            AnnounceChannel = announceChannel;
+            Timeout = timeout;
+            Parkinglot = parkinglot;
         }
 
         /// <summary>
@@ -63,12 +52,12 @@
         public string Channel { get; set; }
 
         /// <summary>
-        ///     Channel name to use when constructing the dial string that will be dialed if the parked channel times out. If TimeoutChannel is in a two party bridge with Channel, then TimeoutChannel will receive an announcement and be treated as having parked Channel in the same manner as the Park Call DTMF feature.
+        ///     Set the Channel where the Call will end up after the timeout is reached.
         /// </summary>
         public string TimeoutChannel { get; set; }
-        
+
         /// <summary>
-        ///    AnnounceChannel is in a state where it can receive announcements 
+        ///     Set the Announcement Channel to receive the AMI Announcement.
         /// </summary>
         public string AnnounceChannel { get; set; }
 
