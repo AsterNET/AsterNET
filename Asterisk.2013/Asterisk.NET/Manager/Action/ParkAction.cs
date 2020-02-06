@@ -20,6 +20,21 @@
         }
 
         /// <summary>
+        ///     Creates a new ParkAction with Announcement.<br />
+        /// </summary>
+        /// <param name="channel">Set the Channel which should be parked</param>
+        /// <param name="TimeoutChannel">Channel name to use when constructing the dial string that will be dialed if the parked channel times out. If TimeoutChannel is in a two party bridge with Channel, then TimeoutChannel will receive an announcement and be treated as having parked Channel in the same manner as the Park Call DTMF feature.</param>
+        /// <param name="AnnounceChannel"> If specified, then this channel will receive an announcement when Channel is parked if AnnounceChannel is in a state where it can receive announcements (AnnounceChannel must be bridged). AnnounceChannel has no bearing on the actual state of the parked call.</param>
+        /// <param name="timeout">Timeout in msec, after timeout is reached call will come back to channel2</param>
+        public ParkAction(string channel, string TimeoutChannel, string AnnounceChannel, string timeout)
+        {
+            this.Channel = channel;
+            this.TimeoutChannel = TimeoutChannel;
+            this.AnnounceChannel = AnnounceChannel;
+            this.Timeout = timeout;
+        }
+        
+                /// <summary>
         ///     Creates a new ParkAction.<br />
         /// </summary>
         /// <param name="channel">Set the Channel which should be parked</param>
