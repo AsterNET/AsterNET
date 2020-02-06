@@ -15,7 +15,7 @@
         public ParkAction(string channel, string channel2, string timeout)
         {
             this.Channel = channel;
-            this.Channel2 = channel2;
+            this.TimeoutChannel = channel2;
             this.Timeout = timeout;
         }
 
@@ -44,7 +44,7 @@
         public ParkAction(string channel, string channel2, string timeout, string parkinglot)
         {
             this.Channel = channel;
-            this.Channel2 = channel2;
+            this.TimeoutChannel = channel2;
             this.Timeout = timeout;
             this.Parkinglot = parkinglot;
         }
@@ -63,9 +63,14 @@
         public string Channel { get; set; }
 
         /// <summary>
-        ///     Set the Channel where the Call will end up after the timeout is reached.
+        ///     Channel name to use when constructing the dial string that will be dialed if the parked channel times out. If TimeoutChannel is in a two party bridge with Channel, then TimeoutChannel will receive an announcement and be treated as having parked Channel in the same manner as the Park Call DTMF feature.
         /// </summary>
-        public string Channel2 { get; set; }
+        public string TimeoutChannel { get; set; }
+        
+        /// <summary>
+        ///    AnnounceChannel is in a state where it can receive announcements 
+        /// </summary>
+        public string AnnounceChannel { get; set; }
 
         /// <summary>
         ///     Timeout in msec, after timeout is reached call will come back to channel2
