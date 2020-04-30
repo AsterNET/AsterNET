@@ -16,6 +16,7 @@ namespace AsterNET.IO
 		{
 			this.encoding = encoding;
 			tcpListener = new TcpListener(new IPEndPoint(bindAddress, port));
+			tcpListener.Server.DualMode = true;
 			tcpListener.Start();
 		}
 		

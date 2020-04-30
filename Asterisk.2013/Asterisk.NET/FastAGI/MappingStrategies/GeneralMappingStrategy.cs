@@ -45,7 +45,7 @@ namespace AsterNET.FastAGI.MappingStrategies
         /// <summary>
         /// The name of the assembly to load, that contains the ScriptClass. Optional, if not specified, the class will be loaded from the current assembly
         /// </summary>
-        public string ScriptAssmebly { get; set; }
+        public string ScriptAssembly { get; set; }
 
         [XmlIgnoreAttribute]
         public Assembly PreLoadedAssembly { get; set; }
@@ -153,19 +153,19 @@ namespace AsterNET.FastAGI.MappingStrategies
 
                     if (mapAssemblies.ContainsKey(de.ScriptName))
                         throw new AGIException(String.Format("Duplicate mapping name '{0}'", de.ScriptName));
-                    if (!string.IsNullOrEmpty(de.ScriptAssmebly))
+                    if (!string.IsNullOrEmpty(de.ScriptAssembly))
                     {
                         try
                         {
                             ma = new MappingAssembly()
                             {
                                 ClassName = (string)de.ScriptClass,
-                                LoadedAssembly = Assembly.LoadFile(de.ScriptAssmebly)
+                                LoadedAssembly = Assembly.LoadFile(de.ScriptAssembly)
                             };
                         }
                         catch (FileNotFoundException fnfex)
                         {
-                            throw new AGIException(string.Format("Unable to load AGI Script {0}, file not found.", Path.Combine(Environment.CurrentDirectory, de.ScriptAssmebly)), fnfex);
+                            throw new AGIException(string.Format("Unable to load AGI Script {0}, file not found.", Path.Combine(Environment.CurrentDirectory, de.ScriptAssembly)), fnfex);
                         }
                     }
                     else

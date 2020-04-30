@@ -59,7 +59,7 @@ namespace AsterNET.FastAGI
             var lines = new List<string>();
             try
             {
-                line = socket.ReadLine();
+                line = socket.ReadToEnd();
             }
             catch (IOException ex)
             {

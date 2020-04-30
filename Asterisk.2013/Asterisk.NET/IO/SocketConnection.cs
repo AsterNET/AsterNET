@@ -142,6 +142,20 @@ namespace AsterNET.IO
 			}
 			return line;
 		}
+
+		public string ReadToEnd()
+		{
+			string line = string.Empty;
+			do
+			{
+				try
+				{					
+					line += reader.ReadLine();
+				}
+				catch { line = null; break; }
+			} while (reader.Peek() >= 0);
+			return line;
+		}
 		#endregion
 
 
