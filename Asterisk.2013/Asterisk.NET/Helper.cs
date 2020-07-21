@@ -647,7 +647,7 @@ namespace AsterNET
             {
                 string name = line.Substring(0, delimiterIndex).ToLower(CultureInfo).Trim();
                 string val = line.Substring(delimiterIndex + 1).Trim();
-                if (list.ContainsKey(name))
+                if (list.Contains(name))
                     list[name] += Environment.NewLine + val;
                 else if (val == "<null>")
                     list[name] = null;
