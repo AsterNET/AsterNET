@@ -273,11 +273,10 @@ namespace AsterNET.Manager
 						if (processingCommandResult)
 						{
 							string lineLower = line.ToLower(Helper.CultureInfo);
-							if (lineLower == "--end command--")
+							if (lineLower == "--end command--" || lineLower == "")
 							{
 								var commandResponse = new CommandResponse();
 								Helper.SetAttributes(commandResponse, packet);
-								commandList.Add(line);
 								commandResponse.Result = commandList;
 								processingCommandResult = false;
 								packet.Clear();
@@ -308,11 +307,11 @@ namespace AsterNET.Manager
 								mrConnector.DispatchEvent(connectEvent);
 								continue;
 							}
-							if (line.Trim().ToLower(Helper.CultureInfo) == "response: follows")
+							if (line.Trim().ToLower(Helper.CultureInfo) == "response: follows"
+								|| line.Trim().ToLower(Helper.CultureInfo).EndsWith("command output follows"))
 							{
-								// Switch to wait "--END COMMAND--" mode
+								// Switch to wait "--END COMMAND--"/"" mode
 								processingCommandResult = true;
-								packet.Clear();
 								commandList.Clear();
 								Helper.AddKeyValue(packet, line);
 								continue;
