@@ -2065,7 +2065,7 @@ namespace AsterNET.Manager
         {
             if (enableEvents && internalEvent != null)
                 if (UseASyncEvents)
-                    internalEvent.BeginInvoke(this, e, new AsyncCallback(eventComplete), null);
+                    Task.Run(() => internalEvent.Invoke(this, e)).ContinueWith(eventComplete);
                 else
                     internalEvent.Invoke(this, e);
         }

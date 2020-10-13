@@ -26,6 +26,8 @@
 
         public string Conference { get; set; }
 
+        public string RecordFile { get; set; }
+
         public override string Action
         {
             get { return "ConfbridgeStartRecord"; }
