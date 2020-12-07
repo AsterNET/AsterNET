@@ -6,7 +6,7 @@ namespace AsterNET.Manager.Event
 {
 	public class BlindTransferEvent : ManagerEvent
 	{
-        public bool Result { get; set; }
+        public string Result { get; set; }
         public string TransfererChannel { get; set; }
         public string TransfererChannelState { get; set; }
         public string TransfererChannelStatedesc { get; set; }
