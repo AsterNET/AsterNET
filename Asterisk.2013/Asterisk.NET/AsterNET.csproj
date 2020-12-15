@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
-    <Version>1.3.0</Version>
-    <Copyright>Copyright © 2017</Copyright>
-    <Authors>Ben Merrills</Authors>
-    <PackageLicenseUrl>https://github.com/AsterNET/AsterNET/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/AsterNET/AsterNET</PackageProjectUrl>
-    <PackageTags>VB.NET, Asterisk, C#, AsterNET, DotNET, Asterisk.NET</PackageTags>
-    <Description>AsterNET an Asterisk FastAGI and AMI framework for .NET</Description>
-    <PackageReleaseNotes>Please see: https://github.com/AsterNET/AsterNET/commits/master</PackageReleaseNotes>
-    <Configurations>Debug;Release;Travis</Configurations>
+
+    <VersionSuffix>1.$([System.DateTime]::UtcNow.ToString(yy)).$([System.DateTime]::UtcNow.ToString(MMdd)).$([System.DateTime]::UtcNow.ToString(mmff))</VersionSuffix>
+    <AssemblyVersion Condition=" '$(VersionSuffix)' == '' ">1.0.0.0</AssemblyVersion>
+    <AssemblyVersion Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</AssemblyVersion>
+    <Version Condition=" '$(VersionSuffix)' == '' ">0.0.1.0</Version>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</Version>
+
+    <PackageId>Sufficit.AsterNETFork</PackageId>
+    <Authors>Hugo Castro de Deco</Authors>
+    <Company>Sufficit</Company>
+    <PackageDescription></PackageDescription>
+    <RepositoryUrl>https://github.com/sufficit/sufficit-asternet-fork</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -45,6 +48,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Travis\AsterNET.XML</DocumentationFile>
   </PropertyGroup>
+
+
   <ItemGroup>
     <None Remove="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
     <None Remove="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
