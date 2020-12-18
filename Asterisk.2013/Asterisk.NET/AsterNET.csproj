@@ -1,14 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net46;</TargetFrameworks>
 
     <VersionSuffix>1.$([System.DateTime]::UtcNow.ToString(yy)).$([System.DateTime]::UtcNow.ToString(MMdd)).$([System.DateTime]::UtcNow.ToString(mmff))</VersionSuffix>
     <AssemblyVersion Condition=" '$(VersionSuffix)' == '' ">1.0.0.0</AssemblyVersion>
     <AssemblyVersion Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</AssemblyVersion>
     <Version Condition=" '$(VersionSuffix)' == '' ">0.0.1.0</Version>
     <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</Version>
-
+    
+	<Name>Sufficit.AsterNETFork</Name>
     <PackageId>Sufficit.AsterNETFork</PackageId>
     <Authors>Hugo Castro de Deco</Authors>
     <Company>Sufficit</Company>
@@ -42,7 +43,7 @@
     <OutputPath>bin\Travis\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>pdbonly</DebugType>    
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>

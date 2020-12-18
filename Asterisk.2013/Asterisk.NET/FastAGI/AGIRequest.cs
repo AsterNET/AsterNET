@@ -475,7 +475,7 @@ namespace AsterNET.FastAGI
             if (ParameterMap().Count == 0)
                 return null;
 
-            return parameterMap[name];
+            return parameterMap[name.ToLowerInvariant()];
         }
 
         #endregion
@@ -557,12 +557,12 @@ namespace AsterNET.FastAGI
                 int i = parameter.IndexOf('=');
                 if (i > 0)
                 {
-                    name = WebUtility.UrlDecode(parameter.Substring(0, i));
+                    name = WebUtility.UrlDecode(parameter.Substring(0, i)).ToLowerInvariant();
                     if (parameter.Length > i + 1)
                         val = WebUtility.UrlDecode(parameter.Substring(i + 1));
                 }
                 else if (i < 0)
-                    name = WebUtility.UrlDecode(parameter);
+                    name = WebUtility.UrlDecode(parameter).ToLowerInvariant();
                 else
                     continue;
 
