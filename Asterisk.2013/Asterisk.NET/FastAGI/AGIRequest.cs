@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Linq;
 
 namespace AsterNET.FastAGI
 {
@@ -133,6 +134,62 @@ namespace AsterNET.FastAGI
                 return callerId10();
             }
         }
+
+        #region Arguments
+
+        private IEnumerable<string> _arguments;
+        private object _lockArguments = new object();
+
+        /// <summary>
+        /// The main advantage to use the arguments is that you not have to escape url parameters 
+        /// </summary>
+        public IEnumerable<string> Arguments
+        {
+            get
+            {
+                lock (_lockArguments)
+                {
+                    if (_arguments == null)
+                    {
+                        Dictionary<int, string> dic = new Dictionary<int, string>();
+                        foreach (string key in request.Keys)
+                        {
+                            if (key.StartsWith("arg_"))
+                            {
+                                dic.Add(int.Parse(key.Substring(4)), request[key]);
+                            }
+                        }
+
+                        if(dic.Count > 0) _arguments = dic.OrderBy(order => order.Key).Select(item => item.Value);                        
+                        else { _arguments = new List<string>(); }
+                    }
+                    return _arguments;
+                }
+            }
+        }
+
+        public string Argument(int position)
+        {
+            IEnumerable<string> args = Arguments;
+            int count = args.Count();
+            if (count > 0)
+            {               
+                if(position >= 0)
+                {
+                    if(count > position)
+                        return args.ElementAt(position);
+                }
+                else
+                {
+                    if(-count <= position)
+                        return args.ElementAt(count + position);
+                }
+            } 
+            
+            return null;
+        }
+
+        #endregion
 
         #endregion
 
@@ -470,12 +527,18 @@ namespace AsterNET.FastAGI
 
         #region ParameterValues(string name) 
 
+        /// <summary>
+        /// Consulta a matrix de parametros (não gera excessão)
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public List<string> ParameterValues(string name)
         {
-            if (ParameterMap().Count == 0)
-                return null;
-
-            return parameterMap[name.ToLowerInvariant()];
+            List<string> result = new List<string>();
+            if (ParameterMap().Count > 0)
+                if(parameterMap.ContainsKey(name.ToLowerInvariant()))
+                    result = parameterMap[name.ToLowerInvariant()];
+            return result;
         }
 
         #endregion
