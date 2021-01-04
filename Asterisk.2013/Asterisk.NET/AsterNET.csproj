@@ -9,12 +9,13 @@
     <Version Condition=" '$(VersionSuffix)' == '' ">0.0.1.0</Version>
     <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</Version>
     
-	<Name>Sufficit.AsterNETFork</Name>
+	  <Name>Sufficit.AsterNETFork</Name>
     <PackageId>Sufficit.AsterNETFork</PackageId>
     <Authors>Hugo Castro de Deco</Authors>
     <Company>Sufficit</Company>
     <PackageDescription></PackageDescription>
     <RepositoryUrl>https://github.com/sufficit/sufficit-asternet-fork</RepositoryUrl>
+    <Description>Sufficit.AsterNETFork</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
