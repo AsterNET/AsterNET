@@ -371,7 +371,7 @@ namespace AsterNET.FastAGI
         /// </summary>
         public string AccountCode
         {
-            get { return request["accountCode"]; }
+            get { return request["accountcode"]; }
         }
 
         #endregion
