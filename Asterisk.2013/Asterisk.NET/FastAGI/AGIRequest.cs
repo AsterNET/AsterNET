@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Linq;
 
 namespace AsterNET.FastAGI
