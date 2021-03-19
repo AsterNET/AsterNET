@@ -87,7 +87,7 @@ namespace AsterNET.Manager.Action
 
         /// <summary>
         ///     Pause or unpause the interface.<br />
-        //      Set to 'true' to pause the member or 'false' to unpause.
+        ///      Set to 'true' to pause the member or 'false' to unpause.
         /// </summary>
         public bool Paused { get; set; }
 

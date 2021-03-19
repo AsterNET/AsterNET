@@ -1,23 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+  <PropertyGroup Label="Sufficit Targeting">
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+  <PropertyGroup Label="Sufficit Versioning">
     <VersionSuffix>1.$([System.DateTime]::UtcNow.ToString(yy)).$([System.DateTime]::UtcNow.ToString(MMdd)).$([System.DateTime]::UtcNow.ToString(mmff))</VersionSuffix>
     <AssemblyVersion Condition=" '$(VersionSuffix)' == '' ">1.0.0.0</AssemblyVersion>
     <AssemblyVersion Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</AssemblyVersion>
     <Version Condition=" '$(VersionSuffix)' == '' ">0.0.1.0</Version>
     <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</Version>
   </PropertyGroup>
+
+  <PropertyGroup Label="Sufficit Product General">
+    <Company>SUFFICIT SOLUÇÕES EM TECNOLOGIA DA INFORMAÇÃO</Company>
+    <Authors>HUGO CASTRO DE DECO</Authors>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Description>Sufficit.AsterNETFork</Description>
+    <ProductName>Sufficit AsterNETFork</ProductName>
+
+    <!-- Copia todas as dlls de dependencias para o diretório de publicação dos projetos que o utilizam -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PreserveCompilationReferences>false</PreserveCompilationReferences>
+
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
   
-  <PropertyGroup Label="Pacote NUGET" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Label="Pacote NUGET">
     <Name>Sufficit.AsterNETFork</Name>
-    <PackageId>Sufficit.AsterNETFork</PackageId>
-    <Authors>Hugo Castro de Deco</Authors>
-    <Company>Sufficit</Company>
+    <PackageId>Sufficit.AsterNETFork</PackageId>    
     <PackageDescription></PackageDescription>
     <RepositoryUrl>https://github.com/sufficit/sufficit-asternet-fork</RepositoryUrl>
-    <Description>Sufficit.AsterNETFork</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -25,12 +39,13 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;LOGGER</DefineConstants>
+    <DefineConstants>TRACE;LOGGER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\Debug\AsterNET.XML</DocumentationFile>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <NoWarn>1701;1702;CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,6 +56,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\Release\AsterNET.XML</DocumentationFile>
+    <NoWarn>1701;1702;CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Travis|AnyCPU'">
     <OutputPath>bin\Travis\</OutputPath>
@@ -62,23 +78,10 @@
   <ItemGroup>
     <None Remove="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
     <None Remove="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
-    <None Remove="nuget.config.backup" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
   </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'netstandard2.1'">
-    <PackageReference Include="System.Collections.NonGeneric">
-      <Version>4.3.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Threading">
-      <Version>4.3.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Threading.Thread">
-      <Version>4.3.0</Version>
-    </PackageReference>
-  </ItemGroup>
-
+      
 </Project>
