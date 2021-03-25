@@ -83,5 +83,8 @@
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AsterNET.Core\AsterNET.Core.csproj" />
+  </ItemGroup>
       
 </Project>

@@ -6,6 +6,8 @@ namespace AsterNET.Manager.Event
 	/// </summary>
 	public class ExtensionStatusEvent : ManagerEvent
 	{
+		public const PrivilegeEnum Privilege = PrivilegeEnum.call;
+
 		private string exten;
 		private string context;
 		private string hint;

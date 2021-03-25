@@ -508,6 +508,11 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<QueueSummaryEvent> QueueSummary;
 
+        /// <summary>
+        /// Raised when a request provides an invalid password during an authentication attempt
+        /// </summary>
+        public event EventHandler<InvalidPasswordEvent> InvalidPassword;
+
         #endregion
 
         #region Constructor - ManagerConnection()
@@ -636,7 +641,8 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeSentEvent), arg => fireEvent(ChallengeSent, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(SuccessfulAuthEvent), arg => fireEvent(SuccessfulAuth, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueSummaryEvent), arg => fireEvent(QueueSummary, arg));
-            
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(InvalidPasswordEvent), arg => fireEvent(InvalidPassword, arg));
+
             #endregion
 
             this.internalEvent += new EventHandler<ManagerEvent>(internalEventHandler);

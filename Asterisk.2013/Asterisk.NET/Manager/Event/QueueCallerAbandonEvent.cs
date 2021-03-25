@@ -2,8 +2,11 @@ using System;
 
 namespace AsterNET.Manager.Event
 {
-	public class QueueCallerAbandonEvent : ManagerEvent
+	public class QueueCallerAbandonEvent : ManagerEvent, QueueCallerAbandonEventInterface
 	{
+		public const PrivilegeEnum Privilege = PrivilegeEnum.agent;
+
+		private string calleridnum;
 		private string queue;
 		private int position;
 		private int originalPosition;
@@ -11,7 +14,7 @@ namespace AsterNET.Manager.Event
 
 		public string Queue
 		{
-			get { return this.queue; }
+			get { return this.queue ?? string.Empty; }
 			set { this.queue = value; }
 		}
 		public int HoldTime
@@ -29,6 +32,12 @@ namespace AsterNET.Manager.Event
 			get { return this.originalPosition; }
 			set { this.originalPosition = value; }
 		}
+		public string CallerIdNum
+		{
+			get { return this.calleridnum ?? string.Empty; }
+			set { this.calleridnum = value; }
+		}
+
 		/// <summary>
 		/// Creates a new DNDStateEvent.
 		/// </summary>

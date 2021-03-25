@@ -1,14 +1,16 @@
-﻿namespace AsterNET.Manager.Event
+﻿using System;
+
+namespace AsterNET.Manager.Event
 {
 
     /// <summary>
     /// Raised when a request successfully authenticates with a service..<br />
     /// </summary>
-    public class SuccessfulAuthEvent : ManagerEvent, SuccessfulAuthEventInterface
+    public class InvalidPasswordEvent : ManagerEvent
     {
         public const PrivilegeEnum Privilege = PrivilegeEnum.security;
 
-        public SuccessfulAuthEvent(ManagerConnection source)
+        public InvalidPasswordEvent(ManagerConnection source)
             : base(source)
         {
         }
@@ -19,6 +21,6 @@
 
         public string RemoteAddress { get; set; }
 
-        public bool UsingPassword { get; set; }
+        public string Challenge { get; set; }
     }
 }
