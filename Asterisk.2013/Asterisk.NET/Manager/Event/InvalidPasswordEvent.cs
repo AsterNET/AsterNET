@@ -16,11 +16,9 @@ namespace AsterNET.Manager.Event
         }
 
         public SeverityEnum Severity { get; set; }
-
         public string AccountId { get; set; }
-
         public string RemoteAddress { get; set; }
-
         public string Challenge { get; set; }
+        public string Service { get; set; }
     }
 }

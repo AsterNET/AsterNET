@@ -14,11 +14,9 @@
         }
 
         public SeverityEnum Severity { get; set; }
-
         public string AccountId { get; set; }
-
         public string RemoteAddress { get; set; }
-
         public bool UsingPassword { get; set; }
+        public string Service { get; set; }
     }
 }

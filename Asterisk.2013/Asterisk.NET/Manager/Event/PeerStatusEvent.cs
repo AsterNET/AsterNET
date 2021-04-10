@@ -7,6 +7,8 @@ namespace AsterNET.Manager.Event
 	/// </summary>
 	public class PeerStatusEvent : ManagerEvent, PeerStatusEventInterface
 	{
+		public const PrivilegeEnum Privilege = PrivilegeEnum.system;
+
 		private string address;
 		private string peer;
 		private string cause;

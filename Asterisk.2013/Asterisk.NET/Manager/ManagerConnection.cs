@@ -299,6 +299,8 @@ namespace AsterNET.Manager
         /// A QueueMemberEvent is triggered in response to a QueueStatusAction and contains information about a member of a queue.
         /// </summary>
         public event EventHandler<QueueMemberEvent> QueueMember;
+        public event EventHandler<QueueMemberPenaltyEvent> QueueMemberPenalty;
+        public event EventHandler<QueueMemberRinginuseEvent> QueueMemberRinginuse;
         /// <summary>
         /// A QueueMemberPausedEvent is triggered when a queue member is paused or unpaused.
         /// <b>Replaced by : </b> <see cref="QueueMemberPauseEvent"/> since <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.<br/>
@@ -579,7 +581,9 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueEntryEvent), arg => fireEvent(QueueEntry, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberAddedEvent), arg => fireEvent(QueueMemberAdded, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberEvent), arg => fireEvent(QueueMember, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberRinginuseEvent), arg => fireEvent(QueueMemberRinginuse, arg)); 
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberPausedEvent), arg => fireEvent(QueueMemberPaused, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberPenaltyEvent), arg => fireEvent(QueueMemberPenalty, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberRemovedEvent), arg => fireEvent(QueueMemberRemoved, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueMemberStatusEvent), arg => fireEvent(QueueMemberStatus, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueParamsEvent), arg => fireEvent(QueueParams, arg));
@@ -1451,34 +1455,21 @@ namespace AsterNET.Manager
         }
         #endregion
 
-
-
-        #region SendActionAsync(action)
-        /// <summary>
-        /// Asynchronously send Action async with default timeout.
-        /// </summary>
-        /// <param name="action">action to send</param>
-        public Task<ManagerResponse> SendActionAsync(ManagerAction action)
-        {
-          return SendActionAsync(action, null);
-        }
-        #endregion
-
         #region SendActionAsync(action, timeout)
         /// <summary>
         /// Asynchronously send Action async.
         /// </summary>
         /// <param name="action">action to send</param>
         /// <param name="cancellationToken">cancellation Token</param>
-        public Task<ManagerResponse> SendActionAsync(ManagerAction action, CancellationTokenSource cancellationToken)
+        public Task<ManagerResponse> SendActionAsync(ManagerAction action, CancellationToken cancellationToken = default)
         {
           var handler = new TaskResponseHandler(action);
           var source = handler.TaskCompletionSource;
 
           SendAction(action, handler);
 
-          if (cancellationToken != null)
-            cancellationToken.Token.Register(() => { source.TrySetCanceled(); });
+          if (cancellationToken != default)
+                cancellationToken.Register(() => { source.TrySetCanceled(); });
 
           return source.Task.ContinueWith(x =>
           {

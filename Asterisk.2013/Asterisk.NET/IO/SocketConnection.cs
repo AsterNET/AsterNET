@@ -217,8 +217,8 @@ namespace AsterNET.IO
 		{
 			try
 			{
-				tcpClient.Client.Shutdown(SocketShutdown.Both);
-				tcpClient.Client.Close();
+				tcpClient.Client?.Shutdown(SocketShutdown.Both);
+				tcpClient.Client?.Close();
 				tcpClient.Close();
 			}
 			catch { }
