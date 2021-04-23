@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80ADC18F-2BFC-4B79-B264-5244E4F2FEED}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET", "Asterisk.NET\AsterNET.csproj", "{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsterNET", "Asterisk.NET\AsterNET.csproj", "{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsterNET.WinForm", "Asterisk.NET.WinForm\AsterNET.WinForm.csproj", "{03687626-613A-4E41-8F60-7C7839D6DD5D}"
 EndProject
@@ -51,5 +51,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD16BE51-C7E5-49FB-B78C-D1E477961D6A}
 	EndGlobalSection
 EndGlobal

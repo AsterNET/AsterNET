@@ -94,5 +94,11 @@ namespace AsterNET.Manager.Action
         ///     true if the queue member should be paused when added.
         /// </summary>
         public bool Paused { get; set; }
+
+        /// <summary>
+        ///     Get/Set an alternate interface to be used to determine the state of the member.<br />
+        ///     Available since Asterisk 12.
+        /// </summary>
+        public string StateInterface { get; set; }
     }
 }

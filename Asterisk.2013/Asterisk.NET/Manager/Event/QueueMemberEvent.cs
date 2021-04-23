@@ -17,11 +17,13 @@ namespace AsterNET.Manager.Event
 		private int status;
 		private bool paused;
 		private string name;
+        private bool incall;
+		private string pausedReason;
 
-		/// <summary>
-		/// Get/Set the name of the queue member.
-		/// </summary>
-		public string Name
+        /// <summary>
+        /// Get/Set the name of the queue member.
+        /// </summary>
+        public string Name
 		{
 			get { return this.name; }
 			set { this.name = value; }
@@ -123,8 +125,27 @@ namespace AsterNET.Manager.Event
 			get { return this.paused; }
 			set { this.paused = value; }
 		}
+        /// <summary>
+        /// Is this queue member in call??<br/>
+        /// Available since Asterisk 12.<br/>
+        /// true if this member is in call,
+        /// false if not
+        /// </summary>
+        public bool InCall
+        {
+            get { return this.incall; }
+            set { this.incall = value; }
+        }
+		/// <summary>
+		/// Paused reason if the queue member is paused
+		/// </summary>
+		public string PausedReason
+		{
+			get { return this.pausedReason; }
+			set { this.pausedReason = value; }
+		}
 
-		public QueueMemberEvent(ManagerConnection source)
+        public QueueMemberEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

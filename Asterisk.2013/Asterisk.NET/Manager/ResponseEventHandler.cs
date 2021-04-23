@@ -6,7 +6,7 @@ using AsterNET.Manager.Response;
 namespace AsterNET.Manager
 {
     /// <summary>
-    ///     A combinded event and response handler that adds received events and the response to a ResponseEvents object.
+    ///     A combined event and response handler that adds received events and the response to a ResponseEvents object.
     /// </summary>
     public class ResponseEventHandler : IResponseHandler
     {
@@ -17,11 +17,11 @@ namespace AsterNET.Manager
         private int hash;
 
         /// <summary>
-        ///     Creates a new instance.
+        ///     Creates a new instance<see cref="ResponseEventHandler"/>.
         /// </summary>
-        /// <param name="events">the ResponseEvents to store the events in</param>
-        /// <param name="actionCompleteEventClass">the type of event that indicates that all events have been received</param>
-        /// <param name="thread">the thread to interrupt when the actionCompleteEventClass has been received</param>
+        /// <param name="connection"><see cref="ManagerConnection"/></param>
+        /// <param name="action"><see cref="ManagerActionEvent"/></param>
+        /// <param name="autoEvent"><see cref="AutoResetEvent"/></param>
         public ResponseEventHandler(ManagerConnection connection, ManagerActionEvent action, AutoResetEvent autoEvent)
         {
             this.connection = connection;
@@ -30,22 +30,34 @@ namespace AsterNET.Manager
             this.autoEvent = autoEvent;
         }
 
+        /// <summary>
+        ///     Gets the response events.
+        /// </summary>
         public ResponseEvents ResponseEvents
         {
             get { return events; }
         }
 
+        /// <summary>
+        ///     Gets the action.
+        /// </summary>
         public ManagerAction Action
         {
             get { return action; }
         }
 
+        /// <summary>
+        ///     Gets or sets the hash.
+        /// </summary>
         public int Hash
         {
             get { return hash; }
             set { hash = value; }
         }
 
+        /// <summary>
+        ///     Frees this instance.
+        /// </summary>
         public void Free()
         {
             connection = null;
@@ -56,6 +68,10 @@ namespace AsterNET.Manager
             events = null;
         }
 
+        /// <summary>
+        ///     This method is called when a response is received.
+        /// </summary>
+        /// <param name="response"><see cref="ManagerResponse"/></param>
         public void HandleResponse(ManagerResponse response)
         {
             events.Response = response;
@@ -66,6 +82,10 @@ namespace AsterNET.Manager
                 autoEvent.Set();
         }
 
+        /// <summary>
+        ///     Handles the event.
+        /// </summary>
+        /// <param name="e"><see cref="ManagerEvent"/></param>
         public void HandleEvent(ManagerEvent e)
         {
             // should always be a ResponseEvent, anyway...

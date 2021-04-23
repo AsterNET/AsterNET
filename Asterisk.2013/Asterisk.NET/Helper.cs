@@ -647,7 +647,9 @@ namespace AsterNET
             {
                 string name = line.Substring(0, delimiterIndex).ToLower(CultureInfo).Trim();
                 string val = line.Substring(delimiterIndex + 1).Trim();
-                if (val == "<null>")
+                if (list.Contains(name))
+                    list[name] += Environment.NewLine + val;
+                else if (val == "<null>")
                     list[name] = null;
                 else
                     list[name] = val;
@@ -874,12 +876,13 @@ namespace AsterNET
 
         #region RegisterEventHandler(Dictionary<int, int> list, int index, Type eventType) 
 
-        internal static void RegisterEventHandler(Dictionary<int, int> list, int index, Type eventType)
+        internal static void RegisterEventHandler(Dictionary<int, Func<ManagerEvent, bool>> list, Type eventType, Func<ManagerEvent, bool> action)
         {
-            int eventHash = eventType.Name.GetHashCode();
+            var eventTypeName = eventType.Name;
+            int eventHash = eventTypeName.GetHashCode();
             if (list.ContainsKey(eventHash))
-                throw new ArgumentException("Event class already registered : " + eventType.Name);
-            list.Add(eventHash, index);
+                throw new ArgumentException("Event class already registered : " + eventTypeName);
+            list.Add(eventHash, action);
         }
 
         #endregion

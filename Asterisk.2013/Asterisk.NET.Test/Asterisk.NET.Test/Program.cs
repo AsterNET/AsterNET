@@ -138,13 +138,13 @@ Ctrl-C to exit");
 			manager.RegisterUserEventClass(typeof(UserAgentLoginEvent));
 
 			// Add or Remove events
-			manager.UserEvents += new UserEventHandler(dam_UserEvents);
+			manager.UserEvents += new EventHandler<UserEvent>(dam_UserEvents);
 
 			// Dont't display this event
-			manager.NewExten += new NewExtenEventHandler(manager_IgnoreEvent);
+			manager.NewExten += new EventHandler<NewExtenEvent>(manager_IgnoreEvent);
 
 			// Display all other
-			manager.UnhandledEvent += new ManagerEventHandler(dam_Events);
+			manager.UnhandledEvent += new EventHandler<ManagerEvent>(dam_Events);
 
 			// +++ Only to debug purpose
 			manager.FireAllEvents = true;
@@ -288,7 +288,7 @@ Ctrl-C to exit");
 
 			Console.WriteLine("Redirect Call from " + ORIGINATE_CHANNEL + " to " + ORIGINATE_EXTRA_CHANNEL + " or press ESC.");
 			// Wait for Dial Event from ORIGINATE_CHANNEL
-			DialEventHandler de = new DialEventHandler(dam_Dial);
+			EventHandler<DialEvent> de = new EventHandler<DialEvent>(dam_Dial);
 			manager.Dial += de;
 			while (transferChannel == null)
 			{
@@ -323,7 +323,7 @@ Ctrl-C to exit");
 			//	Link event used to define monitor channel
 			Console.WriteLine("Monitor call. Please call " + ORIGINATE_CHANNEL + " and answer or press ESC.");
 			// Wait for Link event
-			LinkEventHandler le = new LinkEventHandler(dam_Link);
+			EventHandler<LinkEvent> le = new EventHandler<LinkEvent>(dam_Link);
 			manager.Link += le;
 			while (monitorChannel == null)
 			{

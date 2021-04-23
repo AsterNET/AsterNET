@@ -1,42 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BC6E7DBA-C05A-45FE-A2A3-B1637CE16274}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AsterNET</RootNamespace>
-    <AssemblyName>AsterNET</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <Version>1.3.0</Version>
+    <Copyright>Copyright © 2017</Copyright>
+    <Authors>Ben Merrills</Authors>
+    <PackageLicenseUrl>https://github.com/AsterNET/AsterNET/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/AsterNET/AsterNET</PackageProjectUrl>
+    <PackageTags>VB.NET, Asterisk, C#, AsterNET, DotNET, Asterisk.NET</PackageTags>
+    <Description>AsterNET an Asterisk FastAGI and AMI framework for .NET</Description>
+    <PackageReleaseNotes>Please see: https://github.com/AsterNET/AsterNET/commits/master</PackageReleaseNotes>
+    <Configurations>Debug;Release;Travis</Configurations>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -70,338 +46,28 @@
     <DocumentationFile>bin\Travis\AsterNET.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Common.cs" />
-    <Compile Include="FastAGI\AGIChannel.cs" />
-    <Compile Include="FastAGI\AGIConnectionHandler.cs" />
-    <Compile Include="FastAGI\Exceptions\AGIException.cs" />
-    <Compile Include="FastAGI\Exceptions\AGIHangupException.cs" />
-    <Compile Include="FastAGI\Exceptions\AGINetworkException.cs" />
-    <Compile Include="FastAGI\AGIReader.cs" />
-    <Compile Include="FastAGI\AGIReply.cs" />
-    <Compile Include="FastAGI\AGIRequest.cs" />
-    <Compile Include="FastAGI\AsteriskFastAGI.cs" />
-    <Compile Include="FastAGI\Command\AGICommand.cs" />
-    <Compile Include="FastAGI\Command\GetFullVariableCommand.cs" />
-    <Compile Include="FastAGI\Command\ReceiveTextCommand.cs" />
-    <Compile Include="FastAGI\Command\SayDateTimeCommand.cs" />
-    <Compile Include="FastAGI\AGIWriter.cs" />
-    <Compile Include="FastAGI\AGIScript.cs" />
-    <Compile Include="FastAGI\Command\AnswerCommand.cs" />
-    <Compile Include="FastAGI\Command\ChannelStatusCommand.cs" />
-    <Compile Include="FastAGI\Command\ControlStreamFileCommand.cs" />
-    <Compile Include="FastAGI\Command\DatabaseDelCommand.cs" />
-    <Compile Include="FastAGI\Command\DatabaseDelTreeCommand.cs" />
-    <Compile Include="FastAGI\Command\DatabaseGetCommand.cs" />
-    <Compile Include="FastAGI\Command\DatabasePutCommand.cs" />
-    <Compile Include="FastAGI\Command\ExecCommand.cs" />
-    <Compile Include="FastAGI\Command\GetDataCommand.cs" />
-    <Compile Include="FastAGI\Command\GetOptionCommand.cs" />
-    <Compile Include="FastAGI\Command\GetVariableCommand.cs" />
-    <Compile Include="FastAGI\Command\HangupCommand.cs" />
-    <Compile Include="FastAGI\Command\NoopCommand.cs" />
-    <Compile Include="FastAGI\Command\ReceiveCharCommand.cs" />
-    <Compile Include="FastAGI\Command\RecordFileCommand.cs" />
-    <Compile Include="FastAGI\Command\SayAlphaCommand.cs" />
-    <Compile Include="FastAGI\Command\SayDigitsCommand.cs" />
-    <Compile Include="FastAGI\Command\SayNumberCommand.cs" />
-    <Compile Include="FastAGI\Command\SayPhoneticCommand.cs" />
-    <Compile Include="FastAGI\Command\SayTimeCommand.cs" />
-    <Compile Include="FastAGI\Command\SendImageCommand.cs" />
-    <Compile Include="FastAGI\Command\SendTextCommand.cs" />
-    <Compile Include="FastAGI\Command\SetAutoHangupCommand.cs" />
-    <Compile Include="FastAGI\Command\SetCallerIdCommand.cs" />
-    <Compile Include="FastAGI\Command\SetContextCommand.cs" />
-    <Compile Include="FastAGI\Command\SetExtensionCommand.cs" />
-    <Compile Include="FastAGI\Command\SetMusicOffCommand.cs" />
-    <Compile Include="FastAGI\Command\SetMusicOnCommand.cs" />
-    <Compile Include="FastAGI\Command\SetPriorityCommand.cs" />
-    <Compile Include="FastAGI\Command\SetVariableCommand.cs" />
-    <Compile Include="FastAGI\Command\StreamFileCommand.cs" />
-    <Compile Include="FastAGI\Command\TDDModeCommand.cs" />
-    <Compile Include="FastAGI\Command\VerboseCommand.cs" />
-    <Compile Include="FastAGI\Command\WaitForDigitCommand.cs" />
-    <Compile Include="FastAGI\Exceptions\InvalidCommandSyntaxException.cs" />
-    <Compile Include="FastAGI\Exceptions\InvalidOrUnknownCommandException.cs" />
-    <Compile Include="FastAGI\IMappingStrategy.cs" />
-    <Compile Include="FastAGI\MappingStrategies\GeneralMappingStrategy.cs" />
-    <Compile Include="FastAGI\MappingStrategies\ResourceMappingStrategy.cs" />
-    <Compile Include="FastAGI\MappingStrategy.cs" />
-    <Compile Include="FastAGI\Script\AGINoAction.cs" />
-    <Compile Include="IO\ServerSocket.cs" />
-    <Compile Include="IO\SocketConnection.cs" />
-    <Compile Include="IParseSupport.cs" />
-    <Compile Include="Manager\Action\AbsoluteTimeoutAction.cs" />
-    <Compile Include="Manager\Action\AgentCallbackLoginAction.cs" />
-    <Compile Include="Manager\Action\AgentLogoffAction.cs" />
-    <Compile Include="Manager\Action\AgentsAction.cs" />
-    <Compile Include="Manager\Action\AGIAction.cs" />
-    <Compile Include="Manager\Action\AOCMessageAction.cs" />
-    <Compile Include="Manager\Action\AtxferAction.cs" />
-    <Compile Include="Manager\Action\BridgeAction.cs" />
-    <Compile Include="Manager\Action\ChallengeAction.cs" />
-    <Compile Include="Manager\Action\ChangeMonitorAction.cs" />
-    <Compile Include="Manager\Action\CommandAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeKickAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeListAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeListRoomsAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeLockAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeMuteAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeSetSingleVideoSrcAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeStartRecordAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeStopRecordAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeUnlockAction.cs" />
-    <Compile Include="Manager\Action\ConfbridgeUnmuteAction.cs" />
-    <Compile Include="Manager\Action\CoreSettingsAction.cs" />
-    <Compile Include="Manager\Action\CoreShowChannelsAction.cs" />
-    <Compile Include="Manager\Action\CoreStatusAction.cs" />
-    <Compile Include="Manager\Action\CreateConfigAction.cs" />
-    <Compile Include="Manager\Action\DBDelAction.cs" />
-    <Compile Include="Manager\Action\DBDelTreeAction.cs" />
-    <Compile Include="Manager\Action\DBGetAction.cs" />
-    <Compile Include="Manager\Action\DBPutAction.cs" />
-    <Compile Include="Manager\Action\EventsAction.cs" />
-    <Compile Include="Manager\Action\ExtensionStateAction.cs" />
-    <Compile Include="Manager\Action\GetConfigAction.cs" />
-    <Compile Include="Manager\Action\GetVarAction.cs" />
-    <Compile Include="Manager\Action\HangupAction.cs" />
-    <Compile Include="Manager\Action\ListCommandsAction.cs" />
-    <Compile Include="Manager\Action\ManagerActionEvent.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Manager\Action\LoginAction.cs" />
-    <Compile Include="Manager\Action\LogoffAction.cs" />
-    <Compile Include="Manager\Action\MailboxCountAction.cs" />
-    <Compile Include="Manager\Action\MailboxStatusAction.cs" />
-    <Compile Include="Manager\Action\ManagerAction.cs" />
-    <Compile Include="Manager\Action\ManagerActionResponse.cs" />
-    <Compile Include="Manager\Action\MonitorAction.cs" />
-    <Compile Include="Manager\Action\OriginateAction.cs" />
-    <Compile Include="Manager\Action\ParkAction.cs" />
-    <Compile Include="Manager\Action\ParkedCallsAction.cs" />
-    <Compile Include="Manager\Action\PingAction.cs" />
-    <Compile Include="Manager\Action\ProxyAction.cs" />
-    <Compile Include="Manager\Action\QueueAddAction.cs" />
-    <Compile Include="Manager\Action\QueueLogAction.cs" />
-    <Compile Include="Manager\Action\QueuePauseAction.cs" />
-    <Compile Include="Manager\Action\QueuePenaltyAction.cs" />
-    <Compile Include="Manager\Action\QueueReloadAction.cs" />
-    <Compile Include="Manager\Action\QueueRemoveAction.cs" />
-    <Compile Include="Manager\Action\QueueResetAction.cs" />
-    <Compile Include="Manager\Action\QueueRuleAction.cs" />
-    <Compile Include="Manager\Action\QueueStatusAction.cs" />
-    <Compile Include="Manager\Action\RedirectAction.cs" />
-    <Compile Include="Manager\Action\SetCDRUserFieldAction.cs" />
-    <Compile Include="Manager\Action\SetVarAction.cs" />
-    <Compile Include="Manager\Action\SIPPeersAction.cs" />
-    <Compile Include="Manager\Action\SIPShowPeerAction.cs" />
-    <Compile Include="Manager\Action\StatusAction.cs" />
-    <Compile Include="Manager\Action\StopMonitorAction.cs" />
-    <Compile Include="Manager\Action\UpdateConfigAction.cs" />
-    <Compile Include="Manager\Action\ZapDialOffhookAction.cs" />
-    <Compile Include="Manager\Action\ZapDNDOffAction.cs" />
-    <Compile Include="Manager\Action\ZapDNDOnAction.cs" />
-    <Compile Include="Manager\Action\ZapHangupAction.cs" />
-    <Compile Include="Manager\Action\ZapShowChannelsAction.cs" />
-    <Compile Include="Manager\Action\ZapTransferAction.cs" />
-    <Compile Include="Manager\AsteriskVersion.cs" />
-    <Compile Include="Manager\Event\AbstractAgentVariables.cs" />
-    <Compile Include="Manager\Event\AbstractConfbridgeEvent.cs" />
-    <Compile Include="Manager\Event\BlindTransferEvent.cs" />
-    <Compile Include="Manager\Event\BridgeActivityEvent.cs" />
-    <Compile Include="Manager\Event\BridgeCreateEvent.cs" />
-    <Compile Include="Manager\Event\BridgeDestroyEvent.cs" />
-    <Compile Include="Manager\Event\BridgeStateEvent.cs" />
-    <Compile Include="Manager\Event\BridgeEnterEvent.cs" />
-    <Compile Include="Manager\Event\BridgeLeaveEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeEndEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeJoinEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeLeaveEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeListCompleteEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeListEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeListRoomsCompleteEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeListRoomsEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeStartEvent.cs" />
-    <Compile Include="Manager\Event\ConfbridgeTalkingEvent.cs" />
-    <Compile Include="Manager\Event\ConnectionStateEvent.cs" />
-    <Compile Include="Manager\Event\AGIExecEvent.cs" />
-    <Compile Include="Manager\Event\AsyncAGIEvent.cs" />
-    <Compile Include="Manager\Event\BridgeEvent.cs" />
-    <Compile Include="Manager\Event\ChannelReloadEvent.cs" />
-    <Compile Include="Manager\Event\ChannelUpdateEvent.cs" />
-    <Compile Include="Manager\Event\DialEndEvent.cs" />
-    <Compile Include="Manager\Event\DialBeginEvent.cs" />
-    <Compile Include="Manager\Event\FailedACLEvent.cs" />
-    <Compile Include="Manager\Event\QueueCallerJoinEvent.cs" />
-    <Compile Include="Manager\Event\QueueCallerLeaveEvent.cs" />
-    <Compile Include="Manager\Event\MeetmeMuteEvent.cs" />
-    <Compile Include="Manager\Event\DTMFEvent.cs" />
-    <Compile Include="Manager\Event\FaxReceivedEvent.cs" />
-    <Compile Include="Manager\Event\JabberEvent.cs" />
-    <Compile Include="Manager\Event\JitterBufStatsEvent.cs" />
-    <Compile Include="Manager\Event\MeetmeEndEvent.cs" />
-    <Compile Include="Manager\Event\MeetmeTalkRequestEvent.cs" />
-    <Compile Include="Manager\Event\MobileStatusEvent.cs" />
-    <Compile Include="Manager\Event\ModuleLoadReportEvent.cs" />
-    <Compile Include="Manager\Event\MonitorStartEvent.cs" />
-    <Compile Include="Manager\Event\MonitorStopEvent.cs" />
-    <Compile Include="Manager\Event\NewAccountCodeEvent.cs" />
-    <Compile Include="Manager\Event\OriginateResponseEvent.cs" />
-    <Compile Include="Manager\Event\PRIEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberPauseEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberPenaltyEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberRinginuseEvent.cs" />
-    <Compile Include="Manager\Event\RTPReceiverStatEvent.cs" />
-    <Compile Include="Manager\Event\RTCPSentEvent.cs" />
-    <Compile Include="Manager\Event\RTCPReceivedEvent.cs" />
-    <Compile Include="Manager\Event\RTPSenderStatEvent.cs" />
-    <Compile Include="Manager\Event\ShowDialPlanCompleteEvent.cs" />
-    <Compile Include="Manager\Event\AttendedTransferEvent.cs" />
-    <Compile Include="Manager\Event\TransferEvent.cs" />
-    <Compile Include="Manager\Event\UnknownEvent.cs" />
-    <Compile Include="Manager\Event\VarSet.cs" />
-    <Compile Include="Manager\Event\QueueCallerAbandonEvent.cs" />
-    <Compile Include="Manager\Event\MasqueradeEvent.cs" />
-    <Compile Include="Manager\Exceptions\AuthenticationFailedException.cs" />
-    <Compile Include="Manager\IActionVariable.cs" />
-    <Compile Include="Manager\Response\GetConfigResponse.cs" />
-    <Compile Include="Manager\Response\OriginateResponse.cs" />
-    <Compile Include="Manager\ManagerConnection.cs" />
-    <Compile Include="Manager\Exceptions\EventTimeoutException.cs" />
-    <Compile Include="Manager\Event\AbstractAgentEvent.cs" />
-    <Compile Include="Manager\Event\AbstractParkedCallEvent.cs" />
-    <Compile Include="Manager\Event\AbstractQueueMemberEvent.cs" />
-    <Compile Include="Manager\Event\AgentCallbackLoginEvent.cs" />
-    <Compile Include="Manager\Event\AgentCallbackLogoffEvent.cs" />
-    <Compile Include="Manager\Event\AgentCalledEvent.cs" />
-    <Compile Include="Manager\Event\AgentCompleteEvent.cs" />
-    <Compile Include="Manager\Event\AgentConnectEvent.cs" />
-    <Compile Include="Manager\Event\AgentDumpEvent.cs" />
-    <Compile Include="Manager\Event\AgentLoginEvent.cs" />
-    <Compile Include="Manager\Event\AgentLogoffEvent.cs" />
-    <Compile Include="Manager\Event\AgentsCompleteEvent.cs" />
-    <Compile Include="Manager\Event\AgentsEvent.cs" />
-    <Compile Include="Manager\Event\AlarmClearEvent.cs" />
-    <Compile Include="Manager\Event\AlarmEvent.cs" />
-    <Compile Include="Manager\Event\CdrEvent.cs" />
-    <Compile Include="Manager\Event\AbstractChannelEvent.cs" />
-    <Compile Include="Manager\Event\ConnectEvent.cs" />
-    <Compile Include="Manager\Event\DBGetResponseEvent.cs" />
-    <Compile Include="Manager\Event\DialEvent.cs" />
-    <Compile Include="Manager\Event\DisconnectEvent.cs" />
-    <Compile Include="Manager\Event\DNDStateEvent.cs" />
-    <Compile Include="Manager\Event\ExtensionStatusEvent.cs" />
-    <Compile Include="Manager\Event\HangupEvent.cs" />
-    <Compile Include="Manager\Event\HoldedCallEvent.cs" />
-    <Compile Include="Manager\Event\HoldEvent.cs" />
-    <Compile Include="Manager\Event\JoinEvent.cs" />
-    <Compile Include="Manager\Event\LeaveEvent.cs" />
-    <Compile Include="Manager\Event\LinkEvent.cs" />
-    <Compile Include="Manager\Event\LogChannelEvent.cs" />
-    <Compile Include="Manager\Event\ManagerEvent.cs" />
-    <Compile Include="Manager\Event\AbstractMeetmeEvent.cs" />
-    <Compile Include="Manager\Event\MeetmeJoinEvent.cs" />
-    <Compile Include="Manager\Event\MeetmeLeaveEvent.cs" />
-    <Compile Include="Manager\Event\MeetmeStopTalkingEvent.cs" />
-    <Compile Include="Manager\Event\MeetmeTalkingEvent.cs" />
-    <Compile Include="Manager\Event\MessageWaitingEvent.cs" />
-    <Compile Include="Manager\Event\NewCallerIdEvent.cs" />
-    <Compile Include="Manager\Event\NewChannelEvent.cs" />
-    <Compile Include="Manager\Event\NewExtenEvent.cs" />
-    <Compile Include="Manager\Event\NewStateEvent.cs" />
-    <Compile Include="Manager\Event\ParkedCallEvent.cs" />
-    <Compile Include="Manager\Event\ParkedCallGiveUpEvent.cs" />
-    <Compile Include="Manager\Event\ParkedCallsCompleteEvent.cs" />
-    <Compile Include="Manager\Event\ParkedCallTimeOutEvent.cs" />
-    <Compile Include="Manager\Event\PeerEntryEvent.cs" />
-    <Compile Include="Manager\Event\PeerlistCompleteEvent.cs" />
-    <Compile Include="Manager\Event\PeerStatusEvent.cs" />
-    <Compile Include="Manager\Event\QueueEntryEvent.cs" />
-    <Compile Include="Manager\Event\QueueEvent.cs" />
-    <Compile Include="Manager\Event\ChallengeResponseFailedEvent.cs" />
-    <Compile Include="Manager\Event\InvalidAccountIDEvent.cs" />
-    <Compile Include="Manager\Event\DeviceStateChangeEvent.cs" />
-    <Compile Include="Manager\Event\ChallengeSentEvent.cs" />
-    <Compile Include="Manager\Event\SuccessfulAuthEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberAddedEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberPausedEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberRemovedEvent.cs" />
-    <Compile Include="Manager\Event\QueueMemberStatusEvent.cs" />
-    <Compile Include="Manager\Event\QueueParamsEvent.cs" />
-    <Compile Include="Manager\Event\QueueStatusCompleteEvent.cs" />
-    <Compile Include="Manager\Event\RegistryEvent.cs" />
-    <Compile Include="Manager\Event\ReloadEvent.cs" />
-    <Compile Include="Manager\Event\RenameEvent.cs" />
-    <Compile Include="Manager\Event\ResponseEvent.cs" />
-    <Compile Include="Manager\Event\ShutdownEvent.cs" />
-    <Compile Include="Manager\Event\StatusCompleteEvent.cs" />
-    <Compile Include="Manager\Event\StatusEvent.cs" />
-    <Compile Include="Manager\Event\UnholdEvent.cs" />
-    <Compile Include="Manager\Event\UnlinkEvent.cs" />
-    <Compile Include="Manager\Event\UnparkedCallEvent.cs" />
-    <Compile Include="Manager\Event\UserEvent.cs" />
-    <Compile Include="Manager\Event\ZapShowChannelsCompleteEvent.cs" />
-    <Compile Include="Manager\Event\ZapShowChannelsEvent.cs" />
-    <Compile Include="Manager\Exceptions\ManagerException.cs" />
-    <Compile Include="Manager\ManagerReader.cs" />
-    <Compile Include="Manager\Originate.cs" />
-    <Compile Include="Manager\ResponseEventHandler.cs" />
-    <Compile Include="Manager\ResponseEvents.cs" />
-    <Compile Include="Manager\ResponseHandler.cs" />
-    <Compile Include="Manager\Response\ChallengeResponse.cs" />
-    <Compile Include="Manager\Response\CommandResponse.cs" />
-    <Compile Include="Manager\Response\ExtensionStateResponse.cs" />
-    <Compile Include="Manager\IResponseHandler.cs" />
-    <Compile Include="Manager\Response\MailboxCountResponse.cs" />
-    <Compile Include="Manager\Response\MailboxStatusResponse.cs" />
-    <Compile Include="Manager\Response\ManagerError.cs" />
-    <Compile Include="Manager\Response\ManagerResponse.cs" />
-    <Compile Include="Manager\Exceptions\TimeoutException.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="Util\MD5Support.cs" />
-    <Compile Include="Util\ThreadClass.cs" />
-    <Compile Include="Util\ThreadPool.cs" />
-    <Compile Include="Helper.cs" />
-    <Compile Include="Util\ThreadTask.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
+    <None Remove="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
+    <None Remove="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Commands.txt" />
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Manager\Documentation\Asterisk-1.8.x\" />
-    <Folder Include="Manager\Documentation\Asterisk-10\" />
-    <Folder Include="Manager\Documentation\Asterisk-11\" />
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Web" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Collections.NonGeneric">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Threading">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Threading.Thread">
+      <Version>4.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+
 </Project>
