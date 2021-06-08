@@ -1,0 +1,41 @@
+name: Publish Packages
+
+on:
+  push:
+    branches: [ master ]    
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Environment
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '2.2.x'
+        
+    - name: Install dependencies
+      working-directory: ./Asterisk.2013/Asterisk.NET
+      run: dotnet restore
+      
+    - name: Build
+      working-directory: ./Asterisk.2013/Asterisk.NET
+      run: dotnet build --configuration Release --no-restore
+      
+    - name: Deploy Package 
+      working-directory: ./Asterisk.2013/Asterisk.NET
+      run: dotnet pack --configuration Release --output ./nupkgs
+    
+    - name: Publish to Nuget.Org
+      working-directory: ./Asterisk.2013/Asterisk.NET
+      run: dotnet nuget push ./nupkgs/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+      
+    - name: Publish to GitHub
+      working-directory: ./Asterisk.2013/Asterisk.NET
+      run: dotnet nuget push ./nupkgs/*.nupkg --source https://nuget.pkg.github.com/${{github.repository_owner}}/index.json --api-key ${{github.token}}
+      
+    - name: Delete Old Packages from GitHub
+      uses: actions/delete-package-versions@v1
+      with:
+        package-name: 'Sufficit.AsterNET'

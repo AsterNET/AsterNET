@@ -84,7 +84,7 @@
     <Content Include="Manager\Documentation\Asterisk-1.6.2.24\AMI Events.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\sufficit-asternet-core\AsterNET.Core.csproj" />
+    <PackageReference Include="Sufficit.AsterNET.Core" Version="1.2021.10608.11613" />
   </ItemGroup>
       
 </Project>
