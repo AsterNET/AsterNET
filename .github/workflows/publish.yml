@@ -38,4 +38,4 @@ jobs:
     #- name: Delete Old Packages from GitHub
     #  uses: actions/delete-package-versions@v1
     #  with:
-    #    package-name: 'Sufficit.AsterNET'
+    #    package-name: 'Sufficit.AsterNETFork'

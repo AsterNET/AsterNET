@@ -14,7 +14,7 @@
 
   <PropertyGroup Label="Sufficit Product General">
     <Company>SUFFICIT SOLUÇÕES EM TECNOLOGIA DA INFORMAÇÃO</Company>
-    <Authors>HUGO CASTRO DE DECO</Authors>
+    <Authors>Sufficit</Authors>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Description>Sufficit.AsterNETFork</Description>
     <ProductName>Sufficit AsterNETFork</ProductName>
