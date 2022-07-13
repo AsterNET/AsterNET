@@ -178,7 +178,7 @@ namespace AsterNET.FastAGI
 		{
 			AGIChannel channel = this.Channel;
 			AGIReply lastReply = channel.SendCommand(new Command.GetOptionCommand(file, escapeDigits));
-			return lastReply.ResultCodeAsChar;
+			return lastReply.GetResult();
 		}
 		#endregion
 
@@ -197,7 +197,7 @@ namespace AsterNET.FastAGI
 		{
 			AGIChannel channel = this.Channel;
 			AGIReply lastReply = channel.SendCommand(new Command.GetOptionCommand(file, escapeDigits, timeout));
-			return lastReply.ResultCodeAsChar;
+			return lastReply.GetResult();
 		}
 		#endregion
 
