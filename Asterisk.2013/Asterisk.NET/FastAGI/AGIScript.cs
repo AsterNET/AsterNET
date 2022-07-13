@@ -174,11 +174,11 @@ namespace AsterNET.FastAGI
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that the user is expected to press.</param>
 		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
-		protected internal string GetOption(string file, string escapeDigits)
+		protected internal char GetOption(string file, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
 			AGIReply lastReply = channel.SendCommand(new Command.GetOptionCommand(file, escapeDigits));
-			return lastReply.GetResult();
+			return lastReply.ResultCodeAsChar;
 		}
 		#endregion
 
@@ -193,11 +193,11 @@ namespace AsterNET.FastAGI
 		/// <param name="escapeDigits">contains the digits that the user is expected to press.</param>
 		/// <param name="timeout">the timeout in seconds to wait if none of the defined esacpe digits was presses while streaming.</param>
 		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
-		protected internal string GetOption(string file, string escapeDigits, int timeout)
+		protected internal char GetOption(string file, string escapeDigits, int timeout)
 		{
 			AGIChannel channel = this.Channel;
 			AGIReply lastReply = channel.SendCommand(new Command.GetOptionCommand(file, escapeDigits, timeout));
-			return lastReply.GetResult();
+			return lastReply.ResultCodeAsChar;
 		}
 		#endregion
 
