@@ -162,7 +162,7 @@ namespace AsterNET.FastAGI
             get
             {
                 int resultCode = ResultCode;
-                if (resultCode < 0)
+                if (resultCode == -1)
                     return (char) (0x0);
                 return (char) resultCode;
             }
