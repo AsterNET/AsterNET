@@ -165,7 +165,7 @@ namespace AsterNET.FastAGI
                 if (resultCode == -1)
                     return (char) (0x0);
                 else if (resultCode == 0)
-                    return (char)(48);
+                    return (char)(116);
                 return (char) resultCode;
             }
         }
