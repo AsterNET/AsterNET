@@ -173,7 +173,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that the user is expected to press.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char GetOption(string file, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -192,7 +192,7 @@ namespace AsterNET.FastAGI
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that the user is expected to press.</param>
 		/// <param name="timeout">the timeout in seconds to wait if none of the defined esacpe digits was presses while streaming.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char GetOption(string file, string escapeDigits, int timeout)
 		{
 			AGIChannel channel = this.Channel;
@@ -287,7 +287,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="file">name of the file to play.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char StreamFile(string file, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -314,7 +314,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="digits">the digit string to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayDigits(string digits, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -341,7 +341,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="number">the number to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayNumber(string number, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -368,7 +368,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="text">the text to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayPhonetic(string text, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -395,7 +395,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="text">the text to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayAlpha(string text, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -422,7 +422,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="time">the time to say in seconds since 00:00:00 on January 1, 1970.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayTime(long time, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -541,7 +541,7 @@ namespace AsterNET.FastAGI
 		/// <param name="time">the time to say in seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC)</param>
 		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		/// <param name="format">the format the time should be said in</param>
-		/// <returns>the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns>the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayDateTime(long time, string escapeDigits, string format)
 		{
 			AGIChannel channel = this.Channel;
@@ -557,7 +557,7 @@ namespace AsterNET.FastAGI
 		/// <param name="escapeDigits">the digits that allow the user to interrupt this command or null for none.</param>
 		/// <param name="format">the format the time should be said in</param>
 		/// <param name="timezone">the timezone to use when saying the time, for example "UTC" or "Europe/Berlin".</param>
-		/// <returns>the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns>the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayDateTime(long time, string escapeDigits, string format, string timezone)
 		{
 			AGIChannel channel = this.Channel;
