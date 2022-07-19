@@ -719,9 +719,10 @@ namespace AsterNET.Manager
         private void internalEventHandler(object sender, ManagerEvent e)
         {
             int eventHash = e.GetType().Name.GetHashCode();
-            if (registeredEventHandlers.ContainsKey(eventHash))
+            int userEventHash = typeof(UserEvent).Name.GetHashCode();
+            if (registeredEventHandlers.TryGetValue(eventHash, out var currentEvent)
+            || (registeredEventHandlers.TryGetValue(userEventHash, out currentEvent) && typeof(UserEvent).IsAssignableFrom(e.GetType())))
             {
-                var currentEvent = registeredEventHandlers[eventHash];
                 if (currentEvent(e))
                 {
                     return;
