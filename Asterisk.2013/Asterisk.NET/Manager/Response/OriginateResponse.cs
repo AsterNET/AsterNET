@@ -2,35 +2,14 @@ using System;
 
 namespace AsterNET.Manager.Response
 {
-    public class OriginateResponse
+    public class OriginateResponse : ManagerResponse
     {
         private string channel;
         private string channelName;
         private DateTime endTime = DateTime.MinValue;
         private int reason;
-        private string response;
 
         private DateTime startTime;
-        private string uniqueId;
-
-        #region IsSuccess 
-
-        public bool IsSuccess
-        {
-            get { return response == "Success"; }
-        }
-
-        #endregion
-
-        #region UniqueId
-
-        public string UniqueId
-        {
-            get { return uniqueId; }
-            set { this.uniqueId = value; }
-        }
-
-        #endregion
 
         #region Channel
 
@@ -62,16 +41,6 @@ namespace AsterNET.Manager.Response
 
         #endregion
 
-        #region Response 
-
-        public string Response
-        {
-            get { return response; }
-            set { response = value; }
-        }
-
-        #endregion
-
         #region StartTime
 
         public DateTime StartTime
@@ -94,7 +63,7 @@ namespace AsterNET.Manager.Response
 
         #region Constructor - Call()
 
-        public OriginateResponse()
+        public OriginateResponse() : base()
         {
             startTime = DateTime.Now;
         }
@@ -115,15 +84,6 @@ namespace AsterNET.Manager.Response
             else
                 compTime = DateTime.Now;
             return (compTime.Ticks - startTime.Ticks)/10000;
-        }
-
-        #endregion
-
-        #region ToString()
-
-        public override string ToString()
-        {
-            return Helper.ToString(this);
         }
 
         #endregion
