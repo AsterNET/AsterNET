@@ -20,11 +20,12 @@ namespace AsterNET.FastAGI.Command
 		private string file;
 		/// <summary> When one of these digits is pressed while streaming the command returns.</summary>
 		private string escapeDigits;
-		/// <summary> The offset samples to skip before streaming.</summary>
-		private int offset;
+		/// <summary> The offset samples to skip on forward or rewind.</summary>
+		private int skipMs;
 		private string forwardDigit;
 		private string rewindDigit;
-		private string pauseDigit;
+		private string pauseDigit; 
+		private int offsetMs;
 
 		#region File
 		/// <summary>
@@ -46,14 +47,14 @@ namespace AsterNET.FastAGI.Command
 			set { this.escapeDigits = value; }
 		}
 		#endregion
-		#region Offset
+		#region SkipMs
 		/// <summary>
-		/// Get/Set the offset samples to skip before streaming.
+		/// Get/Set the offset samples to seek on forward or rewind.
 		/// </summary>
-		public int Offset
+		public int SkipMs
 		{
-			get { return offset; }
-			set { this.offset = value; }
+			get { return skipMs; }
+			set { this.skipMs = value; }
 		}
 		#endregion
 		#region ForwardDigit
@@ -83,7 +84,16 @@ namespace AsterNET.FastAGI.Command
 			get { return pauseDigit; }
 		}
 		#endregion
-
+		#region OffsetMs
+		/// <summary>
+		/// Get/Set the offset samples to skip before streaming.
+		/// </summary>
+		public int OffsetMs
+		{
+			get { return offsetMs; }
+			set { this.offsetMs = value; }
+		}
+		#endregion
 		#region ControlStreamFileCommand(string file)
 		/// <summary>
 		/// Creates a new ControlStreamFileCommand, streaming from the beginning. It
@@ -95,7 +105,7 @@ namespace AsterNET.FastAGI.Command
 		{
 			this.file = file;
 			this.escapeDigits = null;
-			this.offset = - 1;
+			this.skipMs = - 1;
 		}
 		#endregion
 		#region ControlStreamFileCommand(string file, string escapeDigits)
@@ -110,12 +120,12 @@ namespace AsterNET.FastAGI.Command
 		{
 			this.file = file;
 			this.escapeDigits = escapeDigits;
-			this.offset = - 1;
+			this.skipMs = - 1;
 		}
 		#endregion
-		#region ControlStreamFileCommand(string file, string escapeDigits, int offset)
+		#region ControlStreamFileCommand(string file, string escapeDigits, int skipMs)
 		/// <summary>
-		/// Creates a new ControlStreamFileCommand, streaming from the given offset.
+		/// Creates a new ControlStreamFileCommand, and setting the forward/rewind milliseconds.
 		/// It uses the default digit "#" for forward and "*" for rewind and does not
 		/// support pausing.
 		/// </summary>
@@ -124,34 +134,58 @@ namespace AsterNET.FastAGI.Command
 		/// contains the digits that allow the user to interrupt this command.
 		/// Maybe null if you don't want the user to interrupt.
 		/// </param>
-		/// <param name="offset">the offset samples to skip before streaming.</param>
-		public ControlStreamFileCommand(string file, string escapeDigits, int offset)
+		/// <param name="skipMs">the offset samples to skip on forward or rewind.</param>
+		public ControlStreamFileCommand(string file, string escapeDigits, int skipMs)
 		{
 			this.file = file;
 			this.escapeDigits = escapeDigits;
-			this.offset = offset;
+			this.skipMs = skipMs;
 		}
 		#endregion
-		#region ControlStreamFileCommand(string file, string escapeDigits, int offset, string forwardDigit, string rewindDigit, string pauseDigit)
+		#region ControlStreamFileCommand(string file, string escapeDigits, int skipMs, string forwardDigit, string rewindDigit, string pauseDigit)
 		/// <summary>
-		/// Creates a new ControlStreamFileCommand, streaming from the given offset.
+		/// Creates a new ControlStreamFileCommand, setting the forward/rewind milliseconds.
 		/// It uses the default digit "#" for forward and "*" for rewind and does not
 		/// support pausing.
 		/// </summary>
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that allow the user to interrupt this command. Maybe null if you don't want the user to interrupt.</param>
-		/// <param name="offset">the offset samples to skip before streaming.</param>
+		/// <param name="skipMs">the offset samples to skip on forward or rewind.</param>
 		/// <param name="forwardDigit">the digit for fast forward.</param>
 		/// <param name="rewindDigit">the digit for rewind.</param>
 		/// <param name="pauseDigit">the digit for pause and unpause.</param>
-		public ControlStreamFileCommand(string file, string escapeDigits, int offset, string forwardDigit, string rewindDigit, string pauseDigit)
+		public ControlStreamFileCommand(string file, string escapeDigits, int skipMs, string forwardDigit, string rewindDigit, string pauseDigit)
 		{
 			this.file = file;
 			this.escapeDigits = escapeDigits;
-			this.offset = offset;
+			this.skipMs = skipMs;
 			this.forwardDigit = forwardDigit;
 			this.rewindDigit = rewindDigit;
 			this.pauseDigit = pauseDigit;
+		}
+		#endregion
+		#region ControlStreamFileCommand(string file, string escapeDigits, int skipMs, string forwardDigit, string rewindDigit, string pauseDigit, int offsetMs)
+		/// <summary>
+		/// Creates a new ControlStreamFileCommand, setting the forward/rewind milliseconds and streaming from the given offset
+		/// It uses the default digit "#" for forward and "*" for rewind and does not
+		/// support pausing.
+		/// </summary>
+		/// <param name="file">the name of the file to stream, must not include extension.</param>
+		/// <param name="escapeDigits">contains the digits that allow the user to interrupt this command. Maybe null if you don't want the user to interrupt.</param>
+		/// <param name="skipMs">the offset samples to skip on forward or rewind.</param>
+		/// <param name="forwardDigit">the digit for fast forward.</param>
+		/// <param name="rewindDigit">the digit for rewind.</param>
+		/// <param name="pauseDigit">the digit for pause and unpause.</param>
+		/// <param name="offsetMs">the offset samples to skip before streaming.</param>
+		public ControlStreamFileCommand(string file, string escapeDigits, int skipMs, string forwardDigit, string rewindDigit, string pauseDigit, int offsetMs)
+		{
+			this.file = file;
+			this.escapeDigits = escapeDigits;
+			this.skipMs = skipMs;
+			this.forwardDigit = forwardDigit;
+			this.rewindDigit = rewindDigit;
+			this.pauseDigit = pauseDigit;
+			this.offsetMs = offsetMs;
 		}
 		#endregion
 
@@ -187,8 +221,8 @@ namespace AsterNET.FastAGI.Command
 		{
 			StringBuilder sb = new StringBuilder("CONTROL STREAM FILE ");
 			sb.Append(EscapeAndQuote(file) + " " + EscapeAndQuote(escapeDigits));
-			if (offset >= 0)
-				sb.Append(" " + offset.ToString());
+			if (skipMs >= 0)
+				sb.Append(" " + skipMs.ToString());
 			else if (forwardDigit != null || rewindDigit != null || pauseDigit != null)
 				sb.Append(" 0");
 			if (forwardDigit != null || rewindDigit != null || pauseDigit != null)
@@ -197,6 +231,8 @@ namespace AsterNET.FastAGI.Command
 				sb.Append(" " + rewindDigit);
 			if (pauseDigit != null)
 				sb.Append(" " + pauseDigit);
+			if (offsetMs >= 0)
+				sb.Append(" " + offsetMs.ToString());
 			return sb.ToString();
 		}
 		#endregion

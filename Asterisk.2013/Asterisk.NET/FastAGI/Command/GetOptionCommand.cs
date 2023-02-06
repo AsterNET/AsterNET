@@ -6,8 +6,8 @@ namespace AsterNET.FastAGI.Command
 	/// digits. If none of the esacpe digits is pressed while streaming the file this
 	/// command waits for the specified timeout still waiting for the user to press a
 	/// digit. Streaming always begins at the beginning.<br/>
-	/// Returns 0 if no digit being pressed, or the ASCII numerical value of the
-	/// digit if one was pressed, or -1 on error or if the channel was disconnected.
+	/// Returns 't' if no digit being pressed, or the ASCII numerical value of the
+	/// digit if one was pressed, or 0x0 on error or if the channel was disconnected.
 	/// <br/>
 	/// Remember, the file extension must not be included in the filename.
 	/// </summary>

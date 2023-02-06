@@ -5,8 +5,8 @@ namespace AsterNET.FastAGI.Command
 	/// <summary>
 	/// Plays the given file, allowing playback to be interrupted by the given digits, if any.<br/>
 	/// If offset is provided then the audio will seek to sample offset before play starts.<br/>
-	/// Returns 0 if playback completes without a digit being pressed, or the ASCII
-	/// numerical value of the digit if one was pressed, or -1 on error or if the
+	/// Returns 't' if playback completes without a digit being pressed, or the ASCII
+	/// numerical value of the digit if one was pressed, or 0x0 on error or if the
 	/// channel was disconnected. <br/>
 	/// Remember, the file extension must not be included in the filename.
 	/// </summary>
