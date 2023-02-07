@@ -163,7 +163,7 @@ namespace AsterNET.FastAGI
 		}
 		#endregion
 
-		
+
 		#region GetOption(string file, string escapeDigits)
 		/// <summary>
 		/// Plays the given file, and waits for the user to press one of the given
@@ -173,7 +173,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that the user is expected to press.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char GetOption(string file, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -192,7 +192,7 @@ namespace AsterNET.FastAGI
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that the user is expected to press.</param>
 		/// <param name="timeout">the timeout in seconds to wait if none of the defined esacpe digits was presses while streaming.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char GetOption(string file, string escapeDigits, int timeout)
 		{
 			AGIChannel channel = this.Channel;
@@ -287,7 +287,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="file">name of the file to play.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char StreamFile(string file, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -314,7 +314,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="digits">the digit string to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayDigits(string digits, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -341,7 +341,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="number">the number to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayNumber(string number, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -368,7 +368,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="text">the text to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayPhonetic(string text, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -395,7 +395,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="text">the text to say.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayAlpha(string text, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -422,7 +422,7 @@ namespace AsterNET.FastAGI
 		/// </summary>
 		/// <param name="time">the time to say in seconds since 00:00:00 on January 1, 1970.</param>
 		/// <param name="escapeDigits">a String containing the DTMF digits that allow the user to escape.</param>
-		/// <returns> the DTMF digit pressed or 0x0 if none was pressed.</returns>
+		/// <returns> the DTMF digit pressed or 't' if none was pressed or 0x0 on error.</returns>
 		protected internal char SayTime(long time, string escapeDigits)
 		{
 			AGIChannel channel = this.Channel;
@@ -759,8 +759,8 @@ namespace AsterNET.FastAGI
 		/// <summary>
 		/// Plays the given file, allowing playback to be interrupted by the given
 		/// digits, if any, and allows the listner to control the stream.<br/>
-		/// If offset is provided then the audio will seek to sample offset before play
-		/// starts.<br/>
+		/// If skipMs is provided then the audio will seek the offset samples 
+		/// on forward or rewind.<br/>
 		/// Returns 0 if playback completes without a digit being pressed, or the ASCII
 		/// numerical value of the digit if one was pressed, or -1 on error or if the
 		/// channel was disconnected. <br/>
@@ -770,15 +770,41 @@ namespace AsterNET.FastAGI
 		/// <seealso cref="Command.ControlStreamFileCommand"/>
 		/// <param name="file">the name of the file to stream, must not include extension.</param>
 		/// <param name="escapeDigits">contains the digits that allow the user to interrupt this command.</param>
-		/// <param name="offset">the offset samples to skip before streaming.</param>
+		/// <param name="skipMs">the offset samples to skip on forward or rewind.</param>
 		/// <param name="forwardDigit">the digit for fast forward.</param>
 		/// <param name="rewindDigit">the digit for rewind.</param>
 		/// <param name="pauseDigit">the digit for pause and unpause.</param>
 		/// <returns>result code</returns>
-		protected internal int ControlStreamFile(string file, string escapeDigits, int offset, string forwardDigit, string rewindDigit, string pauseDigit)
+		protected internal int ControlStreamFile(string file, string escapeDigits, int skipMs, string forwardDigit, string rewindDigit, string pauseDigit)
 		{
 			AGIChannel channel = this.Channel;
-			AGIReply lastReply = channel.SendCommand(new Command.ControlStreamFileCommand(file, escapeDigits, offset, forwardDigit, rewindDigit, pauseDigit));
+			AGIReply lastReply = channel.SendCommand(new Command.ControlStreamFileCommand(file, escapeDigits, skipMs, forwardDigit, rewindDigit, pauseDigit));
+			return lastReply.ResultCode;
+		}
+		/// <summary>
+		/// Plays the given file, allowing playback to be interrupted by the given
+		/// digits, if any, and allows the listner to control the stream.<br/>
+		/// If skipMs is provided then the audio will seek the offset samples 
+		/// on forward or rewind.<br/>
+		/// Returns 0 if playback completes without a digit being pressed, or the ASCII
+		/// numerical value of the digit if one was pressed, or -1 on error or if the
+		/// channel was disconnected. <br/>
+		/// Remember, the file extension must not be included in the filename.<br/>
+		/// Available since Asterisk 1.2
+		/// </summary>
+		/// <seealso cref="Command.ControlStreamFileCommand"/>
+		/// <param name="file">the name of the file to stream, must not include extension.</param>
+		/// <param name="escapeDigits">contains the digits that allow the user to interrupt this command.</param>
+		/// <param name="skipMs">the offset samples to skip on forward or rewind.</param>
+		/// <param name="forwardDigit">the digit for fast forward.</param>
+		/// <param name="rewindDigit">the digit for rewind.</param>
+		/// <param name="pauseDigit">the digit for pause and unpause.</param>
+		/// <param name="offsetMs">the offset samples to skip before streaming.</param>
+		/// <returns>result code</returns>
+		protected internal int ControlStreamFile(string file, string escapeDigits, int skipMs, string forwardDigit, string rewindDigit, string pauseDigit, int offsetMs)
+		{
+			AGIChannel channel = this.Channel;
+			AGIReply lastReply = channel.SendCommand(new Command.ControlStreamFileCommand(file, escapeDigits, skipMs, forwardDigit, rewindDigit, pauseDigit, offsetMs));
 			return lastReply.ResultCode;
 		}
 		#endregion
