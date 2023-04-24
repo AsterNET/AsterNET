@@ -1,10 +1,15 @@
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     An AgentConnectEvent is triggered when a caller is connected to an agent.
+    ///     An AgentConnectEvent is triggered when a caller is connected to an agent.<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentConnect">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentConnect</see>
     /// </summary>
     public class AgentConnectEvent : AbstractAgentEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="AgentConnectEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentConnectEvent(ManagerConnection source)
             : base(source)
         {

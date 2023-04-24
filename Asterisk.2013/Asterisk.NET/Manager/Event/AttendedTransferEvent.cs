@@ -1,11 +1,27 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AsterNET.Manager.Event
 {
-	public class AttendedTransferEvent : ManagerEvent
+    /// <summary>
+    ///     Raised when an attended transfer is complete.<br/>
+    ///     <br/>
+    ///     The headers in this event attempt to describe all the major details of the attended transfer.The two transferrer channels and the two bridges are determined based on their chronological establishment.So consider that Alice calls Bob, and then Alice transfers the call to Voicemail. The transferrer and bridge headers would be arranged as follows:<br/>
+    ///     OrigTransfererChannel: Alice's channel in the bridge with Bob.<br/>
+    ///     OrigBridgeUniqueid: The bridge between Alice and Bob.<br/>
+    ///     SecondTransfererChannel: Alice's channel that called Voicemail.<br/>
+    ///     SecondBridgeUniqueid: Not present, since a call to Voicemail has no bridge.<br/>
+    ///     <br/>
+    ///     Now consider if the order were reversed; instead of having Alice call Bob and transfer him to Voicemail, Alice instead calls her Voicemail and transfers that to Bob. The transferrer and bridge headers would be arranged as follows:<br/>
+    ///     OrigTransfererChannel: Alice's channel that called Voicemail.<br/>
+    ///     OrigBridgeUniqueid: Not present, since a call to Voicemail has no bridge.<br/>
+    ///     SecondTransfererChannel: Alice's channel in the bridge with Bob.<br/>
+    ///     SecondBridgeUniqueid: The bridge between Alice and Bob.<br/>
+    ///     <br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AttendedTransfer">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AttendedTransfer</see>
+    /// </summary>
+    public class AttendedTransferEvent : ManagerEvent
 	{
+        /// <summary>
+        ///     Gets or sets a URL encoded result string from the executed AGI command.
+        /// </summary>
         public bool Result { get; set; }
         /// <summary>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
@@ -35,6 +51,9 @@ namespace AsterNET.Manager.Event
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string OrigTransfererConnectedLineName { get; set; }
+        /// <summary>
+        ///     Gets or sets the original transferrer language.
+        /// </summary>
         public string OrigTransfererLanguage { get; set; }
         /// <summary>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
@@ -61,7 +80,7 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string OrigBridgeType { get; set; }
         /// <summary>
-        ///     Get/Set the identifier of the remote fax station.
+        ///     Get/Set the identifier of the remote fax station.<br/>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string OrigBridgetechnology { get; set; }
@@ -106,6 +125,9 @@ namespace AsterNET.Manager.Event
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string SecondTransfererConnectedLineName { get; set; }
+        /// <summary>
+        ///     Gets or sets the second transferrer language.
+        /// </summary>
         public string SecondTransfererLanguage { get; set; }
         /// <summary>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
@@ -181,6 +203,9 @@ namespace AsterNET.Manager.Event
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
         public string TransfereeConnectedLineName { get; set; }
+        /// <summary>
+        ///     Gets or sets the transferee language.
+        /// </summary>
         public string TransfereeLanguage { get; set; }
         /// <summary>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
@@ -203,24 +228,86 @@ namespace AsterNET.Manager.Event
         /// </summary>
         public string TransfereeUniqueId { get; set; }
 
+        /// <summary>
+        ///     Gets or sets the transfer target channel.
+        /// </summary>
         public string TransferTargetChannel { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the state of the transfer target channel.
+        /// </summary>
         public string TransferTargetChannelState { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target channel state description.
+        /// </summary>
         public string TransferTargetChannelStatedesc { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target Caller*ID number.
+        /// </summary>
         public string TransferTargetCalleridNum { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the name of the transfer target Caller*ID.
+        /// </summary>
         public string TransferTargetCalleridName { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target connected line number.
+        /// </summary>
         public string TransferTargetConnectedLineNum { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the name of the transfer target connected line.
+        /// </summary>
         public string TransferTargetConnectedLineName { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target language.
+        /// </summary>
         public string TransferTargetLanguage { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target account code.
+        /// </summary>
         public string TransferTargetAccountCode { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target context.
+        /// </summary>
         public string TransferTargetContext { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target priority.
+        /// </summary>
         public string TransferTargetPriority { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the transfer target unique id.
+        /// </summary>
         public string TransferTargetUniqueId { get; set; }
 
+        /// <summary>
+        ///     Gets or sets a value indicating whether this instance is external.
+        /// </summary>
         public bool IsExternal { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the type of the destination.
+        /// </summary>
         public string DestType { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the destination bridge unique id.
+        /// </summary>
         public string DestBridgeUniqueId { get; set; }
 
-        #region Constructor - AttendedTransferEvent(ManagerConnection source)
+        #region Constructor - AttendedTransferEvent(ManagerConnection source)        
+        /// <summary>
+        ///     Creates a new <see cref="AttendedTransferEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AttendedTransferEvent(ManagerConnection source)
 			: base(source)
 		{

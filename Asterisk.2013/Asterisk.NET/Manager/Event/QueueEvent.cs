@@ -1,7 +1,7 @@
 namespace AsterNET.Manager.Event
 {
 	/// <summary>
-	/// Abstract base class providing common properties for JoinEvent and LeaveEvent.
+	///     Abstract base class providing common properties for JoinEvent and LeaveEvent.
 	/// </summary>
 	public abstract class QueueEvent : ManagerEvent
 	{
@@ -9,7 +9,7 @@ namespace AsterNET.Manager.Event
 		private int count;
 
 		/// <summary>
-		/// Get/Set the number of elements in the queue, i.e. the number of calls waiting to be answered by an agent.
+		///     Get/Set the number of elements in the queue, i.e. the number of calls waiting to be answered by an agent.
 		/// </summary>
 		public int Count
 		{
@@ -17,15 +17,19 @@ namespace AsterNET.Manager.Event
 			set { this.count = value; }
 		}
 		/// <summary>
-		/// Get/Set the name of the queue.
+		///     Get/Set the name of the queue.
 		/// </summary>
 		public string Queue
 		{
 			get { return queue; }
 			set { this.queue = value; }
 		}
-		
-		public QueueEvent(ManagerConnection source)
+
+        /// <summary>
+        ///     Creates a new <see cref="QueueEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection" /></param>
+        public QueueEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

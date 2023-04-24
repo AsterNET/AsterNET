@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     Raised as part of the ConfbridgeListRooms action response list.<br/>
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeList">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_ConfbridgeList</see>
+    ///     Lists data about all active conferences. ConfbridgeListRooms will follow as separate events, followed by a final event called ConfbridgeListRoomsComplete.<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeListRooms">https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeListRooms</see>
     /// </summary>
     public class ConfbridgeListRoomsEvent : AbstractConfbridgeEvent
     {

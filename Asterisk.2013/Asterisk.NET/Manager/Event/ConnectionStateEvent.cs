@@ -1,13 +1,13 @@
 namespace AsterNET.Manager.Event
 {
 	/// <summary>
-	/// Abstract base class for several agent related events.
+	///     Abstract base class for several agent related events.
 	/// </summary>
 	public abstract class ConnectionStateEvent : ManagerEvent
 	{
 		private bool reconnect = false;
 		/// <summary>
-		/// Get/Set reconnect status.
+		///     Get/Set reconnect status.
 		/// </summary>
 		public bool Reconnect
 		{
@@ -15,7 +15,11 @@ namespace AsterNET.Manager.Event
 			set { this.reconnect = value; }
 		}
 
-		public ConnectionStateEvent(ManagerConnection source)
+        /// <summary>
+        ///     Creates a new <see cref="ConnectionStateEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
+        public ConnectionStateEvent(ManagerConnection source)
 			: base(source)
 		{ }
 	}

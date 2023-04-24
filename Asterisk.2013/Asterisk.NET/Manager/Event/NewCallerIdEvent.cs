@@ -4,13 +4,18 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     A NewCallerIdEvent is triggered when the caller id of a channel changes.<br />
-    ///     It is implemented in channel.c
+    ///     It is implemented in channel.c<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_NewCallerid">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_NewCallerid</see>
     /// </summary>
     public class NewCallerIdEvent : ManagerEvent
     {
         private int cidCallingPres;
         private string cidCallingPresTxt;
 
+        /// <summary>
+        ///     Creates a new <see cref="NewCallerIdEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public NewCallerIdEvent(ManagerConnection source)
             : base(source)
         {

@@ -1,10 +1,15 @@
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     An AgentCompleteEvent is triggered when at the end of a call if the caller was connected to an agent.
+    ///     An AgentCompleteEvent is triggered when at the end of a call if the caller was connected to an agent.<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentComplete">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_AgentComplete</see>
     /// </summary>
     public class AgentCompleteEvent : AbstractAgentEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="AgentCompleteEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentCompleteEvent(ManagerConnection source)
             : base(source)
         {

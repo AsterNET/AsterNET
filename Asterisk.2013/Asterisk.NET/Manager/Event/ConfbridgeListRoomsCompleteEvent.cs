@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     An ConfbridgeListRoomsCompleteEvent is triggered after the state of all ConfBridgeRooms has been reported in response to an ConfbridgeListRoomsAction.<br/>
-    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions">https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions</see>
+    ///     Raised after all <see cref="ConfbridgeListRoomsEvent"/> are complete.<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeListRooms">https://wiki.asterisk.org/wiki/display/AST/ConfBridge+AMI+Actions#ConfBridgeAMIActions-ConfbridgeListRooms</see>
     /// </summary>
-    /// <seealso cref="ConfbridgeListRoomsEvent" />
+    /// <seealso cref="Manager.Action.ConfbridgeListRoomsAction"/>
+    /// <seealso cref="Manager.Event.ConfbridgeListRoomsEvent"/>
     public class ConfbridgeListRoomsCompleteEvent : ResponseEvent
     {
         /// <summary>

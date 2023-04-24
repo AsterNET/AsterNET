@@ -1,11 +1,11 @@
 namespace AsterNET.Manager.Event
 {
-	/// <summary>
-	/// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.<br/>
-	/// It is implemented in apps/app_queue.c
-	/// </summary>
-	/// <seealso cref="Manager.Action.QueueStatusAction" />
-	public class QueueEntryEvent : ResponseEvent
+    /// <summary>
+    ///     A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.<br/>
+    ///     It is implemented in apps/app_queue.c
+    /// </summary>
+    /// <seealso cref="Manager.Action.QueueStatusAction" />
+    public class QueueEntryEvent : ResponseEvent
 	{
 		private string queue;
 		private int position;
@@ -14,7 +14,7 @@ namespace AsterNET.Manager.Event
 		private long wait;
 
 		/// <summary>
-		/// Get/Set the name of the queue that contains this entry.
+		///     Get/Set the name of the queue that contains this entry.
 		/// </summary>
 		public string Queue
 		{
@@ -22,7 +22,7 @@ namespace AsterNET.Manager.Event
 			set { this.queue = value; }
 		}
 		/// <summary>
-		/// Get/Set the position of this entry in the queue.
+		///     Get/Set the position of this entry in the queue.
 		/// </summary>
 		public int Position
 		{
@@ -30,7 +30,7 @@ namespace AsterNET.Manager.Event
 			set { this.position = value; }
 		}
 		/// <summary>
-		/// Get/Set the the Caller*ID number of this entry.
+		///     Get/Set the the Caller*ID number of this entry.
 		/// </summary>
 		public string CallerId
 		{
@@ -38,7 +38,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerId = value; }
 		}
 		/// <summary>
-		/// Get/Set the Caller*ID name of this entry.
+		///     Get/Set the Caller*ID name of this entry.
 		/// </summary>
 		public string CallerIdName
 		{
@@ -46,7 +46,7 @@ namespace AsterNET.Manager.Event
 			set { this.callerIdName = value; }
 		}
 		/// <summary>
-		/// Get/Set the number of seconds this entry has spent in the queue.
+		///     Get/Set the number of seconds this entry has spent in the queue.
 		/// </summary>
 		public long Wait
 		{
@@ -54,7 +54,11 @@ namespace AsterNET.Manager.Event
 			set { this.wait = value; }
 		}
 
-		public QueueEntryEvent(ManagerConnection source)
+        /// <summary>
+        ///     Creates a new <see cref="QueueEntryEvent"/> .
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
+        public QueueEntryEvent(ManagerConnection source)
 			: base(source)
 		{
 		}

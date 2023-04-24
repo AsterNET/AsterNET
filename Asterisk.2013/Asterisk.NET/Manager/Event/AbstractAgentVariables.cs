@@ -5,18 +5,25 @@ using System.Collections;
 
 namespace AsterNET.Manager.Event
 {
-	public abstract class AbstractAgentVariables : ManagerEvent, IActionVariable
+    /// <summary>
+    ///     Abstract base class for several agent related variables.
+    /// </summary>
+    public abstract class AbstractAgentVariables : ManagerEvent, IActionVariable
 	{
 		private Dictionary<string, string> variables;
 
-		public AbstractAgentVariables(ManagerConnection source)
+        /// <summary>
+        ///     Creates a new <see cref="AbstractAgentVariables"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
+        public AbstractAgentVariables(ManagerConnection source)
 			: base(source)
 		{ }
 
 		#region Variable
 		/// <summary>
-		/// Get/Set the variables to set on the queue call in native asterisk format.<br/>
-		/// Example: "VAR1=abc|VAR2=def".
+		///     Get/Set the variables to set on the queue call in native asterisk format.<br/>
+		///     Example: "VAR1=abc|VAR2=def".
 		/// </summary>
 		[Obsolete("Use GetVariables and SetVariables instead.", true)]
 		public string Variable
@@ -28,7 +35,7 @@ namespace AsterNET.Manager.Event
 
 		#region GetVariables()
 		/// <summary>
-		/// Get the variables dictionary to set on the originated call.
+		///     Get the variables dictionary to set on the originated call.
 		/// </summary>
 		public Dictionary<string, string> GetVariables()
 		{
@@ -38,7 +45,7 @@ namespace AsterNET.Manager.Event
 
 		#region SetVariables(Dictionary<string, string> vars)
 		/// <summary>
-		/// Set the variables dictionary to set on the originated call.
+		///     Set the variables dictionary to set on the originated call.
 		/// </summary>
 		public void SetVariables(Dictionary<string, string> vars)
 		{
@@ -48,7 +55,7 @@ namespace AsterNET.Manager.Event
 
 		#region SetVariable(string name, string val)
 		/// <summary>
-		/// Sets a variable dictionary on the originated call. Replaces any existing variable with the same name.
+		///     Sets a variable dictionary on the originated call. Replaces any existing variable with the same name.
 		/// </summary>
 		public void SetVariable(string key, string val)
 		{
@@ -63,7 +70,7 @@ namespace AsterNET.Manager.Event
 
 		#region GetVariable(string name)
 		/// <summary>
-		/// Gets a variable on the originated call. Replaces any existing variable with the same name.
+		///     Gets a variable on the originated call. Replaces any existing variable with the same name.
 		/// </summary>
 		public string GetVariable(string key)
 		{

@@ -1,11 +1,15 @@
 namespace AsterNET.Manager.Event
 {
     /// <summary>
-    ///     A HoldedCallEvent is triggered when a channel is put on hold.<br />
+    ///     A HoldedCallEvent is triggered when a channel is put on hold.<br/>
     ///     It is implemented in res/res_features.c
     /// </summary>
     public class HoldedCallEvent : ManagerEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="HoldedCallEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public HoldedCallEvent(ManagerConnection source)
             : base(source)
         {

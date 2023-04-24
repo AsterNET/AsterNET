@@ -2,18 +2,23 @@ namespace AsterNET.Manager.Event
 {
     /// <summary>
     ///     An AgentsEvent is triggered for each agent in response to an AgentsAction.<br />
-    ///     Available since Asterisk 1.2
+    ///     Available since Asterisk 1.2<br/>
+    ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Agents">https://wiki.asterisk.org/wiki/display/AST/Asterisk+16+ManagerEvent_Agents</see>
     /// </summary>
     /// <seealso cref="Manager.Action.AgentsAction" />
     public class AgentsEvent : ResponseEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="AgentsEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public AgentsEvent(ManagerConnection source)
             : base(source)
         {
         }
 
         /// <summary>
-        ///     Get/Set the agentid.
+        ///     Get/Set the agent id.
         /// </summary>
         public string Agent { get; set; }
 
@@ -69,7 +74,7 @@ namespace AsterNET.Manager.Event
         public long LoggedInTime { get; set; }
 
         /// <summary>
-        ///     Get/Set a numeric code for the channel's current state, related to ChannelStateDesc.
+        ///     Get/Set the numerical Caller*ID of the channel this agent is talking to or "n/a" if this agent is talking to nobody.
         /// </summary>
         public int ChannelState { get; set; }
 

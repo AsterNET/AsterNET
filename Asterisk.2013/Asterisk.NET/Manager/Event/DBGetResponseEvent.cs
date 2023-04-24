@@ -7,6 +7,10 @@ namespace AsterNET.Manager.Event
     /// <seealso cref="Manager.Action.DBGetAction" />
     public class DBGetResponseEvent : ResponseEvent
     {
+        /// <summary>
+        ///     Creates a new <see cref="DBGetResponseEvent"/>.
+        /// </summary>
+        /// <param name="source"><see cref="ManagerConnection"/></param>
         public DBGetResponseEvent(ManagerConnection source)
             : base(source)
         {

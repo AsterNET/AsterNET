@@ -1,8 +1,8 @@
 namespace AsterNET.Manager.Event
 {
 	/// <summary>
-	/// A QueueMemberEvent is triggered in response to a QueueStatusAction and contains information about a member of a queue.<br/>
-	/// It is implemented in apps/app_queue.c
+	///     A QueueMemberEvent is triggered in response to a QueueStatusAction and contains information about a member of a queue.<br/>
+	///     It is implemented in apps/app_queue.c
 	/// </summary>
 	/// <seealso cref="Manager.Action.QueueStatusAction" />
 	public class QueueMemberEvent : ResponseEvent
