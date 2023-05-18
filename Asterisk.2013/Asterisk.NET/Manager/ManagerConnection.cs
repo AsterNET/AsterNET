@@ -151,10 +151,13 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<CdrEvent> Cdr;
         public event EventHandler<DBGetResponseEvent> DBGetResponse;
-        /// <summary>
-        /// A Dial is triggered whenever a phone attempts to dial someone.<br/>
-        /// </summary>
-        public event EventHandler<DialEvent> Dial;
+
+        public event EventHandler<CoreShowChannelEvent> CoreShowChannel;
+        public event EventHandler<CoreShowChannelsCompleteEvent> CoreShowChannelsComplete;
+		/// <summary>
+		/// A Dial is triggered whenever a phone attempts to dial someone.<br/>
+		/// </summary>
+		public event EventHandler<DialEvent> Dial;
         public event EventHandler<DTMFEvent> DTMF;
         /// <summary>
         /// An DTMFBeginEvent is triggered when a DTMF digit has started on a channel.
@@ -543,7 +546,10 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AlarmEvent), arg => fireEvent(Alarm, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(CdrEvent), arg => fireEvent(Cdr, arg));
 
-            Helper.RegisterEventHandler(registeredEventHandlers, typeof(DBGetResponseEvent), arg => fireEvent(DBGetResponse, arg));
+			Helper.RegisterEventHandler(registeredEventHandlers, typeof(CoreShowChannelEvent), arg => fireEvent(CoreShowChannel, arg));
+			Helper.RegisterEventHandler(registeredEventHandlers, typeof(CoreShowChannelsCompleteEvent), arg => fireEvent(CoreShowChannelsComplete, arg));
+
+			Helper.RegisterEventHandler(registeredEventHandlers, typeof(DBGetResponseEvent), arg => fireEvent(DBGetResponse, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DialEvent), arg => fireEvent(Dial, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DNDStateEvent), arg => fireEvent(DNDState, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ExtensionStatusEvent), arg => fireEvent(ExtensionStatus, arg));
