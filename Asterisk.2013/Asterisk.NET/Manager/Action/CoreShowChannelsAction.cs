@@ -6,17 +6,13 @@ namespace AsterNET.Manager.Action
 {
 	public class CoreShowChannelsAction : ManagerActionEvent
 	{
-		#region Action
-
 		/// <summary>
-		///     Get the name of this action, i.e. "CoreShowChannels".
+		///     Get the name of this action "CoreShowChannels".
 		/// </summary>
 		public override string Action
 		{
 			get { return "CoreShowChannels"; }
 		}
-
-		#endregion
 
 		public override Type ActionCompleteEventClass()
 		{
