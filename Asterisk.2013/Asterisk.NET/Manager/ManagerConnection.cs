@@ -151,14 +151,21 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<CdrEvent> Cdr;
         public event EventHandler<DBGetResponseEvent> DBGetResponse;
-
-        public event EventHandler<CoreShowChannelEvent> CoreShowChannel;
-        public event EventHandler<CoreShowChannelsCompleteEvent> CoreShowChannelsComplete;
 		/// <summary>
 		/// A Dial is triggered whenever a phone attempts to dial someone.<br/>
 		/// </summary>
 		public event EventHandler<DialEvent> Dial;
-        public event EventHandler<DTMFEvent> DTMF;
+
+		/// <summary>
+		/// An CoreShowChannelEvent is triggered in response to a CoreShowChannelsAction.
+		/// </summary>
+		public event EventHandler<CoreShowChannelEvent> CoreShowChannel;
+		/// <summary>
+		/// An CoreShowChannelsCompleteEvent is triggered when at the end of CoreShowChannelsAction.
+		/// </summary>
+		public event EventHandler<CoreShowChannelsCompleteEvent> CoreShowChannelsComplete;
+
+		public event EventHandler<DTMFEvent> DTMF;
         /// <summary>
         /// An DTMFBeginEvent is triggered when a DTMF digit has started on a channel.
         /// </summary>
