@@ -26,7 +26,6 @@ namespace AsterNET.Manager.Event
 		/// Get/Set Exten
 		/// </summary>
 		public string Exten { get; set; }
-		public string Extennnnnnnnnnsions { get; set; }
 
 		/// <summary>
 		/// Get/Set Priority
