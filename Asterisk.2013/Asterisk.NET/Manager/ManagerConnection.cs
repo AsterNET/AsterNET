@@ -71,7 +71,7 @@ namespace AsterNET.Manager
         /// <summary> Default Slow Reconnect interval in milliseconds.</summary>
         private int reconnectIntervalMax = 10000;
 
-		public char[] VAR_DELIMITER = { '|' };
+        public char[] VAR_DELIMITER = { '|' };
 
         #endregion
 
@@ -151,11 +151,11 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<CdrEvent> Cdr;
         public event EventHandler<DBGetResponseEvent> DBGetResponse;
-		/// <summary>
-		/// A Dial is triggered whenever a phone attempts to dial someone.<br/>
-		/// </summary>
-		public event EventHandler<DialEvent> Dial;
-		public event EventHandler<DTMFEvent> DTMF;
+        /// <summary>
+        /// A Dial is triggered whenever a phone attempts to dial someone.<br/>
+        /// </summary>
+        public event EventHandler<DialEvent> Dial;
+        public event EventHandler<DTMFEvent> DTMF;
         /// <summary>
         /// An DTMFBeginEvent is triggered when a DTMF digit has started on a channel.
         /// </summary>
@@ -508,20 +508,20 @@ namespace AsterNET.Manager
         /// </summary>
         public event EventHandler<QueueSummaryEvent> QueueSummary;
 
-		/// <summary>
-		/// An CoreShowChannelEvent is triggered in response to a CoreShowChannelsAction.
-		/// </summary>
-		public event EventHandler<CoreShowChannelEvent> CoreShowChannel;
-		/// <summary>
-		/// An CoreShowChannelsCompleteEvent is triggered when at the end of CoreShowChannelsAction.
-		/// </summary>
-		public event EventHandler<CoreShowChannelsCompleteEvent> CoreShowChannelsComplete;
+        /// <summary>
+        /// An CoreShowChannelEvent is triggered in response to a CoreShowChannelsAction.
+        /// </summary>
+        public event EventHandler<CoreShowChannelEvent> CoreShowChannel;
+        /// <summary>
+        /// An CoreShowChannelsCompleteEvent is triggered when at the end of CoreShowChannelsAction.
+        /// </summary>
+        public event EventHandler<CoreShowChannelsCompleteEvent> CoreShowChannelsComplete;k
 
-		#endregion
+        #endregion
 
-		#region Constructor - ManagerConnection()
-		/// <summary> Creates a new instance.</summary>
-		public ManagerConnection()
+        #region Constructor - ManagerConnection()
+        /// <summary> Creates a new instance.</summary>
+        public ManagerConnection()
         {
             callerThread = Thread.CurrentThread;
 
@@ -552,10 +552,10 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(AlarmEvent), arg => fireEvent(Alarm, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(CdrEvent), arg => fireEvent(Cdr, arg));
 
-			Helper.RegisterEventHandler(registeredEventHandlers, typeof(CoreShowChannelEvent), arg => fireEvent(CoreShowChannel, arg));
-			Helper.RegisterEventHandler(registeredEventHandlers, typeof(CoreShowChannelsCompleteEvent), arg => fireEvent(CoreShowChannelsComplete, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(CoreShowChannelEvent), arg => fireEvent(CoreShowChannel, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(CoreShowChannelsCompleteEvent), arg => fireEvent(CoreShowChannelsComplete, arg));
 
-			Helper.RegisterEventHandler(registeredEventHandlers, typeof(DBGetResponseEvent), arg => fireEvent(DBGetResponse, arg));
+            Helper.RegisterEventHandler(registeredEventHandlers, typeof(DBGetResponseEvent), arg => fireEvent(DBGetResponse, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DialEvent), arg => fireEvent(Dial, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(DNDStateEvent), arg => fireEvent(DNDState, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ExtensionStatusEvent), arg => fireEvent(ExtensionStatus, arg));
@@ -648,7 +648,7 @@ namespace AsterNET.Manager
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(ChallengeSentEvent), arg => fireEvent(ChallengeSent, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(SuccessfulAuthEvent), arg => fireEvent(SuccessfulAuth, arg));
             Helper.RegisterEventHandler(registeredEventHandlers, typeof(QueueSummaryEvent), arg => fireEvent(QueueSummary, arg));
-            
+
             #endregion
 
             this.internalEvent += new EventHandler<ManagerEvent>(internalEventHandler);
@@ -913,7 +913,7 @@ namespace AsterNET.Manager
         /// Changing the property doesn't do anything while you are already connected.
         /// </para>
         /// </remarks>
-        public int SocketReceiveBufferSize { get; set;}
+        public int SocketReceiveBufferSize { get; set; }
 
         #endregion
 
@@ -1025,136 +1025,136 @@ namespace AsterNET.Manager
 #if LOGGER
                 logger.Info("Determined Asterisk version: " + asteriskVersion);
 #endif
-				enableEvents = true;
-				ConnectEvent ce = new ConnectEvent(this);
-				ce.ProtocolIdentifier = this.protocolIdentifier;
-				DispatchEvent(ce);
-			}
-			else if (response is ManagerError)
-				throw new ManagerException("Unable login to Asterisk - " + response.Message);
-			else
-				throw new ManagerException("Unknown response during login to Asterisk - " + response.GetType().Name + " with message " + response.Message);
+                enableEvents = true;
+                ConnectEvent ce = new ConnectEvent(this);
+                ce.ProtocolIdentifier = this.protocolIdentifier;
+                DispatchEvent(ce);
+            }
+            else if (response is ManagerError)
+                throw new ManagerException("Unable login to Asterisk - " + response.Message);
+            else
+                throw new ManagerException("Unknown response during login to Asterisk - " + response.GetType().Name + " with message " + response.Message);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region determineVersion()
-		protected internal AsteriskVersion determineVersion()
-		{
-			Response.ManagerResponse response;
-			response = SendAction(new Action.CommandAction("core show version"), defaultResponseTimeout * 2);
-			if (response is Response.CommandResponse)
-			{
-				foreach (string line in ((Response.CommandResponse)response).Result)
-				{
-					foreach (Match m in Common.ASTERISK_VERSION.Matches(line))
-					{
-						if (m.Groups.Count >= 2)
-						{
-							version = m.Groups[1].Value;
-							if (version.StartsWith("1.4."))
-							{
-								VAR_DELIMITER = new char[] { '|' };
-								return AsteriskVersion.ASTERISK_1_4;
-							}
-							else if (version.StartsWith("1.6."))
-							{
-								VAR_DELIMITER = new char[] { '|' };
-								return Manager.AsteriskVersion.ASTERISK_1_6;
-							}
-							else if (version.StartsWith("1.8."))
-							{
-								VAR_DELIMITER = new char[] { '|' };
-								return Manager.AsteriskVersion.ASTERISK_1_8;
-							}
-							else if (version.StartsWith("10."))
-							{
-								VAR_DELIMITER = new char[] { '|' };
-								return Manager.AsteriskVersion.ASTERISK_10;
-							}
-							else if (version.StartsWith("11."))
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_11;
-							}
-							else if (version.StartsWith("12."))
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_12;
-							}
-							else if (version.StartsWith("13."))
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_13;
-							}
-							else if (version.StartsWith("14."))
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_14;
-							}
-							else if (version.StartsWith("15."))
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_15;
-							}
-							else if (version.StartsWith("16."))
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_16;
-							}
-							else if (version.StartsWith("17."))
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_17;
-							}
-							else if (version.IndexOf('.') >= 2)
-							{
-								VAR_DELIMITER = new char[] { ',' };
-								return Manager.AsteriskVersion.ASTERISK_Newer;
-							}
-							else
-								throw new ManagerException("Unknown Asterisk version " + version);
-						}
-					}
-				}
-			}
+        #region determineVersion()
+        protected internal AsteriskVersion determineVersion()
+        {
+            Response.ManagerResponse response;
+            response = SendAction(new Action.CommandAction("core show version"), defaultResponseTimeout * 2);
+            if (response is Response.CommandResponse)
+            {
+                foreach (string line in ((Response.CommandResponse)response).Result)
+                {
+                    foreach (Match m in Common.ASTERISK_VERSION.Matches(line))
+                    {
+                        if (m.Groups.Count >= 2)
+                        {
+                            version = m.Groups[1].Value;
+                            if (version.StartsWith("1.4."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return AsteriskVersion.ASTERISK_1_4;
+                            }
+                            else if (version.StartsWith("1.6."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return Manager.AsteriskVersion.ASTERISK_1_6;
+                            }
+                            else if (version.StartsWith("1.8."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return Manager.AsteriskVersion.ASTERISK_1_8;
+                            }
+                            else if (version.StartsWith("10."))
+                            {
+                                VAR_DELIMITER = new char[] { '|' };
+                                return Manager.AsteriskVersion.ASTERISK_10;
+                            }
+                            else if (version.StartsWith("11."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_11;
+                            }
+                            else if (version.StartsWith("12."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_12;
+                            }
+                            else if (version.StartsWith("13."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_13;
+                            }
+                            else if (version.StartsWith("14."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_14;
+                            }
+                            else if (version.StartsWith("15."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_15;
+                            }
+                            else if (version.StartsWith("16."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_16;
+                            }
+                            else if (version.StartsWith("17."))
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_17;
+                            }
+                            else if (version.IndexOf('.') >= 2)
+                            {
+                                VAR_DELIMITER = new char[] { ',' };
+                                return Manager.AsteriskVersion.ASTERISK_Newer;
+                            }
+                            else
+                                throw new ManagerException("Unknown Asterisk version " + version);
+                        }
+                    }
+                }
+            }
 
-			Response.ManagerResponse showVersionFilesResponse = SendAction(new Action.CommandAction("show version files"), defaultResponseTimeout * 2);
-			if (showVersionFilesResponse is Response.CommandResponse)
-			{
-				IList showVersionFilesResult = ((Response.CommandResponse)showVersionFilesResponse).Result;
-				if (showVersionFilesResult != null && showVersionFilesResult.Count > 0)
-				{
-					string line1;
-					line1 = (string)showVersionFilesResult[0];
-					if (line1 != null && line1.StartsWith("File"))
-					{
-						VAR_DELIMITER = new char[] { '|' };
-						return AsteriskVersion.ASTERISK_1_2;
-					}
-				}
-			}
-			return AsteriskVersion.ASTERISK_1_0;
-		}
+            Response.ManagerResponse showVersionFilesResponse = SendAction(new Action.CommandAction("show version files"), defaultResponseTimeout * 2);
+            if (showVersionFilesResponse is Response.CommandResponse)
+            {
+                IList showVersionFilesResult = ((Response.CommandResponse)showVersionFilesResponse).Result;
+                if (showVersionFilesResult != null && showVersionFilesResult.Count > 0)
+                {
+                    string line1;
+                    line1 = (string)showVersionFilesResult[0];
+                    if (line1 != null && line1.StartsWith("File"))
+                    {
+                        VAR_DELIMITER = new char[] { '|' };
+                        return AsteriskVersion.ASTERISK_1_2;
+                    }
+                }
+            }
+            return AsteriskVersion.ASTERISK_1_0;
+        }
 
-		#endregion
+        #endregion
 
-		#region connect()
-		protected internal bool connect()
-		{
-			bool result = false;
-			bool startReader = false;
+        #region connect()
+        protected internal bool connect()
+        {
+            bool result = false;
+            bool startReader = false;
 
-			lock (lockSocket)
-			{
-				if (mrSocket == null)
-				{
+            lock (lockSocket)
+            {
+                if (mrSocket == null)
+                {
 #if LOGGER
                     logger.Info("Connecting to {0}:{1}", hostname, port);
 #endif
                     try
                     {
-                        if (SocketReceiveBufferSize>0)
+                        if (SocketReceiveBufferSize > 0)
                             mrSocket = new SocketConnection(hostname, port, SocketReceiveBufferSize, socketEncoding);
                         else
                             mrSocket = new SocketConnection(hostname, port, socketEncoding);
@@ -1304,8 +1304,8 @@ namespace AsterNET.Manager
                         {
                             logger.Info("Reconnect delay exception : ", ex.Message);
 #else
-						catch
-						{
+                        catch
+                        {
 #endif
                             continue;
                         }
@@ -1323,8 +1323,8 @@ namespace AsterNET.Manager
                         {
                             logger.Info("Connect exception : ", ex.Message);
 #else
-						catch
-						{
+                        catch
+                        {
 #endif
                         }
                         retryCount++;
@@ -1495,7 +1495,7 @@ namespace AsterNET.Manager
         /// <param name="action">action to send</param>
         public Task<ManagerResponse> SendActionAsync(ManagerAction action)
         {
-          return SendActionAsync(action, null);
+            return SendActionAsync(action, null);
         }
         #endregion
 
@@ -1507,19 +1507,19 @@ namespace AsterNET.Manager
         /// <param name="cancellationToken">cancellation Token</param>
         public Task<ManagerResponse> SendActionAsync(ManagerAction action, CancellationTokenSource cancellationToken)
         {
-          var handler = new TaskResponseHandler(action);
-          var source = handler.TaskCompletionSource;
+            var handler = new TaskResponseHandler(action);
+            var source = handler.TaskCompletionSource;
 
-          SendAction(action, handler);
+            SendAction(action, handler);
 
-          if (cancellationToken != null)
-            cancellationToken.Token.Register(() => { source.TrySetCanceled(); });
+            if (cancellationToken != null)
+                cancellationToken.Token.Register(() => { source.TrySetCanceled(); });
 
-          return source.Task.ContinueWith(x =>
-          {
-            RemoveResponseHandler(handler);
-            return x.Result;
-          });
+            return source.Task.ContinueWith(x =>
+            {
+                RemoveResponseHandler(handler);
+                return x.Result;
+            });
         }
         #endregion
         #region SendEventGeneratingAction(action)
@@ -1592,7 +1592,7 @@ namespace AsterNET.Manager
         /// Delete an instance of a class <see cref="IResponseHandler"/> from handlers list.
         /// </summary>
         /// <param name="handler">Class instance <see cref="IResponseHandler"/>.</param>
-		public void RemoveResponseHandler(IResponseHandler handler)
+        public void RemoveResponseHandler(IResponseHandler handler)
         {
             int hash = handler.Hash;
             if (hash != 0)
@@ -1744,7 +1744,7 @@ namespace AsterNET.Manager
                     logger.Error("Unable to retrieve property '" + name + "' of " + action.GetType(), ex);
                     continue;
 #else
-					throw new ManagerException("Unable to retrieve property '" + name + "' of " + action.GetType(), ex);
+                    throw new ManagerException("Unable to retrieve property '" + name + "' of " + action.GetType(), ex);
 #endif
                 }
                 catch (TargetInvocationException ex)
@@ -1753,7 +1753,7 @@ namespace AsterNET.Manager
                     logger.Error("Unable to retrieve property '" + name + "' of " + action.GetType(), ex);
                     continue;
 #else
-					throw new ManagerException("Unable to retrieve property '" + name + "' of " + action.GetType(), ex);
+                    throw new ManagerException("Unable to retrieve property '" + name + "' of " + action.GetType(), ex);
 #endif
                 }
 
@@ -1886,7 +1886,7 @@ namespace AsterNET.Manager
 #if LOGGER
                         logger.Error("Unexpected exception in responseHandler {0}\n{1}", response, ex);
 #else
-						throw new ManagerException("Unexpected exception in responseHandler " + responseHandler.GetType().FullName, ex);
+                        throw new ManagerException("Unexpected exception in responseHandler " + responseHandler.GetType().FullName, ex);
 #endif
                     }
                 }
@@ -1933,8 +1933,8 @@ namespace AsterNET.Manager
                     {
                         logger.Error("Unable to create login key using MD5 Message Digest", ex);
 #else
-					catch
-					{
+                    catch
+                    {
 #endif
                         key = null;
                     }
@@ -2017,7 +2017,7 @@ namespace AsterNET.Manager
 #if LOGGER
                             logger.Error("Unexpected exception", ex);
 #else
-							throw ex;
+                            throw ex;
 #endif
                         }
                 }
@@ -2056,8 +2056,8 @@ namespace AsterNET.Manager
                     {
                         logger.Info("Send Challenge fail : ", ex.Message);
 #else
-					catch
-					{
+                    catch
+                    {
 #endif
                         disconnect(true);
                     }
